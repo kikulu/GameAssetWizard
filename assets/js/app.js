@@ -3,6 +3,9 @@ let baseConfig = null;      // base_settings.json
 let profilesConfig = null;  // profiles.json
 let globalMatrix = {};      // 各分類詞庫 { sheetName: {...} }
 let activeSelections = new Map();
+// Set by templates.js. Keep the package layer separate so users can still fine-tune tags.
+let templatePrompt = '';
+let templateNegative = '';
 
 let currentPlatform = "mobile"; // mobile | steam
 let currentDimension = "general"; // general | 2d | 3d
@@ -283,7 +286,7 @@ function buildBasePrompt() {
     const bg = document.getElementById('dt-bg').value;
     const quality = document.getElementById('dt-quality').value;
     const styleTags = profile ? profile.styleTags : "game asset";
-    return `${styleTags}, ${quality}, ${bg}, ${model}`;
+    return [styleTags, quality, bg, model, templatePrompt].filter(Boolean).join(', ');
 }
 
 function updateUIAndOutput() {
@@ -334,7 +337,8 @@ function updateUIAndOutput() {
     document.getElementById('positivePrompt').value = activeTokens.length > 0
         ? `${basePositive}, ${activeTokens.join(', ')}`
         : basePositive;
-    document.getElementById('negativePrompt').value = baseConfig ? baseConfig.baseNegative : '';
+    const baseNegative = baseConfig ? baseConfig.baseNegative : '';
+    document.getElementById('negativePrompt').value = [baseNegative, templateNegative].filter(Boolean).join(', ');
 }
 
 function clearAllSelection() { activeSelections.clear(); updateUIAndOutput(); }

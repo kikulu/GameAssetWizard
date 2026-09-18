@@ -36,6 +36,10 @@ npm run check
 2. 新分類須加入 `assets/js/app.js` 的 `SHEET_FILES` 陣列。
 3. 確保每個項目均有 `en` 與 `cn`，並以 `node --check assets/js/app.js` 確認前端未被破壞。
 
+## 擴充創作範本
+
+在 `config_sheets/templates.json` 新增套餐。每筆需包含 `gameType`、`styleType`、`label`、`description`、`platform`、`dimension`、`prompt` 與 `negative`。範本只會提供提示詞基礎層，使用者仍可從詞庫選擇標籤及調整權重。
+
 ## Git 工作方式
 
 - 每個功能使用一個描述性的分支與小型 commit。
