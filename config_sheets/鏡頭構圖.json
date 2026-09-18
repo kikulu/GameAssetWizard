@@ -1,0 +1,39 @@
+{
+  "sheetName": "鏡頭構圖",
+  "data": {
+    "景別": {
+      "景別": [
+        {"en": "extreme close-up shot", "cn": "大特寫"},
+        {"en": "close-up shot", "cn": "特寫鏡頭"},
+        {"en": "medium shot", "cn": "中景鏡頭"},
+        {"en": "cowboy shot", "cn": "半身鏡頭"},
+        {"en": "full body shot", "cn": "全身鏡頭"},
+        {"en": "wide shot", "cn": "遠景鏡頭"}
+      ]
+    },
+    "視角": {
+      "視角": [
+        {"en": "bird's eye view", "cn": "鳥瞰視角"},
+        {"en": "low angle shot", "cn": "低角度仰視"},
+        {"en": "high angle shot", "cn": "高角度俯視"},
+        {"en": "eye level shot", "cn": "平視角度"},
+        {"en": "dutch angle", "cn": "傾斜鏡頭"},
+        {"en": "over-the-shoulder shot", "cn": "過肩鏡頭"},
+        {"en": "first-person view", "cn": "第一人稱視角"},
+        {"en": "isometric view", "cn": "等角視角"}
+      ]
+    },
+    "構圖與鏡頭效果": {
+      "構圖與鏡頭效果": [
+        {"en": "rule of thirds composition", "cn": "三分構圖"},
+        {"en": "centered composition", "cn": "置中構圖"},
+        {"en": "dynamic diagonal composition", "cn": "動態對角構圖"},
+        {"en": "symmetrical composition", "cn": "對稱構圖"},
+        {"en": "shallow depth of field", "cn": "淺景深效果"},
+        {"en": "wide angle lens", "cn": "廣角鏡頭"},
+        {"en": "telephoto lens compression", "cn": "長焦鏡頭壓縮感"},
+        {"en": "motion blur background", "cn": "動態模糊背景"}
+      ]
+    }
+  }
+}

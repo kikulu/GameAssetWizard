@@ -1,0 +1,31 @@
+{
+  "sheetName": "身份種族",
+  "data": {
+    "奇幻種族": {
+      "奇幻種族": [
+        {"en": "human", "cn": "人類"},
+        {"en": "elf", "cn": "精靈"},
+        {"en": "dwarf", "cn": "矮人"},
+        {"en": "orc warrior", "cn": "獸人戰士"},
+        {"en": "fairy", "cn": "妖精"},
+        {"en": "dragon-kin", "cn": "龍裔"},
+        {"en": "beast-eared humanoid", "cn": "獸耳人型"},
+        {"en": "robot android", "cn": "機器人"}
+      ]
+    },
+    "職業設定": {
+      "職業設定": [
+        {"en": "knight", "cn": "騎士"},
+        {"en": "mage", "cn": "法師"},
+        {"en": "archer ranger", "cn": "弓箭遊俠"},
+        {"en": "warrior", "cn": "戰士"},
+        {"en": "engineer", "cn": "工程師"},
+        {"en": "pilot", "cn": "駕駛員"},
+        {"en": "alchemist", "cn": "鍊金術士"},
+        {"en": "summoner", "cn": "召喚師"},
+        {"en": "blacksmith", "cn": "鐵匠"},
+        {"en": "scholar", "cn": "學者"}
+      ]
+    }
+  }
+}

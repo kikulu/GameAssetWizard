@@ -1,0 +1,28 @@
+{
+  "sheetName": "圖示徽章",
+  "data": {
+    "遊戲內圖示": {
+      "技能與貨幣": [
+        {"en": "skill icon design", "cn": "技能圖示設計"},
+        {"en": "spell icon", "cn": "法術圖示"},
+        {"en": "currency coin icon", "cn": "貨幣金幣圖示"},
+        {"en": "gem currency icon", "cn": "寶石貨幣圖示"},
+        {"en": "energy icon", "cn": "能量圖示"}
+      ],
+      "成就徽章": [
+        {"en": "achievement badge icon", "cn": "成就徽章圖示"},
+        {"en": "trophy icon", "cn": "獎盃圖示"},
+        {"en": "rank medal icon", "cn": "段位獎章圖示"},
+        {"en": "level up badge", "cn": "升級徽章"}
+      ]
+    },
+    "App / 商店圖示": {
+      "應用程式圖示": [
+        {"en": "mobile app icon design", "cn": "手機App圖示設計"},
+        {"en": "minimalist app icon", "cn": "極簡App圖示"},
+        {"en": "3D app icon", "cn": "立體3D App圖示"},
+        {"en": "rounded square app icon", "cn": "圓角方形App圖示"}
+      ]
+    }
+  }
+}

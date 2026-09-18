@@ -1,0 +1,16 @@
+{
+  "name": "game-asset-prompt-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "以詞庫驅動的遊戲美術提示詞產生器，支援 Draw Things 本機產圖。",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "proxy": "node server_proxy.js",
+    "check": "node --check server.js && node --check server_proxy.js && node --check assets/js/app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

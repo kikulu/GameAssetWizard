@@ -1,0 +1,29 @@
+{
+  "sheetName": "UI元素",
+  "data": {
+    "按鈕與框架": {
+      "按鈕": [
+        {"en": "game button UI", "cn": "遊戲按鈕UI"},
+        {"en": "rounded fantasy button", "cn": "圓角奇幻按鈕"},
+        {"en": "sci-fi UI button", "cn": "科幻風格按鈕"},
+        {"en": "wooden UI button", "cn": "木質UI按鈕"},
+        {"en": "glass UI button", "cn": "玻璃質感按鈕"}
+      ],
+      "框架邊框": [
+        {"en": "ornate frame border", "cn": "華麗邊框裝飾"},
+        {"en": "fantasy UI panel", "cn": "奇幻UI面板"},
+        {"en": "futuristic HUD frame", "cn": "未來HUD框架"},
+        {"en": "parchment UI background", "cn": "羊皮紙UI背景"}
+      ]
+    },
+    "HUD 介面": {
+      "狀態列": [
+        {"en": "health bar UI", "cn": "血量條UI"},
+        {"en": "mana bar UI", "cn": "魔力條UI"},
+        {"en": "experience progress bar", "cn": "經驗值進度條"},
+        {"en": "minimap UI element", "cn": "小地圖UI元件"},
+        {"en": "inventory grid UI", "cn": "物品欄格線UI"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "sheetName": "道具裝備",
+  "data": {
+    "武器": {
+      "近戰武器": [
+        {"en": "fantasy sword", "cn": "奇幻長劍"},
+        {"en": "battle axe", "cn": "戰斧"},
+        {"en": "war hammer", "cn": "戰錘"},
+        {"en": "dagger blade", "cn": "短刀"},
+        {"en": "spear weapon", "cn": "長槍"},
+        {"en": "magic staff", "cn": "魔法權杖"}
+      ],
+      "遠程武器": [
+        {"en": "sci-fi rifle", "cn": "科幻步槍"},
+        {"en": "bow and arrow", "cn": "弓與箭"},
+        {"en": "laser pistol", "cn": "雷射手槍"},
+        {"en": "throwing knife", "cn": "投擲飛刀"},
+        {"en": "crossbow weapon", "cn": "十字弓"}
+      ]
+    },
+    "防具與道具": {
+      "護甲": [
+        {"en": "plate armor", "cn": "板甲"},
+        {"en": "leather armor set", "cn": "皮革護甲套裝"},
+        {"en": "mage robe", "cn": "法師長袍"},
+        {"en": "futuristic exosuit", "cn": "未來動力裝甲"},
+        {"en": "shield item", "cn": "盾牌道具"}
+      ],
+      "消耗品與收藏": [
+        {"en": "health potion bottle", "cn": "生命藥水瓶"},
+        {"en": "magic scroll", "cn": "魔法卷軸"},
+        {"en": "treasure chest", "cn": "寶箱"},
+        {"en": "gold coin icon", "cn": "金幣圖示"},
+        {"en": "gemstone item", "cn": "寶石道具"},
+        {"en": "key item", "cn": "鑰匙道具"}
+      ]
+    }
+  }
+}

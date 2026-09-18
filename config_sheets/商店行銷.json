@@ -1,0 +1,30 @@
+{
+  "sheetName": "商店行銷",
+  "data": {
+    "Steam 素材": {
+      "商店圖片": [
+        {"en": "steam capsule art", "cn": "Steam膠囊圖"},
+        {"en": "steam header image", "cn": "Steam頁首圖"},
+        {"en": "steam store background", "cn": "Steam商店背景圖"},
+        {"en": "key art poster", "cn": "主視覺關鍵圖"}
+      ]
+    },
+    "行銷宣傳": {
+      "宣傳圖": [
+        {"en": "game promotional banner", "cn": "遊戲宣傳橫幅"},
+        {"en": "social media game ad", "cn": "社群媒體廣告圖"},
+        {"en": "splash screen artwork", "cn": "啟動畫面插圖"},
+        {"en": "loading screen illustration", "cn": "載入畫面插圖"},
+        {"en": "main menu background art", "cn": "主選單背景美術"}
+      ]
+    },
+    "Logo 與品牌": {
+      "標誌設計": [
+        {"en": "game logo design", "cn": "遊戲Logo設計"},
+        {"en": "studio logo icon", "cn": "工作室Logo圖示"},
+        {"en": "wordmark title logo", "cn": "文字標題Logo"},
+        {"en": "emblem badge logo", "cn": "徽章式Logo"}
+      ]
+    }
+  }
+}

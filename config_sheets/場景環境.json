@@ -1,0 +1,39 @@
+{
+  "sheetName": "場景環境",
+  "data": {
+    "自然場景": {
+      "地形": [
+        {"en": "fantasy forest landscape", "cn": "奇幻森林景觀"},
+        {"en": "mystical mountain scene", "cn": "神秘山脈場景"},
+        {"en": "desert wasteland", "cn": "沙漠荒地"},
+        {"en": "snowy tundra", "cn": "雪原凍土"},
+        {"en": "tropical island", "cn": "熱帶島嶼"},
+        {"en": "underwater ocean scene", "cn": "海底場景"}
+      ]
+    },
+    "建築與地城": {
+      "建築": [
+        {"en": "medieval castle", "cn": "中世紀城堡"},
+        {"en": "futuristic city skyline", "cn": "未來城市天際線"},
+        {"en": "ancient temple ruins", "cn": "古代神殿遺跡"},
+        {"en": "floating sky island", "cn": "漂浮天空島"},
+        {"en": "steampunk city", "cn": "蒸汽龐克城市"}
+      ],
+      "地城內部": [
+        {"en": "dungeon corridor", "cn": "地城走廊"},
+        {"en": "cave interior", "cn": "洞穴內部"},
+        {"en": "dark forest path", "cn": "暗黑森林小徑"},
+        {"en": "sci-fi spaceship interior", "cn": "太空船內部"},
+        {"en": "abandoned laboratory", "cn": "廢棄實驗室"}
+      ]
+    },
+    "天空盒與背景": {
+      "背景素材": [
+        {"en": "seamless sky background", "cn": "無縫天空背景"},
+        {"en": "parallax background layer", "cn": "視差背景圖層"},
+        {"en": "starry night skybox", "cn": "星空天空盒"},
+        {"en": "sunset horizon backdrop", "cn": "夕陽地平線背景"}
+      ]
+    }
+  }
+}

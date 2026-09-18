@@ -1,0 +1,92 @@
+{
+  "mobile": {
+    "label": "📱 手遊（綜合）",
+    "platformLabel": "手機遊戲",
+    "dimensionLabel": "綜合風格",
+    "styleTags": "mobile game art, clean asset design, polished game UI style",
+    "defaultRandomSheets": ["身份種族", "服裝造型", "動作姿勢"],
+    "presets": [
+      { "label": "iOS App 圖示 1024x1024", "w": 1024, "h": 1024, "note": "App Store 上架必備尺寸" },
+      { "label": "Android 圖示 512x512", "w": 512, "h": 512, "note": "Google Play 圖示尺寸" },
+      { "label": "遊戲內圖示 256x256", "w": 256, "h": 256, "note": "技能/道具/貨幣圖示" },
+      { "label": "啟動畫面 1170x2532", "w": 1170, "h": 2532, "note": "直式手機啟動畫面" },
+      { "label": "商店截圖 1284x2778", "w": 1284, "h": 2778, "note": "App Store 直式截圖" },
+      { "label": "角色概念圖 1024x1024", "w": 1024, "h": 1024, "note": "方形角色設計稿" }
+    ]
+  },
+  "mobile2d": {
+    "label": "📱 手遊 2D",
+    "platformLabel": "手機遊戲",
+    "dimensionLabel": "2D 風格",
+    "styleTags": "2D mobile game art, flat shading, vector illustration style, clean line art, anime style mobile UI art",
+    "defaultRandomSheets": ["身份種族", "服裝造型", "髮型髮色"],
+    "presets": [
+      { "label": "iOS App 圖示 1024x1024", "w": 1024, "h": 1024, "note": "App Store 上架必備尺寸" },
+      { "label": "遊戲內圖示 256x256", "w": 256, "h": 256, "note": "技能/道具/貨幣圖示" },
+      { "label": "2D 角色立繪 1024x1536", "w": 1024, "h": 1536, "note": "直式角色立繪比例" },
+      { "label": "精靈圖單格 512x512", "w": 512, "h": 512, "note": "Sprite sheet 單一動作格" },
+      { "label": "2D UI小圖示 128x128", "w": 128, "h": 128, "note": "按鈕/狀態小圖示" },
+      { "label": "商店截圖 1284x2778", "w": 1284, "h": 2778, "note": "App Store 直式截圖" }
+    ]
+  },
+  "mobile3d": {
+    "label": "📱 手遊 3D",
+    "platformLabel": "手機遊戲",
+    "dimensionLabel": "3D 風格",
+    "styleTags": "stylized 3D render, mobile game 3D character art, toon shaded PBR material, game engine render",
+    "defaultRandomSheets": ["身份種族", "動作姿勢", "道具裝備"],
+    "presets": [
+      { "label": "iOS App 圖示 1024x1024", "w": 1024, "h": 1024, "note": "App Store 上架必備尺寸" },
+      { "label": "3D角色轉盤圖 1024x1536", "w": 1024, "h": 1536, "note": "角色三視圖/轉盤參考比例" },
+      { "label": "角色模型參考圖 2048x1024", "w": 2048, "h": 1024, "note": "橫向模型設計參考" },
+      { "label": "遊戲內圖示 256x256", "w": 256, "h": 256, "note": "技能/道具/貨幣圖示" },
+      { "label": "啟動畫面 1170x2532", "w": 1170, "h": 2532, "note": "直式手機啟動畫面" },
+      { "label": "商店截圖 1284x2778", "w": 1284, "h": 2778, "note": "App Store 直式截圖" }
+    ]
+  },
+  "steam": {
+    "label": "🖥️ Steam（綜合）",
+    "platformLabel": "Steam / PC",
+    "dimensionLabel": "綜合風格",
+    "styleTags": "PC game asset, steam store art, polished game illustration",
+    "defaultRandomSheets": ["場景環境", "道具裝備", "身份種族"],
+    "presets": [
+      { "label": "Steam 主膠囊圖 616x353", "w": 616, "h": 353, "note": "商店頁最主要曝光圖" },
+      { "label": "Steam 小膠囊圖 231x87", "w": 231, "h": 87, "note": "清單/搜尋結果用" },
+      { "label": "Steam 頁首圖 460x215", "w": 460, "h": 215, "note": "商店頁頂部圖" },
+      { "label": "Steam 資料庫英雄圖 3840x1240", "w": 3840, "h": 1240, "note": "個人收藏庫大圖" },
+      { "label": "商店截圖 16:9 1920x1080", "w": 1920, "h": 1080, "note": "商店展示截圖" },
+      { "label": "概念美術 2048x2048", "w": 2048, "h": 2048, "note": "高解析概念設計稿" }
+    ]
+  },
+  "steam2d": {
+    "label": "🖥️ Steam 2D",
+    "platformLabel": "Steam / PC",
+    "dimensionLabel": "2D 風格",
+    "styleTags": "2D indie game art, hand-painted illustration, flat vector art, pixel art style",
+    "defaultRandomSheets": ["場景環境", "服裝造型", "髮型髮色"],
+    "presets": [
+      { "label": "Steam 主膠囊圖 616x353", "w": 616, "h": 353, "note": "商店頁最主要曝光圖" },
+      { "label": "Steam 頁首圖 460x215", "w": 460, "h": 215, "note": "商店頁頂部圖" },
+      { "label": "像素風精靈圖 128x128", "w": 128, "h": 128, "note": "Pixel art sprite 尺寸" },
+      { "label": "2D 背景圖層 1920x1080", "w": 1920, "h": 1080, "note": "視差捲動背景層" },
+      { "label": "商店截圖 16:9 1920x1080", "w": 1920, "h": 1080, "note": "商店展示截圖" },
+      { "label": "角色立繪 1024x1536", "w": 1024, "h": 1536, "note": "直式角色設計稿" }
+    ]
+  },
+  "steam3d": {
+    "label": "🖥️ Steam 3D",
+    "platformLabel": "Steam / PC",
+    "dimensionLabel": "3D 風格",
+    "styleTags": "photorealistic 3D render, AAA game concept art, unreal engine 5 render, PBR material",
+    "defaultRandomSheets": ["場景環境", "道具裝備", "動作姿勢"],
+    "presets": [
+      { "label": "Steam 主膠囊圖 616x353", "w": 616, "h": 353, "note": "商店頁最主要曝光圖" },
+      { "label": "Steam 資料庫英雄圖 3840x1240", "w": 3840, "h": 1240, "note": "個人收藏庫大圖" },
+      { "label": "3D角色設計圖 2048x2048", "w": 2048, "h": 2048, "note": "高解析角色設計稿" },
+      { "label": "環境概念圖 3840x2160", "w": 3840, "h": 2160, "note": "橫向場景概念稿" },
+      { "label": "商店截圖 16:9 1920x1080", "w": 1920, "h": 1080, "note": "商店展示截圖" },
+      { "label": "概念美術 2048x2048", "w": 2048, "h": 2048, "note": "高解析概念設計稿" }
+    ]
+  }
+}
