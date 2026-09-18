@@ -1,0 +1,10 @@
+.generator-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px; }
+.generator-tab { border: 1px solid var(--border); border-radius: 7px; padding: 8px 4px; background: var(--panel2); color: var(--text-muted); cursor: pointer; font-size: 11px; font-weight: bold; }
+.generator-tab.active { background: #163642; border-color: var(--accent); color: var(--accent); }
+.advanced-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+.advanced-section { margin-top: 10px; border-top: 1px solid #294536; padding-top: 10px; }
+.advanced-section summary { color: #a7f3d0; cursor: pointer; font-weight: bold; font-size: 12px; margin-bottom: 10px; }
+.generator-note { font-size: 11px; color: var(--text-muted); margin: 8px 0; line-height: 1.5; }
+.generator-status { min-height: 18px; }
+.wide-field { grid-column: 1 / -1; }
+@media (max-width: 500px) { .advanced-grid { grid-template-columns: 1fr; } }

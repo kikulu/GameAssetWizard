@@ -1,0 +1,44 @@
+{
+  "sheetName": "服裝造型",
+  "data": {
+    "奇幻裝束": {
+      "奇幻裝束": [
+        {"en": "fantasy plate armor", "cn": "奇幻板甲"},
+        {"en": "leather adventurer outfit", "cn": "皮革冒險者服裝"},
+        {"en": "wizard robe", "cn": "巫師長袍"},
+        {"en": "royal ceremonial dress", "cn": "皇室禮服"},
+        {"en": "traveler cloak and hood", "cn": "旅行者斗篷兜帽"},
+        {"en": "ranger leather gear", "cn": "遊俠皮甲裝備"}
+      ]
+    },
+    "科幻裝束": {
+      "科幻裝束": [
+        {"en": "futuristic combat suit", "cn": "未來戰鬥服"},
+        {"en": "cyberpunk streetwear", "cn": "賽博龐克街頭服"},
+        {"en": "space explorer suit", "cn": "太空探索服"},
+        {"en": "mecha pilot suit", "cn": "機甲駕駛服"},
+        {"en": "holographic armor", "cn": "全息裝甲"},
+        {"en": "tech-enhanced jacket", "cn": "科技強化夾克"}
+      ]
+    },
+    "日常與現代服裝": {
+      "日常與現代服裝": [
+        {"en": "casual streetwear", "cn": "休閒街頭服"},
+        {"en": "school uniform", "cn": "學生制服"},
+        {"en": "sportswear outfit", "cn": "運動服裝"},
+        {"en": "business formal attire", "cn": "正式商務服裝"},
+        {"en": "explorer utility outfit", "cn": "探險工作服"}
+      ]
+    },
+    "配件與裝飾": {
+      "配件與裝飾": [
+        {"en": "ornate shoulder armor", "cn": "華麗肩甲"},
+        {"en": "utility belt", "cn": "工具腰帶"},
+        {"en": "decorative cape", "cn": "裝飾披風"},
+        {"en": "fingerless gloves", "cn": "無指手套"},
+        {"en": "tactical goggles accessory", "cn": "戰術護目鏡配件"},
+        {"en": "layered scarf", "cn": "多層圍巾"}
+      ]
+    }
+  }
+}
