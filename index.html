@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎮 遊戲角色美術咒語產生器 — 手遊 / Steam</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header-title">
+        <h1>🎮 遊戲角色美術咒語產生器</h1>
+        <p>手遊 / Steam · 2D / 3D · 讀取外部 JSON 詞庫的角色設計提示詞工具</p>
+    </div>
+
+    <!-- 左側控制牆 -->
+    <div class="card">
+        <h2>📂 素材詞庫矩陣</h2>
+        <p style="color: var(--text-muted); font-size: 13px; margin-top: -10px;">點擊分類列可【展開/收合】。點選標籤可加入右側面板並可調整權重。</p>
+        <div id="matrixContainer">載入詞庫中...</div>
+    </div>
+
+    <!-- 右側主控面板 -->
+    <div class="sticky-side">
+        <div class="card" style="margin-bottom: 0;">
+            <h3>🕹️ 主控面板</h3>
+
+            <div class="toggle-row">
+                <div class="toggle-btn active" id="btn-plat-mobile" onclick="setPlatform('mobile')">📱 手機遊戲</div>
+                <div class="toggle-btn" id="btn-plat-steam" onclick="setPlatform('steam')">🖥️ Steam / PC</div>
+            </div>
+            <div class="toggle-row">
+                <div class="toggle-btn active" id="btn-dim-general" onclick="setDimension('general')">🎨 綜合風格</div>
+                <div class="toggle-btn" id="btn-dim-2d" onclick="setDimension('2d')">🖌️ 2D</div>
+                <div class="toggle-btn" id="btn-dim-3d" onclick="setDimension('3d')">🧊 3D</div>
+            </div>
+            <div class="profile-label" id="profileLabel">目前模式：<b>載入中...</b></div>
+
+            <div class="random-config-box">
+                <div style="font-size: 13px; font-weight: bold; color: var(--primary-light); display: flex; justify-content: space-between;">
+                    <span>🎲 設定隨機抽卡包含的分類：</span>
+                    <a href="#" onclick="toggleAllCheckboxes(event)" style="color:var(--accent); text-decoration:none; font-size:11px;">全選/全不選</a>
+                </div>
+                <div id="randomOptionsContainer" class="random-options"></div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn" onclick="randomPickSelected()">🎲 指定分類隨機抽卡</button>
+                <button class="btn sec" onclick="clearAllSelection()">❌ 清空重選</button>
+            </div>
+
+            <!-- 素材規格設定 -->
+            <div class="settings-toggle-header" onclick="toggleSettingsPanel()">
+                <span>🎛️ 展開素材規格設定（尺寸 / 引擎）</span>
+                <span id="settings-arrow" class="arrow">▶</span>
+            </div>
+
+            <div id="settingsPanel" class="settings-panel-content">
+                <div class="setting-field" style="margin-bottom: 10px;">
+                    <label>📐 用途尺寸預設（依模式自動切換）</label>
+                    <select id="dt-preset" onchange="applyPreset()"></select>
+                    <div class="preset-note" id="preset-note"></div>
+                </div>
+
+                <div class="setting-grid">
+                    <div class="setting-field">
+                        <label>寬 (Width)</label>
+                        <input type="number" id="dt-width" value="1024">
+                    </div>
+                    <div class="setting-field">
+                        <label>高 (Height)</label>
+                        <input type="number" id="dt-height" value="1024">
+                    </div>
+                </div>
+
+                <div class="setting-field" style="margin-bottom: 10px;">
+                    <label>🖌️ 繪圖引擎 / 模型參考</label>
+                    <select id="dt-model">
+                        <option value="Midjourney v6 game art style">Midjourney v6</option>
+                        <option value="SDXL, game asset lora">Stable Diffusion XL</option>
+                        <option value="Leonardo Ai, game asset style">Leonardo.Ai</option>
+                        <option value="Ideogram 2.0, clean vector style">Ideogram 2.0</option>
+                        <option value="DALL-E 3, clean digital art">DALL·E 3</option>
+                    </select>
+                </div>
+
+                <div class="setting-grid">
+                    <div class="setting-field">
+                        <label>🎨 背景需求</label>
+                        <select id="dt-bg">
+                            <option value="transparent background, isolated on white">透明/去背 (Icon用)</option>
+                            <option value="clean studio background" selected>簡潔背景</option>
+                            <option value="fully rendered environment background">完整場景背景</option>
+                        </select>
+                    </div>
+                    <div class="setting-field">
+                        <label>✨ 品質關鍵字</label>
+                        <select id="dt-quality">
+                            <option value="masterpiece, best quality, highly detailed, 4k" selected>高品質細節</option>
+                            <option value="clean vector, flat design, minimal">簡潔向量風</option>
+                            <option value="AAA game art, concept art quality">AAA 遊戲規格</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <h4 style="margin: 5px 0 5px 0; color: var(--accent);">📍 目前選中標籤：</h4>
+            <div id="selectedDisplayList" style="max-height: 170px; overflow-y: auto; margin-bottom: 15px;">
+                <span style="color:var(--text-muted); font-size: 13px;">尚未選取任何標籤...</span>
+            </div>
+
+            <h4 style="margin: 0 0 5px 0; color: var(--accent);">🚀 正向提示詞 (Positive)</h4>
+            <div style="position: relative;">
+                <textarea id="positivePrompt"></textarea>
+                <button id="btn-copy-pos" class="btn" style="padding: 6px 12px; font-size: 12px; position: absolute; right: 10px; top: 10px; width: auto;" onclick="copyText('positivePrompt', 'btn-copy-pos')">📋 複製</button>
+            </div>
+
+            <h4 style="margin: 15px 0 5px 0; color: var(--danger);">❌ 反向排除詞 (Negative)</h4>
+            <div style="position: relative;">
+                <textarea id="negativePrompt"></textarea>
+                <button id="btn-copy-neg" class="btn" style="padding: 6px 12px; font-size: 12px; position: absolute; right: 10px; top: 10px; width: auto;" onclick="copyText('negativePrompt', 'btn-copy-neg')">📋 複製</button>
+            </div>
+
+            <h4 style="margin: 15px 0 5px 0; color: var(--gold);">🔗 快速開啟繪圖工具</h4>
+            <div class="quicklink-row">
+                <a class="quicklink" href="https://www.midjourney.com/imagine" target="_blank" rel="noopener">Midjourney</a>
+                <a class="quicklink" href="https://leonardo.ai" target="_blank" rel="noopener">Leonardo.Ai</a>
+                <a class="quicklink" href="https://ideogram.ai" target="_blank" rel="noopener">Ideogram</a>
+                <a class="quicklink" href="https://copilot.microsoft.com/images/create" target="_blank" rel="noopener">Bing Image Creator</a>
+            </div>
+
+            <h4 style="margin: 18px 0 8px 0; color: #4ade80;">🖨️ Draw Things 本機直接產圖</h4>
+            <div class="dt-panel">
+                <div class="dt-field-row">
+                    <div class="setting-field">
+                        <label>API 位址</label>
+                        <input type="text" id="dt-api-base" value="http://127.0.0.1:7860">
+                    </div>
+                </div>
+                <div class="dt-field-row">
+                    <div class="setting-field">
+                        <label>Steps 步數</label>
+                        <input type="number" id="dt-steps" value="20" min="1" max="150">
+                    </div>
+                    <div class="setting-field">
+                        <label>CFG Scale</label>
+                        <input type="number" id="dt-cfg" value="7" min="1" max="20" step="0.5">
+                    </div>
+                </div>
+                <div class="dt-field-row">
+                    <div class="setting-field">
+                        <label>Sampler 採樣器</label>
+                        <select id="dt-sampler">
+                            <option value="DPM++ 2M Karras">DPM++ 2M Karras</option>
+                            <option value="DPM++ SDE Karras">DPM++ SDE Karras</option>
+                            <option value="Euler a">Euler a</option>
+                            <option value="Euler">Euler</option>
+                            <option value="DDIM">DDIM</option>
+                            <option value="UniPC">UniPC</option>
+                            <option value="PLMS">PLMS</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="dt-field-row">
+                    <div class="setting-field">
+                        <label>Seed（-1 為隨機）</label>
+                        <input type="number" id="dt-seed" value="-1">
+                    </div>
+                    <div class="setting-field">
+                        <label>Batch 張數</label>
+                        <input type="number" id="dt-batch" value="1" min="1" max="8">
+                    </div>
+                </div>
+                <div class="preset-note" style="margin-bottom: 10px;">📌 產圖尺寸會直接沿用上方「素材規格設定」的寬/高數值。</div>
+
+                <div class="dt-btn-row">
+                    <button class="dt-btn test" onclick="testDrawThingsConnection()">🔌 測試連線</button>
+                    <button class="dt-btn generate" id="btn-generate-dt" onclick="generateWithDrawThings()">🎨 產生圖片</button>
+                </div>
+
+                <div class="dt-status" id="dt-status">尚未連線。請先在 Draw Things App 內開啟「HTTP API Server」。</div>
+
+                <div class="dt-gallery" id="dt-gallery"></div>
+
+                <div class="dt-hint">
+                    若「測試連線」或「產生圖片」出現 CORS / 網路錯誤，代表瀏覽器擋下跨來源請求。<br>
+                    請改執行附帶的 <code>server_proxy.js</code> 本機代理（<code>node server_proxy.js</code>），<br>
+                    並把上方 API 位址改成 <code>http://127.0.0.1:8791</code>，詳見 README。
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="backToTop" class="back-to-top" title="回到頁首">▲</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "sheetName": "動作姿勢",
+  "data": {
+    "站姿與待機": {
+      "站姿與待機": [
+        {"en": "standing pose", "cn": "站立姿勢"},
+        {"en": "idle stance", "cn": "待機姿勢"},
+        {"en": "confident standing pose", "cn": "自信站姿"},
+        {"en": "relaxed pose", "cn": "放鬆姿勢"},
+        {"en": "hands on hips", "cn": "叉腰姿勢"},
+        {"en": "arms crossed pose", "cn": "抱胸姿勢"}
+      ]
+    },
+    "戰鬥動作": {
+      "戰鬥動作": [
+        {"en": "combat stance", "cn": "戰鬥架勢"},
+        {"en": "dynamic action pose", "cn": "動態戰鬥姿勢"},
+        {"en": "sword swing pose", "cn": "揮劍動作"},
+        {"en": "spellcasting pose", "cn": "施法姿勢"},
+        {"en": "bow aiming pose", "cn": "拉弓瞄準姿勢"},
+        {"en": "charging pose", "cn": "衝鋒姿勢"},
+        {"en": "defensive guard stance", "cn": "防禦姿勢"},
+        {"en": "victory battle pose", "cn": "勝利戰鬥姿勢"}
+      ]
+    },
+    "移動姿態": {
+      "移動姿態": [
+        {"en": "running pose", "cn": "奔跑姿勢"},
+        {"en": "jumping pose", "cn": "跳躍姿勢"},
+        {"en": "flying pose", "cn": "飛行姿勢"},
+        {"en": "crouching pose", "cn": "蹲伏姿勢"},
+        {"en": "sneaking pose", "cn": "潛行姿勢"},
+        {"en": "dashing pose", "cn": "疾衝姿勢"}
+      ]
+    },
+    "情境姿勢": {
+      "情境姿勢": [
+        {"en": "sitting pose", "cn": "坐姿"},
+        {"en": "leaning pose", "cn": "倚靠姿勢"},
+        {"en": "victory pose", "cn": "勝利姿勢"},
+        {"en": "greeting pose", "cn": "打招呼姿勢"},
+        {"en": "thinking pose", "cn": "沉思姿勢"},
+        {"en": "kneeling pose", "cn": "單膝下跪姿勢"}
+      ]
+    }
+  }
+}

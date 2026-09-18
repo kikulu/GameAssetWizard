@@ -1,0 +1,31 @@
+{
+  "sheetName": "特效",
+  "data": {
+    "魔法特效": {
+      "元素特效": [
+        {"en": "fire magic effect", "cn": "火焰魔法特效"},
+        {"en": "ice frost effect", "cn": "冰霜特效"},
+        {"en": "lightning bolt effect", "cn": "閃電特效"},
+        {"en": "healing light aura", "cn": "治療光環"},
+        {"en": "dark magic swirl", "cn": "暗黑魔法漩渦"}
+      ]
+    },
+    "戰鬥特效": {
+      "打擊特效": [
+        {"en": "sword slash effect", "cn": "劍擊斬擊特效"},
+        {"en": "explosion particle effect", "cn": "爆炸粒子特效"},
+        {"en": "impact hit spark", "cn": "命中打擊火花"},
+        {"en": "shield block effect", "cn": "護盾格擋特效"}
+      ]
+    },
+    "環境特效": {
+      "氛圍特效": [
+        {"en": "floating particles dust", "cn": "飄浮塵埃粒子"},
+        {"en": "magical glow aura", "cn": "魔法光暈氛圍"},
+        {"en": "smoke fog effect", "cn": "煙霧迷霧特效"},
+        {"en": "rain weather effect", "cn": "降雨天氣特效"},
+        {"en": "falling leaves effect", "cn": "落葉飄散特效"}
+      ]
+    }
+  }
+}

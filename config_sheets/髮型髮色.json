@@ -1,0 +1,29 @@
+{
+  "sheetName": "髮型髮色",
+  "data": {
+    "髮型": {
+      "髮型": [
+        {"en": "ponytail", "cn": "馬尾"},
+        {"en": "twintails", "cn": "雙馬尾"},
+        {"en": "braided hair", "cn": "辮子"},
+        {"en": "short hair", "cn": "短髮"},
+        {"en": "long hair", "cn": "長髮"},
+        {"en": "messy hair", "cn": "凌亂髮型"},
+        {"en": "bun hairstyle", "cn": "丸子頭"},
+        {"en": "wavy hair", "cn": "波浪捲髮"}
+      ]
+    },
+    "髮色": {
+      "髮色": [
+        {"en": "black hair", "cn": "黑髮"},
+        {"en": "blonde hair", "cn": "金髮"},
+        {"en": "silver hair", "cn": "銀髮"},
+        {"en": "red hair", "cn": "紅髮"},
+        {"en": "blue hair", "cn": "藍髮"},
+        {"en": "white hair", "cn": "白髮"},
+        {"en": "gradient hair color", "cn": "漸層髮色"},
+        {"en": "colorful fantasy hair", "cn": "奇幻鮮豔髮色"}
+      ]
+    }
+  }
+}
