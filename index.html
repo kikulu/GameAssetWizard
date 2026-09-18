@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <link rel="stylesheet" href="assets/css/generation.css">
 <link rel="stylesheet" href="assets/css/alchemy.css">
+<link rel="stylesheet" href="assets/css/templates.css">
 </head>
 <body>
 
@@ -108,6 +109,18 @@
                 </div>
             </div>
 
+            <div class="template-panel" id="template-panel">
+                <div class="template-panel-title">⚗️ 創作範本套餐</div>
+                <p class="template-panel-note">先選遊戲類型與風格，再套用套餐作為可微調的起點。</p>
+                <div class="advanced-grid">
+                    <div class="setting-field"><label for="template-game-type">遊戲類型</label><select id="template-game-type"></select></div>
+                    <div class="setting-field"><label for="template-style-type">風格類型</label><select id="template-style-type"></select></div>
+                    <div class="setting-field wide-field"><label for="template-package">基礎套餐</label><select id="template-package"></select></div>
+                </div>
+                <div id="template-description" class="template-description">載入套餐中…</div>
+                <div class="dt-btn-row"><button class="dt-btn generate" onclick="applyCreativeTemplate()">✨ 套用並開始微調</button><button class="dt-btn test" onclick="clearCreativeTemplate()">↺ 移除套餐</button></div>
+            </div>
+
             <h4 style="margin: 5px 0 5px 0; color: var(--accent);">📍 目前選中標籤：</h4>
             <div id="selectedDisplayList" style="max-height: 170px; overflow-y: auto; margin-bottom: 15px;">
                 <span style="color:var(--text-muted); font-size: 13px;">尚未選取任何標籤...</span>
@@ -200,5 +213,6 @@
 <script src="assets/js/app.js" defer></script>
 <script src="assets/js/generation.js" defer></script>
 <script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/templates.js" defer></script>
 </body>
 </html>
