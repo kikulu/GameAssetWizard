@@ -5,7 +5,8 @@
 ## Validation
 
 - [ ] `npm run check`
-- [ ] Tested the affected flow in a browser
+- [ ] `npm test`
+- [ ] Tested the affected flow in a browser (and in the desktop app when relevant)
 - [ ] Updated JSON/config documentation when relevant
 
 ## Checklist

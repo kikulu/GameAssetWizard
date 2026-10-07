@@ -20,9 +20,32 @@ npm start
 
 `http://127.0.0.1:3000` を開きます。Node.js 18 以上が必要です。追加の実行時パッケージは不要です。
 
+## デスクトップ版（Electron）
+
+```bash
+npm install          # デスクトップ版のみ必要（electron と electron-builder）
+npm run electron     # デスクトップ版を起動
+npm run dist         # 現在の OS 向けインストーラーを作成（出力: release/）
+```
+
+デスクトップ版はメインプロセスからローカル生成バックエンドへリクエストを送るため、CORS プロキシは不要です。詳細は[デスクトップ版ガイド](docs/DESKTOP.md)を参照してください。
+
+## スタイルロックとバッチ生成
+
+スタイルプリセット（スタイル用プロンプト、ネガティブプロンプト、パラメーター、シード）を保存してロックし、素材リストを同じスタイルでまとめて生成できます。プリセットは JSON でエクスポート・共有できます。詳細は[スタイル一貫化ワークフロー](docs/STYLE_CONSISTENCY.md)を参照してください。
+
 ## ドキュメント
 
 - [アーキテクチャ](docs/ARCHITECTURE.md)
 - [開発ガイド](docs/DEVELOPMENT.md)
 - [ローカル生成バックエンド設定](docs/LOCAL_GENERATORS.md)
 - [ロードマップ](docs/ROADMAP.md)
+- [デスクトップ版ガイド](docs/DESKTOP.md)
+- [デプロイ](docs/DEPLOYMENT.md)
+- [辞書・設定ファイル形式](docs/CONFIG_SHEETS.md)
+- [スタイル一貫化ワークフロー](docs/STYLE_CONSISTENCY.md)
+- [変更履歴](CHANGELOG.md) · [コントリビュート](CONTRIBUTING.md)
+
+## 作者
+
+[kikulu](https://github.com/kikulu)
