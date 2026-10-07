@@ -13,7 +13,8 @@
     "dist:win": "electron-builder --win",
     "dist:mac": "electron-builder --mac",
     "dist:linux": "electron-builder --linux",
-    "check": "node --check server.js && node --check server_proxy.js && node --check electron/main.js && node --check electron/preload.js && node --check assets/js/platform.js && node --check assets/js/app.js && node --check assets/js/generation.js"
+    "check": "node --check server.js && node --check server_proxy.js && node --check electron/main.js && node --check electron/preload.js && node --check assets/js/platform.js && node --check assets/js/app.js && node --check assets/js/generation.js && node --check assets/js/styleguide.js",
+    "test": "node --test"
   },
   "devDependencies": {
     "electron": "^33.0.0",
