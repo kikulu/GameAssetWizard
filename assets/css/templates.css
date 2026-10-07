@@ -1,0 +1,4 @@
+.template-panel { margin: 15px 0; padding: 14px; border: 1px solid #84662c; border-radius: 10px; background: linear-gradient(135deg, rgba(75,53,14,.48), rgba(20,34,25,.6)); }
+.template-panel-title { color: var(--gold); font-weight: bold; font-size: 14px; }
+.template-panel-note { margin: 5px 0 11px; color: var(--text-muted); font-size: 11.5px; line-height: 1.5; }
+.template-description { min-height: 44px; margin: 10px 0; padding: 9px 10px; border-left: 3px solid var(--accent); background: rgba(6, 13, 10, .42); color: #d7e7c7; font-size: 12px; line-height: 1.55; }

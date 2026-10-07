@@ -22,22 +22,42 @@ npm run proxy
 
 在網頁的 API 位址輸入 `http://127.0.0.1:8791`。可複製 `.env.example` 的值作為啟動參數；目前代理讀取的環境變數為 `DT_HOST`、`DT_PORT`、`PROXY_PORT`。
 
+## 桌面版（Electron）
+
+```bash
+npm install
+npm run electron
+```
+
+- 前端以 `app://local/` 自訂協定載入，使 `fetch('config_sheets/...')` 與 `localStorage` 行為和網頁版一致。
+- 產圖後端請求一律透過 `assets/js/platform.js` 的 `apiFetch()`：網頁版等同 `fetch`，桌面版改走 IPC 由主程序代送（無 CORS 問題）。**新增呼叫本機後端的程式碼時請使用 `apiFetch`，不要直接用 `fetch`**；讀取專案內 JSON 則仍用 `fetch`。
+- 打包：`npm run dist`（或 `dist:win`／`dist:mac`／`dist:linux`），輸出於 `release/`。
+
 ## 品質檢查
 
 ```bash
-npm run check
+npm run check   # 語法檢查
+npm test        # 單元測試（Node 內建測試執行器，無需額外套件）
 ```
 
-此指令會驗證所有 Node.js 與瀏覽器 JavaScript 的語法。新增功能時，請手動驗證：詞庫載入、標籤權重、提示詞複製、模式/尺寸切換與代理錯誤訊息。
+`check` 會驗證 Node.js、Electron 與瀏覽器 JavaScript 的語法；`test` 目前涵蓋風格鎖定的純函式。新增功能時，請手動驗證：詞庫載入、標籤權重、提示詞複製、模式/尺寸切換與代理錯誤訊息。
 
 ## 擴充詞庫
+
+詳細格式見 [詞庫與設定檔格式](CONFIG_SHEETS.md)。
 
 1. 在 `config_sheets` 新增或更新 JSON 檔。
 2. 新分類須加入 `assets/js/app.js` 的 `SHEET_FILES` 陣列。
 3. 確保每個項目均有 `en` 與 `cn`，並以 `node --check assets/js/app.js` 確認前端未被破壞。
 
+## 擴充創作範本
+
+在 `config_sheets/templates.json` 新增套餐。每筆需包含 `gameType`、`styleType`、`label`、`description`、`platform`、`dimension`、`prompt` 與 `negative`。範本只會提供提示詞基礎層，使用者仍可從詞庫選擇標籤及調整權重。
+
 ## Git 工作方式
 
-- 每個功能使用一個描述性的分支與小型 commit。
+- 預設且唯一的長期分支為 `master`；功能分支完成後合併回 `master` 並刪除。
+- 每個功能使用一個描述性的分支與小型 commit，訊息採 Conventional Commits（`feat:`、`fix:`、`docs:`…）。
+- 版本遵循語意化版本，發佈時更新 `package.json` 與 `CHANGELOG.md`，並建立 annotated tag（`vX.Y.Z`）。細節見 [CONTRIBUTING](../CONTRIBUTING.md)。
 - 不提交 `.env`、產圖結果、token 或個人設定。
-- 合併前執行 `npm run check`，並在瀏覽器完成核心操作驗收。
+- 合併前執行 `npm run check` 與 `npm test`，並在瀏覽器完成核心操作驗收。

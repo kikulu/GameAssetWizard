@@ -3,6 +3,9 @@ let baseConfig = null;      // base_settings.json
 let profilesConfig = null;  // profiles.json
 let globalMatrix = {};      // 各分類詞庫 { sheetName: {...} }
 let activeSelections = new Map();
+// Set by templates.js. Keep the package layer separate so users can still fine-tune tags.
+let templatePrompt = '';
+let templateNegative = '';
 
 let currentPlatform = "mobile"; // mobile | steam
 let currentDimension = "general"; // general | 2d | 3d
@@ -283,7 +286,7 @@ function buildBasePrompt() {
     const bg = document.getElementById('dt-bg').value;
     const quality = document.getElementById('dt-quality').value;
     const styleTags = profile ? profile.styleTags : "game asset";
-    return `${styleTags}, ${quality}, ${bg}, ${model}`;
+    return [styleTags, quality, bg, model, templatePrompt].filter(Boolean).join(', ');
 }
 
 function updateUIAndOutput() {
@@ -334,7 +337,8 @@ function updateUIAndOutput() {
     document.getElementById('positivePrompt').value = activeTokens.length > 0
         ? `${basePositive}, ${activeTokens.join(', ')}`
         : basePositive;
-    document.getElementById('negativePrompt').value = baseConfig ? baseConfig.baseNegative : '';
+    const baseNegative = baseConfig ? baseConfig.baseNegative : '';
+    document.getElementById('negativePrompt').value = [baseNegative, templateNegative].filter(Boolean).join(', ');
 }
 
 function clearAllSelection() { activeSelections.clear(); updateUIAndOutput(); }
@@ -374,7 +378,7 @@ async function testDrawThingsConnection() {
     const statusEl = document.getElementById('dt-status');
     statusEl.textContent = '🔄 測試連線中...';
     try {
-        const res = await fetch(`${dtApiBase()}/`, { method: 'GET' });
+        const res = await apiFetch(`${dtApiBase()}/`, { method: 'GET' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         await res.json().catch(() => ({}));
         statusEl.innerHTML = '✅ 連線成功！Draw Things HTTP API 可正常呼叫。';
@@ -419,7 +423,7 @@ async function generateWithDrawThings() {
     gallery.innerHTML = '';
 
     try {
-        const res = await fetch(`${dtApiBase()}/sdapi/v1/txt2img`, {
+        const res = await apiFetch(`${dtApiBase()}/sdapi/v1/txt2img`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)

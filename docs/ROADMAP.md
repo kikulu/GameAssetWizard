@@ -11,17 +11,29 @@
 
 ## v1.1 — 體驗與可靠性
 
+- [x] 支援 Draw Things、SD WebUI／Forge 與 ComfyUI 本機產圖
+- [x] 加入 sampler、scheduler、denoise、checkpoint、VAE、LoRA 與 ControlNet 參數
+- [x] 支援提交 ComfyUI API workflow JSON
 - [ ] 將 inline HTML event handler 改為集中式事件綁定
 - [ ] 新增詞庫 JSON schema 驗證與友善錯誤提示
 - [ ] 加入提示詞範本的匯出/匯入與 localStorage 儲存
-- [ ] 為主要流程加入單元測試與端對端煙霧測試
+- [x] 風格鎖定單元測試（`npm test`）
+- [ ] 為主要流程加入更多單元測試與端對端煙霧測試
 
-## v1.2 — 創作工作流
+## v1.2 — 桌面版（完成）
+
+- [x] Electron 桌面版與跨平台打包
+- [x] 網頁／桌面共用的 `apiFetch()` 抽象層，桌面版免 CORS 代理
+- [ ] 應用程式圖示、程式碼簽章與自動更新
+
+## v1.3 — 創作工作流
 
 - [ ] 可搜尋、篩選與收藏標籤
+- [ ] 以參考圖鎖定畫風（IP-Adapter／img2img）
 - [ ] 支援多組提示詞配方與版本比較
-- [ ] 將 Draw Things 參數保存為可重複使用的 preset
-- [ ] 支援批次產圖工作佇列與歷史紀錄（僅本機）
+- [x] 將產圖參數保存為可重複使用的風格預設（風格鎖定，v1.3）
+- [x] 批次產圖（v1.3）
+- [ ] 產圖歷史紀錄與工作佇列（僅本機）
 
 ## v2.0 — 可擴充平台
 

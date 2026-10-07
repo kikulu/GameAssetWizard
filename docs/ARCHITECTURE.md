@@ -12,7 +12,11 @@ assets/css/styles.css      響應式視覺樣式
 assets/js/app.js           UI 狀態、詞庫載入、提示詞組合與 Draw Things 呼叫
 config_sheets/*.json       可編輯的提示詞資料來源
 server.js                  開發用靜態檔案伺服器
-server_proxy.js            Draw Things 的 CORS 轉送代理
+server_proxy.js            Draw Things 的 CORS 轉送代理（僅網頁版需要）
+assets/js/styleguide.js     風格鎖定、風格預設與批次產圖（透過 generationSettings 掛勾介入）
+assets/js/platform.js      網頁／桌面版抽象層，提供 apiFetch()
+electron/main.js           Electron 主程序：app:// 協定與產圖 API 橋接
+electron/preload.js        以 contextBridge 暴露 window.desktop
 ```
 
 ## 資料流
@@ -27,3 +31,5 @@ server_proxy.js            Draw Things 的 CORS 轉送代理
 - 詞庫與程式碼分離，內容人員無須修改 JavaScript 即可擴充資料。
 - 不引入執行期套件，降低本機安裝門檻與供應鏈風險。
 - Node.js 僅處理本機靜態服務與代理；不保存提示詞或圖片。
+- 雙平台共用同一份前端；差異只集中在 `platform.js`，Electron 依賴僅限 devDependencies。
+- 桌面版啟用 contextIsolation 與 sandbox，IPC 僅接受來自 `app://local/` 的 http/https 請求。

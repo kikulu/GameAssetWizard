@@ -5,18 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎮 遊戲角色美術咒語產生器 — 手遊 / Steam</title>
 <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/generation.css">
+<link rel="stylesheet" href="assets/css/alchemy.css">
+<link rel="stylesheet" href="assets/css/templates.css">
+<link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
 <body>
 
 <div class="wrapper">
     <div class="header-title">
-        <h1>🎮 遊戲角色美術咒語產生器</h1>
-        <p>手遊 / Steam · 2D / 3D · 讀取外部 JSON 詞庫的角色設計提示詞工具</p>
+        <div class="language-bar"><label for="language-select">🌐 <span data-i18n="language">語言</span></label><select id="language-select" aria-label="Language"><option value="zh-TW">繁體中文</option><option value="en">English</option><option value="ja">日本語</option><option value="ko">한국어</option></select></div>
+        <h1 data-i18n="title">🎮 遊戲角色美術咒語產生器</h1>
+        <p data-i18n="subtitle">手遊 / Steam · 2D / 3D · 讀取外部 JSON 詞庫的角色設計提示詞工具</p>
     </div>
 
     <!-- 左側控制牆 -->
     <div class="card">
-        <h2>📂 素材詞庫矩陣</h2>
+        <h2 data-i18n="libraryTitle">📂 素材詞庫矩陣</h2>
         <p style="color: var(--text-muted); font-size: 13px; margin-top: -10px;">點擊分類列可【展開/收合】。點選標籤可加入右側面板並可調整權重。</p>
         <div id="matrixContainer">載入詞庫中...</div>
     </div>
@@ -24,7 +29,7 @@
     <!-- 右側主控面板 -->
     <div class="sticky-side">
         <div class="card" style="margin-bottom: 0;">
-            <h3>🕹️ 主控面板</h3>
+            <h3 data-i18n="controlTitle">🕹️ 主控面板</h3>
 
             <div class="toggle-row">
                 <div class="toggle-btn active" id="btn-plat-mobile" onclick="setPlatform('mobile')">📱 手機遊戲</div>
@@ -105,6 +110,18 @@
                 </div>
             </div>
 
+            <div class="template-panel" id="template-panel">
+                <div class="template-panel-title">⚗️ 創作範本套餐</div>
+                <p class="template-panel-note">先選遊戲類型與風格，再套用套餐作為可微調的起點。</p>
+                <div class="advanced-grid">
+                    <div class="setting-field"><label for="template-game-type">遊戲類型</label><select id="template-game-type"></select></div>
+                    <div class="setting-field"><label for="template-style-type">風格類型</label><select id="template-style-type"></select></div>
+                    <div class="setting-field wide-field"><label for="template-package">基礎套餐</label><select id="template-package"></select></div>
+                </div>
+                <div id="template-description" class="template-description">載入套餐中…</div>
+                <div class="dt-btn-row"><button class="dt-btn generate" onclick="applyCreativeTemplate()">✨ 套用並開始微調</button><button class="dt-btn test" onclick="clearCreativeTemplate()">↺ 移除套餐</button></div>
+            </div>
+
             <h4 style="margin: 5px 0 5px 0; color: var(--accent);">📍 目前選中標籤：</h4>
             <div id="selectedDisplayList" style="max-height: 170px; overflow-y: auto; margin-bottom: 15px;">
                 <span style="color:var(--text-muted); font-size: 13px;">尚未選取任何標籤...</span>
@@ -183,7 +200,7 @@
 
                 <div class="dt-gallery" id="dt-gallery"></div>
 
-                <div class="dt-hint">
+                <div class="dt-hint web-only">
                     若「測試連線」或「產生圖片」出現 CORS / 網路錯誤，代表瀏覽器擋下跨來源請求。<br>
                     請改執行附帶的 <code>server_proxy.js</code> 本機代理（<code>node server_proxy.js</code>），<br>
                     並把上方 API 位址改成 <code>http://127.0.0.1:8791</code>，詳見 README。
@@ -194,6 +211,11 @@
 </div>
 
 <div id="backToTop" class="back-to-top" title="回到頁首">▲</div>
+<script src="assets/js/platform.js" defer></script>
 <script src="assets/js/app.js" defer></script>
+<script src="assets/js/generation.js" defer></script>
+<script src="assets/js/styleguide.js" defer></script>
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/templates.js" defer></script>
 </body>
 </html>
