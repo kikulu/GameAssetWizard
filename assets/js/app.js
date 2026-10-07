@@ -378,7 +378,7 @@ async function testDrawThingsConnection() {
     const statusEl = document.getElementById('dt-status');
     statusEl.textContent = '🔄 測試連線中...';
     try {
-        const res = await fetch(`${dtApiBase()}/`, { method: 'GET' });
+        const res = await apiFetch(`${dtApiBase()}/`, { method: 'GET' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         await res.json().catch(() => ({}));
         statusEl.innerHTML = '✅ 連線成功！Draw Things HTTP API 可正常呼叫。';
@@ -423,7 +423,7 @@ async function generateWithDrawThings() {
     gallery.innerHTML = '';
 
     try {
-        const res = await fetch(`${dtApiBase()}/sdapi/v1/txt2img`, {
+        const res = await apiFetch(`${dtApiBase()}/sdapi/v1/txt2img`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
