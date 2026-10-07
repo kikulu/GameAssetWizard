@@ -115,7 +115,7 @@ npm run dist:win     # 或 dist:mac / dist:linux
 
 ## 授權
 
-目前未指定公開授權；發布至公開 GitHub 前，請由專案擁有者補上適用的 `LICENSE`。
+本專案以 [MIT License](LICENSE) 授權。Copyright (c) 2026 kikulu。
 
 ## 作者
 

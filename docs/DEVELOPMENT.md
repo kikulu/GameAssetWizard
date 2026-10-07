@@ -56,6 +56,7 @@ npm test        # 單元測試（Node 內建測試執行器，無需額外套件
 
 ## Git 工作方式
 
+- 預設且唯一的長期分支為 `master`；功能分支完成後合併回 `master` 並刪除。
 - 每個功能使用一個描述性的分支與小型 commit，訊息採 Conventional Commits（`feat:`、`fix:`、`docs:`…）。
 - 版本遵循語意化版本，發佈時更新 `package.json` 與 `CHANGELOG.md`，並建立 annotated tag（`vX.Y.Z`）。細節見 [CONTRIBUTING](../CONTRIBUTING.md)。
 - 不提交 `.env`、產圖結果、token 或個人設定。

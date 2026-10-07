@@ -2,6 +2,12 @@
 
 格式參考 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，版本遵循[語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.3.1] — 2026-10-07
+
+### Changed
+- 授權改為 MIT，新增 `LICENSE` 並更新 `package.json` 與各語言 README。
+- Git 分支統一為單一 `master`（移除 `main`）。
+
 ## [1.3.0] — 2026-10-07
 
 ### Added

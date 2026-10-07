@@ -1,6 +1,6 @@
 {
   "name": "game-asset-prompt-generator",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "private": true,
   "description": "以詞庫驅動的遊戲美術提示詞產生器，支援 Draw Things 本機產圖。同時提供網頁與 Electron 桌面版。",
   "author": "kikulu <kikulu@gmail.com>",
@@ -74,5 +74,5 @@
   "engines": {
     "node": ">=18"
   },
-  "license": "UNLICENSED"
+  "license": "MIT"
 }

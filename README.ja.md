@@ -49,3 +49,7 @@ npm run dist         # 現在の OS 向けインストーラーを作成（出�
 ## 作者
 
 [kikulu](https://github.com/kikulu)
+
+## ライセンス
+
+[MIT License](LICENSE) の下で公開されています。Copyright (c) 2026 kikulu.

@@ -49,3 +49,7 @@ npm run dist         # 현재 OS용 설치 파일 빌드 (출력: release/)
 ## 작성자
 
 [kikulu](https://github.com/kikulu)
+
+## 라이선스
+
+[MIT License](LICENSE)로 배포됩니다. Copyright (c) 2026 kikulu.

@@ -49,3 +49,7 @@ Save a style preset (style prefix, negative prompt, parameters, seed), lock it, 
 ## Author
 
 [kikulu](https://github.com/kikulu)
+
+## License
+
+Released under the [MIT License](LICENSE). Copyright (c) 2026 kikulu.

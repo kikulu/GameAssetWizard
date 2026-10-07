@@ -9,7 +9,7 @@
 
 ## 提交流程
 
-1. 從 `main` 建立描述性分支，例如 `feat/style-lock`、`fix/comfy-timeout`。
+1. 從 `master` 建立描述性分支，例如 `feat/style-lock`、`fix/comfy-timeout`。
 2. 保持小型、單一目的的 commit，訊息採用 [Conventional Commits](https://www.conventionalcommits.org/)：`feat:`、`fix:`、`docs:`、`chore:`、`refactor:`、`test:`。
 3. 提交前執行：
 
@@ -30,6 +30,10 @@
 ## 請勿提交
 
 API token、`.env`、個人設定、產生的圖片、`release/` 與 `node_modules/`。
+
+## 授權
+
+提交貢獻即表示你同意以 [MIT License](LICENSE) 授權你的變更。
 
 ## 版本與發佈
 
