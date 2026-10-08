@@ -1,0 +1,631 @@
+# 翻譯對照表
+
+> 此檔由 `npm run i18n:table` 自動產生，請勿手動編輯。要修改翻譯，請編輯 `locales/<語言>/` 底下的 JSON，或編輯 `translation-table.csv` 後以 `npm run i18n:import` 匯回。
+
+共 550 筆，語言：zh-TW、en、ja、ko。
+
+
+## ui
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| app.pageTitle | 🎮 遊戲角色美術咒語產生器 — 手遊 / Steam | 🎮 Game Asset Prompt Generator — Mobile / Steam | 🎮 ゲームアセット・プロンプトジェネレーター — モバイル / Steam | 🎮 게임 에셋 프롬프트 생성기 — 모바일 / Steam |
+| app.title | 🎮 遊戲角色美術咒語產生器 | 🎮 Game Asset Prompt Generator | 🎮 ゲームアセット・プロンプトジェネレーター | 🎮 게임 에셋 프롬프트 생성기 |
+| app.subtitle | 手遊 / Steam · 2D / 3D · 讀取外部 JSON 詞庫的角色設計提示詞工具 | Mobile / Steam · 2D / 3D · A character-design prompt tool powered by external JSON libraries | モバイル / Steam ・ 2D / 3D ・ 外部 JSON 辞書を使ったキャラクターデザイン用ツール | 모바일 / Steam · 2D / 3D · 외부 JSON 라이브러리를 사용하는 캐릭터 디자인 프롬프트 도구 |
+| app.language | 語言 | Language | 言語 | 언어 |
+| app.backToTop | 回到頁首 | Back to top | ページ上部へ | 맨 위로 |
+| library.title | 📂 素材詞庫矩陣 | 📂 Asset Prompt Library | 📂 アセットプロンプト辞書 | 📂 에셋 프롬프트 라이브러리 |
+| library.hint | 點擊分類列可【展開/收合】。點選標籤可加入右側面板並可調整權重。 | Click a category to expand or collapse it. Select tags to add them to the prompt and adjust their weights. | カテゴリをクリックすると開閉できます。タグを選択してプロンプトに追加し、重みを調整できます。 | 카테고리를 클릭해 펼치거나 접을 수 있습니다. 태그를 선택해 프롬프트에 추가하고 가중치를 조절하세요. |
+| library.loading | 載入詞庫中... | Loading library... | 辞書を読み込み中... | 라이브러리 불러오는 중... |
+| library.loadError | ❌ 載入失敗: {message} | ❌ Failed to load: {message} | ❌ 読み込みに失敗しました: {message} | ❌ 불러오기 실패: {message} |
+| library.loadErrorHint | 提示：此頁面需透過本機伺服器開啟（例如 npm start 或 python3 -m http.server），直接用瀏覽器開啟 file:// 可能會被瀏覽器阻擋讀取 JSON。 | Tip: open this page through a local server (for example npm start or python3 -m http.server). Opening it directly via file:// may stop the browser from reading JSON files. | ヒント: このページはローカルサーバー（例: npm start や python3 -m http.server）経由で開いてください。file:// で直接開くと、ブラウザが JSON の読み込みをブロックすることがあります。 | 팁: 이 페이지는 로컬 서버(예: npm start 또는 python3 -m http.server)로 열어야 합니다. file:// 로 직접 열면 브라우저가 JSON 읽기를 차단할 수 있습니다. |
+| control.title | 🕹️ 主控面板 | 🕹️ Control Panel | 🕹️ コントロールパネル | 🕹️ 제어 패널 |
+| platform.mobile | 📱 手機遊戲 | 📱 Mobile Game | 📱 モバイルゲーム | 📱 모바일 게임 |
+| platform.steam | 🖥️ Steam / PC | 🖥️ Steam / PC | 🖥️ Steam / PC | 🖥️ Steam / PC |
+| dimension.general | 🎨 綜合風格 | 🎨 General | 🎨 総合スタイル | 🎨 종합 스타일 |
+| dimension.2d | 🖌️ 2D | 🖌️ 2D | 🖌️ 2D | 🖌️ 2D |
+| dimension.3d | 🧊 3D | 🧊 3D | 🧊 3D | 🧊 3D |
+| profile.loading | 目前模式：<b>載入中...</b> | Current mode: <b>Loading...</b> | 現在のモード: <b>読み込み中...</b> | 현재 모드: <b>불러오는 중...</b> |
+| profile.current | 目前模式：<b>{label}</b> — {dimension} | Current mode: <b>{label}</b> — {dimension} | 現在のモード: <b>{label}</b> — {dimension} | 현재 모드: <b>{label}</b> — {dimension} |
+| random.title | 🎲 設定隨機抽卡包含的分類： | 🎲 Categories included in random pick: | 🎲 ランダム抽選に含めるカテゴリ: | 🎲 무작위 추첨에 포함할 카테고리: |
+| random.toggleAll | 全選/全不選 | Select all / none | 全選択/全解除 | 전체 선택/해제 |
+| random.pick | 🎲 指定分類隨機抽卡 | 🎲 Randomize Selected Categories | 🎲 選択カテゴリをランダム抽選 | 🎲 선택한 카테고리 무작위 추첨 |
+| random.clear | ❌ 清空重選 | ❌ Clear Selection | ❌ 選択をクリア | ❌ 선택 초기화 |
+| random.needOne | 請至少勾選一個分類進行隨機抽卡！ | Select at least one category to randomize. | ランダム抽選するカテゴリを 1 つ以上選択してください。 | 무작위 추첨할 카테고리를 하나 이상 선택하세요. |
+| settings.toggle | 🎛️ 展開素材規格設定（尺寸 / 引擎） | 🎛️ Asset Specs (size / engine) | 🎛️ アセット仕様設定（サイズ / エンジン） | 🎛️ 에셋 사양 설정 (크기 / 엔진) |
+| settings.preset | 📐 用途尺寸預設（依模式自動切換） | 📐 Size presets (switch with the mode) | 📐 用途別サイズプリセット（モードに応じて切替） | 📐 용도별 크기 프리셋 (모드에 따라 전환) |
+| settings.width | 寬 (Width) | Width | 幅 (Width) | 너비 (Width) |
+| settings.height | 高 (Height) | Height | 高さ (Height) | 높이 (Height) |
+| settings.engine | 🖌️ 繪圖引擎 / 模型參考 | 🖌️ Image engine / model reference | 🖌️ 画像エンジン / モデル参考 | 🖌️ 이미지 엔진 / 모델 참고 |
+| settings.background | 🎨 背景需求 | 🎨 Background | 🎨 背景の指定 | 🎨 배경 요구 |
+| settings.quality | ✨ 品質關鍵字 | ✨ Quality keywords | ✨ 品質キーワード | ✨ 품질 키워드 |
+| bg.transparent | 透明/去背 (Icon用) | Transparent / isolated (for icons) | 透明・切り抜き（アイコン用） | 투명/배경 제거 (아이콘용) |
+| bg.clean | 簡潔背景 | Clean background | シンプルな背景 | 깔끔한 배경 |
+| bg.environment | 完整場景背景 | Full environment background | 完全なシーン背景 | 완전한 장면 배경 |
+| quality.high | 高品質細節 | High quality detail | 高品質・高精細 | 고품질 디테일 |
+| quality.vector | 簡潔向量風 | Clean vector style | シンプルなベクタースタイル | 깔끔한 벡터 스타일 |
+| quality.aaa | AAA 遊戲規格 | AAA game quality | AAA ゲーム品質 | AAA 게임 사양 |
+| template.title | ⚗️ 創作範本套餐 | ⚗️ Creative Template Packs | ⚗️ クリエイティブテンプレート | ⚗️ 창작 템플릿 패키지 |
+| template.note | 先選遊戲類型與風格，再套用套餐作為可微調的起點。 | Pick a game type and style, then apply a pack as a starting point you can fine-tune. | ゲームの種類とスタイルを選び、微調整できる出発点としてテンプレートを適用します。 | 게임 유형과 스타일을 고른 뒤 세부 조정이 가능한 시작점으로 패키지를 적용하세요. |
+| template.gameType | 遊戲類型 | Game type | ゲームの種類 | 게임 유형 |
+| template.styleType | 風格類型 | Style type | スタイルの種類 | 스타일 유형 |
+| template.package | 基礎套餐 | Base pack | ベースパック | 기본 패키지 |
+| template.loading | 載入套餐中… | Loading packs… | テンプレートを読み込み中… | 패키지 불러오는 중… |
+| template.allGameTypes | 全部遊戲類型 | All game types | すべてのジャンル | 모든 게임 유형 |
+| template.allStyleTypes | 全部風格類型 | All style types | すべてのスタイル | 모든 스타일 유형 |
+| template.apply | ✨ 套用並開始微調 | ✨ Apply and start tuning | ✨ 適用して微調整を開始 | ✨ 적용하고 세부 조정 시작 |
+| template.clear | ↺ 移除套餐 | ↺ Remove pack | ↺ テンプレートを解除 | ↺ 패키지 제거 |
+| template.noMatch | 找不到符合條件的套餐，請調整篩選。 | No pack matches the filters. Adjust the filters. | 条件に合うテンプレートがありません。絞り込みを調整してください。 | 조건에 맞는 패키지가 없습니다. 필터를 조정하세요. |
+| template.applied | ✅ 已套用「{label}」。現在可從詞庫加入標籤、調整權重與產圖參數。 | ✅ Applied "{label}". You can now add tags from the library and adjust weights and generation parameters. | ✅「{label}」を適用しました。辞書からタグを追加し、重みや生成パラメーターを調整できます。 | ✅ "{label}" 적용 완료. 이제 라이브러리에서 태그를 추가하고 가중치와 생성 파라미터를 조정할 수 있습니다. |
+| template.loadError | ❌ 無法載入套餐：{message} | ❌ Could not load packs: {message} | ❌ テンプレートを読み込めません: {message} | ❌ 패키지를 불러올 수 없습니다: {message} |
+| template.meta | {description} {platform} · {dimension} | {description} {platform} · {dimension} | {description} {platform} · {dimension} | {description} {platform} · {dimension} |
+| template.platformMobile | 📱 手機 | 📱 Mobile | 📱 モバイル | 📱 모바일 |
+| template.platformSteam | 🖥️ Steam/PC | 🖥️ Steam/PC | 🖥️ Steam/PC | 🖥️ Steam/PC |
+| selected.title | 📍 目前選中標籤： | 📍 Selected tags: | 📍 選択中のタグ: | 📍 선택한 태그: |
+| selected.empty | 尚未選取任何標籤... | No tags selected yet... | タグはまだ選択されていません... | 선택한 태그가 없습니다... |
+| selected.remove | ❌ 剔除 | ❌ Remove | ❌ 削除 | ❌ 제외 |
+| selected.removeTitle | 從本次組合剔除 | Remove from this combination | 今回の組み合わせから削除 | 이번 조합에서 제외 |
+| prompt.positive | 🚀 正向提示詞 (Positive) | 🚀 Positive Prompt | 🚀 ポジティブプロンプト | 🚀 긍정 프롬프트 |
+| prompt.negative | ❌ 反向排除詞 (Negative) | ❌ Negative Prompt | ❌ ネガティブプロンプト | ❌ 부정 프롬프트 |
+| prompt.copy | 📋 複製 | 📋 Copy | 📋 コピー | 📋 복사 |
+| prompt.copied | ✅ 已複製！ | ✅ Copied! | ✅ コピーしました！ | ✅ 복사됨! |
+| quicklinks.title | 🔗 快速開啟繪圖工具 | 🔗 Open an image tool | 🔗 画像生成ツールを開く | 🔗 이미지 도구 빠르게 열기 |
+| generator.title | 🖨️ 本機產圖工作台 | 🖨️ Local Generation Studio | 🖨️ ローカル生成スタジオ | 🖨️ 로컬 생성 스튜디오 |
+| gen.apiBase | API 位址 | API address | API アドレス | API 주소 |
+| gen.steps | Steps 步數 | Steps | Steps（ステップ数） | Steps (단계 수) |
+| gen.cfg | CFG Scale | CFG Scale | CFG Scale | CFG Scale |
+| gen.sampler | Sampler 採樣器 | Sampler | Sampler（サンプラー） | Sampler (샘플러) |
+| gen.scheduler | Scheduler 排程器 | Scheduler | Scheduler（スケジューラー） | Scheduler (스케줄러) |
+| gen.seed | Seed（-1 為隨機） | Seed (-1 = random) | Seed（-1 でランダム） | Seed (-1은 무작위) |
+| gen.batch | Batch 張數 | Batch size | Batch（枚数） | Batch (장수) |
+| gen.advanced | 進階參數（SD WebUI / ComfyUI） | Advanced parameters (SD WebUI / ComfyUI) | 詳細パラメーター（SD WebUI / ComfyUI） | 고급 파라미터 (SD WebUI / ComfyUI) |
+| gen.denoise | Denoise 強度 | Denoise strength | Denoise 強度 | Denoise 강도 |
+| gen.clipSkip | Clip skip | Clip skip | Clip skip | Clip skip |
+| gen.checkpoint | Checkpoint（選填） | Checkpoint (optional) | Checkpoint（任意） | Checkpoint (선택) |
+| gen.vae | VAE（選填） | VAE (optional) | VAE（任意） | VAE (선택) |
+| gen.lora | LoRA 名稱（選填） | LoRA name (optional) | LoRA 名（任意） | LoRA 이름 (선택) |
+| gen.loraWeight | LoRA 權重 | LoRA weight | LoRA の重み | LoRA 가중치 |
+| gen.controlModel | ControlNet model（選填） | ControlNet model (optional) | ControlNet model（任意） | ControlNet model (선택) |
+| gen.controlModule | ControlNet module | ControlNet module | ControlNet module | ControlNet module |
+| gen.controlImage | ControlNet 圖片（Data URL，選填） | ControlNet image (Data URL, optional) | ControlNet 画像（Data URL、任意） | ControlNet 이미지 (Data URL, 선택) |
+| gen.comfyTitle | ComfyUI API workflow（選填） | ComfyUI API workflow (optional) | ComfyUI API ワークフロー（任意） | ComfyUI API 워크플로 (선택) |
+| gen.comfyNote | 貼上「Save (API Format)」匯出的 workflow JSON。未填時，會送出內建的標準 Checkpoint → KSampler → VAE Decode → Save Image 工作流。 | Paste the workflow JSON exported with "Save (API Format)". If left empty, the built-in Checkpoint → KSampler → VAE Decode → Save Image workflow is sent. | 「Save (API Format)」で書き出したワークフロー JSON を貼り付けます。空の場合は、標準の Checkpoint → KSampler → VAE Decode → Save Image ワークフローを送信します。 | "Save (API Format)"로 내보낸 워크플로 JSON을 붙여 넣으세요. 비워 두면 기본 Checkpoint → KSampler → VAE Decode → Save Image 워크플로를 전송합니다. |
+| gen.workflow | Workflow JSON | Workflow JSON | ワークフロー JSON | 워크플로 JSON |
+| gen.testConnection | 🔌 測試連線 | 🔌 Test connection | 🔌 接続テスト | 🔌 연결 테스트 |
+| gen.generate | 🎨 產生圖片 | 🎨 Generate image | 🎨 画像を生成 | 🎨 이미지 생성 |
+| gen.footnote | SD WebUI 需啟用 <code>--api</code>；ComfyUI 可使用預設 API workflow 或貼上自己匯出的 API workflow。 | SD WebUI needs <code>--api</code> enabled. For ComfyUI, use the default API workflow or paste your own exported API workflow. | SD WebUI は <code>--api</code> を有効にしてください。ComfyUI は標準の API ワークフローか、書き出した独自の API ワークフローを使えます。 | SD WebUI는 <code>--api</code>를 활성화해야 합니다. ComfyUI는 기본 API 워크플로를 쓰거나 직접 내보낸 API 워크플로를 붙여 넣을 수 있습니다. |
+| gen.corsHint | 若連線出現 CORS／網路錯誤，代表瀏覽器擋下跨來源請求。請執行 <code>npm run proxy</code> 並把 API 位址改成 <code>http://127.0.0.1:8791</code>，或改用桌面版。 | If you see CORS or network errors, the browser blocked a cross-origin request. Run <code>npm run proxy</code> and change the API address to <code>http://127.0.0.1:8791</code>, or use the desktop app. | CORS やネットワークエラーが出る場合、ブラウザがクロスオリジンのリクエストをブロックしています。<code>npm run proxy</code> を実行して API アドレスを <code>http://127.0.0.1:8791</code> に変更するか、デスクトップ版を使ってください。 | CORS 또는 네트워크 오류가 나타나면 브라우저가 교차 출처 요청을 차단한 것입니다. <code>npm run proxy</code>를 실행하고 API 주소를 <code>http://127.0.0.1:8791</code>로 바꾸거나 데스크톱 앱을 사용하세요. |
+| gen.backend | 目前後端：{name}。 | Current backend: {name}. | 現在のバックエンド: {name}。 | 현재 백엔드: {name}. |
+| gen.testing | 🔄 測試連線中… | 🔄 Testing connection… | 🔄 接続をテスト中… | 🔄 연결 테스트 중… |
+| gen.connected | ✅ 連線成功。 | ✅ Connected. | ✅ 接続に成功しました。 | ✅ 연결되었습니다. |
+| gen.connectFailed | ❌ 連線失敗：{message} | ❌ Connection failed: {message} | ❌ 接続に失敗しました: {message} | ❌ 연결 실패: {message} |
+| gen.sending | 🎨 已送出產圖請求，請稍候… | 🎨 Generation request sent. Please wait… | 🎨 生成リクエストを送信しました。しばらくお待ちください… | 🎨 생성 요청을 보냈습니다. 잠시 기다려 주세요… |
+| gen.emptyPrompt | 正向提示詞是空的。 | The positive prompt is empty. | ポジティブプロンプトが空です。 | 긍정 프롬프트가 비어 있습니다. |
+| gen.noImages | 後端沒有回傳圖片 | The backend returned no images | バックエンドから画像が返されませんでした | 백엔드가 이미지를 반환하지 않았습니다 |
+| gen.done | ✅ 產圖完成，共 {count} 張。 | ✅ Done: {count} image(s) generated. | ✅ 生成完了: {count} 枚。 | ✅ 생성 완료: {count}장. |
+| gen.failed | ❌ 產圖失敗：{message} | ❌ Generation failed: {message} | ❌ 生成に失敗しました: {message} | ❌ 생성 실패: {message} |
+| gen.download | ⬇️ 下載這張圖 | ⬇️ Download this image | ⬇️ この画像をダウンロード | ⬇️ 이 이미지 다운로드 |
+| gen.comfyBadJson | ComfyUI workflow JSON 格式不正確 | The ComfyUI workflow JSON is invalid | ComfyUI ワークフロー JSON の形式が正しくありません | ComfyUI 워크플로 JSON 형식이 올바르지 않습니다 |
+| gen.comfyQueueFailed | ComfyUI 排入佇列失敗：HTTP {status} | Failed to queue the ComfyUI prompt: HTTP {status} | ComfyUI のキュー登録に失敗しました: HTTP {status} | ComfyUI 대기열 등록 실패: HTTP {status} |
+| gen.comfyTimeout | ComfyUI 等待逾時（120 秒） | ComfyUI timed out (120 s) | ComfyUI の待機がタイムアウトしました（120 秒） | ComfyUI 대기 시간 초과 (120초) |
+| error.invalidUrl | 無效的網址：{detail} | Invalid URL: {detail} | 無効な URL: {detail} | 잘못된 URL: {detail} |
+| error.unsupportedProtocol | 僅支援 http/https 位址 | Only http/https addresses are supported | http/https アドレスのみ対応しています | http/https 주소만 지원합니다 |
+| error.untrustedSender | 已封鎖：不受信任的來源 | Blocked: untrusted sender | ブロックしました: 信頼できない送信元 | 차단됨: 신뢰할 수 없는 출처 |
+| style.title | 🎨 風格鎖定（保持系列素材一致） | 🎨 Style Lock (keep a series consistent) | 🎨 スタイルロック（シリーズの統一） | 🎨 스타일 잠금 (시리즈 일관성 유지) |
+| style.badgeOff | 🔓 未鎖定 | 🔓 Unlocked | 🔓 ロック解除 | 🔓 잠금 해제 |
+| style.badgeOn | 🔒 已鎖定 | 🔒 Locked | 🔒 ロック中 | 🔒 잠김 |
+| style.badgeOnNamed | 🔒 已鎖定：{name} | 🔒 Locked: {name} | 🔒 ロック中: {name} | 🔒 잠김: {name} |
+| style.note | 先調好下方產圖參數並按「擷取目前參數」，填入風格前綴與種子，再開啟鎖定。之後每次產圖（含批次）都會套用同一組設定。注意：固定種子能穩定構圖與色調，但不同提示詞間仍可能有差異，建議搭配固定的 Checkpoint／LoRA。 | Tune the generation parameters below and press "Capture current parameters", fill in the style prefix and seed, then turn the lock on. Every generation afterwards (including batches) uses the same settings. Note: a fixed seed stabilizes composition and color, but results can still differ between prompts; pair it with a fixed checkpoint / LoRA. | 下の生成パラメーターを調整して「現在のパラメーターを取得」を押し、スタイルのプレフィックスとシードを入力してからロックを有効にします。以降の生成（バッチ含む）は同じ設定で行われます。注意: シード固定で構図と色調は安定しますが、プロンプトが違えば結果も変わります。Checkpoint／LoRA も固定することをおすすめします。 | 아래 생성 파라미터를 조정한 뒤 "현재 파라미터 가져오기"를 누르고 스타일 접두어와 시드를 입력한 다음 잠금을 켜세요. 이후 모든 생성(배치 포함)에 같은 설정이 적용됩니다. 참고: 시드를 고정하면 구도와 색감이 안정되지만 프롬프트가 다르면 결과도 달라질 수 있으니 Checkpoint/LoRA도 함께 고정하세요. |
+| style.profilePlaceholder | — 選擇已儲存的風格 — | — Choose a saved style — | — 保存済みのスタイルを選択 — | — 저장된 스타일 선택 — |
+| style.namePlaceholder | 風格名稱（例如：Q版卡牌） | Style name (e.g. Chibi Cards) | スタイル名（例: デフォルメカード） | 스타일 이름 (예: SD 카드) |
+| style.save | 💾 儲存 | 💾 Save | 💾 保存 | 💾 저장 |
+| style.delete | 🗑️ 刪除 | 🗑️ Delete | 🗑️ 削除 | 🗑️ 삭제 |
+| style.export | 📤 匯出 | 📤 Export | 📤 エクスポート | 📤 내보내기 |
+| style.import | 📥 匯入 | 📥 Import | 📥 インポート | 📥 가져오기 |
+| style.promptLabel | 風格前綴提示詞（自動加在每次提示詞最前面） | Style prefix prompt (added to the front of every prompt) | スタイルのプレフィックス（毎回プロンプトの先頭に自動追加） | 스타일 접두 프롬프트 (모든 프롬프트 맨 앞에 자동 추가) |
+| style.promptPlaceholder | 例如：flat vector illustration, thick outline, pastel palette, game asset | e.g. flat vector illustration, thick outline, pastel palette, game asset | 例: flat vector illustration, thick outline, pastel palette, game asset | 예: flat vector illustration, thick outline, pastel palette, game asset |
+| style.negativeLabel | 風格反向詞（自動附加到反向提示詞） | Style negative prompt (appended to the negative prompt) | スタイルのネガティブ（ネガティブプロンプトに自動追加） | 스타일 부정 프롬프트 (부정 프롬프트에 자동 추가) |
+| style.negativePlaceholder | 例如：photo, realistic, blurry, watermark | e.g. photo, realistic, blurry, watermark | 例: photo, realistic, blurry, watermark | 예: photo, realistic, blurry, watermark |
+| style.seedMode | 種子模式 | Seed mode | シードモード | 시드 모드 |
+| style.seedFixed | 固定種子（較一致） | Fixed seed (more consistent) | 固定シード（より統一） | 고정 시드 (더 일관됨) |
+| style.seedRandom | 每張隨機 | Random per image | 画像ごとにランダム | 이미지마다 무작위 |
+| style.seedLabel | 固定種子 | Fixed seed | 固定シード | 고정 시드 |
+| style.diceTitle | 隨機產生種子 | Generate a random seed | ランダムなシードを生成 | 무작위 시드 생성 |
+| style.capture | 📌 擷取目前參數 | 📌 Capture current parameters | 📌 現在のパラメーターを取得 | 📌 현재 파라미터 가져오기 |
+| style.enable | 啟用風格鎖定（鎖住 Steps／CFG／Sampler／Checkpoint／LoRA／種子欄位） | Enable style lock (locks Steps / CFG / Sampler / Checkpoint / LoRA / Seed fields) | スタイルロックを有効にする（Steps／CFG／Sampler／Checkpoint／LoRA／Seed 欄をロック） | 스타일 잠금 사용 (Steps／CFG／Sampler／Checkpoint／LoRA／Seed 필드 잠금) |
+| style.batchLabel | 批次素材清單（每行一項，最多 {max} 項） | Batch asset list (one per line, up to {max}) | バッチ素材リスト（1 行に 1 件、最大 {max} 件） | 배치 에셋 목록 (한 줄에 하나, 최대 {max}개) |
+| style.append | 同時附加上方已組好的提示詞（如鏡頭、場景標籤） | Also append the prompt built above (camera, scene tags, etc.) | 上で組み立てたプロンプト（カメラ、シーンのタグなど）も追加する | 위에서 만든 프롬프트(카메라, 장면 태그 등)도 함께 추가 |
+| style.run | 🚀 批次產圖 | 🚀 Batch generate | 🚀 バッチ生成 | 🚀 배치 생성 |
+| style.stop | ⏹ 停止 | ⏹ Stop | ⏹ 停止 | ⏹ 중지 |
+| style.downloadAll | ⬇️ 全部下載 | ⬇️ Download all | ⬇️ すべてダウンロード | ⬇️ 모두 다운로드 |
+| style.manifest | 📄 匯出設定紀錄 | 📄 Export settings log | 📄 設定ログをエクスポート | 📄 설정 기록 내보내기 |
+| style.statusIdle | 尚未開始。 | Not started. | まだ開始していません。 | 아직 시작하지 않았습니다. |
+| style.noParams | 尚未擷取參數。調整好下方產圖參數後，按「擷取目前參數」。 | No parameters captured yet. Tune the generation parameters below, then press "Capture current parameters". | パラメーターはまだ取得されていません。下の生成パラメーターを調整してから「現在のパラメーターを取得」を押してください。 | 아직 파라미터를 가져오지 않았습니다. 아래 생성 파라미터를 조정한 뒤 "현재 파라미터 가져오기"를 누르세요. |
+| style.seedFixedSummary | 固定種子 {seed} | fixed seed {seed} | 固定シード {seed} | 고정 시드 {seed} |
+| style.seedRandomSummary | 隨機種子 | random seed | ランダムシード | 무작위 시드 |
+| style.captured | 📌 已擷取目前產圖參數。 | 📌 Current generation parameters captured. | 📌 現在の生成パラメーターを取得しました。 | 📌 현재 생성 파라미터를 가져왔습니다. |
+| style.needName | 請先輸入風格名稱。 | Enter a style name first. | 先にスタイル名を入力してください。 | 먼저 스타일 이름을 입력하세요. |
+| style.invalid | 風格設定無效，請檢查名稱。 | Invalid style settings. Check the name. | スタイル設定が無効です。名前を確認してください。 | 스타일 설정이 올바르지 않습니다. 이름을 확인하세요. |
+| style.overwrite | 已有名為「{name}」的風格，要覆蓋嗎？ | A style named "{name}" already exists. Overwrite it? | 「{name}」という名前のスタイルが既にあります。上書きしますか？ | "{name}" 스타일이 이미 있습니다. 덮어쓸까요? |
+| style.saved | 💾 已儲存風格「{name}」。 | 💾 Saved style "{name}". | 💾 スタイル「{name}」を保存しました。 | 💾 스타일 "{name}"을(를) 저장했습니다. |
+| style.loaded | 已載入風格「{name}」。 | Loaded style "{name}". | スタイル「{name}」を読み込みました。 | 스타일 "{name}"을(를) 불러왔습니다. |
+| style.deleteFirst | 請先選擇要刪除的風格。 | Choose a style to delete first. | 先に削除するスタイルを選択してください。 | 먼저 삭제할 스타일을 선택하세요. |
+| style.confirmDelete | 確定刪除風格「{name}」？ | Delete style "{name}"? | スタイル「{name}」を削除しますか？ | 스타일 "{name}"을(를) 삭제할까요? |
+| style.deleted | 🗑️ 已刪除風格「{name}」。 | 🗑️ Deleted style "{name}". | 🗑️ スタイル「{name}」を削除しました。 | 🗑️ 스타일 "{name}"을(를) 삭제했습니다. |
+| style.exportNeedName | 請先輸入風格名稱再匯出。 | Enter a style name before exporting. | エクスポートする前にスタイル名を入力してください。 | 내보내기 전에 스타일 이름을 입력하세요. |
+| style.exported | 📤 已匯出風格設定。 | 📤 Style settings exported. | 📤 スタイル設定をエクスポートしました。 | 📤 스타일 설정을 내보냈습니다. |
+| style.importOk | 📥 已匯入 {count} 個風格，並載入「{name}」。 | 📥 Imported {count} style(s) and loaded "{name}". | 📥 {count} 件のスタイルをインポートし、「{name}」を読み込みました。 | 📥 스타일 {count}개를 가져오고 "{name}"을(를) 불러왔습니다. |
+| style.importFail | ❌ 匯入失敗：{message} | ❌ Import failed: {message} | ❌ インポートに失敗しました: {message} | ❌ 가져오기 실패: {message} |
+| style.importTooLarge | 檔案過大 | File is too large | ファイルが大きすぎます | 파일이 너무 큽니다 |
+| style.importNone | 找不到有效的風格設定 | No valid style settings found | 有効なスタイル設定が見つかりません | 유효한 스타일 설정을 찾을 수 없습니다 |
+| style.batchEmpty | 請先在清單中輸入至少一個素材（每行一項）。 | Enter at least one asset in the list (one per line). | リストに素材を 1 件以上入力してください（1 行に 1 件）。 | 목록에 에셋을 하나 이상 입력하세요 (한 줄에 하나). |
+| style.batchNotLocked | 提醒：風格鎖定尚未啟用，批次結果的風格可能不一致。 | Reminder: the style lock is off, so batch results may not match in style. | 注意: スタイルロックが無効のため、バッチ結果のスタイルが揃わない可能性があります。 | 알림: 스타일 잠금이 꺼져 있어 배치 결과의 스타일이 일치하지 않을 수 있습니다. |
+| style.batchProgress | 🎨 產圖中 {current}/{total}：{subject} | 🎨 Generating {current}/{total}: {subject} | 🎨 生成中 {current}/{total}: {subject} | 🎨 생성 중 {current}/{total}: {subject} |
+| style.batchAbortedFailures | ❌ 連續失敗 3 次，已中止批次。請檢查後端連線。 | ❌ Stopped after 3 consecutive failures. Check the backend connection. | ❌ 3 回連続で失敗したためバッチを中止しました。バックエンドの接続を確認してください。 | ❌ 3회 연속 실패하여 배치를 중단했습니다. 백엔드 연결을 확인하세요. |
+| style.batchStopped | ⏹ 已停止，完成 {done} 項。 | ⏹ Stopped. {done} item(s) completed. | ⏹ 停止しました。{done} 件完了。 | ⏹ 중지됨. {done}개 완료. |
+| style.batchDone | ✅ 批次完成：成功 {done}/{total} 項。 | ✅ Batch complete: {done}/{total} succeeded. | ✅ バッチ完了: {done}/{total} 件成功。 | ✅ 배치 완료: {done}/{total}개 성공. |
+| style.stopping | 正在停止…（等待目前這張完成） | Stopping… (waiting for the current image to finish) | 停止中…（現在の画像の完了を待っています） | 중지하는 중… (현재 이미지가 끝날 때까지 대기) |
+| style.tileDownload | ⬇️ 下載 | ⬇️ Download | ⬇️ ダウンロード | ⬇️ 다운로드 |
+| style.noDownloads | 目前沒有可下載的圖片。 | There are no images to download. | ダウンロードできる画像がありません。 | 다운로드할 이미지가 없습니다. |
+| style.downloadsStarted | ⬇️ 已觸發 {count} 張圖片下載。 | ⬇️ Started downloading {count} image(s). | ⬇️ {count} 枚の画像のダウンロードを開始しました。 | ⬇️ 이미지 {count}장 다운로드를 시작했습니다. |
+| style.noManifest | 尚無批次紀錄可匯出。 | There is no batch log to export yet. | エクスポートできるバッチログがまだありません。 | 내보낼 배치 기록이 아직 없습니다. |
+| style.manifestExported | 📄 已匯出批次設定紀錄。 | 📄 Batch settings log exported. | 📄 バッチ設定ログをエクスポートしました。 | 📄 배치 설정 기록을 내보냈습니다. |
+
+## profiles
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| profiles::mobile::label | 📱 手遊（綜合） | 📱 Mobile (General) | 📱 モバイル（総合） | 📱 모바일 (종합) |
+| profiles::mobile::platform | 手機遊戲 | Mobile Games | モバイルゲーム | 모바일 게임 |
+| profiles::mobile::dimension | 綜合風格 | General Style | 総合スタイル | 종합 스타일 |
+| profiles::mobile2d::label | 📱 手遊 2D | 📱 Mobile 2D | 📱 モバイル 2D | 📱 모바일 2D |
+| profiles::mobile2d::platform | 手機遊戲 | Mobile Games | モバイルゲーム | 모바일 게임 |
+| profiles::mobile2d::dimension | 2D 風格 | 2D Style | 2Dスタイル | 2D 스타일 |
+| profiles::mobile3d::label | 📱 手遊 3D | 📱 Mobile 3D | 📱 モバイル 3D | 📱 모바일 3D |
+| profiles::mobile3d::platform | 手機遊戲 | Mobile Games | モバイルゲーム | 모바일 게임 |
+| profiles::mobile3d::dimension | 3D 風格 | 3D Style | 3Dスタイル | 3D 스타일 |
+| profiles::steam::label | 🖥️ Steam（綜合） | 🖥️ Steam (General) | 🖥️ Steam（総合） | 🖥️ Steam (종합) |
+| profiles::steam::platform | Steam / PC | Steam / PC | Steam / PC | Steam / PC |
+| profiles::steam::dimension | 綜合風格 | General Style | 総合スタイル | 종합 스타일 |
+| profiles::steam2d::label | 🖥️ Steam 2D | 🖥️ Steam 2D | 🖥️ Steam 2D | 🖥️ Steam 2D |
+| profiles::steam2d::platform | Steam / PC | Steam / PC | Steam / PC | Steam / PC |
+| profiles::steam2d::dimension | 2D 風格 | 2D Style | 2Dスタイル | 2D 스타일 |
+| profiles::steam3d::label | 🖥️ Steam 3D | 🖥️ Steam 3D | 🖥️ Steam 3D | 🖥️ Steam 3D |
+| profiles::steam3d::platform | Steam / PC | Steam / PC | Steam / PC | Steam / PC |
+| profiles::steam3d::dimension | 3D 風格 | 3D Style | 3Dスタイル | 3D 스타일 |
+| presets::ios-app-icon::label | iOS App 圖示 1024x1024 | iOS App Icon 1024x1024 | iOS アプリアイコン 1024x1024 | iOS 앱 아이콘 1024x1024 |
+| presets::ios-app-icon::note | App Store 上架必備尺寸 | Required size for App Store submission | App Store 申請に必須のサイズ | App Store 출시 필수 크기 |
+| presets::android-icon::label | Android 圖示 512x512 | Android Icon 512x512 | Android アイコン 512x512 | Android 아이콘 512x512 |
+| presets::android-icon::note | Google Play 圖示尺寸 | Google Play icon size | Google Play のアイコンサイズ | Google Play 아이콘 크기 |
+| presets::in-game-icon::label | 遊戲內圖示 256x256 | In-Game Icon 256x256 | ゲーム内アイコン 256x256 | 게임 내 아이콘 256x256 |
+| presets::in-game-icon::note | 技能/道具/貨幣圖示 | Skill / item / currency icons | スキル・アイテム・通貨アイコン | 스킬/아이템/재화 아이콘 |
+| presets::splash-portrait::label | 啟動畫面 1170x2532 | Splash Screen 1170x2532 | スプラッシュ画面 1170x2532 | 스플래시 화면 1170x2532 |
+| presets::splash-portrait::note | 直式手機啟動畫面 | Portrait phone splash screen | 縦向きスマートフォンのスプラッシュ画面 | 세로형 휴대폰 스플래시 화면 |
+| presets::store-screenshot-portrait::label | 商店截圖 1284x2778 | Store Screenshot 1284x2778 | ストアスクリーンショット 1284x2778 | 스토어 스크린샷 1284x2778 |
+| presets::store-screenshot-portrait::note | App Store 直式截圖 | App Store portrait screenshot | App Store の縦向きスクリーンショット | App Store 세로형 스크린샷 |
+| presets::character-concept-square::label | 角色概念圖 1024x1024 | Character Concept 1024x1024 | キャラクターコンセプト 1024x1024 | 캐릭터 콘셉트 1024x1024 |
+| presets::character-concept-square::note | 方形角色設計稿 | Square character design sheet | 正方形のキャラクターデザイン画 | 정사각형 캐릭터 디자인 시안 |
+| presets::character-portrait-2d::label | 2D 角色立繪 1024x1536 | 2D Character Portrait 1024x1536 | 2Dキャラクター立ち絵 1024x1536 | 2D 캐릭터 스탠딩 일러스트 1024x1536 |
+| presets::character-portrait-2d::note | 直式角色立繪比例 | Portrait-ratio standing character art | 縦長の立ち絵比率 | 세로 비율의 캐릭터 스탠딩 일러스트 |
+| presets::sprite-frame::label | 精靈圖單格 512x512 | Sprite Frame 512x512 | スプライト1コマ 512x512 | 스프라이트 단일 프레임 512x512 |
+| presets::sprite-frame::note | Sprite sheet 單一動作格 | Single action frame of a sprite sheet | スプライトシートの1アクション分 | 스프라이트 시트의 단일 동작 프레임 |
+| presets::ui-small-icon::label | 2D UI小圖示 128x128 | 2D UI Small Icon 128x128 | 2D UI小アイコン 128x128 | 2D UI 소형 아이콘 128x128 |
+| presets::ui-small-icon::note | 按鈕/狀態小圖示 | Button / status small icons | ボタン・ステータス用の小アイコン | 버튼/상태 소형 아이콘 |
+| presets::character-turnaround-3d::label | 3D角色轉盤圖 1024x1536 | 3D Character Turnaround 1024x1536 | 3Dキャラクターターンアラウンド 1024x1536 | 3D 캐릭터 턴어라운드 1024x1536 |
+| presets::character-turnaround-3d::note | 角色三視圖/轉盤參考比例 | Three-view / turnaround reference ratio | 三面図・ターンアラウンド参考比率 | 3면도/턴어라운드 참고 비율 |
+| presets::model-reference-wide::label | 角色模型參考圖 2048x1024 | Character Model Reference 2048x1024 | キャラクターモデル参考画像 2048x1024 | 캐릭터 모델 참고 이미지 2048x1024 |
+| presets::model-reference-wide::note | 橫向模型設計參考 | Landscape model design reference | 横長のモデルデザイン参考 | 가로형 모델 디자인 참고 |
+| presets::steam-main-capsule::label | Steam 主膠囊圖 616x353 | Steam Main Capsule 616x353 | Steam メインカプセル 616x353 | Steam 메인 캡슐 616x353 |
+| presets::steam-main-capsule::note | 商店頁最主要曝光圖 | Primary exposure image on the store page | ストアページで最も目立つ画像 | 스토어 페이지의 가장 주요한 노출 이미지 |
+| presets::steam-small-capsule::label | Steam 小膠囊圖 231x87 | Steam Small Capsule 231x87 | Steam スモールカプセル 231x87 | Steam 소형 캡슐 231x87 |
+| presets::steam-small-capsule::note | 清單/搜尋結果用 | For lists and search results | リストや検索結果用 | 목록/검색 결과용 |
+| presets::steam-header::label | Steam 頁首圖 460x215 | Steam Header 460x215 | Steam ヘッダー 460x215 | Steam 헤더 460x215 |
+| presets::steam-header::note | 商店頁頂部圖 | Image at the top of the store page | ストアページ上部の画像 | 스토어 페이지 상단 이미지 |
+| presets::steam-library-hero::label | Steam 資料庫英雄圖 3840x1240 | Steam Library Hero 3840x1240 | Steam ライブラリヒーロー 3840x1240 | Steam 라이브러리 히어로 3840x1240 |
+| presets::steam-library-hero::note | 個人收藏庫大圖 | Large image for the personal library | ライブラリ用の大型画像 | 개인 라이브러리용 대형 이미지 |
+| presets::store-screenshot-16-9::label | 商店截圖 16:9 1920x1080 | Store Screenshot 16:9 1920x1080 | ストアスクリーンショット 16:9 1920x1080 | 스토어 스크린샷 16:9 1920x1080 |
+| presets::store-screenshot-16-9::note | 商店展示截圖 | Store showcase screenshot | ストア掲載用スクリーンショット | 스토어 전시용 스크린샷 |
+| presets::concept-art-2048::label | 概念美術 2048x2048 | Concept Art 2048x2048 | コンセプトアート 2048x2048 | 콘셉트 아트 2048x2048 |
+| presets::concept-art-2048::note | 高解析概念設計稿 | High-resolution concept design | 高解像度のコンセプトデザイン画 | 고해상도 콘셉트 디자인 시안 |
+| presets::pixel-sprite::label | 像素風精靈圖 128x128 | Pixel Art Sprite 128x128 | ピクセルアートスプライト 128x128 | 픽셀 아트 스프라이트 128x128 |
+| presets::pixel-sprite::note | Pixel art sprite 尺寸 | Pixel art sprite size | ピクセルアートのスプライトサイズ | 픽셀 아트 스프라이트 크기 |
+| presets::background-layer-2d::label | 2D 背景圖層 1920x1080 | 2D Background Layer 1920x1080 | 2D背景レイヤー 1920x1080 | 2D 배경 레이어 1920x1080 |
+| presets::background-layer-2d::note | 視差捲動背景層 | Parallax scrolling background layer | パララックススクロール用の背景レイヤー | 패럴랙스 스크롤 배경 레이어 |
+| presets::character-portrait::label | 角色立繪 1024x1536 | Character Portrait 1024x1536 | キャラクター立ち絵 1024x1536 | 캐릭터 스탠딩 일러스트 1024x1536 |
+| presets::character-portrait::note | 直式角色設計稿 | Portrait character design sheet | 縦長のキャラクターデザイン画 | 세로형 캐릭터 디자인 시안 |
+| presets::character-design-3d::label | 3D角色設計圖 2048x2048 | 3D Character Design 2048x2048 | 3Dキャラクターデザイン 2048x2048 | 3D 캐릭터 디자인 2048x2048 |
+| presets::character-design-3d::note | 高解析角色設計稿 | High-resolution character design sheet | 高解像度のキャラクターデザイン画 | 고해상도 캐릭터 디자인 시안 |
+| presets::environment-concept::label | 環境概念圖 3840x2160 | Environment Concept 3840x2160 | 環境コンセプト 3840x2160 | 환경 콘셉트 3840x2160 |
+| presets::environment-concept::note | 橫向場景概念稿 | Landscape scene concept | 横長のシーンコンセプト画 | 가로형 장면 콘셉트 시안 |
+
+## templates
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| gameTypes::rpg | 角色扮演 RPG | Role-Playing (RPG) | ロールプレイング RPG | 롤플레잉 RPG |
+| gameTypes::casual-simulation | 休閒／模擬 | Casual / Simulation | カジュアル／シミュレーション | 캐주얼/시뮬레이션 |
+| gameTypes::card-strategy | 卡牌／策略 | Card / Strategy | カード／ストラテジー | 카드/전략 |
+| gameTypes::shooter-action | 射擊／動作 | Shooter / Action | シューティング／アクション | 슈팅/액션 |
+| gameTypes::roguelike-action | Roguelike／動作 | Roguelike / Action | ローグライク／アクション | 로그라이크/액션 |
+| styleTypes::anime-2d | 日系 2D 動畫 | Japanese 2D Anime | 日本風2Dアニメ | 일본풍 2D 애니메이션 |
+| styleTypes::cute-3d | 可愛 3D | Cute 3D | かわいい3D | 귀여운 3D |
+| styleTypes::fantasy-illustration | 奇幻插畫 | Fantasy Illustration | ファンタジーイラスト | 판타지 일러스트 |
+| styleTypes::dark-fantasy-3d | 黑暗奇幻 3D | Dark Fantasy 3D | ダークファンタジー3D | 다크 판타지 3D |
+| styleTypes::cozy-storybook-2d | 溫馨繪本 2D | Cozy Storybook 2D | ほのぼの絵本2D | 따뜻한 그림책 2D |
+| styleTypes::scifi-3d | 科幻 3D | Sci-Fi 3D | SF 3D | SF 3D |
+| styleTypes::pixel-art | 像素藝術 | Pixel Art | ピクセルアート | 픽셀 아트 |
+| templates::mobile-anime-rpg::label | 手遊日系 RPG 角色卡 | Mobile Anime RPG Character Card | モバイル和風RPGキャラクターカード | 모바일 일본풍 RPG 캐릭터 카드 |
+| templates::mobile-anime-rpg::description | 適合抽卡角色、立繪與角色檔案頁；以清晰輪廓和易讀表情為優先。 | Great for gacha characters, standing art and character profile pages; prioritizes a clear silhouette and readable expressions. | ガチャキャラ、立ち絵、キャラクタープロフィール画面向け。明瞭なシルエットと読み取りやすい表情を重視します。 | 가챠 캐릭터, 스탠딩 일러스트, 캐릭터 프로필 화면에 적합하며 선명한 실루엣과 읽기 쉬운 표정을 우선합니다. |
+| templates::mobile-casual::label | 休閒手遊 3D 道具／角色 | Casual Mobile 3D Props / Characters | カジュアルモバイル3Dアイテム／キャラクター | 캐주얼 모바일 3D 아이템/캐릭터 |
+| templates::mobile-casual::description | 適合農場、料理與生活模擬遊戲；強調明亮、圓潤且在小螢幕可辨識。 | For farm, cooking and life-sim games; emphasizes bright, rounded shapes that stay readable on small screens. | 農場・料理・ライフシミュレーションゲーム向け。明るく丸みのある形で、小さな画面でも見分けやすさを重視します。 | 농장, 요리, 생활 시뮬레이션 게임에 적합하며 밝고 둥근 형태로 작은 화면에서도 알아보기 쉽게 합니다. |
+| templates::mobile-card-battle::label | 策略卡牌奇幻角色 | Strategy Card Fantasy Hero | ストラテジーカードのファンタジーキャラクター | 전략 카드 판타지 캐릭터 |
+| templates::mobile-card-battle::description | 適合卡牌框、英雄半身像與技能演出；以戲劇光影與清楚焦點為主。 | For card frames, hero bust portraits and skill cut-ins; built around dramatic lighting and a clear focal point. | カード枠、ヒーローのバストアップ、スキル演出向け。ドラマチックな光と明確な焦点が中心です。 | 카드 프레임, 영웅 상반신 초상, 스킬 연출에 적합하며 극적인 조명과 뚜렷한 초점을 중심으로 합니다. |
+| templates::steam-dark-fantasy::label | Steam 黑暗奇幻概念圖 | Steam Dark Fantasy Concept Art | Steam ダークファンタジーコンセプトアート | Steam 다크 판타지 콘셉트 아트 |
+| templates::steam-dark-fantasy::description | 適合 Steam RPG 的角色、敵人與場景概念；優先呈現材質、尺度與氛圍。 | For Steam RPG characters, enemies and scenes; puts material, scale and atmosphere first. | Steam RPG のキャラクター、敵、シーンのコンセプト向け。質感、スケール、雰囲気を優先します。 | Steam RPG의 캐릭터, 적, 장면 콘셉트에 적합하며 재질, 규모, 분위기를 우선합니다. |
+| templates::steam-cozy::label | Steam 溫馨模擬場景 | Steam Cozy Sim Scene | Steam ほのぼのシミュレーションシーン | Steam 아늑한 시뮬레이션 장면 |
+| templates::steam-cozy::description | 適合療癒、農場與建造類遊戲；以溫暖光線和可探索的場景層次為主。 | For healing, farming and building games; built on warm light and explorable scene depth. | 癒やし系、農場、建設ゲーム向け。温かな光と探索したくなる奥行きのあるシーンが中心です。 | 힐링, 농장, 건설 게임에 적합하며 따뜻한 빛과 탐험하고 싶은 장면의 깊이를 중심으로 합니다. |
+| templates::steam-scifi::label | 科幻動作武器／介面素材 | Sci-Fi Action Weapon / UI Assets | SFアクションの武器／UI素材 | SF 액션 무기/인터페이스 소재 |
+| templates::steam-scifi::description | 適合武器、載具、HUD 和宣傳圖；保留明確輪廓與高科技材質對比。 | For weapons, vehicles, HUDs and promo art; keeps clear silhouettes and high-tech material contrast. | 武器、乗り物、HUD、宣伝画像向け。明確なシルエットとハイテクな素材のコントラストを保ちます。 | 무기, 탈것, HUD, 홍보 이미지에 적합하며 뚜렷한 실루엣과 첨단 소재의 대비를 유지합니다. |
+| templates::indie-pixel::label | 獨立 Roguelike 像素素材 | Indie Roguelike Pixel Assets | インディー・ローグライクのピクセル素材 | 인디 로그라이크 픽셀 소재 |
+| templates::indie-pixel::description | 適合角色、道具與小型場景設計；強調有限色盤和明確可讀性。 | For characters, items and small scenes; emphasizes a limited palette and clear readability. | キャラクター、アイテム、小規模なシーン向け。限られたパレットと明確な視認性を重視します。 | 캐릭터, 아이템, 소규모 장면에 적합하며 제한된 팔레트와 뚜렷한 가독성을 강조합니다. |
+
+## tags/camera-composition
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 鏡頭構圖 | Camera & Composition | カメラ・構図 | 카메라·구도 |
+| categories::shot-size | 景別 | Shot Size | ショットサイズ | 샷 크기 |
+| categories::viewpoint | 視角 | Viewpoint | 視点 | 시점 |
+| categories::composition-lens | 構圖與鏡頭效果 | Composition & Lens Effects | 構図・レンズ効果 | 구도·렌즈 효과 |
+| subcategories::shot-size/shot-size | 景別 | Shot Size | ショットサイズ | 샷 크기 |
+| subcategories::viewpoint/viewpoint | 視角 | Viewpoint | 視点 | 시점 |
+| subcategories::composition-lens/composition-lens | 構圖與鏡頭效果 | Composition & Lens Effects | 構図・レンズ効果 | 구도·렌즈 효과 |
+| tags::extreme close-up shot | 大特寫 | extreme close-up shot | 極端なクローズアップ | 익스트림 클로즈업 |
+| tags::close-up shot | 特寫鏡頭 | close-up shot | クローズアップ | 클로즈업 |
+| tags::medium shot | 中景鏡頭 | medium shot | ミディアムショット | 미디엄 샷 |
+| tags::cowboy shot | 半身鏡頭 | cowboy shot | カウボーイショット | 카우보이 샷 |
+| tags::full body shot | 全身鏡頭 | full body shot | 全身ショット | 전신 샷 |
+| tags::wide shot | 遠景鏡頭 | wide shot | ワイドショット | 와이드 샷 |
+| tags::bird's eye view | 鳥瞰視角 | bird's eye view | 鳥瞰 | 버즈아이 뷰 |
+| tags::low angle shot | 低角度仰視 | low angle shot | ローアングル | 로우 앵글 |
+| tags::high angle shot | 高角度俯視 | high angle shot | ハイアングル | 하이 앵글 |
+| tags::eye level shot | 平視角度 | eye level shot | アイレベル | 아이 레벨 |
+| tags::dutch angle | 傾斜鏡頭 | dutch angle | ダッチアングル | 더치 앵글 |
+| tags::over-the-shoulder shot | 過肩鏡頭 | over-the-shoulder shot | オーバーショルダー | 오버 더 숄더 |
+| tags::first-person view | 第一人稱視角 | first-person view | 一人称視点 | 1인칭 시점 |
+| tags::isometric view | 等角視角 | isometric view | アイソメトリック視点 | 아이소메트릭 시점 |
+| tags::rule of thirds composition | 三分構圖 | rule of thirds composition | 三分割構図 | 삼분할 구도 |
+| tags::centered composition | 置中構圖 | centered composition | 中央構図 | 중앙 구도 |
+| tags::dynamic diagonal composition | 動態對角構圖 | dynamic diagonal composition | ダイナミック対角線構図 | 역동적 대각선 구도 |
+| tags::symmetrical composition | 對稱構圖 | symmetrical composition | シンメトリー構図 | 대칭 구도 |
+| tags::shallow depth of field | 淺景深效果 | shallow depth of field | 浅い被写界深度 | 얕은 피사계 심도 |
+| tags::wide angle lens | 廣角鏡頭 | wide angle lens | 広角レンズ | 광각 렌즈 |
+| tags::telephoto lens compression | 長焦鏡頭壓縮感 | telephoto lens compression | 望遠レンズの圧縮効果 | 망원 렌즈 압축감 |
+| tags::motion blur background | 動態模糊背景 | motion blur background | モーションブラー背景 | 모션 블러 배경 |
+
+## tags/poses
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 動作姿勢 | Actions & Poses | アクション・ポーズ | 동작·포즈 |
+| categories::standing-idle | 站姿與待機 | Standing & Idle | 立ちポーズ・待機 | 서 있는 자세·대기 |
+| categories::combat-actions | 戰鬥動作 | Combat Actions | 戦闘アクション | 전투 동작 |
+| categories::movement | 移動姿態 | Movement | 移動ポーズ | 이동 자세 |
+| categories::situational-poses | 情境姿勢 | Situational Poses | シチュエーションポーズ | 상황별 포즈 |
+| subcategories::standing-idle/standing-idle | 站姿與待機 | Standing & Idle | 立ちポーズ・待機 | 서 있는 자세·대기 |
+| subcategories::combat-actions/combat-actions | 戰鬥動作 | Combat Actions | 戦闘アクション | 전투 동작 |
+| subcategories::movement/movement | 移動姿態 | Movement | 移動ポーズ | 이동 자세 |
+| subcategories::situational-poses/situational-poses | 情境姿勢 | Situational Poses | シチュエーションポーズ | 상황별 포즈 |
+| tags::standing pose | 站立姿勢 | standing pose | 立ちポーズ | 서 있는 포즈 |
+| tags::idle stance | 待機姿勢 | idle stance | アイドルポーズ | 대기 포즈 |
+| tags::confident standing pose | 自信站姿 | confident standing pose | 自信に満ちた立ち姿 | 자신감 있는 서 있는 자세 |
+| tags::relaxed pose | 放鬆姿勢 | relaxed pose | リラックスしたポーズ | 편안한 포즈 |
+| tags::hands on hips | 叉腰姿勢 | hands on hips | 腰に手を当てたポーズ | 허리에 손을 얹은 포즈 |
+| tags::arms crossed pose | 抱胸姿勢 | arms crossed pose | 腕組みポーズ | 팔짱 낀 포즈 |
+| tags::combat stance | 戰鬥架勢 | combat stance | 戦闘の構え | 전투 자세 |
+| tags::dynamic action pose | 動態戰鬥姿勢 | dynamic action pose | ダイナミックな戦闘ポーズ | 역동적인 전투 포즈 |
+| tags::sword swing pose | 揮劍動作 | sword swing pose | 剣を振るうポーズ | 검을 휘두르는 포즈 |
+| tags::spellcasting pose | 施法姿勢 | spellcasting pose | 詠唱ポーズ | 주문 시전 포즈 |
+| tags::bow aiming pose | 拉弓瞄準姿勢 | bow aiming pose | 弓を引いて狙うポーズ | 활을 당겨 조준하는 포즈 |
+| tags::charging pose | 衝鋒姿勢 | charging pose | 突撃ポーズ | 돌격 포즈 |
+| tags::defensive guard stance | 防禦姿勢 | defensive guard stance | 防御の構え | 방어 자세 |
+| tags::victory battle pose | 勝利戰鬥姿勢 | victory battle pose | 勝利の戦闘ポーズ | 승리의 전투 포즈 |
+| tags::running pose | 奔跑姿勢 | running pose | 走るポーズ | 달리는 포즈 |
+| tags::jumping pose | 跳躍姿勢 | jumping pose | ジャンプポーズ | 점프 포즈 |
+| tags::flying pose | 飛行姿勢 | flying pose | 飛行ポーズ | 비행 포즈 |
+| tags::crouching pose | 蹲伏姿勢 | crouching pose | しゃがみポーズ | 웅크린 포즈 |
+| tags::sneaking pose | 潛行姿勢 | sneaking pose | 忍び足ポーズ | 은신 포즈 |
+| tags::dashing pose | 疾衝姿勢 | dashing pose | ダッシュポーズ | 전력 질주 포즈 |
+| tags::sitting pose | 坐姿 | sitting pose | 座りポーズ | 앉은 자세 |
+| tags::leaning pose | 倚靠姿勢 | leaning pose | もたれかかるポーズ | 기댄 포즈 |
+| tags::victory pose | 勝利姿勢 | victory pose | 勝利ポーズ | 승리 포즈 |
+| tags::greeting pose | 打招呼姿勢 | greeting pose | 挨拶ポーズ | 인사 포즈 |
+| tags::thinking pose | 沉思姿勢 | thinking pose | 考え込むポーズ | 생각에 잠긴 포즈 |
+| tags::kneeling pose | 單膝下跪姿勢 | kneeling pose | 片膝をつくポーズ | 한쪽 무릎 꿇은 포즈 |
+
+## tags/costumes
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 服裝造型 | Costumes & Outfits | 衣装・スタイル | 의상·스타일 |
+| categories::fantasy-attire | 奇幻裝束 | Fantasy Attire | ファンタジー衣装 | 판타지 복장 |
+| categories::scifi-attire | 科幻裝束 | Sci-Fi Attire | SF衣装 | SF 복장 |
+| categories::casual-modern | 日常與現代服裝 | Casual & Modern Clothing | 日常・現代の服装 | 일상·현대 의상 |
+| categories::accessories | 配件與裝飾 | Accessories & Decorations | アクセサリー・装飾 | 액세서리·장식 |
+| subcategories::fantasy-attire/fantasy-attire | 奇幻裝束 | Fantasy Attire | ファンタジー衣装 | 판타지 복장 |
+| subcategories::scifi-attire/scifi-attire | 科幻裝束 | Sci-Fi Attire | SF衣装 | SF 복장 |
+| subcategories::casual-modern/casual-modern | 日常與現代服裝 | Casual & Modern Clothing | 日常・現代の服装 | 일상·현대 의상 |
+| subcategories::accessories/accessories | 配件與裝飾 | Accessories & Decorations | アクセサリー・装飾 | 액세서리·장식 |
+| tags::fantasy plate armor | 奇幻板甲 | fantasy plate armor | ファンタジー・プレートアーマー | 판타지 판금 갑옷 |
+| tags::leather adventurer outfit | 皮革冒險者服裝 | leather adventurer outfit | 革製の冒険者の服 | 가죽 모험가 복장 |
+| tags::wizard robe | 巫師長袍 | wizard robe | 魔法使いのローブ | 마법사 로브 |
+| tags::royal ceremonial dress | 皇室禮服 | royal ceremonial dress | 王室の礼装 | 왕실 예복 |
+| tags::traveler cloak and hood | 旅行者斗篷兜帽 | traveler cloak and hood | 旅人のマントとフード | 여행자 망토와 후드 |
+| tags::ranger leather gear | 遊俠皮甲裝備 | ranger leather gear | レンジャーの革鎧装備 | 레인저 가죽 갑옷 장비 |
+| tags::futuristic combat suit | 未來戰鬥服 | futuristic combat suit | 近未来の戦闘スーツ | 미래형 전투복 |
+| tags::cyberpunk streetwear | 賽博龐克街頭服 | cyberpunk streetwear | サイバーパンクのストリートウェア | 사이버펑크 스트리트웨어 |
+| tags::space explorer suit | 太空探索服 | space explorer suit | 宇宙探査スーツ | 우주 탐사복 |
+| tags::mecha pilot suit | 機甲駕駛服 | mecha pilot suit | メカパイロットスーツ | 메카 조종사 슈트 |
+| tags::holographic armor | 全息裝甲 | holographic armor | ホログラフィックアーマー | 홀로그램 아머 |
+| tags::tech-enhanced jacket | 科技強化夾克 | tech-enhanced jacket | テック強化ジャケット | 기술 강화 재킷 |
+| tags::casual streetwear | 休閒街頭服 | casual streetwear | カジュアルなストリートウェア | 캐주얼 스트리트웨어 |
+| tags::school uniform | 學生制服 | school uniform | 学生服 | 교복 |
+| tags::sportswear outfit | 運動服裝 | sportswear outfit | スポーツウェア | 스포츠웨어 |
+| tags::business formal attire | 正式商務服裝 | business formal attire | ビジネスフォーマル | 비즈니스 정장 |
+| tags::explorer utility outfit | 探險工作服 | explorer utility outfit | 探検用ワークウェア | 탐험 작업복 |
+| tags::ornate shoulder armor | 華麗肩甲 | ornate shoulder armor | 華やかな肩当て | 화려한 어깨 갑옷 |
+| tags::utility belt | 工具腰帶 | utility belt | ユーティリティベルト | 유틸리티 벨트 |
+| tags::decorative cape | 裝飾披風 | decorative cape | 装飾マント | 장식 망토 |
+| tags::fingerless gloves | 無指手套 | fingerless gloves | 指なし手袋 | 손가락 없는 장갑 |
+| tags::tactical goggles accessory | 戰術護目鏡配件 | tactical goggles accessory | タクティカルゴーグル | 전술 고글 |
+| tags::layered scarf | 多層圍巾 | layered scarf | 重ね巻きスカーフ | 겹겹이 두른 스카프 |
+
+## tags/expressions
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 表情情緒 | Expressions & Emotions | 表情・感情 | 표정·감정 |
+| categories::positive-emotions | 正面情緒 | Positive Emotions | ポジティブな感情 | 긍정적인 감정 |
+| categories::combat-emotions | 戰鬥情緒 | Combat Emotions | 戦闘時の感情 | 전투 감정 |
+| categories::other-emotions | 其他情緒 | Other Emotions | その他の感情 | 기타 감정 |
+| subcategories::positive-emotions/positive-emotions | 正面情緒 | Positive Emotions | ポジティブな感情 | 긍정적인 감정 |
+| subcategories::combat-emotions/combat-emotions | 戰鬥情緒 | Combat Emotions | 戦闘時の感情 | 전투 감정 |
+| subcategories::other-emotions/other-emotions | 其他情緒 | Other Emotions | その他の感情 | 기타 감정 |
+| tags::confident expression | 自信表情 | confident expression | 自信に満ちた表情 | 자신감 있는 표정 |
+| tags::determined expression | 堅定表情 | determined expression | 決意に満ちた表情 | 단호한 표정 |
+| tags::cheerful smile | 開朗微笑 | cheerful smile | 明るい笑顔 | 밝은 미소 |
+| tags::heroic expression | 英雄氣概表情 | heroic expression | 英雄的な表情 | 영웅다운 표정 |
+| tags::calm expression | 平靜表情 | calm expression | 穏やかな表情 | 평온한 표정 |
+| tags::playful grin | 俏皮笑容 | playful grin | いたずらっぽい笑み | 장난기 어린 미소 |
+| tags::fierce battle expression | 兇猛戰鬥表情 | fierce battle expression | 猛々しい戦闘の表情 | 맹렬한 전투 표정 |
+| tags::focused expression | 專注表情 | focused expression | 集中した表情 | 집중한 표정 |
+| tags::battle cry expression | 怒吼表情 | battle cry expression | 雄叫びの表情 | 함성 지르는 표정 |
+| tags::intense determined stare | 銳利堅毅眼神 | intense determined stare | 鋭く決意に満ちた眼差し | 날카롭고 굳센 눈빛 |
+| tags::fearless expression | 無畏表情 | fearless expression | 恐れを知らない表情 | 두려움 없는 표정 |
+| tags::surprised expression | 驚訝表情 | surprised expression | 驚いた表情 | 놀란 표정 |
+| tags::mysterious expression | 神秘表情 | mysterious expression | 神秘的な表情 | 신비로운 표정 |
+| tags::gentle expression | 溫柔表情 | gentle expression | 優しい表情 | 온화한 표정 |
+| tags::curious expression | 好奇表情 | curious expression | 好奇心に満ちた表情 | 호기심 어린 표정 |
+| tags::serene expression | 寧靜表情 | serene expression | 静かな表情 | 고요한 표정 |
+| tags::proud expression | 驕傲表情 | proud expression | 誇らしげな表情 | 자랑스러운 표정 |
+
+## tags/races-classes
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 身份種族 | Races & Classes | 種族・職業 | 종족·직업 |
+| categories::fantasy-races | 奇幻種族 | Fantasy Races | ファンタジー種族 | 판타지 종족 |
+| categories::classes-roles | 職業設定 | Classes & Roles | 職業設定 | 직업 설정 |
+| subcategories::fantasy-races/fantasy-races | 奇幻種族 | Fantasy Races | ファンタジー種族 | 판타지 종족 |
+| subcategories::classes-roles/classes-roles | 職業設定 | Classes & Roles | 職業設定 | 직업 설정 |
+| tags::human | 人類 | human | 人間 | 인간 |
+| tags::elf | 精靈 | elf | エルフ | 엘프 |
+| tags::dwarf | 矮人 | dwarf | ドワーフ | 드워프 |
+| tags::orc warrior | 獸人戰士 | orc warrior | オークの戦士 | 오크 전사 |
+| tags::fairy | 妖精 | fairy | 妖精 | 요정 |
+| tags::dragon-kin | 龍裔 | dragon-kin | 竜の血を引く者 | 용족 |
+| tags::beast-eared humanoid | 獸耳人型 | beast-eared humanoid | 獣耳のヒューマノイド | 수인형 휴머노이드 |
+| tags::robot android | 機器人 | robot android | ロボット・アンドロイド | 로봇 안드로이드 |
+| tags::knight | 騎士 | knight | 騎士 | 기사 |
+| tags::mage | 法師 | mage | メイジ | 마법사 |
+| tags::archer ranger | 弓箭遊俠 | archer ranger | アーチャー・レンジャー | 궁수 레인저 |
+| tags::warrior | 戰士 | warrior | 戦士 | 전사 |
+| tags::engineer | 工程師 | engineer | エンジニア | 엔지니어 |
+| tags::pilot | 駕駛員 | pilot | パイロット | 조종사 |
+| tags::alchemist | 鍊金術士 | alchemist | 錬金術師 | 연금술사 |
+| tags::summoner | 召喚師 | summoner | 召喚士 | 소환사 |
+| tags::blacksmith | 鐵匠 | blacksmith | 鍛冶屋 | 대장장이 |
+| tags::scholar | 學者 | scholar | 学者 | 학자 |
+
+## tags/hair
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 髮型髮色 | Hairstyle & Hair Color | 髪型・髪色 | 헤어스타일·머리색 |
+| categories::hairstyle | 髮型 | Hairstyle | 髪型 | 헤어스타일 |
+| categories::hair-color | 髮色 | Hair Color | 髪色 | 머리색 |
+| subcategories::hairstyle/hairstyle | 髮型 | Hairstyle | 髪型 | 헤어스타일 |
+| subcategories::hair-color/hair-color | 髮色 | Hair Color | 髪色 | 머리색 |
+| tags::ponytail | 馬尾 | ponytail | ポニーテール | 포니테일 |
+| tags::twintails | 雙馬尾 | twintails | ツインテール | 트윈테일 |
+| tags::braided hair | 辮子 | braided hair | 三つ編み | 땋은 머리 |
+| tags::short hair | 短髮 | short hair | ショートヘア | 짧은 머리 |
+| tags::long hair | 長髮 | long hair | ロングヘア | 긴 머리 |
+| tags::messy hair | 凌亂髮型 | messy hair | ボサボサの髪 | 헝클어진 머리 |
+| tags::bun hairstyle | 丸子頭 | bun hairstyle | お団子ヘア | 올림머리 번 |
+| tags::wavy hair | 波浪捲髮 | wavy hair | ウェーブヘア | 웨이브 머리 |
+| tags::black hair | 黑髮 | black hair | 黒髪 | 검은 머리 |
+| tags::blonde hair | 金髮 | blonde hair | 金髪 | 금발 |
+| tags::silver hair | 銀髮 | silver hair | 銀髪 | 은발 |
+| tags::red hair | 紅髮 | red hair | 赤髪 | 붉은 머리 |
+| tags::blue hair | 藍髮 | blue hair | 青髪 | 파란 머리 |
+| tags::white hair | 白髮 | white hair | 白髪 | 흰 머리 |
+| tags::gradient hair color | 漸層髮色 | gradient hair color | グラデーションヘア | 그라데이션 머리색 |
+| tags::colorful fantasy hair | 奇幻鮮豔髮色 | colorful fantasy hair | ファンタジーな鮮やかな髪色 | 판타지풍 화려한 머리색 |
+
+## tags/items-gear
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 道具裝備 | Items & Gear | アイテム・装備 | 아이템·장비 |
+| categories::weapons | 武器 | Weapons | 武器 | 무기 |
+| categories::armor-items | 防具與道具 | Armor & Items | 防具・アイテム | 방어구·아이템 |
+| subcategories::weapons/melee-weapons | 近戰武器 | Melee Weapons | 近接武器 | 근접 무기 |
+| subcategories::weapons/ranged-weapons | 遠程武器 | Ranged Weapons | 遠距離武器 | 원거리 무기 |
+| subcategories::armor-items/armor | 護甲 | Armor | 防具 | 방어구 |
+| subcategories::armor-items/consumables-collectibles | 消耗品與收藏 | Consumables & Collectibles | 消耗品・収集品 | 소모품·수집품 |
+| tags::fantasy sword | 奇幻長劍 | fantasy sword | ファンタジーの長剣 | 판타지 장검 |
+| tags::battle axe | 戰斧 | battle axe | 戦斧 | 전투 도끼 |
+| tags::war hammer | 戰錘 | war hammer | ウォーハンマー | 전투 망치 |
+| tags::dagger blade | 短刀 | dagger blade | ダガー | 단검 |
+| tags::spear weapon | 長槍 | spear weapon | 槍 | 장창 |
+| tags::magic staff | 魔法權杖 | magic staff | 魔法の杖 | 마법 지팡이 |
+| tags::sci-fi rifle | 科幻步槍 | sci-fi rifle | SFライフル | SF 소총 |
+| tags::bow and arrow | 弓與箭 | bow and arrow | 弓矢 | 활과 화살 |
+| tags::laser pistol | 雷射手槍 | laser pistol | レーザーピストル | 레이저 권총 |
+| tags::throwing knife | 投擲飛刀 | throwing knife | 投げナイフ | 투척용 단검 |
+| tags::crossbow weapon | 十字弓 | crossbow weapon | クロスボウ | 석궁 |
+| tags::plate armor | 板甲 | plate armor | プレートアーマー | 판금 갑옷 |
+| tags::leather armor set | 皮革護甲套裝 | leather armor set | 革鎧セット | 가죽 갑옷 세트 |
+| tags::mage robe | 法師長袍 | mage robe | メイジのローブ | 마법사 로브 |
+| tags::futuristic exosuit | 未來動力裝甲 | futuristic exosuit | 近未来のパワードスーツ | 미래형 파워 슈트 |
+| tags::shield item | 盾牌道具 | shield item | 盾 | 방패 |
+| tags::health potion bottle | 生命藥水瓶 | health potion bottle | 体力回復ポーションの瓶 | 체력 물약 병 |
+| tags::magic scroll | 魔法卷軸 | magic scroll | 魔法の巻物 | 마법 두루마리 |
+| tags::treasure chest | 寶箱 | treasure chest | 宝箱 | 보물 상자 |
+| tags::gold coin icon | 金幣圖示 | gold coin icon | 金貨アイコン | 금화 아이콘 |
+| tags::gemstone item | 寶石道具 | gemstone item | 宝石アイテム | 보석 아이템 |
+| tags::key item | 鑰匙道具 | key item | 鍵アイテム | 열쇠 아이템 |
+
+## tags/environments
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 場景環境 | Scenes & Environments | シーン・環境 | 장면·환경 |
+| categories::nature | 自然場景 | Natural Scenes | 自然のシーン | 자연 장면 |
+| categories::architecture-dungeons | 建築與地城 | Architecture & Dungeons | 建築・ダンジョン | 건축·던전 |
+| categories::skybox-backgrounds | 天空盒與背景 | Skyboxes & Backgrounds | スカイボックス・背景 | 스카이박스·배경 |
+| subcategories::nature/terrain | 地形 | Terrain | 地形 | 지형 |
+| subcategories::architecture-dungeons/buildings | 建築 | Buildings | 建築物 | 건축물 |
+| subcategories::architecture-dungeons/dungeon-interiors | 地城內部 | Dungeon Interiors | ダンジョン内部 | 던전 내부 |
+| subcategories::skybox-backgrounds/background-assets | 背景素材 | Background Assets | 背景素材 | 배경 소재 |
+| tags::fantasy forest landscape | 奇幻森林景觀 | fantasy forest landscape | ファンタジーの森の風景 | 판타지 숲 풍경 |
+| tags::mystical mountain scene | 神秘山脈場景 | mystical mountain scene | 神秘的な山脈のシーン | 신비로운 산맥 장면 |
+| tags::desert wasteland | 沙漠荒地 | desert wasteland | 砂漠の荒野 | 사막 황무지 |
+| tags::snowy tundra | 雪原凍土 | snowy tundra | 雪原と凍土 | 설원 동토 |
+| tags::tropical island | 熱帶島嶼 | tropical island | 熱帯の島 | 열대 섬 |
+| tags::underwater ocean scene | 海底場景 | underwater ocean scene | 海中のシーン | 해저 장면 |
+| tags::medieval castle | 中世紀城堡 | medieval castle | 中世の城 | 중세 성 |
+| tags::futuristic city skyline | 未來城市天際線 | futuristic city skyline | 近未来都市のスカイライン | 미래 도시 스카이라인 |
+| tags::ancient temple ruins | 古代神殿遺跡 | ancient temple ruins | 古代神殿の遺跡 | 고대 신전 유적 |
+| tags::floating sky island | 漂浮天空島 | floating sky island | 浮遊する空の島 | 떠다니는 하늘 섬 |
+| tags::steampunk city | 蒸汽龐克城市 | steampunk city | スチームパンクの都市 | 스팀펑크 도시 |
+| tags::dungeon corridor | 地城走廊 | dungeon corridor | ダンジョンの廊下 | 던전 복도 |
+| tags::cave interior | 洞穴內部 | cave interior | 洞窟の内部 | 동굴 내부 |
+| tags::dark forest path | 暗黑森林小徑 | dark forest path | 暗い森の小道 | 어두운 숲길 |
+| tags::sci-fi spaceship interior | 太空船內部 | sci-fi spaceship interior | 宇宙船の内部 | 우주선 내부 |
+| tags::abandoned laboratory | 廢棄實驗室 | abandoned laboratory | 廃墟の研究所 | 버려진 실험실 |
+| tags::seamless sky background | 無縫天空背景 | seamless sky background | シームレスな空の背景 | 이음새 없는 하늘 배경 |
+| tags::parallax background layer | 視差背景圖層 | parallax background layer | パララックス背景レイヤー | 패럴랙스 배경 레이어 |
+| tags::starry night skybox | 星空天空盒 | starry night skybox | 星空のスカイボックス | 별이 빛나는 밤하늘 스카이박스 |
+| tags::sunset horizon backdrop | 夕陽地平線背景 | sunset horizon backdrop | 夕焼けの地平線の背景 | 석양 지평선 배경 |
+
+## tags/effects
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 特效 | Visual Effects | エフェクト | 이펙트 |
+| categories::magic | 魔法特效 | Magic Effects | 魔法エフェクト | 마법 이펙트 |
+| categories::combat | 戰鬥特效 | Combat Effects | 戦闘エフェクト | 전투 이펙트 |
+| categories::environment | 環境特效 | Environment Effects | 環境エフェクト | 환경 이펙트 |
+| subcategories::magic/elemental | 元素特效 | Elemental Effects | 属性エフェクト | 원소 이펙트 |
+| subcategories::combat/impact | 打擊特效 | Impact Effects | 打撃エフェクト | 타격 이펙트 |
+| subcategories::environment/ambient | 氛圍特效 | Ambient Effects | 雰囲気エフェクト | 분위기 이펙트 |
+| tags::fire magic effect | 火焰魔法特效 | fire magic effect | 炎魔法エフェクト | 화염 마법 이펙트 |
+| tags::ice frost effect | 冰霜特效 | ice frost effect | 氷結エフェクト | 서리 이펙트 |
+| tags::lightning bolt effect | 閃電特效 | lightning bolt effect | 稲妻エフェクト | 번개 이펙트 |
+| tags::healing light aura | 治療光環 | healing light aura | 回復のオーラ | 치유의 오라 |
+| tags::dark magic swirl | 暗黑魔法漩渦 | dark magic swirl | 暗黒魔法の渦 | 암흑 마법 소용돌이 |
+| tags::sword slash effect | 劍擊斬擊特效 | sword slash effect | 剣撃・斬撃エフェクト | 검격 참격 이펙트 |
+| tags::explosion particle effect | 爆炸粒子特效 | explosion particle effect | 爆発パーティクルエフェクト | 폭발 파티클 이펙트 |
+| tags::impact hit spark | 命中打擊火花 | impact hit spark | 命中時の火花 | 타격 불꽃 |
+| tags::shield block effect | 護盾格擋特效 | shield block effect | シールドガードエフェクト | 방패 방어 이펙트 |
+| tags::floating particles dust | 飄浮塵埃粒子 | floating particles dust | 漂う塵のパーティクル | 떠다니는 먼지 입자 |
+| tags::magical glow aura | 魔法光暈氛圍 | magical glow aura | 魔法の光のオーラ | 마법 광채 분위기 |
+| tags::smoke fog effect | 煙霧迷霧特效 | smoke fog effect | 煙・霧エフェクト | 연기·안개 이펙트 |
+| tags::rain weather effect | 降雨天氣特效 | rain weather effect | 降雨の天候エフェクト | 비 오는 날씨 이펙트 |
+| tags::falling leaves effect | 落葉飄散特效 | falling leaves effect | 舞い散る落ち葉エフェクト | 흩날리는 낙엽 이펙트 |
+
+## tags/ui-elements
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | UI元素 | UI Elements | UI要素 | UI 요소 |
+| categories::buttons-frames | 按鈕與框架 | Buttons & Frames | ボタン・フレーム | 버튼·프레임 |
+| categories::hud | HUD 介面 | HUD | HUD | HUD |
+| subcategories::buttons-frames/buttons | 按鈕 | Buttons | ボタン | 버튼 |
+| subcategories::buttons-frames/frames-borders | 框架邊框 | Frames & Borders | フレーム・枠 | 프레임·테두리 |
+| subcategories::hud/status-bars | 狀態列 | Status Bars | ステータスバー | 상태 바 |
+| tags::game button UI | 遊戲按鈕UI | game button UI | ゲームボタンUI | 게임 버튼 UI |
+| tags::rounded fantasy button | 圓角奇幻按鈕 | rounded fantasy button | 角丸のファンタジーボタン | 둥근 판타지 버튼 |
+| tags::sci-fi UI button | 科幻風格按鈕 | sci-fi UI button | SFスタイルのボタン | SF 스타일 버튼 |
+| tags::wooden UI button | 木質UI按鈕 | wooden UI button | 木製UIボタン | 나무 질감 UI 버튼 |
+| tags::glass UI button | 玻璃質感按鈕 | glass UI button | ガラス質感のボタン | 유리 질감 버튼 |
+| tags::ornate frame border | 華麗邊框裝飾 | ornate frame border | 華やかな枠装飾 | 화려한 테두리 장식 |
+| tags::fantasy UI panel | 奇幻UI面板 | fantasy UI panel | ファンタジーUIパネル | 판타지 UI 패널 |
+| tags::futuristic HUD frame | 未來HUD框架 | futuristic HUD frame | 近未来のHUDフレーム | 미래형 HUD 프레임 |
+| tags::parchment UI background | 羊皮紙UI背景 | parchment UI background | 羊皮紙のUI背景 | 양피지 UI 배경 |
+| tags::health bar UI | 血量條UI | health bar UI | HPバーUI | 체력 바 UI |
+| tags::mana bar UI | 魔力條UI | mana bar UI | MPバーUI | 마나 바 UI |
+| tags::experience progress bar | 經驗值進度條 | experience progress bar | 経験値の進行バー | 경험치 진행 바 |
+| tags::minimap UI element | 小地圖UI元件 | minimap UI element | ミニマップUI部品 | 미니맵 UI 요소 |
+| tags::inventory grid UI | 物品欄格線UI | inventory grid UI | インベントリグリッドUI | 인벤토리 격자 UI |
+
+## tags/icons-badges
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 圖示徽章 | Icons & Badges | アイコン・バッジ | 아이콘·배지 |
+| categories::in-game-icons | 遊戲內圖示 | In-Game Icons | ゲーム内アイコン | 게임 내 아이콘 |
+| categories::app-store-icons | App / 商店圖示 | App & Store Icons | アプリ・ストアアイコン | 앱·스토어 아이콘 |
+| subcategories::in-game-icons/skills-currency | 技能與貨幣 | Skills & Currency | スキル・通貨 | 스킬·재화 |
+| subcategories::in-game-icons/achievement-badges | 成就徽章 | Achievement Badges | 実績バッジ | 업적 배지 |
+| subcategories::app-store-icons/app-icons | 應用程式圖示 | App Icons | アプリアイコン | 앱 아이콘 |
+| tags::skill icon design | 技能圖示設計 | skill icon design | スキルアイコンデザイン | 스킬 아이콘 디자인 |
+| tags::spell icon | 法術圖示 | spell icon | 魔法アイコン | 주문 아이콘 |
+| tags::currency coin icon | 貨幣金幣圖示 | currency coin icon | 通貨・金貨アイコン | 화폐 금화 아이콘 |
+| tags::gem currency icon | 寶石貨幣圖示 | gem currency icon | 宝石通貨アイコン | 보석 재화 아이콘 |
+| tags::energy icon | 能量圖示 | energy icon | エネルギーアイコン | 에너지 아이콘 |
+| tags::achievement badge icon | 成就徽章圖示 | achievement badge icon | 実績バッジアイコン | 업적 배지 아이콘 |
+| tags::trophy icon | 獎盃圖示 | trophy icon | トロフィーアイコン | 트로피 아이콘 |
+| tags::rank medal icon | 段位獎章圖示 | rank medal icon | ランクメダルアイコン | 랭크 메달 아이콘 |
+| tags::level up badge | 升級徽章 | level up badge | レベルアップバッジ | 레벨업 배지 |
+| tags::mobile app icon design | 手機App圖示設計 | mobile app icon design | モバイルアプリアイコンデザイン | 모바일 앱 아이콘 디자인 |
+| tags::minimalist app icon | 極簡App圖示 | minimalist app icon | ミニマルなアプリアイコン | 미니멀 앱 아이콘 |
+| tags::3D app icon | 立體3D App圖示 | 3D app icon | 立体的な3Dアプリアイコン | 입체 3D 앱 아이콘 |
+| tags::rounded square app icon | 圓角方形App圖示 | rounded square app icon | 角丸四角のアプリアイコン | 둥근 사각형 앱 아이콘 |
+
+## tags/store-marketing
+
+| 鍵 | zh-TW | en | ja | ko |
+| --- | --- | --- | --- | --- |
+| name | 商店行銷 | Store & Marketing | ストア・マーケティング | 스토어·마케팅 |
+| categories::steam-assets | Steam 素材 | Steam Assets | Steamアセット | Steam 에셋 |
+| categories::marketing-promotion | 行銷宣傳 | Marketing & Promotion | マーケティング・宣伝 | 마케팅·홍보 |
+| categories::logos-branding | Logo 與品牌 | Logos & Branding | ロゴ・ブランド | 로고·브랜드 |
+| subcategories::steam-assets/store-images | 商店圖片 | Store Images | ストア画像 | 스토어 이미지 |
+| subcategories::marketing-promotion/promotional-images | 宣傳圖 | Promotional Images | 宣伝画像 | 홍보 이미지 |
+| subcategories::logos-branding/logo-design | 標誌設計 | Logo Design | ロゴデザイン | 로고 디자인 |
+| tags::steam capsule art | Steam膠囊圖 | steam capsule art | Steamカプセル画像 | Steam 캡슐 이미지 |
+| tags::steam header image | Steam頁首圖 | steam header image | Steamヘッダー画像 | Steam 헤더 이미지 |
+| tags::steam store background | Steam商店背景圖 | steam store background | Steamストア背景画像 | Steam 스토어 배경 이미지 |
+| tags::key art poster | 主視覺關鍵圖 | key art poster | キーアートポスター | 키 아트 포스터 |
+| tags::game promotional banner | 遊戲宣傳橫幅 | game promotional banner | ゲーム宣伝バナー | 게임 홍보 배너 |
+| tags::social media game ad | 社群媒體廣告圖 | social media game ad | SNSゲーム広告画像 | SNS 게임 광고 이미지 |
+| tags::splash screen artwork | 啟動畫面插圖 | splash screen artwork | スプラッシュ画面イラスト | 스플래시 화면 일러스트 |
+| tags::loading screen illustration | 載入畫面插圖 | loading screen illustration | ロード画面イラスト | 로딩 화면 일러스트 |
+| tags::main menu background art | 主選單背景美術 | main menu background art | メインメニュー背景アート | 메인 메뉴 배경 아트 |
+| tags::game logo design | 遊戲Logo設計 | game logo design | ゲームロゴデザイン | 게임 로고 디자인 |
+| tags::studio logo icon | 工作室Logo圖示 | studio logo icon | スタジオロゴアイコン | 스튜디오 로고 아이콘 |
+| tags::wordmark title logo | 文字標題Logo | wordmark title logo | ワードマークタイトルロゴ | 워드마크 타이틀 로고 |
+| tags::emblem badge logo | 徽章式Logo | emblem badge logo | エンブレム型バッジロゴ | 엠블럼 배지 로고 |
