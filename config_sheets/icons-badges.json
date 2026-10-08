@@ -1,0 +1,43 @@
+{
+  "id": "icons-badges",
+  "categories": [
+    {
+      "id": "in-game-icons",
+      "subcategories": [
+        {
+          "id": "skills-currency",
+          "tags": [
+            "skill icon design",
+            "spell icon",
+            "currency coin icon",
+            "gem currency icon",
+            "energy icon"
+          ]
+        },
+        {
+          "id": "achievement-badges",
+          "tags": [
+            "achievement badge icon",
+            "trophy icon",
+            "rank medal icon",
+            "level up badge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "app-store-icons",
+      "subcategories": [
+        {
+          "id": "app-icons",
+          "tags": [
+            "mobile app icon design",
+            "minimalist app icon",
+            "3D app icon",
+            "rounded square app icon"
+          ]
+        }
+      ]
+    }
+  ]
+}

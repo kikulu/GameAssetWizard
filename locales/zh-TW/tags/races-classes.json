@@ -1,0 +1,31 @@
+{
+  "name": "身份種族",
+  "categories": {
+    "fantasy-races": "奇幻種族",
+    "classes-roles": "職業設定"
+  },
+  "subcategories": {
+    "fantasy-races/fantasy-races": "奇幻種族",
+    "classes-roles/classes-roles": "職業設定"
+  },
+  "tags": {
+    "human": "人類",
+    "elf": "精靈",
+    "dwarf": "矮人",
+    "orc warrior": "獸人戰士",
+    "fairy": "妖精",
+    "dragon-kin": "龍裔",
+    "beast-eared humanoid": "獸耳人型",
+    "robot android": "機器人",
+    "knight": "騎士",
+    "mage": "法師",
+    "archer ranger": "弓箭遊俠",
+    "warrior": "戰士",
+    "engineer": "工程師",
+    "pilot": "駕駛員",
+    "alchemist": "鍊金術士",
+    "summoner": "召喚師",
+    "blacksmith": "鐵匠",
+    "scholar": "學者"
+  }
+}

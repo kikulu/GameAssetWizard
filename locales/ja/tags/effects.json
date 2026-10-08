@@ -1,0 +1,29 @@
+{
+  "name": "エフェクト",
+  "categories": {
+    "magic": "魔法エフェクト",
+    "combat": "戦闘エフェクト",
+    "environment": "環境エフェクト"
+  },
+  "subcategories": {
+    "magic/elemental": "属性エフェクト",
+    "combat/impact": "打撃エフェクト",
+    "environment/ambient": "雰囲気エフェクト"
+  },
+  "tags": {
+    "fire magic effect": "炎魔法エフェクト",
+    "ice frost effect": "氷結エフェクト",
+    "lightning bolt effect": "稲妻エフェクト",
+    "healing light aura": "回復のオーラ",
+    "dark magic swirl": "暗黒魔法の渦",
+    "sword slash effect": "剣撃・斬撃エフェクト",
+    "explosion particle effect": "爆発パーティクルエフェクト",
+    "impact hit spark": "命中時の火花",
+    "shield block effect": "シールドガードエフェクト",
+    "floating particles dust": "漂う塵のパーティクル",
+    "magical glow aura": "魔法の光のオーラ",
+    "smoke fog effect": "煙・霧エフェクト",
+    "rain weather effect": "降雨の天候エフェクト",
+    "falling leaves effect": "舞い散る落ち葉エフェクト"
+  }
+}

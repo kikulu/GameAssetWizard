@@ -1,0 +1,37 @@
+{
+  "name": "カメラ・構図",
+  "categories": {
+    "shot-size": "ショットサイズ",
+    "viewpoint": "視点",
+    "composition-lens": "構図・レンズ効果"
+  },
+  "subcategories": {
+    "shot-size/shot-size": "ショットサイズ",
+    "viewpoint/viewpoint": "視点",
+    "composition-lens/composition-lens": "構図・レンズ効果"
+  },
+  "tags": {
+    "extreme close-up shot": "極端なクローズアップ",
+    "close-up shot": "クローズアップ",
+    "medium shot": "ミディアムショット",
+    "cowboy shot": "カウボーイショット",
+    "full body shot": "全身ショット",
+    "wide shot": "ワイドショット",
+    "bird's eye view": "鳥瞰",
+    "low angle shot": "ローアングル",
+    "high angle shot": "ハイアングル",
+    "eye level shot": "アイレベル",
+    "dutch angle": "ダッチアングル",
+    "over-the-shoulder shot": "オーバーショルダー",
+    "first-person view": "一人称視点",
+    "isometric view": "アイソメトリック視点",
+    "rule of thirds composition": "三分割構図",
+    "centered composition": "中央構図",
+    "dynamic diagonal composition": "ダイナミック対角線構図",
+    "symmetrical composition": "シンメトリー構図",
+    "shallow depth of field": "浅い被写界深度",
+    "wide angle lens": "広角レンズ",
+    "telephoto lens compression": "望遠レンズの圧縮効果",
+    "motion blur background": "モーションブラー背景"
+  }
+}

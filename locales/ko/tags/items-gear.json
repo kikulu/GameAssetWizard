@@ -1,0 +1,37 @@
+{
+  "name": "아이템·장비",
+  "categories": {
+    "weapons": "무기",
+    "armor-items": "방어구·아이템"
+  },
+  "subcategories": {
+    "weapons/melee-weapons": "근접 무기",
+    "weapons/ranged-weapons": "원거리 무기",
+    "armor-items/armor": "방어구",
+    "armor-items/consumables-collectibles": "소모품·수집품"
+  },
+  "tags": {
+    "fantasy sword": "판타지 장검",
+    "battle axe": "전투 도끼",
+    "war hammer": "전투 망치",
+    "dagger blade": "단검",
+    "spear weapon": "장창",
+    "magic staff": "마법 지팡이",
+    "sci-fi rifle": "SF 소총",
+    "bow and arrow": "활과 화살",
+    "laser pistol": "레이저 권총",
+    "throwing knife": "투척용 단검",
+    "crossbow weapon": "석궁",
+    "plate armor": "판금 갑옷",
+    "leather armor set": "가죽 갑옷 세트",
+    "mage robe": "마법사 로브",
+    "futuristic exosuit": "미래형 파워 슈트",
+    "shield item": "방패",
+    "health potion bottle": "체력 물약 병",
+    "magic scroll": "마법 두루마리",
+    "treasure chest": "보물 상자",
+    "gold coin icon": "금화 아이콘",
+    "gemstone item": "보석 아이템",
+    "key item": "열쇠 아이템"
+  }
+}

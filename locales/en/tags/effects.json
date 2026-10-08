@@ -1,0 +1,29 @@
+{
+  "name": "Visual Effects",
+  "categories": {
+    "magic": "Magic Effects",
+    "combat": "Combat Effects",
+    "environment": "Environment Effects"
+  },
+  "subcategories": {
+    "magic/elemental": "Elemental Effects",
+    "combat/impact": "Impact Effects",
+    "environment/ambient": "Ambient Effects"
+  },
+  "tags": {
+    "fire magic effect": "fire magic effect",
+    "ice frost effect": "ice frost effect",
+    "lightning bolt effect": "lightning bolt effect",
+    "healing light aura": "healing light aura",
+    "dark magic swirl": "dark magic swirl",
+    "sword slash effect": "sword slash effect",
+    "explosion particle effect": "explosion particle effect",
+    "impact hit spark": "impact hit spark",
+    "shield block effect": "shield block effect",
+    "floating particles dust": "floating particles dust",
+    "magical glow aura": "magical glow aura",
+    "smoke fog effect": "smoke fog effect",
+    "rain weather effect": "rain weather effect",
+    "falling leaves effect": "falling leaves effect"
+  }
+}

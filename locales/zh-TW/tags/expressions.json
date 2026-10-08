@@ -1,0 +1,32 @@
+{
+  "name": "表情情緒",
+  "categories": {
+    "positive-emotions": "正面情緒",
+    "combat-emotions": "戰鬥情緒",
+    "other-emotions": "其他情緒"
+  },
+  "subcategories": {
+    "positive-emotions/positive-emotions": "正面情緒",
+    "combat-emotions/combat-emotions": "戰鬥情緒",
+    "other-emotions/other-emotions": "其他情緒"
+  },
+  "tags": {
+    "confident expression": "自信表情",
+    "determined expression": "堅定表情",
+    "cheerful smile": "開朗微笑",
+    "heroic expression": "英雄氣概表情",
+    "calm expression": "平靜表情",
+    "playful grin": "俏皮笑容",
+    "fierce battle expression": "兇猛戰鬥表情",
+    "focused expression": "專注表情",
+    "battle cry expression": "怒吼表情",
+    "intense determined stare": "銳利堅毅眼神",
+    "fearless expression": "無畏表情",
+    "surprised expression": "驚訝表情",
+    "mysterious expression": "神秘表情",
+    "gentle expression": "溫柔表情",
+    "curious expression": "好奇表情",
+    "serene expression": "寧靜表情",
+    "proud expression": "驕傲表情"
+  }
+}

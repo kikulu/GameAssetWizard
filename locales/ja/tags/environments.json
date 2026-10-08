@@ -1,0 +1,36 @@
+{
+  "name": "シーン・環境",
+  "categories": {
+    "nature": "自然のシーン",
+    "architecture-dungeons": "建築・ダンジョン",
+    "skybox-backgrounds": "スカイボックス・背景"
+  },
+  "subcategories": {
+    "nature/terrain": "地形",
+    "architecture-dungeons/buildings": "建築物",
+    "architecture-dungeons/dungeon-interiors": "ダンジョン内部",
+    "skybox-backgrounds/background-assets": "背景素材"
+  },
+  "tags": {
+    "fantasy forest landscape": "ファンタジーの森の風景",
+    "mystical mountain scene": "神秘的な山脈のシーン",
+    "desert wasteland": "砂漠の荒野",
+    "snowy tundra": "雪原と凍土",
+    "tropical island": "熱帯の島",
+    "underwater ocean scene": "海中のシーン",
+    "medieval castle": "中世の城",
+    "futuristic city skyline": "近未来都市のスカイライン",
+    "ancient temple ruins": "古代神殿の遺跡",
+    "floating sky island": "浮遊する空の島",
+    "steampunk city": "スチームパンクの都市",
+    "dungeon corridor": "ダンジョンの廊下",
+    "cave interior": "洞窟の内部",
+    "dark forest path": "暗い森の小道",
+    "sci-fi spaceship interior": "宇宙船の内部",
+    "abandoned laboratory": "廃墟の研究所",
+    "seamless sky background": "シームレスな空の背景",
+    "parallax background layer": "パララックス背景レイヤー",
+    "starry night skybox": "星空のスカイボックス",
+    "sunset horizon backdrop": "夕焼けの地平線の背景"
+  }
+}

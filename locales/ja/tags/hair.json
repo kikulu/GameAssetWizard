@@ -1,0 +1,29 @@
+{
+  "name": "髪型・髪色",
+  "categories": {
+    "hairstyle": "髪型",
+    "hair-color": "髪色"
+  },
+  "subcategories": {
+    "hairstyle/hairstyle": "髪型",
+    "hair-color/hair-color": "髪色"
+  },
+  "tags": {
+    "ponytail": "ポニーテール",
+    "twintails": "ツインテール",
+    "braided hair": "三つ編み",
+    "short hair": "ショートヘア",
+    "long hair": "ロングヘア",
+    "messy hair": "ボサボサの髪",
+    "bun hairstyle": "お団子ヘア",
+    "wavy hair": "ウェーブヘア",
+    "black hair": "黒髪",
+    "blonde hair": "金髪",
+    "silver hair": "銀髪",
+    "red hair": "赤髪",
+    "blue hair": "青髪",
+    "white hair": "白髪",
+    "gradient hair color": "グラデーションヘア",
+    "colorful fantasy hair": "ファンタジーな鮮やかな髪色"
+  }
+}

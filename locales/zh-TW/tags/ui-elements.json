@@ -1,0 +1,28 @@
+{
+  "name": "UI元素",
+  "categories": {
+    "buttons-frames": "按鈕與框架",
+    "hud": "HUD 介面"
+  },
+  "subcategories": {
+    "buttons-frames/buttons": "按鈕",
+    "buttons-frames/frames-borders": "框架邊框",
+    "hud/status-bars": "狀態列"
+  },
+  "tags": {
+    "game button UI": "遊戲按鈕UI",
+    "rounded fantasy button": "圓角奇幻按鈕",
+    "sci-fi UI button": "科幻風格按鈕",
+    "wooden UI button": "木質UI按鈕",
+    "glass UI button": "玻璃質感按鈕",
+    "ornate frame border": "華麗邊框裝飾",
+    "fantasy UI panel": "奇幻UI面板",
+    "futuristic HUD frame": "未來HUD框架",
+    "parchment UI background": "羊皮紙UI背景",
+    "health bar UI": "血量條UI",
+    "mana bar UI": "魔力條UI",
+    "experience progress bar": "經驗值進度條",
+    "minimap UI element": "小地圖UI元件",
+    "inventory grid UI": "物品欄格線UI"
+  }
+}

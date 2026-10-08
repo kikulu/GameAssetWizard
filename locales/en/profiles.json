@@ -1,0 +1,124 @@
+{
+  "profiles": {
+    "mobile": {
+      "label": "📱 Mobile (General)",
+      "platform": "Mobile Games",
+      "dimension": "General Style"
+    },
+    "mobile2d": {
+      "label": "📱 Mobile 2D",
+      "platform": "Mobile Games",
+      "dimension": "2D Style"
+    },
+    "mobile3d": {
+      "label": "📱 Mobile 3D",
+      "platform": "Mobile Games",
+      "dimension": "3D Style"
+    },
+    "steam": {
+      "label": "🖥️ Steam (General)",
+      "platform": "Steam / PC",
+      "dimension": "General Style"
+    },
+    "steam2d": {
+      "label": "🖥️ Steam 2D",
+      "platform": "Steam / PC",
+      "dimension": "2D Style"
+    },
+    "steam3d": {
+      "label": "🖥️ Steam 3D",
+      "platform": "Steam / PC",
+      "dimension": "3D Style"
+    }
+  },
+  "presets": {
+    "ios-app-icon": {
+      "label": "iOS App Icon 1024x1024",
+      "note": "Required size for App Store submission"
+    },
+    "android-icon": {
+      "label": "Android Icon 512x512",
+      "note": "Google Play icon size"
+    },
+    "in-game-icon": {
+      "label": "In-Game Icon 256x256",
+      "note": "Skill / item / currency icons"
+    },
+    "splash-portrait": {
+      "label": "Splash Screen 1170x2532",
+      "note": "Portrait phone splash screen"
+    },
+    "store-screenshot-portrait": {
+      "label": "Store Screenshot 1284x2778",
+      "note": "App Store portrait screenshot"
+    },
+    "character-concept-square": {
+      "label": "Character Concept 1024x1024",
+      "note": "Square character design sheet"
+    },
+    "character-portrait-2d": {
+      "label": "2D Character Portrait 1024x1536",
+      "note": "Portrait-ratio standing character art"
+    },
+    "sprite-frame": {
+      "label": "Sprite Frame 512x512",
+      "note": "Single action frame of a sprite sheet"
+    },
+    "ui-small-icon": {
+      "label": "2D UI Small Icon 128x128",
+      "note": "Button / status small icons"
+    },
+    "character-turnaround-3d": {
+      "label": "3D Character Turnaround 1024x1536",
+      "note": "Three-view / turnaround reference ratio"
+    },
+    "model-reference-wide": {
+      "label": "Character Model Reference 2048x1024",
+      "note": "Landscape model design reference"
+    },
+    "steam-main-capsule": {
+      "label": "Steam Main Capsule 616x353",
+      "note": "Primary exposure image on the store page"
+    },
+    "steam-small-capsule": {
+      "label": "Steam Small Capsule 231x87",
+      "note": "For lists and search results"
+    },
+    "steam-header": {
+      "label": "Steam Header 460x215",
+      "note": "Image at the top of the store page"
+    },
+    "steam-library-hero": {
+      "label": "Steam Library Hero 3840x1240",
+      "note": "Large image for the personal library"
+    },
+    "store-screenshot-16-9": {
+      "label": "Store Screenshot 16:9 1920x1080",
+      "note": "Store showcase screenshot"
+    },
+    "concept-art-2048": {
+      "label": "Concept Art 2048x2048",
+      "note": "High-resolution concept design"
+    },
+    "pixel-sprite": {
+      "label": "Pixel Art Sprite 128x128",
+      "note": "Pixel art sprite size"
+    },
+    "background-layer-2d": {
+      "label": "2D Background Layer 1920x1080",
+      "note": "Parallax scrolling background layer"
+    },
+    "character-portrait": {
+      "label": "Character Portrait 1024x1536",
+      "note": "Portrait character design sheet"
+    },
+    "character-design-3d": {
+      "label": "3D Character Design 2048x2048",
+      "note": "High-resolution character design sheet"
+    },
+    "environment-concept": {
+      "label": "Environment Concept 3840x2160",
+      "note": "Landscape scene concept"
+    }
+  }
+}

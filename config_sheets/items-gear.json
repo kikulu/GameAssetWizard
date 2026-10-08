@@ -1,0 +1,57 @@
+{
+  "id": "items-gear",
+  "categories": [
+    {
+      "id": "weapons",
+      "subcategories": [
+        {
+          "id": "melee-weapons",
+          "tags": [
+            "fantasy sword",
+            "battle axe",
+            "war hammer",
+            "dagger blade",
+            "spear weapon",
+            "magic staff"
+          ]
+        },
+        {
+          "id": "ranged-weapons",
+          "tags": [
+            "sci-fi rifle",
+            "bow and arrow",
+            "laser pistol",
+            "throwing knife",
+            "crossbow weapon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "armor-items",
+      "subcategories": [
+        {
+          "id": "armor",
+          "tags": [
+            "plate armor",
+            "leather armor set",
+            "mage robe",
+            "futuristic exosuit",
+            "shield item"
+          ]
+        },
+        {
+          "id": "consumables-collectibles",
+          "tags": [
+            "health potion bottle",
+            "magic scroll",
+            "treasure chest",
+            "gold coin icon",
+            "gemstone item",
+            "key item"
+          ]
+        }
+      ]
+    }
+  ]
+}

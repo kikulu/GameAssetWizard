@@ -1,0 +1,31 @@
+{
+  "name": "Races & Classes",
+  "categories": {
+    "fantasy-races": "Fantasy Races",
+    "classes-roles": "Classes & Roles"
+  },
+  "subcategories": {
+    "fantasy-races/fantasy-races": "Fantasy Races",
+    "classes-roles/classes-roles": "Classes & Roles"
+  },
+  "tags": {
+    "human": "human",
+    "elf": "elf",
+    "dwarf": "dwarf",
+    "orc warrior": "orc warrior",
+    "fairy": "fairy",
+    "dragon-kin": "dragon-kin",
+    "beast-eared humanoid": "beast-eared humanoid",
+    "robot android": "robot android",
+    "knight": "knight",
+    "mage": "mage",
+    "archer ranger": "archer ranger",
+    "warrior": "warrior",
+    "engineer": "engineer",
+    "pilot": "pilot",
+    "alchemist": "alchemist",
+    "summoner": "summoner",
+    "blacksmith": "blacksmith",
+    "scholar": "scholar"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "동작·포즈",
+  "categories": {
+    "standing-idle": "서 있는 자세·대기",
+    "combat-actions": "전투 동작",
+    "movement": "이동 자세",
+    "situational-poses": "상황별 포즈"
+  },
+  "subcategories": {
+    "standing-idle/standing-idle": "서 있는 자세·대기",
+    "combat-actions/combat-actions": "전투 동작",
+    "movement/movement": "이동 자세",
+    "situational-poses/situational-poses": "상황별 포즈"
+  },
+  "tags": {
+    "standing pose": "서 있는 포즈",
+    "idle stance": "대기 포즈",
+    "confident standing pose": "자신감 있는 서 있는 자세",
+    "relaxed pose": "편안한 포즈",
+    "hands on hips": "허리에 손을 얹은 포즈",
+    "arms crossed pose": "팔짱 낀 포즈",
+    "combat stance": "전투 자세",
+    "dynamic action pose": "역동적인 전투 포즈",
+    "sword swing pose": "검을 휘두르는 포즈",
+    "spellcasting pose": "주문 시전 포즈",
+    "bow aiming pose": "활을 당겨 조준하는 포즈",
+    "charging pose": "돌격 포즈",
+    "defensive guard stance": "방어 자세",
+    "victory battle pose": "승리의 전투 포즈",
+    "running pose": "달리는 포즈",
+    "jumping pose": "점프 포즈",
+    "flying pose": "비행 포즈",
+    "crouching pose": "웅크린 포즈",
+    "sneaking pose": "은신 포즈",
+    "dashing pose": "전력 질주 포즈",
+    "sitting pose": "앉은 자세",
+    "leaning pose": "기댄 포즈",
+    "victory pose": "승리 포즈",
+    "greeting pose": "인사 포즈",
+    "thinking pose": "생각에 잠긴 포즈",
+    "kneeling pose": "한쪽 무릎 꿇은 포즈"
+  }
+}

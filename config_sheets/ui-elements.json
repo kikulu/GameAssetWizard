@@ -1,0 +1,44 @@
+{
+  "id": "ui-elements",
+  "categories": [
+    {
+      "id": "buttons-frames",
+      "subcategories": [
+        {
+          "id": "buttons",
+          "tags": [
+            "game button UI",
+            "rounded fantasy button",
+            "sci-fi UI button",
+            "wooden UI button",
+            "glass UI button"
+          ]
+        },
+        {
+          "id": "frames-borders",
+          "tags": [
+            "ornate frame border",
+            "fantasy UI panel",
+            "futuristic HUD frame",
+            "parchment UI background"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hud",
+      "subcategories": [
+        {
+          "id": "status-bars",
+          "tags": [
+            "health bar UI",
+            "mana bar UI",
+            "experience progress bar",
+            "minimap UI element",
+            "inventory grid UI"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "ストア・マーケティング",
+  "categories": {
+    "steam-assets": "Steamアセット",
+    "marketing-promotion": "マーケティング・宣伝",
+    "logos-branding": "ロゴ・ブランド"
+  },
+  "subcategories": {
+    "steam-assets/store-images": "ストア画像",
+    "marketing-promotion/promotional-images": "宣伝画像",
+    "logos-branding/logo-design": "ロゴデザイン"
+  },
+  "tags": {
+    "steam capsule art": "Steamカプセル画像",
+    "steam header image": "Steamヘッダー画像",
+    "steam store background": "Steamストア背景画像",
+    "key art poster": "キーアートポスター",
+    "game promotional banner": "ゲーム宣伝バナー",
+    "social media game ad": "SNSゲーム広告画像",
+    "splash screen artwork": "スプラッシュ画面イラスト",
+    "loading screen illustration": "ロード画面イラスト",
+    "main menu background art": "メインメニュー背景アート",
+    "game logo design": "ゲームロゴデザイン",
+    "studio logo icon": "スタジオロゴアイコン",
+    "wordmark title logo": "ワードマークタイトルロゴ",
+    "emblem badge logo": "エンブレム型バッジロゴ"
+  }
+}

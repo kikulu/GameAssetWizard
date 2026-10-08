@@ -1,0 +1,48 @@
+{
+  "id": "store-marketing",
+  "categories": [
+    {
+      "id": "steam-assets",
+      "subcategories": [
+        {
+          "id": "store-images",
+          "tags": [
+            "steam capsule art",
+            "steam header image",
+            "steam store background",
+            "key art poster"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marketing-promotion",
+      "subcategories": [
+        {
+          "id": "promotional-images",
+          "tags": [
+            "game promotional banner",
+            "social media game ad",
+            "splash screen artwork",
+            "loading screen illustration",
+            "main menu background art"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "logos-branding",
+      "subcategories": [
+        {
+          "id": "logo-design",
+          "tags": [
+            "game logo design",
+            "studio logo icon",
+            "wordmark title logo",
+            "emblem badge logo"
+          ]
+        }
+      ]
+    }
+  ]
+}

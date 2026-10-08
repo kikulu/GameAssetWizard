@@ -1,0 +1,37 @@
+{
+  "name": "道具裝備",
+  "categories": {
+    "weapons": "武器",
+    "armor-items": "防具與道具"
+  },
+  "subcategories": {
+    "weapons/melee-weapons": "近戰武器",
+    "weapons/ranged-weapons": "遠程武器",
+    "armor-items/armor": "護甲",
+    "armor-items/consumables-collectibles": "消耗品與收藏"
+  },
+  "tags": {
+    "fantasy sword": "奇幻長劍",
+    "battle axe": "戰斧",
+    "war hammer": "戰錘",
+    "dagger blade": "短刀",
+    "spear weapon": "長槍",
+    "magic staff": "魔法權杖",
+    "sci-fi rifle": "科幻步槍",
+    "bow and arrow": "弓與箭",
+    "laser pistol": "雷射手槍",
+    "throwing knife": "投擲飛刀",
+    "crossbow weapon": "十字弓",
+    "plate armor": "板甲",
+    "leather armor set": "皮革護甲套裝",
+    "mage robe": "法師長袍",
+    "futuristic exosuit": "未來動力裝甲",
+    "shield item": "盾牌道具",
+    "health potion bottle": "生命藥水瓶",
+    "magic scroll": "魔法卷軸",
+    "treasure chest": "寶箱",
+    "gold coin icon": "金幣圖示",
+    "gemstone item": "寶石道具",
+    "key item": "鑰匙道具"
+  }
+}

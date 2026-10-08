@@ -1,0 +1,29 @@
+{
+  "name": "Hairstyle & Hair Color",
+  "categories": {
+    "hairstyle": "Hairstyle",
+    "hair-color": "Hair Color"
+  },
+  "subcategories": {
+    "hairstyle/hairstyle": "Hairstyle",
+    "hair-color/hair-color": "Hair Color"
+  },
+  "tags": {
+    "ponytail": "ponytail",
+    "twintails": "twintails",
+    "braided hair": "braided hair",
+    "short hair": "short hair",
+    "long hair": "long hair",
+    "messy hair": "messy hair",
+    "bun hairstyle": "bun hairstyle",
+    "wavy hair": "wavy hair",
+    "black hair": "black hair",
+    "blonde hair": "blonde hair",
+    "silver hair": "silver hair",
+    "red hair": "red hair",
+    "blue hair": "blue hair",
+    "white hair": "white hair",
+    "gradient hair color": "gradient hair color",
+    "colorful fantasy hair": "colorful fantasy hair"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "poses",
+  "categories": [
+    {
+      "id": "standing-idle",
+      "subcategories": [
+        {
+          "id": "standing-idle",
+          "tags": [
+            "standing pose",
+            "idle stance",
+            "confident standing pose",
+            "relaxed pose",
+            "hands on hips",
+            "arms crossed pose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combat-actions",
+      "subcategories": [
+        {
+          "id": "combat-actions",
+          "tags": [
+            "combat stance",
+            "dynamic action pose",
+            "sword swing pose",
+            "spellcasting pose",
+            "bow aiming pose",
+            "charging pose",
+            "defensive guard stance",
+            "victory battle pose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "movement",
+      "subcategories": [
+        {
+          "id": "movement",
+          "tags": [
+            "running pose",
+            "jumping pose",
+            "flying pose",
+            "crouching pose",
+            "sneaking pose",
+            "dashing pose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "situational-poses",
+      "subcategories": [
+        {
+          "id": "situational-poses",
+          "tags": [
+            "sitting pose",
+            "leaning pose",
+            "victory pose",
+            "greeting pose",
+            "thinking pose",
+            "kneeling pose"
+          ]
+        }
+      ]
+    }
+  ]
+}

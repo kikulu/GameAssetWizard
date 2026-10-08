@@ -47,6 +47,7 @@
       "index.html",
       "assets/**/*",
       "config_sheets/**/*",
+      "locales/**/*",
       "electron/**/*",
       "package.json"
     ],

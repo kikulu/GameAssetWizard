@@ -1,0 +1,124 @@
+{
+  "profiles": {
+    "mobile": {
+      "label": "📱 モバイル（総合）",
+      "platform": "モバイルゲーム",
+      "dimension": "総合スタイル"
+    },
+    "mobile2d": {
+      "label": "📱 モバイル 2D",
+      "platform": "モバイルゲーム",
+      "dimension": "2Dスタイル"
+    },
+    "mobile3d": {
+      "label": "📱 モバイル 3D",
+      "platform": "モバイルゲーム",
+      "dimension": "3Dスタイル"
+    },
+    "steam": {
+      "label": "🖥️ Steam（総合）",
+      "platform": "Steam / PC",
+      "dimension": "総合スタイル"
+    },
+    "steam2d": {
+      "label": "🖥️ Steam 2D",
+      "platform": "Steam / PC",
+      "dimension": "2Dスタイル"
+    },
+    "steam3d": {
+      "label": "🖥️ Steam 3D",
+      "platform": "Steam / PC",
+      "dimension": "3Dスタイル"
+    }
+  },
+  "presets": {
+    "ios-app-icon": {
+      "label": "iOS アプリアイコン 1024x1024",
+      "note": "App Store 申請に必須のサイズ"
+    },
+    "android-icon": {
+      "label": "Android アイコン 512x512",
+      "note": "Google Play のアイコンサイズ"
+    },
+    "in-game-icon": {
+      "label": "ゲーム内アイコン 256x256",
+      "note": "スキル・アイテム・通貨アイコン"
+    },
+    "splash-portrait": {
+      "label": "スプラッシュ画面 1170x2532",
+      "note": "縦向きスマートフォンのスプラッシュ画面"
+    },
+    "store-screenshot-portrait": {
+      "label": "ストアスクリーンショット 1284x2778",
+      "note": "App Store の縦向きスクリーンショット"
+    },
+    "character-concept-square": {
+      "label": "キャラクターコンセプト 1024x1024",
+      "note": "正方形のキャラクターデザイン画"
+    },
+    "character-portrait-2d": {
+      "label": "2Dキャラクター立ち絵 1024x1536",
+      "note": "縦長の立ち絵比率"
+    },
+    "sprite-frame": {
+      "label": "スプライト1コマ 512x512",
+      "note": "スプライトシートの1アクション分"
+    },
+    "ui-small-icon": {
+      "label": "2D UI小アイコン 128x128",
+      "note": "ボタン・ステータス用の小アイコン"
+    },
+    "character-turnaround-3d": {
+      "label": "3Dキャラクターターンアラウンド 1024x1536",
+      "note": "三面図・ターンアラウンド参考比率"
+    },
+    "model-reference-wide": {
+      "label": "キャラクターモデル参考画像 2048x1024",
+      "note": "横長のモデルデザイン参考"
+    },
+    "steam-main-capsule": {
+      "label": "Steam メインカプセル 616x353",
+      "note": "ストアページで最も目立つ画像"
+    },
+    "steam-small-capsule": {
+      "label": "Steam スモールカプセル 231x87",
+      "note": "リストや検索結果用"
+    },
+    "steam-header": {
+      "label": "Steam ヘッダー 460x215",
+      "note": "ストアページ上部の画像"
+    },
+    "steam-library-hero": {
+      "label": "Steam ライブラリヒーロー 3840x1240",
+      "note": "ライブラリ用の大型画像"
+    },
+    "store-screenshot-16-9": {
+      "label": "ストアスクリーンショット 16:9 1920x1080",
+      "note": "ストア掲載用スクリーンショット"
+    },
+    "concept-art-2048": {
+      "label": "コンセプトアート 2048x2048",
+      "note": "高解像度のコンセプトデザイン画"
+    },
+    "pixel-sprite": {
+      "label": "ピクセルアートスプライト 128x128",
+      "note": "ピクセルアートのスプライトサイズ"
+    },
+    "background-layer-2d": {
+      "label": "2D背景レイヤー 1920x1080",
+      "note": "パララックススクロール用の背景レイヤー"
+    },
+    "character-portrait": {
+      "label": "キャラクター立ち絵 1024x1536",
+      "note": "縦長のキャラクターデザイン画"
+    },
+    "character-design-3d": {
+      "label": "3Dキャラクターデザイン 2048x2048",
+      "note": "高解像度のキャラクターデザイン画"
+    },
+    "environment-concept": {
+      "label": "環境コンセプト 3840x2160",
+      "note": "横長のシーンコンセプト画"
+    }
+  }
+}

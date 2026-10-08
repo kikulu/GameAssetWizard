@@ -1,0 +1,29 @@
+{
+  "name": "이펙트",
+  "categories": {
+    "magic": "마법 이펙트",
+    "combat": "전투 이펙트",
+    "environment": "환경 이펙트"
+  },
+  "subcategories": {
+    "magic/elemental": "원소 이펙트",
+    "combat/impact": "타격 이펙트",
+    "environment/ambient": "분위기 이펙트"
+  },
+  "tags": {
+    "fire magic effect": "화염 마법 이펙트",
+    "ice frost effect": "서리 이펙트",
+    "lightning bolt effect": "번개 이펙트",
+    "healing light aura": "치유의 오라",
+    "dark magic swirl": "암흑 마법 소용돌이",
+    "sword slash effect": "검격 참격 이펙트",
+    "explosion particle effect": "폭발 파티클 이펙트",
+    "impact hit spark": "타격 불꽃",
+    "shield block effect": "방패 방어 이펙트",
+    "floating particles dust": "떠다니는 먼지 입자",
+    "magical glow aura": "마법 광채 분위기",
+    "smoke fog effect": "연기·안개 이펙트",
+    "rain weather effect": "비 오는 날씨 이펙트",
+    "falling leaves effect": "흩날리는 낙엽 이펙트"
+  }
+}

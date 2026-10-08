@@ -1,0 +1,40 @@
+{
+  "name": "Costumes & Outfits",
+  "categories": {
+    "fantasy-attire": "Fantasy Attire",
+    "scifi-attire": "Sci-Fi Attire",
+    "casual-modern": "Casual & Modern Clothing",
+    "accessories": "Accessories & Decorations"
+  },
+  "subcategories": {
+    "fantasy-attire/fantasy-attire": "Fantasy Attire",
+    "scifi-attire/scifi-attire": "Sci-Fi Attire",
+    "casual-modern/casual-modern": "Casual & Modern Clothing",
+    "accessories/accessories": "Accessories & Decorations"
+  },
+  "tags": {
+    "fantasy plate armor": "fantasy plate armor",
+    "leather adventurer outfit": "leather adventurer outfit",
+    "wizard robe": "wizard robe",
+    "royal ceremonial dress": "royal ceremonial dress",
+    "traveler cloak and hood": "traveler cloak and hood",
+    "ranger leather gear": "ranger leather gear",
+    "futuristic combat suit": "futuristic combat suit",
+    "cyberpunk streetwear": "cyberpunk streetwear",
+    "space explorer suit": "space explorer suit",
+    "mecha pilot suit": "mecha pilot suit",
+    "holographic armor": "holographic armor",
+    "tech-enhanced jacket": "tech-enhanced jacket",
+    "casual streetwear": "casual streetwear",
+    "school uniform": "school uniform",
+    "sportswear outfit": "sportswear outfit",
+    "business formal attire": "business formal attire",
+    "explorer utility outfit": "explorer utility outfit",
+    "ornate shoulder armor": "ornate shoulder armor",
+    "utility belt": "utility belt",
+    "decorative cape": "decorative cape",
+    "fingerless gloves": "fingerless gloves",
+    "tactical goggles accessory": "tactical goggles accessory",
+    "layered scarf": "layered scarf"
+  }
+}

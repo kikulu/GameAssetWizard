@@ -1,0 +1,37 @@
+{
+  "name": "鏡頭構圖",
+  "categories": {
+    "shot-size": "景別",
+    "viewpoint": "視角",
+    "composition-lens": "構圖與鏡頭效果"
+  },
+  "subcategories": {
+    "shot-size/shot-size": "景別",
+    "viewpoint/viewpoint": "視角",
+    "composition-lens/composition-lens": "構圖與鏡頭效果"
+  },
+  "tags": {
+    "extreme close-up shot": "大特寫",
+    "close-up shot": "特寫鏡頭",
+    "medium shot": "中景鏡頭",
+    "cowboy shot": "半身鏡頭",
+    "full body shot": "全身鏡頭",
+    "wide shot": "遠景鏡頭",
+    "bird's eye view": "鳥瞰視角",
+    "low angle shot": "低角度仰視",
+    "high angle shot": "高角度俯視",
+    "eye level shot": "平視角度",
+    "dutch angle": "傾斜鏡頭",
+    "over-the-shoulder shot": "過肩鏡頭",
+    "first-person view": "第一人稱視角",
+    "isometric view": "等角視角",
+    "rule of thirds composition": "三分構圖",
+    "centered composition": "置中構圖",
+    "dynamic diagonal composition": "動態對角構圖",
+    "symmetrical composition": "對稱構圖",
+    "shallow depth of field": "淺景深效果",
+    "wide angle lens": "廣角鏡頭",
+    "telephoto lens compression": "長焦鏡頭壓縮感",
+    "motion blur background": "動態模糊背景"
+  }
+}

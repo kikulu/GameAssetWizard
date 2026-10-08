@@ -1,0 +1,40 @@
+{
+  "name": "衣装・スタイル",
+  "categories": {
+    "fantasy-attire": "ファンタジー衣装",
+    "scifi-attire": "SF衣装",
+    "casual-modern": "日常・現代の服装",
+    "accessories": "アクセサリー・装飾"
+  },
+  "subcategories": {
+    "fantasy-attire/fantasy-attire": "ファンタジー衣装",
+    "scifi-attire/scifi-attire": "SF衣装",
+    "casual-modern/casual-modern": "日常・現代の服装",
+    "accessories/accessories": "アクセサリー・装飾"
+  },
+  "tags": {
+    "fantasy plate armor": "ファンタジー・プレートアーマー",
+    "leather adventurer outfit": "革製の冒険者の服",
+    "wizard robe": "魔法使いのローブ",
+    "royal ceremonial dress": "王室の礼装",
+    "traveler cloak and hood": "旅人のマントとフード",
+    "ranger leather gear": "レンジャーの革鎧装備",
+    "futuristic combat suit": "近未来の戦闘スーツ",
+    "cyberpunk streetwear": "サイバーパンクのストリートウェア",
+    "space explorer suit": "宇宙探査スーツ",
+    "mecha pilot suit": "メカパイロットスーツ",
+    "holographic armor": "ホログラフィックアーマー",
+    "tech-enhanced jacket": "テック強化ジャケット",
+    "casual streetwear": "カジュアルなストリートウェア",
+    "school uniform": "学生服",
+    "sportswear outfit": "スポーツウェア",
+    "business formal attire": "ビジネスフォーマル",
+    "explorer utility outfit": "探検用ワークウェア",
+    "ornate shoulder armor": "華やかな肩当て",
+    "utility belt": "ユーティリティベルト",
+    "decorative cape": "装飾マント",
+    "fingerless gloves": "指なし手袋",
+    "tactical goggles accessory": "タクティカルゴーグル",
+    "layered scarf": "重ね巻きスカーフ"
+  }
+}

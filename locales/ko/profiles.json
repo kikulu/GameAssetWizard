@@ -1,0 +1,124 @@
+{
+  "profiles": {
+    "mobile": {
+      "label": "📱 모바일 (종합)",
+      "platform": "모바일 게임",
+      "dimension": "종합 스타일"
+    },
+    "mobile2d": {
+      "label": "📱 모바일 2D",
+      "platform": "모바일 게임",
+      "dimension": "2D 스타일"
+    },
+    "mobile3d": {
+      "label": "📱 모바일 3D",
+      "platform": "모바일 게임",
+      "dimension": "3D 스타일"
+    },
+    "steam": {
+      "label": "🖥️ Steam (종합)",
+      "platform": "Steam / PC",
+      "dimension": "종합 스타일"
+    },
+    "steam2d": {
+      "label": "🖥️ Steam 2D",
+      "platform": "Steam / PC",
+      "dimension": "2D 스타일"
+    },
+    "steam3d": {
+      "label": "🖥️ Steam 3D",
+      "platform": "Steam / PC",
+      "dimension": "3D 스타일"
+    }
+  },
+  "presets": {
+    "ios-app-icon": {
+      "label": "iOS 앱 아이콘 1024x1024",
+      "note": "App Store 출시 필수 크기"
+    },
+    "android-icon": {
+      "label": "Android 아이콘 512x512",
+      "note": "Google Play 아이콘 크기"
+    },
+    "in-game-icon": {
+      "label": "게임 내 아이콘 256x256",
+      "note": "스킬/아이템/재화 아이콘"
+    },
+    "splash-portrait": {
+      "label": "스플래시 화면 1170x2532",
+      "note": "세로형 휴대폰 스플래시 화면"
+    },
+    "store-screenshot-portrait": {
+      "label": "스토어 스크린샷 1284x2778",
+      "note": "App Store 세로형 스크린샷"
+    },
+    "character-concept-square": {
+      "label": "캐릭터 콘셉트 1024x1024",
+      "note": "정사각형 캐릭터 디자인 시안"
+    },
+    "character-portrait-2d": {
+      "label": "2D 캐릭터 스탠딩 일러스트 1024x1536",
+      "note": "세로 비율의 캐릭터 스탠딩 일러스트"
+    },
+    "sprite-frame": {
+      "label": "스프라이트 단일 프레임 512x512",
+      "note": "스프라이트 시트의 단일 동작 프레임"
+    },
+    "ui-small-icon": {
+      "label": "2D UI 소형 아이콘 128x128",
+      "note": "버튼/상태 소형 아이콘"
+    },
+    "character-turnaround-3d": {
+      "label": "3D 캐릭터 턴어라운드 1024x1536",
+      "note": "3면도/턴어라운드 참고 비율"
+    },
+    "model-reference-wide": {
+      "label": "캐릭터 모델 참고 이미지 2048x1024",
+      "note": "가로형 모델 디자인 참고"
+    },
+    "steam-main-capsule": {
+      "label": "Steam 메인 캡슐 616x353",
+      "note": "스토어 페이지의 가장 주요한 노출 이미지"
+    },
+    "steam-small-capsule": {
+      "label": "Steam 소형 캡슐 231x87",
+      "note": "목록/검색 결과용"
+    },
+    "steam-header": {
+      "label": "Steam 헤더 460x215",
+      "note": "스토어 페이지 상단 이미지"
+    },
+    "steam-library-hero": {
+      "label": "Steam 라이브러리 히어로 3840x1240",
+      "note": "개인 라이브러리용 대형 이미지"
+    },
+    "store-screenshot-16-9": {
+      "label": "스토어 스크린샷 16:9 1920x1080",
+      "note": "스토어 전시용 스크린샷"
+    },
+    "concept-art-2048": {
+      "label": "콘셉트 아트 2048x2048",
+      "note": "고해상도 콘셉트 디자인 시안"
+    },
+    "pixel-sprite": {
+      "label": "픽셀 아트 스프라이트 128x128",
+      "note": "픽셀 아트 스프라이트 크기"
+    },
+    "background-layer-2d": {
+      "label": "2D 배경 레이어 1920x1080",
+      "note": "패럴랙스 스크롤 배경 레이어"
+    },
+    "character-portrait": {
+      "label": "캐릭터 스탠딩 일러스트 1024x1536",
+      "note": "세로형 캐릭터 디자인 시안"
+    },
+    "character-design-3d": {
+      "label": "3D 캐릭터 디자인 2048x2048",
+      "note": "고해상도 캐릭터 디자인 시안"
+    },
+    "environment-concept": {
+      "label": "환경 콘셉트 3840x2160",
+      "note": "가로형 장면 콘셉트 시안"
+    }
+  }
+}

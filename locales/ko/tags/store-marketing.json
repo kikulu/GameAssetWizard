@@ -1,0 +1,28 @@
+{
+  "name": "스토어·마케팅",
+  "categories": {
+    "steam-assets": "Steam 에셋",
+    "marketing-promotion": "마케팅·홍보",
+    "logos-branding": "로고·브랜드"
+  },
+  "subcategories": {
+    "steam-assets/store-images": "스토어 이미지",
+    "marketing-promotion/promotional-images": "홍보 이미지",
+    "logos-branding/logo-design": "로고 디자인"
+  },
+  "tags": {
+    "steam capsule art": "Steam 캡슐 이미지",
+    "steam header image": "Steam 헤더 이미지",
+    "steam store background": "Steam 스토어 배경 이미지",
+    "key art poster": "키 아트 포스터",
+    "game promotional banner": "게임 홍보 배너",
+    "social media game ad": "SNS 게임 광고 이미지",
+    "splash screen artwork": "스플래시 화면 일러스트",
+    "loading screen illustration": "로딩 화면 일러스트",
+    "main menu background art": "메인 메뉴 배경 아트",
+    "game logo design": "게임 로고 디자인",
+    "studio logo icon": "스튜디오 로고 아이콘",
+    "wordmark title logo": "워드마크 타이틀 로고",
+    "emblem badge logo": "엠블럼 배지 로고"
+  }
+}

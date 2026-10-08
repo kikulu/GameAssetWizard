@@ -1,0 +1,31 @@
+{
+  "name": "種族・職業",
+  "categories": {
+    "fantasy-races": "ファンタジー種族",
+    "classes-roles": "職業設定"
+  },
+  "subcategories": {
+    "fantasy-races/fantasy-races": "ファンタジー種族",
+    "classes-roles/classes-roles": "職業設定"
+  },
+  "tags": {
+    "human": "人間",
+    "elf": "エルフ",
+    "dwarf": "ドワーフ",
+    "orc warrior": "オークの戦士",
+    "fairy": "妖精",
+    "dragon-kin": "竜の血を引く者",
+    "beast-eared humanoid": "獣耳のヒューマノイド",
+    "robot android": "ロボット・アンドロイド",
+    "knight": "騎士",
+    "mage": "メイジ",
+    "archer ranger": "アーチャー・レンジャー",
+    "warrior": "戦士",
+    "engineer": "エンジニア",
+    "pilot": "パイロット",
+    "alchemist": "錬金術師",
+    "summoner": "召喚士",
+    "blacksmith": "鍛冶屋",
+    "scholar": "学者"
+  }
+}

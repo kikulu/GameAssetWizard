@@ -1,0 +1,68 @@
+{
+  "id": "costumes",
+  "categories": [
+    {
+      "id": "fantasy-attire",
+      "subcategories": [
+        {
+          "id": "fantasy-attire",
+          "tags": [
+            "fantasy plate armor",
+            "leather adventurer outfit",
+            "wizard robe",
+            "royal ceremonial dress",
+            "traveler cloak and hood",
+            "ranger leather gear"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scifi-attire",
+      "subcategories": [
+        {
+          "id": "scifi-attire",
+          "tags": [
+            "futuristic combat suit",
+            "cyberpunk streetwear",
+            "space explorer suit",
+            "mecha pilot suit",
+            "holographic armor",
+            "tech-enhanced jacket"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "casual-modern",
+      "subcategories": [
+        {
+          "id": "casual-modern",
+          "tags": [
+            "casual streetwear",
+            "school uniform",
+            "sportswear outfit",
+            "business formal attire",
+            "explorer utility outfit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "accessories",
+      "subcategories": [
+        {
+          "id": "accessories",
+          "tags": [
+            "ornate shoulder armor",
+            "utility belt",
+            "decorative cape",
+            "fingerless gloves",
+            "tactical goggles accessory",
+            "layered scarf"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "카메라·구도",
+  "categories": {
+    "shot-size": "샷 크기",
+    "viewpoint": "시점",
+    "composition-lens": "구도·렌즈 효과"
+  },
+  "subcategories": {
+    "shot-size/shot-size": "샷 크기",
+    "viewpoint/viewpoint": "시점",
+    "composition-lens/composition-lens": "구도·렌즈 효과"
+  },
+  "tags": {
+    "extreme close-up shot": "익스트림 클로즈업",
+    "close-up shot": "클로즈업",
+    "medium shot": "미디엄 샷",
+    "cowboy shot": "카우보이 샷",
+    "full body shot": "전신 샷",
+    "wide shot": "와이드 샷",
+    "bird's eye view": "버즈아이 뷰",
+    "low angle shot": "로우 앵글",
+    "high angle shot": "하이 앵글",
+    "eye level shot": "아이 레벨",
+    "dutch angle": "더치 앵글",
+    "over-the-shoulder shot": "오버 더 숄더",
+    "first-person view": "1인칭 시점",
+    "isometric view": "아이소메트릭 시점",
+    "rule of thirds composition": "삼분할 구도",
+    "centered composition": "중앙 구도",
+    "dynamic diagonal composition": "역동적 대각선 구도",
+    "symmetrical composition": "대칭 구도",
+    "shallow depth of field": "얕은 피사계 심도",
+    "wide angle lens": "광각 렌즈",
+    "telephoto lens compression": "망원 렌즈 압축감",
+    "motion blur background": "모션 블러 배경"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "종족·직업",
+  "categories": {
+    "fantasy-races": "판타지 종족",
+    "classes-roles": "직업 설정"
+  },
+  "subcategories": {
+    "fantasy-races/fantasy-races": "판타지 종족",
+    "classes-roles/classes-roles": "직업 설정"
+  },
+  "tags": {
+    "human": "인간",
+    "elf": "엘프",
+    "dwarf": "드워프",
+    "orc warrior": "오크 전사",
+    "fairy": "요정",
+    "dragon-kin": "용족",
+    "beast-eared humanoid": "수인형 휴머노이드",
+    "robot android": "로봇 안드로이드",
+    "knight": "기사",
+    "mage": "마법사",
+    "archer ranger": "궁수 레인저",
+    "warrior": "전사",
+    "engineer": "엔지니어",
+    "pilot": "조종사",
+    "alchemist": "연금술사",
+    "summoner": "소환사",
+    "blacksmith": "대장장이",
+    "scholar": "학자"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "gameTypes": {
+    "rpg": "롤플레잉 RPG",
+    "casual-simulation": "캐주얼/시뮬레이션",
+    "card-strategy": "카드/전략",
+    "shooter-action": "슈팅/액션",
+    "roguelike-action": "로그라이크/액션"
+  },
+  "styleTypes": {
+    "anime-2d": "일본풍 2D 애니메이션",
+    "cute-3d": "귀여운 3D",
+    "fantasy-illustration": "판타지 일러스트",
+    "dark-fantasy-3d": "다크 판타지 3D",
+    "cozy-storybook-2d": "따뜻한 그림책 2D",
+    "scifi-3d": "SF 3D",
+    "pixel-art": "픽셀 아트"
+  },
+  "templates": {
+    "mobile-anime-rpg": {
+      "label": "모바일 일본풍 RPG 캐릭터 카드",
+      "description": "가챠 캐릭터, 스탠딩 일러스트, 캐릭터 프로필 화면에 적합하며 선명한 실루엣과 읽기 쉬운 표정을 우선합니다."
+    },
+    "mobile-casual": {
+      "label": "캐주얼 모바일 3D 아이템/캐릭터",
+      "description": "농장, 요리, 생활 시뮬레이션 게임에 적합하며 밝고 둥근 형태로 작은 화면에서도 알아보기 쉽게 합니다."
+    },
+    "mobile-card-battle": {
+      "label": "전략 카드 판타지 캐릭터",
+      "description": "카드 프레임, 영웅 상반신 초상, 스킬 연출에 적합하며 극적인 조명과 뚜렷한 초점을 중심으로 합니다."
+    },
+    "steam-dark-fantasy": {
+      "label": "Steam 다크 판타지 콘셉트 아트",
+      "description": "Steam RPG의 캐릭터, 적, 장면 콘셉트에 적합하며 재질, 규모, 분위기를 우선합니다."
+    },
+    "steam-cozy": {
+      "label": "Steam 아늑한 시뮬레이션 장면",
+      "description": "힐링, 농장, 건설 게임에 적합하며 따뜻한 빛과 탐험하고 싶은 장면의 깊이를 중심으로 합니다."
+    },
+    "steam-scifi": {
+      "label": "SF 액션 무기/인터페이스 소재",
+      "description": "무기, 탈것, HUD, 홍보 이미지에 적합하며 뚜렷한 실루엣과 첨단 소재의 대비를 유지합니다."
+    },
+    "indie-pixel": {
+      "label": "인디 로그라이크 픽셀 소재",
+      "description": "캐릭터, 아이템, 소규모 장면에 적합하며 제한된 팔레트와 뚜렷한 가독성을 강조합니다."
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "アイテム・装備",
+  "categories": {
+    "weapons": "武器",
+    "armor-items": "防具・アイテム"
+  },
+  "subcategories": {
+    "weapons/melee-weapons": "近接武器",
+    "weapons/ranged-weapons": "遠距離武器",
+    "armor-items/armor": "防具",
+    "armor-items/consumables-collectibles": "消耗品・収集品"
+  },
+  "tags": {
+    "fantasy sword": "ファンタジーの長剣",
+    "battle axe": "戦斧",
+    "war hammer": "ウォーハンマー",
+    "dagger blade": "ダガー",
+    "spear weapon": "槍",
+    "magic staff": "魔法の杖",
+    "sci-fi rifle": "SFライフル",
+    "bow and arrow": "弓矢",
+    "laser pistol": "レーザーピストル",
+    "throwing knife": "投げナイフ",
+    "crossbow weapon": "クロスボウ",
+    "plate armor": "プレートアーマー",
+    "leather armor set": "革鎧セット",
+    "mage robe": "メイジのローブ",
+    "futuristic exosuit": "近未来のパワードスーツ",
+    "shield item": "盾",
+    "health potion bottle": "体力回復ポーションの瓶",
+    "magic scroll": "魔法の巻物",
+    "treasure chest": "宝箱",
+    "gold coin icon": "金貨アイコン",
+    "gemstone item": "宝石アイテム",
+    "key item": "鍵アイテム"
+  }
+}

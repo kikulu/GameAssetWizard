@@ -1,0 +1,43 @@
+{
+  "id": "races-classes",
+  "categories": [
+    {
+      "id": "fantasy-races",
+      "subcategories": [
+        {
+          "id": "fantasy-races",
+          "tags": [
+            "human",
+            "elf",
+            "dwarf",
+            "orc warrior",
+            "fairy",
+            "dragon-kin",
+            "beast-eared humanoid",
+            "robot android"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "classes-roles",
+      "subcategories": [
+        {
+          "id": "classes-roles",
+          "tags": [
+            "knight",
+            "mage",
+            "archer ranger",
+            "warrior",
+            "engineer",
+            "pilot",
+            "alchemist",
+            "summoner",
+            "blacksmith",
+            "scholar"
+          ]
+        }
+      ]
+    }
+  ]
+}

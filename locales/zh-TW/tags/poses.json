@@ -1,0 +1,43 @@
+{
+  "name": "動作姿勢",
+  "categories": {
+    "standing-idle": "站姿與待機",
+    "combat-actions": "戰鬥動作",
+    "movement": "移動姿態",
+    "situational-poses": "情境姿勢"
+  },
+  "subcategories": {
+    "standing-idle/standing-idle": "站姿與待機",
+    "combat-actions/combat-actions": "戰鬥動作",
+    "movement/movement": "移動姿態",
+    "situational-poses/situational-poses": "情境姿勢"
+  },
+  "tags": {
+    "standing pose": "站立姿勢",
+    "idle stance": "待機姿勢",
+    "confident standing pose": "自信站姿",
+    "relaxed pose": "放鬆姿勢",
+    "hands on hips": "叉腰姿勢",
+    "arms crossed pose": "抱胸姿勢",
+    "combat stance": "戰鬥架勢",
+    "dynamic action pose": "動態戰鬥姿勢",
+    "sword swing pose": "揮劍動作",
+    "spellcasting pose": "施法姿勢",
+    "bow aiming pose": "拉弓瞄準姿勢",
+    "charging pose": "衝鋒姿勢",
+    "defensive guard stance": "防禦姿勢",
+    "victory battle pose": "勝利戰鬥姿勢",
+    "running pose": "奔跑姿勢",
+    "jumping pose": "跳躍姿勢",
+    "flying pose": "飛行姿勢",
+    "crouching pose": "蹲伏姿勢",
+    "sneaking pose": "潛行姿勢",
+    "dashing pose": "疾衝姿勢",
+    "sitting pose": "坐姿",
+    "leaning pose": "倚靠姿勢",
+    "victory pose": "勝利姿勢",
+    "greeting pose": "打招呼姿勢",
+    "thinking pose": "沉思姿勢",
+    "kneeling pose": "單膝下跪姿勢"
+  }
+}

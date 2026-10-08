@@ -1,0 +1,41 @@
+{
+  "id": "hair",
+  "categories": [
+    {
+      "id": "hairstyle",
+      "subcategories": [
+        {
+          "id": "hairstyle",
+          "tags": [
+            "ponytail",
+            "twintails",
+            "braided hair",
+            "short hair",
+            "long hair",
+            "messy hair",
+            "bun hairstyle",
+            "wavy hair"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hair-color",
+      "subcategories": [
+        {
+          "id": "hair-color",
+          "tags": [
+            "black hair",
+            "blonde hair",
+            "silver hair",
+            "red hair",
+            "blue hair",
+            "white hair",
+            "gradient hair color",
+            "colorful fantasy hair"
+          ]
+        }
+      ]
+    }
+  ]
+}

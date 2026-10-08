@@ -1,0 +1,36 @@
+{
+  "name": "Scenes & Environments",
+  "categories": {
+    "nature": "Natural Scenes",
+    "architecture-dungeons": "Architecture & Dungeons",
+    "skybox-backgrounds": "Skyboxes & Backgrounds"
+  },
+  "subcategories": {
+    "nature/terrain": "Terrain",
+    "architecture-dungeons/buildings": "Buildings",
+    "architecture-dungeons/dungeon-interiors": "Dungeon Interiors",
+    "skybox-backgrounds/background-assets": "Background Assets"
+  },
+  "tags": {
+    "fantasy forest landscape": "fantasy forest landscape",
+    "mystical mountain scene": "mystical mountain scene",
+    "desert wasteland": "desert wasteland",
+    "snowy tundra": "snowy tundra",
+    "tropical island": "tropical island",
+    "underwater ocean scene": "underwater ocean scene",
+    "medieval castle": "medieval castle",
+    "futuristic city skyline": "futuristic city skyline",
+    "ancient temple ruins": "ancient temple ruins",
+    "floating sky island": "floating sky island",
+    "steampunk city": "steampunk city",
+    "dungeon corridor": "dungeon corridor",
+    "cave interior": "cave interior",
+    "dark forest path": "dark forest path",
+    "sci-fi spaceship interior": "sci-fi spaceship interior",
+    "abandoned laboratory": "abandoned laboratory",
+    "seamless sky background": "seamless sky background",
+    "parallax background layer": "parallax background layer",
+    "starry night skybox": "starry night skybox",
+    "sunset horizon backdrop": "sunset horizon backdrop"
+  }
+}

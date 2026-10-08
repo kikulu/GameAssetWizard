@@ -1,0 +1,48 @@
+{
+  "gameTypes": {
+    "rpg": "ロールプレイング RPG",
+    "casual-simulation": "カジュアル／シミュレーション",
+    "card-strategy": "カード／ストラテジー",
+    "shooter-action": "シューティング／アクション",
+    "roguelike-action": "ローグライク／アクション"
+  },
+  "styleTypes": {
+    "anime-2d": "日本風2Dアニメ",
+    "cute-3d": "かわいい3D",
+    "fantasy-illustration": "ファンタジーイラスト",
+    "dark-fantasy-3d": "ダークファンタジー3D",
+    "cozy-storybook-2d": "ほのぼの絵本2D",
+    "scifi-3d": "SF 3D",
+    "pixel-art": "ピクセルアート"
+  },
+  "templates": {
+    "mobile-anime-rpg": {
+      "label": "モバイル和風RPGキャラクターカード",
+      "description": "ガチャキャラ、立ち絵、キャラクタープロフィール画面向け。明瞭なシルエットと読み取りやすい表情を重視します。"
+    },
+    "mobile-casual": {
+      "label": "カジュアルモバイル3Dアイテム／キャラクター",
+      "description": "農場・料理・ライフシミュレーションゲーム向け。明るく丸みのある形で、小さな画面でも見分けやすさを重視します。"
+    },
+    "mobile-card-battle": {
+      "label": "ストラテジーカードのファンタジーキャラクター",
+      "description": "カード枠、ヒーローのバストアップ、スキル演出向け。ドラマチックな光と明確な焦点が中心です。"
+    },
+    "steam-dark-fantasy": {
+      "label": "Steam ダークファンタジーコンセプトアート",
+      "description": "Steam RPG のキャラクター、敵、シーンのコンセプト向け。質感、スケール、雰囲気を優先します。"
+    },
+    "steam-cozy": {
+      "label": "Steam ほのぼのシミュレーションシーン",
+      "description": "癒やし系、農場、建設ゲーム向け。温かな光と探索したくなる奥行きのあるシーンが中心です。"
+    },
+    "steam-scifi": {
+      "label": "SFアクションの武器／UI素材",
+      "description": "武器、乗り物、HUD、宣伝画像向け。明確なシルエットとハイテクな素材のコントラストを保ちます。"
+    },
+    "indie-pixel": {
+      "label": "インディー・ローグライクのピクセル素材",
+      "description": "キャラクター、アイテム、小規模なシーン向け。限られたパレットと明確な視認性を重視します。"
+    }
+  }
+}

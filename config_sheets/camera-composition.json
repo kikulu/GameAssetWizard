@@ -1,0 +1,57 @@
+{
+  "id": "camera-composition",
+  "categories": [
+    {
+      "id": "shot-size",
+      "subcategories": [
+        {
+          "id": "shot-size",
+          "tags": [
+            "extreme close-up shot",
+            "close-up shot",
+            "medium shot",
+            "cowboy shot",
+            "full body shot",
+            "wide shot"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "viewpoint",
+      "subcategories": [
+        {
+          "id": "viewpoint",
+          "tags": [
+            "bird's eye view",
+            "low angle shot",
+            "high angle shot",
+            "eye level shot",
+            "dutch angle",
+            "over-the-shoulder shot",
+            "first-person view",
+            "isometric view"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "composition-lens",
+      "subcategories": [
+        {
+          "id": "composition-lens",
+          "tags": [
+            "rule of thirds composition",
+            "centered composition",
+            "dynamic diagonal composition",
+            "symmetrical composition",
+            "shallow depth of field",
+            "wide angle lens",
+            "telephoto lens compression",
+            "motion blur background"
+          ]
+        }
+      ]
+    }
+  ]
+}

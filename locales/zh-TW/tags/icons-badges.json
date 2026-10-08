@@ -1,0 +1,27 @@
+{
+  "name": "圖示徽章",
+  "categories": {
+    "in-game-icons": "遊戲內圖示",
+    "app-store-icons": "App / 商店圖示"
+  },
+  "subcategories": {
+    "in-game-icons/skills-currency": "技能與貨幣",
+    "in-game-icons/achievement-badges": "成就徽章",
+    "app-store-icons/app-icons": "應用程式圖示"
+  },
+  "tags": {
+    "skill icon design": "技能圖示設計",
+    "spell icon": "法術圖示",
+    "currency coin icon": "貨幣金幣圖示",
+    "gem currency icon": "寶石貨幣圖示",
+    "energy icon": "能量圖示",
+    "achievement badge icon": "成就徽章圖示",
+    "trophy icon": "獎盃圖示",
+    "rank medal icon": "段位獎章圖示",
+    "level up badge": "升級徽章",
+    "mobile app icon design": "手機App圖示設計",
+    "minimalist app icon": "極簡App圖示",
+    "3D app icon": "立體3D App圖示",
+    "rounded square app icon": "圓角方形App圖示"
+  }
+}

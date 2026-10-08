@@ -1,0 +1,48 @@
+{
+  "gameTypes": {
+    "rpg": "Role-Playing (RPG)",
+    "casual-simulation": "Casual / Simulation",
+    "card-strategy": "Card / Strategy",
+    "shooter-action": "Shooter / Action",
+    "roguelike-action": "Roguelike / Action"
+  },
+  "styleTypes": {
+    "anime-2d": "Japanese 2D Anime",
+    "cute-3d": "Cute 3D",
+    "fantasy-illustration": "Fantasy Illustration",
+    "dark-fantasy-3d": "Dark Fantasy 3D",
+    "cozy-storybook-2d": "Cozy Storybook 2D",
+    "scifi-3d": "Sci-Fi 3D",
+    "pixel-art": "Pixel Art"
+  },
+  "templates": {
+    "mobile-anime-rpg": {
+      "label": "Mobile Anime RPG Character Card",
+      "description": "Great for gacha characters, standing art and character profile pages; prioritizes a clear silhouette and readable expressions."
+    },
+    "mobile-casual": {
+      "label": "Casual Mobile 3D Props / Characters",
+      "description": "For farm, cooking and life-sim games; emphasizes bright, rounded shapes that stay readable on small screens."
+    },
+    "mobile-card-battle": {
+      "label": "Strategy Card Fantasy Hero",
+      "description": "For card frames, hero bust portraits and skill cut-ins; built around dramatic lighting and a clear focal point."
+    },
+    "steam-dark-fantasy": {
+      "label": "Steam Dark Fantasy Concept Art",
+      "description": "For Steam RPG characters, enemies and scenes; puts material, scale and atmosphere first."
+    },
+    "steam-cozy": {
+      "label": "Steam Cozy Sim Scene",
+      "description": "For healing, farming and building games; built on warm light and explorable scene depth."
+    },
+    "steam-scifi": {
+      "label": "Sci-Fi Action Weapon / UI Assets",
+      "description": "For weapons, vehicles, HUDs and promo art; keeps clear silhouettes and high-tech material contrast."
+    },
+    "indie-pixel": {
+      "label": "Indie Roguelike Pixel Assets",
+      "description": "For characters, items and small scenes; emphasizes a limited palette and clear readability."
+    }
+  }
+}

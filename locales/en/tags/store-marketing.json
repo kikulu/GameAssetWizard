@@ -1,0 +1,28 @@
+{
+  "name": "Store & Marketing",
+  "categories": {
+    "steam-assets": "Steam Assets",
+    "marketing-promotion": "Marketing & Promotion",
+    "logos-branding": "Logos & Branding"
+  },
+  "subcategories": {
+    "steam-assets/store-images": "Store Images",
+    "marketing-promotion/promotional-images": "Promotional Images",
+    "logos-branding/logo-design": "Logo Design"
+  },
+  "tags": {
+    "steam capsule art": "steam capsule art",
+    "steam header image": "steam header image",
+    "steam store background": "steam store background",
+    "key art poster": "key art poster",
+    "game promotional banner": "game promotional banner",
+    "social media game ad": "social media game ad",
+    "splash screen artwork": "splash screen artwork",
+    "loading screen illustration": "loading screen illustration",
+    "main menu background art": "main menu background art",
+    "game logo design": "game logo design",
+    "studio logo icon": "studio logo icon",
+    "wordmark title logo": "wordmark title logo",
+    "emblem badge logo": "emblem badge logo"
+  }
+}

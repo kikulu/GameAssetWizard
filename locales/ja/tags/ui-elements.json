@@ -1,0 +1,28 @@
+{
+  "name": "UI要素",
+  "categories": {
+    "buttons-frames": "ボタン・フレーム",
+    "hud": "HUD"
+  },
+  "subcategories": {
+    "buttons-frames/buttons": "ボタン",
+    "buttons-frames/frames-borders": "フレーム・枠",
+    "hud/status-bars": "ステータスバー"
+  },
+  "tags": {
+    "game button UI": "ゲームボタンUI",
+    "rounded fantasy button": "角丸のファンタジーボタン",
+    "sci-fi UI button": "SFスタイルのボタン",
+    "wooden UI button": "木製UIボタン",
+    "glass UI button": "ガラス質感のボタン",
+    "ornate frame border": "華やかな枠装飾",
+    "fantasy UI panel": "ファンタジーUIパネル",
+    "futuristic HUD frame": "近未来のHUDフレーム",
+    "parchment UI background": "羊皮紙のUI背景",
+    "health bar UI": "HPバーUI",
+    "mana bar UI": "MPバーUI",
+    "experience progress bar": "経験値の進行バー",
+    "minimap UI element": "ミニマップUI部品",
+    "inventory grid UI": "インベントリグリッドUI"
+  }
+}

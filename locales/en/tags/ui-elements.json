@@ -1,0 +1,28 @@
+{
+  "name": "UI Elements",
+  "categories": {
+    "buttons-frames": "Buttons & Frames",
+    "hud": "HUD"
+  },
+  "subcategories": {
+    "buttons-frames/buttons": "Buttons",
+    "buttons-frames/frames-borders": "Frames & Borders",
+    "hud/status-bars": "Status Bars"
+  },
+  "tags": {
+    "game button UI": "game button UI",
+    "rounded fantasy button": "rounded fantasy button",
+    "sci-fi UI button": "sci-fi UI button",
+    "wooden UI button": "wooden UI button",
+    "glass UI button": "glass UI button",
+    "ornate frame border": "ornate frame border",
+    "fantasy UI panel": "fantasy UI panel",
+    "futuristic HUD frame": "futuristic HUD frame",
+    "parchment UI background": "parchment UI background",
+    "health bar UI": "health bar UI",
+    "mana bar UI": "mana bar UI",
+    "experience progress bar": "experience progress bar",
+    "minimap UI element": "minimap UI element",
+    "inventory grid UI": "inventory grid UI"
+  }
+}

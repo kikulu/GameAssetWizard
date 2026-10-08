@@ -1,0 +1,36 @@
+{
+  "name": "장면·환경",
+  "categories": {
+    "nature": "자연 장면",
+    "architecture-dungeons": "건축·던전",
+    "skybox-backgrounds": "스카이박스·배경"
+  },
+  "subcategories": {
+    "nature/terrain": "지형",
+    "architecture-dungeons/buildings": "건축물",
+    "architecture-dungeons/dungeon-interiors": "던전 내부",
+    "skybox-backgrounds/background-assets": "배경 소재"
+  },
+  "tags": {
+    "fantasy forest landscape": "판타지 숲 풍경",
+    "mystical mountain scene": "신비로운 산맥 장면",
+    "desert wasteland": "사막 황무지",
+    "snowy tundra": "설원 동토",
+    "tropical island": "열대 섬",
+    "underwater ocean scene": "해저 장면",
+    "medieval castle": "중세 성",
+    "futuristic city skyline": "미래 도시 스카이라인",
+    "ancient temple ruins": "고대 신전 유적",
+    "floating sky island": "떠다니는 하늘 섬",
+    "steampunk city": "스팀펑크 도시",
+    "dungeon corridor": "던전 복도",
+    "cave interior": "동굴 내부",
+    "dark forest path": "어두운 숲길",
+    "sci-fi spaceship interior": "우주선 내부",
+    "abandoned laboratory": "버려진 실험실",
+    "seamless sky background": "이음새 없는 하늘 배경",
+    "parallax background layer": "패럴랙스 배경 레이어",
+    "starry night skybox": "별이 빛나는 밤하늘 스카이박스",
+    "sunset horizon backdrop": "석양 지평선 배경"
+  }
+}

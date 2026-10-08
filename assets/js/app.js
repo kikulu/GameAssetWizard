@@ -1,8 +1,12 @@
 // ========================= 全域狀態 =========================
 let baseConfig = null;      // base_settings.json
-let profilesConfig = null;  // profiles.json
-let globalMatrix = {};      // 各分類詞庫 { sheetName: {...} }
-let activeSelections = new Map();
+let profilesConfig = null;  // profiles.json（與語言無關）
+let sheetOrder = [];        // 詞庫分類 id（config_sheets/index.json）
+let globalMatrix = {};      // { sheetId: { id, categories: [...] } }（與語言無關）
+const tagIndex = new Map(); // 提示詞 → sheetId
+const localeData = {};      // { [locale]: { profiles, tags: { [sheetId]: {...} } } }
+const activeSelections = new Map(); // 提示詞 → { weight }
+let configReady = false;
 // Set by templates.js. Keep the package layer separate so users can still fine-tune tags.
 let templatePrompt = '';
 let templateNegative = '';
@@ -11,10 +15,8 @@ let currentPlatform = "mobile"; // mobile | steam
 let currentDimension = "general"; // general | 2d | 3d
 let allCheckedState = true;
 
-const SHEET_FILES = [
-    "鏡頭構圖", "動作姿勢", "服裝造型", "表情情緒", "身份種族", "髮型髮色",
-    "道具裝備", "場景環境", "特效", "UI元素", "圖示徽章", "商店行銷"
-];
+const openSheets = new Set();         // 展開中的分類（sheetId）
+const collapsedCategories = new Set(); // 收合中的子分類（`${sheetId}/${categoryId}`）
 
 function currentProfileKey() {
     if (currentDimension === "general") return currentPlatform;
@@ -25,37 +27,87 @@ function currentProfile() {
     return profilesConfig ? profilesConfig[currentProfileKey()] : null;
 }
 
+// ========================= 語系資料查詢 =========================
+function prettifyId(id) {
+    return String(id).replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+function localized() { return localeData[I18N.locale] || {}; }
+function sheetLocale(sheetId) { return (localized().tags || {})[sheetId] || {}; }
+function sheetName(sheetId) { return sheetLocale(sheetId).name || prettifyId(sheetId); }
+function categoryName(sheetId, categoryId) { return (sheetLocale(sheetId).categories || {})[categoryId] || prettifyId(categoryId); }
+function subcategoryName(sheetId, categoryId, subId) { return (sheetLocale(sheetId).subcategories || {})[`${categoryId}/${subId}`] || prettifyId(subId); }
+function tagLabel(prompt) { return (sheetLocale(tagIndex.get(prompt)).tags || {})[prompt] || prompt; }
+function profileText(key) { return ((localized().profiles || {}).profiles || {})[key] || {}; }
+function presetText(presetId) { return ((localized().profiles || {}).presets || {})[presetId] || {}; }
+
+async function loadAppLocaleData(code) {
+    if (!sheetOrder.length || localeData[code]) return;
+    const safe = promise => promise.catch(error => { console.warn('[i18n]', error.message); return {}; });
+    const [profiles, ...tags] = await Promise.all([
+        safe(I18N.fetchLocaleJson(code, 'profiles.json')),
+        ...sheetOrder.map(id => safe(I18N.fetchLocaleJson(code, 'tags', `${id}.json`)))
+    ]);
+    localeData[code] = { profiles, tags: Object.fromEntries(sheetOrder.map((id, i) => [id, tags[i]])) };
+}
+I18N.addLoader(loadAppLocaleData);
+
 // ========================= 載入設定 =========================
 async function loadConfig() {
     try {
-        const [baseRes, profilesRes] = await Promise.all([
+        await I18N.ready;
+        document.getElementById('matrixContainer').textContent = t('library.loading');
+        I18N.setRich(document.getElementById('profileLabel'), 'profile.loading');
+        const [baseRes, profilesRes, indexRes] = await Promise.all([
             fetch('config_sheets/base_settings.json'),
-            fetch('config_sheets/profiles.json')
+            fetch('config_sheets/profiles.json'),
+            fetch('config_sheets/index.json')
         ]);
-        if (!baseRes.ok) throw new Error('找不到 config_sheets/base_settings.json');
-        if (!profilesRes.ok) throw new Error('找不到 config_sheets/profiles.json');
+        if (!baseRes.ok) throw new Error('config_sheets/base_settings.json not found');
+        if (!profilesRes.ok) throw new Error('config_sheets/profiles.json not found');
+        if (!indexRes.ok) throw new Error('config_sheets/index.json not found');
         baseConfig = await baseRes.json();
         profilesConfig = await profilesRes.json();
+        sheetOrder = (await indexRes.json()).sheets;
 
-        const fetchPromises = SHEET_FILES.map(sheetName =>
-            fetch(`config_sheets/${encodeURIComponent(sheetName)}.json`).then(res => {
-                if (!res.ok) throw new Error(`找不到檔案: config_sheets/${sheetName}.json`);
+        const loadedSheets = await Promise.all(sheetOrder.map(sheetId =>
+            fetch(`config_sheets/${encodeURIComponent(sheetId)}.json`).then(res => {
+                if (!res.ok) throw new Error(`config_sheets/${sheetId}.json not found`);
                 return res.json();
             })
-        );
-        const loadedSheets = await Promise.all(fetchPromises);
-        loadedSheets.forEach(sheet => { globalMatrix[sheet.sheetName] = sheet.data; });
+        ));
+        loadedSheets.forEach(sheet => {
+            globalMatrix[sheet.id] = sheet;
+            sheet.categories.forEach(category => category.subcategories.forEach(sub => sub.tags.forEach(prompt => tagIndex.set(prompt, sheet.id))));
+        });
+        if (sheetOrder.length) openSheets.add(sheetOrder[0]);
 
-        buildMatrixUI(globalMatrix);
-        buildRandomConfigUI();
+        await loadAppLocaleData(I18N.locale);
+        configReady = true;
+        buildMatrixUI();
+        buildRandomConfigUI(false);
         buildPresetSelect();
         updateProfileLabel();
         randomPickSelected();
 
     } catch (e) {
-        document.getElementById('matrixContainer').innerHTML = `<span class="load-error">❌ 載入失敗: ${e.message}<br>提示：此頁面需透過本機伺服器開啟（例如 python3 -m http.server），直接用瀏覽器開啟 file:// 可能會被瀏覽器阻擋讀取 JSON。</span>`;
+        const box = document.getElementById('matrixContainer');
+        box.textContent = '';
+        const span = document.createElement('span');
+        span.className = 'load-error';
+        span.append(document.createTextNode(t('library.loadError', { message: e.message })), document.createElement('br'), document.createTextNode(t('library.loadErrorHint')));
+        box.append(span);
     }
 }
+
+// 切換語言：詞庫標籤、分類名稱、模式與尺寸預設都需要重新套用語系
+window.addEventListener('localechange', () => {
+    if (!configReady) return;
+    buildMatrixUI();
+    buildRandomConfigUI(true);
+    buildPresetSelect({ apply: false });
+    updateProfileLabel();
+    updateUIAndOutput();
+});
 
 // ========================= 平台 / 風格切換 =========================
 function setPlatform(p) {
@@ -89,34 +141,44 @@ function updateProfileLabel() {
     const profile = currentProfile();
     const label = document.getElementById('profileLabel');
     if (profile) {
-        label.innerHTML = `目前模式：<b>${profile.label}</b> — ${profile.dimensionLabel}`;
+        const text = profileText(currentProfileKey());
+        I18N.setRich(label, 'profile.current', { label: text.label || currentProfileKey(), dimension: text.dimension || '' });
     }
 }
 
 // ========================= 尺寸預設 =========================
-function buildPresetSelect() {
+function buildPresetSelect({ apply = true } = {}) {
     const profile = currentProfile();
     if (!profile) return;
     const sel = document.getElementById('dt-preset');
+    const keep = sel.value;
     sel.innerHTML = '';
     profile.presets.forEach((p, i) => {
         const opt = document.createElement('option');
         opt.value = i;
-        opt.textContent = p.label;
+        opt.textContent = presetText(p.id).label || prettifyId(p.id);
         sel.appendChild(opt);
     });
-    applyPreset();
+    if (!apply && keep !== '' && sel.querySelector(`option[value="${keep}"]`)) sel.value = keep;
+    if (apply) applyPreset();
+    else updatePresetNote();
+}
+
+function updatePresetNote() {
+    const profile = currentProfile();
+    if (!profile) return;
+    const preset = profile.presets[document.getElementById('dt-preset').value];
+    if (preset) document.getElementById('preset-note').textContent = "📌 " + (presetText(preset.id).note || '');
 }
 
 function applyPreset() {
     const profile = currentProfile();
     if (!profile) return;
-    const idx = document.getElementById('dt-preset').value;
-    const preset = profile.presets[idx];
+    const preset = profile.presets[document.getElementById('dt-preset').value];
     if (!preset) return;
     document.getElementById('dt-width').value = preset.w;
     document.getElementById('dt-height').value = preset.h;
-    document.getElementById('preset-note').textContent = "📌 " + preset.note;
+    updatePresetNote();
 }
 
 // ========================= 設定面板收合 =========================
@@ -129,16 +191,22 @@ function toggleSettingsPanel() {
 }
 
 // ========================= 隨機抽卡設定區 =========================
-function buildRandomConfigUI() {
+function buildRandomConfigUI(preserve) {
     const container = document.getElementById('randomOptionsContainer');
+    const previous = new Map();
+    if (preserve) container.querySelectorAll('input').forEach(cb => previous.set(cb.value, cb.checked));
     container.innerHTML = '';
     const profile = currentProfile();
     const defaultSheets = profile ? profile.defaultRandomSheets : [];
-    SHEET_FILES.forEach(sheetName => {
+    sheetOrder.forEach(sheetId => {
         const label = document.createElement('label');
         label.className = 'random-opt-label';
-        const isChecked = defaultSheets.includes(sheetName) ? 'checked' : '';
-        label.innerHTML = `<input type="checkbox" value="${sheetName}" data-role="random-sheet-cb" ${isChecked}> ${sheetName}`;
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.value = sheetId;
+        input.dataset.role = 'random-sheet-cb';
+        input.checked = preserve && previous.has(sheetId) ? previous.get(sheetId) : defaultSheets.includes(sheetId);
+        label.append(input, document.createTextNode(' ' + sheetName(sheetId)));
         container.appendChild(label);
     });
 }
@@ -149,133 +217,152 @@ function toggleAllCheckboxes(e) {
     document.querySelectorAll('input[data-role="random-sheet-cb"]').forEach(cb => { cb.checked = allCheckedState; });
 }
 
+function forEachSubcategory(sheetId, callback) {
+    const sheet = globalMatrix[sheetId];
+    if (!sheet) return;
+    sheet.categories.forEach(category => category.subcategories.forEach(sub => callback(sub, category)));
+}
+
 function randomPickSelected() {
-    if (!globalMatrix || Object.keys(globalMatrix).length === 0) return;
-    const checkedBoxes = document.querySelectorAll('input[data-role="random-sheet-cb"]:checked');
-    const allowedSheets = Array.from(checkedBoxes).map(cb => cb.value);
-    if (allowedSheets.length === 0) { alert("請至少勾選一個分類進行隨機抽卡！"); return; }
+    if (!sheetOrder.length) return;
+    const allowedSheets = Array.from(document.querySelectorAll('input[data-role="random-sheet-cb"]:checked')).map(cb => cb.value);
+    if (allowedSheets.length === 0) { alert(t('random.needOne')); return; }
 
-    activeSelections.forEach((val, enKey) => {
-        allowedSheets.forEach(sheetName => {
-            const l2Obj = globalMatrix[sheetName];
-            if (!l2Obj) return;
-            for (const l3Obj of Object.values(l2Obj)) {
-                for (const items of Object.values(l3Obj)) {
-                    if (items.some(i => i.en === enKey)) activeSelections.delete(enKey);
-                }
-            }
-        });
+    activeSelections.forEach((_, prompt) => {
+        if (allowedSheets.includes(tagIndex.get(prompt))) activeSelections.delete(prompt);
     });
-
-    allowedSheets.forEach(sheetName => {
-        const l2Obj = globalMatrix[sheetName];
-        if (!l2Obj) return;
-        for (const l3Obj of Object.values(l2Obj)) {
-            for (const items of Object.values(l3Obj)) {
-                if (items && items.length > 0) {
-                    const randomItem = items[Math.floor(Math.random() * items.length)];
-                    activeSelections.set(randomItem.en, { cn: randomItem.cn, weight: 1.0 });
-                }
-            }
+    allowedSheets.forEach(sheetId => forEachSubcategory(sheetId, sub => {
+        if (sub.tags.length > 0) {
+            const prompt = sub.tags[Math.floor(Math.random() * sub.tags.length)];
+            activeSelections.set(prompt, { weight: 1.0 });
         }
-    });
+    }));
     updateUIAndOutput();
 }
 
 // ========================= 主要矩陣 UI =========================
-function buildMatrixUI(matrix) {
+function tagElementId(prompt) { return `tag-${btoa(encodeURIComponent(prompt)).replace(/=/g, '')}`; }
+
+function buildMatrixUI() {
     const container = document.getElementById('matrixContainer');
     container.innerHTML = '';
-    let isFirstL1 = true;
 
-    SHEET_FILES.forEach(l1Name => {
-        const l2Obj = matrix[l1Name];
-        if (!l2Obj) return;
+    sheetOrder.forEach(sheetId => {
+        const sheet = globalMatrix[sheetId];
+        if (!sheet) return;
 
         const accItem = document.createElement('div');
         accItem.className = 'accordion-item';
 
         const header1 = document.createElement('div');
-        header1.className = `layer1-header ${isFirstL1 ? 'active' : ''}`;
-        header1.innerHTML = `<span>📂 ${l1Name}</span><span class="arrow">▶</span>`;
+        const isOpen = openSheets.has(sheetId);
+        header1.className = `layer1-header ${isOpen ? 'active' : ''}`;
+        const title1 = document.createElement('span');
+        title1.textContent = `📂 ${sheetName(sheetId)}`;
+        const arrow1 = document.createElement('span');
+        arrow1.className = 'arrow';
+        arrow1.textContent = '▶';
+        header1.append(title1, arrow1);
 
         const content1 = document.createElement('div');
         content1.className = 'layer1-content';
-        if (isFirstL1) { content1.style.display = 'block'; isFirstL1 = false; }
+        if (isOpen) content1.style.display = 'block';
 
         header1.onclick = () => {
             const isVisible = content1.style.display === 'block';
             content1.style.display = isVisible ? 'none' : 'block';
             header1.classList.toggle('active', !isVisible);
+            if (isVisible) openSheets.delete(sheetId); else openSheets.add(sheetId);
         };
 
-        for (const [l2Name, l3Obj] of Object.entries(l2Obj)) {
+        sheet.categories.forEach(category => {
+            const categoryKey = `${sheetId}/${category.id}`;
+            const collapsed = collapsedCategories.has(categoryKey);
             const l2Box = document.createElement('div');
             l2Box.className = 'layer2-box';
 
             const header2 = document.createElement('div');
-            header2.className = 'layer2-header active';
-            header2.innerHTML = `<span>🔹 ${l2Name}</span><span class="arrow">▶</span>`;
+            header2.className = `layer2-header ${collapsed ? '' : 'active'}`;
+            const title2 = document.createElement('span');
+            title2.textContent = `🔹 ${categoryName(sheetId, category.id)}`;
+            const arrow2 = document.createElement('span');
+            arrow2.className = 'arrow';
+            arrow2.textContent = '▶';
+            header2.append(title2, arrow2);
 
             const content2 = document.createElement('div');
             content2.className = 'layer2-content';
-            content2.style.display = 'block';
+            content2.style.display = collapsed ? 'none' : 'block';
 
             header2.onclick = (e) => {
                 e.stopPropagation();
                 const isVisible = content2.style.display === 'block';
                 content2.style.display = isVisible ? 'none' : 'block';
                 header2.classList.toggle('active', !isVisible);
+                if (isVisible) collapsedCategories.add(categoryKey); else collapsedCategories.delete(categoryKey);
             };
 
-            for (const [l3Name, items] of Object.entries(l3Obj)) {
-                if (!items || items.length === 0) continue;
+            category.subcategories.forEach(sub => {
+                if (!sub.tags || sub.tags.length === 0) return;
                 const l3Div = document.createElement('div');
-                l3Div.innerHTML = `<div class="layer3-title">▫️ ${l3Name}</div>`;
+                const title3 = document.createElement('div');
+                title3.className = 'layer3-title';
+                title3.textContent = `▫️ ${subcategoryName(sheetId, category.id, sub.id)}`;
+                l3Div.appendChild(title3);
                 const tagPool = document.createElement('div');
                 tagPool.className = 'tag-pool';
 
-                items.forEach(item => {
+                sub.tags.forEach(prompt => {
                     const tagEl = document.createElement('div');
                     tagEl.className = 'interactive-tag';
-                    tagEl.id = `tag-${btoa(encodeURIComponent(item.en)).replace(/=/g, '')}`;
-                    tagEl.innerHTML = `${item.cn} <span>${item.en}</span> <b class="weight-badge" style="display:none;"></b>`;
-                    tagEl.onclick = (e) => { e.stopPropagation(); toggleTag(item); };
+                    tagEl.id = tagElementId(prompt);
+                    const label = tagLabel(prompt);
+                    tagEl.append(document.createTextNode(label));
+                    if (label.trim().toLowerCase() !== prompt.toLowerCase()) {
+                        const promptSpan = document.createElement('span');
+                        promptSpan.textContent = prompt;
+                        tagEl.append(document.createTextNode(' '), promptSpan);
+                    }
+                    const badge = document.createElement('b');
+                    badge.className = 'weight-badge';
+                    badge.style.display = 'none';
+                    tagEl.append(document.createTextNode(' '), badge);
+                    tagEl.onclick = (e) => { e.stopPropagation(); toggleTag(prompt); };
                     tagPool.appendChild(tagEl);
                 });
                 l3Div.appendChild(tagPool);
                 content2.appendChild(l3Div);
-            }
+            });
             l2Box.appendChild(header2);
             l2Box.appendChild(content2);
             content1.appendChild(l2Box);
-        }
+        });
         accItem.appendChild(header1);
         accItem.appendChild(content1);
         container.appendChild(accItem);
     });
 }
 
-function toggleTag(item) {
-    if (activeSelections.has(item.en)) { activeSelections.delete(item.en); }
-    else { activeSelections.set(item.en, { cn: item.cn, weight: 1.0 }); }
+function toggleTag(prompt) {
+    if (activeSelections.has(prompt)) { activeSelections.delete(prompt); }
+    else { activeSelections.set(prompt, { weight: 1.0 }); }
     updateUIAndOutput();
 }
 
-function removeTagDirectly(enKey) {
-    if (activeSelections.has(enKey)) {
-        activeSelections.delete(enKey);
+function removeTagDirectly(prompt) {
+    if (activeSelections.has(prompt)) {
+        activeSelections.delete(prompt);
         updateUIAndOutput();
     }
 }
 
-function adjustWeight(enKey, delta) {
-    if (activeSelections.has(enKey)) {
-        let data = activeSelections.get(enKey);
+function adjustWeight(prompt, delta) {
+    if (activeSelections.has(prompt)) {
+        let data = activeSelections.get(prompt);
         data.weight = Math.round((data.weight + delta) * 10) / 10;
         if (data.weight <= 0.2) data.weight = 0.2;
         if (data.weight > 2.0) data.weight = 2.0;
-        activeSelections.set(enKey, data);
+        activeSelections.set(prompt, data);
         updateUIAndOutput();
     }
 }
@@ -287,6 +374,37 @@ function buildBasePrompt() {
     const quality = document.getElementById('dt-quality').value;
     const styleTags = profile ? profile.styleTags : "game asset";
     return [styleTags, quality, bg, model, templatePrompt].filter(Boolean).join(', ');
+}
+
+function selectedListItem(prompt, data) {
+    const item = document.createElement('div');
+    item.className = 'selected-list-item';
+
+    const info = document.createElement('div');
+    const name = document.createElement('b');
+    name.textContent = tagLabel(prompt);
+    const weight = document.createElement('span');
+    weight.style.cssText = 'font-size:11px;color:var(--text-muted)';
+    weight.textContent = data.weight !== 1.0 ? ' x' + data.weight : '';
+    info.append(name, weight);
+
+    const actions = document.createElement('div');
+    actions.className = 'weight-actions';
+    const plus = document.createElement('button');
+    plus.textContent = '➕';
+    plus.addEventListener('click', () => adjustWeight(prompt, 0.1));
+    const minus = document.createElement('button');
+    minus.textContent = '➖';
+    minus.addEventListener('click', () => adjustWeight(prompt, -0.1));
+    const remove = document.createElement('button');
+    remove.className = 'btn-remove';
+    remove.textContent = t('selected.remove');
+    remove.title = t('selected.removeTitle');
+    remove.addEventListener('click', () => removeTagDirectly(prompt));
+    actions.append(plus, minus, remove);
+
+    item.append(info, actions);
+    return item;
 }
 
 function updateUIAndOutput() {
@@ -301,14 +419,16 @@ function updateUIAndOutput() {
     const activeTokens = [];
 
     if (activeSelections.size === 0) {
-        listContainer.innerHTML = `<span style="color:var(--text-muted); font-size: 13px;">尚未選取任何標籤...</span>`;
+        const empty = document.createElement('span');
+        empty.style.cssText = 'color:var(--text-muted); font-size: 13px;';
+        empty.textContent = t('selected.empty');
+        listContainer.appendChild(empty);
     } else {
-        activeSelections.forEach((data, enKey) => {
-            const formattedToken = (data.weight === 1.0) ? enKey : `(${enKey}:${data.weight})`;
+        activeSelections.forEach((data, prompt) => {
+            const formattedToken = (data.weight === 1.0) ? prompt : `(${prompt}:${data.weight})`;
             activeTokens.push(formattedToken);
 
-            const targetId = `tag-${btoa(encodeURIComponent(enKey)).replace(/=/g, '')}`;
-            const matchedEl = document.getElementById(targetId);
+            const matchedEl = document.getElementById(tagElementId(prompt));
             if (matchedEl) {
                 matchedEl.classList.add('selected');
                 if (data.weight !== 1.0) {
@@ -316,20 +436,7 @@ function updateUIAndOutput() {
                     if (badge) { badge.innerText = `x${data.weight}`; badge.style.display = 'inline-block'; }
                 }
             }
-
-            const listItem = document.createElement('div');
-            listItem.className = 'selected-list-item';
-            const safeEnKey = enKey.replace(/'/g, "\\'");
-
-            listItem.innerHTML = `
-                <div><b>${data.cn}</b> <span style="font-size:11px;color:var(--text-muted)">${data.weight !== 1.0 ? 'x'+data.weight : ''}</span></div>
-                <div class="weight-actions">
-                    <button onclick="adjustWeight('${safeEnKey}', 0.1)">➕</button>
-                    <button onclick="adjustWeight('${safeEnKey}', -0.1)">➖</button>
-                    <button class="btn-remove" onclick="removeTagDirectly('${safeEnKey}')" title="從本次組合剔除">❌ 剔除</button>
-                </div>
-            `;
-            listContainer.appendChild(listItem);
+            listContainer.appendChild(selectedListItem(prompt, data));
         });
     }
 
@@ -349,9 +456,8 @@ function copyText(textareaId, btnId) {
     if (!textarea || !textarea.value) return;
     textarea.select();
     navigator.clipboard.writeText(textarea.value).then(() => {
-        const originalText = btn.innerHTML;
-        btn.innerHTML = "✅ 已複製！"; btn.style.background = "var(--accent)";
-        setTimeout(() => { btn.innerHTML = originalText; btn.style.background = "var(--primary)"; }, 2000);
+        btn.textContent = t('prompt.copied'); btn.style.background = "var(--accent)";
+        setTimeout(() => { btn.textContent = t('prompt.copy'); btn.style.background = "var(--primary)"; }, 2000);
     });
 }
 
@@ -368,92 +474,3 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.onload = loadConfig;
-
-// ========================= Draw Things HTTP API =========================
-function dtApiBase() {
-    return document.getElementById('dt-api-base').value.replace(/\/+$/, '');
-}
-
-async function testDrawThingsConnection() {
-    const statusEl = document.getElementById('dt-status');
-    statusEl.textContent = '🔄 測試連線中...';
-    try {
-        const res = await apiFetch(`${dtApiBase()}/`, { method: 'GET' });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        await res.json().catch(() => ({}));
-        statusEl.innerHTML = '✅ 連線成功！Draw Things HTTP API 可正常呼叫。';
-    } catch (e) {
-        statusEl.innerHTML = `❌ 連線失敗：${e.message}<br>請確認 Draw Things App 已開啟「HTTP API Server」、位址正確，或改用 server_proxy.js 本機代理（見下方提示）。`;
-    }
-}
-
-async function generateWithDrawThings() {
-    const btn = document.getElementById('btn-generate-dt');
-    const statusEl = document.getElementById('dt-status');
-    const gallery = document.getElementById('dt-gallery');
-
-    const positive = document.getElementById('positivePrompt').value.trim();
-    const negative = document.getElementById('negativePrompt').value.trim();
-    const width = parseInt(document.getElementById('dt-width').value) || 512;
-    const height = parseInt(document.getElementById('dt-height').value) || 512;
-    const steps = parseInt(document.getElementById('dt-steps').value) || 20;
-    const cfgScale = parseFloat(document.getElementById('dt-cfg').value) || 7;
-    const samplerName = document.getElementById('dt-sampler').value;
-    const seedVal = parseInt(document.getElementById('dt-seed').value);
-    const batchSize = parseInt(document.getElementById('dt-batch').value) || 1;
-
-    if (!positive) { alert('正向提示詞是空的，請先選幾個標籤或輸入內容。'); return; }
-
-    const payload = {
-        prompt: positive,
-        negative_prompt: negative,
-        width: width,
-        height: height,
-        steps: steps,
-        cfg_scale: cfgScale,
-        sampler_name: samplerName,
-        seed: isNaN(seedVal) ? -1 : seedVal,
-        batch_size: batchSize
-    };
-
-    btn.disabled = true;
-    const originalLabel = btn.innerHTML;
-    btn.innerHTML = '⏳ 產生中...';
-    statusEl.textContent = '🎨 已送出請求，等待 Draw Things 產圖（依步數/解析度可能需數秒到數十秒）...';
-    gallery.innerHTML = '';
-
-    try {
-        const res = await apiFetch(`${dtApiBase()}/sdapi/v1/txt2img`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-        if (!res.ok) {
-            const errText = await res.text().catch(() => '');
-            throw new Error(`HTTP ${res.status} ${errText.slice(0, 150)}`);
-        }
-        const data = await res.json();
-        if (!data.images || data.images.length === 0) throw new Error('回應中沒有圖片資料 (images 欄位為空)');
-
-        data.images.forEach((b64, idx) => {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'dt-image-item';
-            const img = document.createElement('img');
-            img.src = `data:image/png;base64,${b64}`;
-            const dlLink = document.createElement('a');
-            dlLink.href = img.src;
-            dlLink.download = `draw_things_${Date.now()}_${idx}.png`;
-            dlLink.className = 'dt-download-link';
-            dlLink.textContent = '⬇️ 下載這張圖';
-            wrapper.appendChild(img);
-            wrapper.appendChild(dlLink);
-            gallery.appendChild(wrapper);
-        });
-        statusEl.textContent = `✅ 產圖完成，共 ${data.images.length} 張（${width}x${height}, ${steps} steps, seed ${payload.seed}）。`;
-    } catch (e) {
-        statusEl.innerHTML = `❌ 產圖失敗：${e.message}<br>請確認 Draw Things HTTP API 已開啟，或改用 server_proxy.js 本機代理後把位址改成 http://127.0.0.1:8791。`;
-    } finally {
-        btn.disabled = false;
-        btn.innerHTML = originalLabel;
-    }
-}

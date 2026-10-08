@@ -1,0 +1,48 @@
+{
+  "gameTypes": {
+    "rpg": "角色扮演 RPG",
+    "casual-simulation": "休閒／模擬",
+    "card-strategy": "卡牌／策略",
+    "shooter-action": "射擊／動作",
+    "roguelike-action": "Roguelike／動作"
+  },
+  "styleTypes": {
+    "anime-2d": "日系 2D 動畫",
+    "cute-3d": "可愛 3D",
+    "fantasy-illustration": "奇幻插畫",
+    "dark-fantasy-3d": "黑暗奇幻 3D",
+    "cozy-storybook-2d": "溫馨繪本 2D",
+    "scifi-3d": "科幻 3D",
+    "pixel-art": "像素藝術"
+  },
+  "templates": {
+    "mobile-anime-rpg": {
+      "label": "手遊日系 RPG 角色卡",
+      "description": "適合抽卡角色、立繪與角色檔案頁；以清晰輪廓和易讀表情為優先。"
+    },
+    "mobile-casual": {
+      "label": "休閒手遊 3D 道具／角色",
+      "description": "適合農場、料理與生活模擬遊戲；強調明亮、圓潤且在小螢幕可辨識。"
+    },
+    "mobile-card-battle": {
+      "label": "策略卡牌奇幻角色",
+      "description": "適合卡牌框、英雄半身像與技能演出；以戲劇光影與清楚焦點為主。"
+    },
+    "steam-dark-fantasy": {
+      "label": "Steam 黑暗奇幻概念圖",
+      "description": "適合 Steam RPG 的角色、敵人與場景概念；優先呈現材質、尺度與氛圍。"
+    },
+    "steam-cozy": {
+      "label": "Steam 溫馨模擬場景",
+      "description": "適合療癒、農場與建造類遊戲；以溫暖光線和可探索的場景層次為主。"
+    },
+    "steam-scifi": {
+      "label": "科幻動作武器／介面素材",
+      "description": "適合武器、載具、HUD 和宣傳圖；保留明確輪廓與高科技材質對比。"
+    },
+    "indie-pixel": {
+      "label": "獨立 Roguelike 像素素材",
+      "description": "適合角色、道具與小型場景設計；強調有限色盤和明確可讀性。"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "特效",
+  "categories": {
+    "magic": "魔法特效",
+    "combat": "戰鬥特效",
+    "environment": "環境特效"
+  },
+  "subcategories": {
+    "magic/elemental": "元素特效",
+    "combat/impact": "打擊特效",
+    "environment/ambient": "氛圍特效"
+  },
+  "tags": {
+    "fire magic effect": "火焰魔法特效",
+    "ice frost effect": "冰霜特效",
+    "lightning bolt effect": "閃電特效",
+    "healing light aura": "治療光環",
+    "dark magic swirl": "暗黑魔法漩渦",
+    "sword slash effect": "劍擊斬擊特效",
+    "explosion particle effect": "爆炸粒子特效",
+    "impact hit spark": "命中打擊火花",
+    "shield block effect": "護盾格擋特效",
+    "floating particles dust": "飄浮塵埃粒子",
+    "magical glow aura": "魔法光暈氛圍",
+    "smoke fog effect": "煙霧迷霧特效",
+    "rain weather effect": "降雨天氣特效",
+    "falling leaves effect": "落葉飄散特效"
+  }
+}

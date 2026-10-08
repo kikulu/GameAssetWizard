@@ -1,0 +1,60 @@
+{
+  "id": "environments",
+  "categories": [
+    {
+      "id": "nature",
+      "subcategories": [
+        {
+          "id": "terrain",
+          "tags": [
+            "fantasy forest landscape",
+            "mystical mountain scene",
+            "desert wasteland",
+            "snowy tundra",
+            "tropical island",
+            "underwater ocean scene"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "architecture-dungeons",
+      "subcategories": [
+        {
+          "id": "buildings",
+          "tags": [
+            "medieval castle",
+            "futuristic city skyline",
+            "ancient temple ruins",
+            "floating sky island",
+            "steampunk city"
+          ]
+        },
+        {
+          "id": "dungeon-interiors",
+          "tags": [
+            "dungeon corridor",
+            "cave interior",
+            "dark forest path",
+            "sci-fi spaceship interior",
+            "abandoned laboratory"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skybox-backgrounds",
+      "subcategories": [
+        {
+          "id": "background-assets",
+          "tags": [
+            "seamless sky background",
+            "parallax background layer",
+            "starry night skybox",
+            "sunset horizon backdrop"
+          ]
+        }
+      ]
+    }
+  ]
+}

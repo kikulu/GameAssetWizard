@@ -1,0 +1,40 @@
+{
+  "name": "의상·스타일",
+  "categories": {
+    "fantasy-attire": "판타지 복장",
+    "scifi-attire": "SF 복장",
+    "casual-modern": "일상·현대 의상",
+    "accessories": "액세서리·장식"
+  },
+  "subcategories": {
+    "fantasy-attire/fantasy-attire": "판타지 복장",
+    "scifi-attire/scifi-attire": "SF 복장",
+    "casual-modern/casual-modern": "일상·현대 의상",
+    "accessories/accessories": "액세서리·장식"
+  },
+  "tags": {
+    "fantasy plate armor": "판타지 판금 갑옷",
+    "leather adventurer outfit": "가죽 모험가 복장",
+    "wizard robe": "마법사 로브",
+    "royal ceremonial dress": "왕실 예복",
+    "traveler cloak and hood": "여행자 망토와 후드",
+    "ranger leather gear": "레인저 가죽 갑옷 장비",
+    "futuristic combat suit": "미래형 전투복",
+    "cyberpunk streetwear": "사이버펑크 스트리트웨어",
+    "space explorer suit": "우주 탐사복",
+    "mecha pilot suit": "메카 조종사 슈트",
+    "holographic armor": "홀로그램 아머",
+    "tech-enhanced jacket": "기술 강화 재킷",
+    "casual streetwear": "캐주얼 스트리트웨어",
+    "school uniform": "교복",
+    "sportswear outfit": "스포츠웨어",
+    "business formal attire": "비즈니스 정장",
+    "explorer utility outfit": "탐험 작업복",
+    "ornate shoulder armor": "화려한 어깨 갑옷",
+    "utility belt": "유틸리티 벨트",
+    "decorative cape": "장식 망토",
+    "fingerless gloves": "손가락 없는 장갑",
+    "tactical goggles accessory": "전술 고글",
+    "layered scarf": "겹겹이 두른 스카프"
+  }
+}

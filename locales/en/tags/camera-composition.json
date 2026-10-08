@@ -1,0 +1,37 @@
+{
+  "name": "Camera & Composition",
+  "categories": {
+    "shot-size": "Shot Size",
+    "viewpoint": "Viewpoint",
+    "composition-lens": "Composition & Lens Effects"
+  },
+  "subcategories": {
+    "shot-size/shot-size": "Shot Size",
+    "viewpoint/viewpoint": "Viewpoint",
+    "composition-lens/composition-lens": "Composition & Lens Effects"
+  },
+  "tags": {
+    "extreme close-up shot": "extreme close-up shot",
+    "close-up shot": "close-up shot",
+    "medium shot": "medium shot",
+    "cowboy shot": "cowboy shot",
+    "full body shot": "full body shot",
+    "wide shot": "wide shot",
+    "bird's eye view": "bird's eye view",
+    "low angle shot": "low angle shot",
+    "high angle shot": "high angle shot",
+    "eye level shot": "eye level shot",
+    "dutch angle": "dutch angle",
+    "over-the-shoulder shot": "over-the-shoulder shot",
+    "first-person view": "first-person view",
+    "isometric view": "isometric view",
+    "rule of thirds composition": "rule of thirds composition",
+    "centered composition": "centered composition",
+    "dynamic diagonal composition": "dynamic diagonal composition",
+    "symmetrical composition": "symmetrical composition",
+    "shallow depth of field": "shallow depth of field",
+    "wide angle lens": "wide angle lens",
+    "telephoto lens compression": "telephoto lens compression",
+    "motion blur background": "motion blur background"
+  }
+}

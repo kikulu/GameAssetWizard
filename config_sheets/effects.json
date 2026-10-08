@@ -1,0 +1,49 @@
+{
+  "id": "effects",
+  "categories": [
+    {
+      "id": "magic",
+      "subcategories": [
+        {
+          "id": "elemental",
+          "tags": [
+            "fire magic effect",
+            "ice frost effect",
+            "lightning bolt effect",
+            "healing light aura",
+            "dark magic swirl"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combat",
+      "subcategories": [
+        {
+          "id": "impact",
+          "tags": [
+            "sword slash effect",
+            "explosion particle effect",
+            "impact hit spark",
+            "shield block effect"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "environment",
+      "subcategories": [
+        {
+          "id": "ambient",
+          "tags": [
+            "floating particles dust",
+            "magical glow aura",
+            "smoke fog effect",
+            "rain weather effect",
+            "falling leaves effect"
+          ]
+        }
+      ]
+    }
+  ]
+}

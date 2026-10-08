@@ -1,0 +1,40 @@
+{
+  "name": "服裝造型",
+  "categories": {
+    "fantasy-attire": "奇幻裝束",
+    "scifi-attire": "科幻裝束",
+    "casual-modern": "日常與現代服裝",
+    "accessories": "配件與裝飾"
+  },
+  "subcategories": {
+    "fantasy-attire/fantasy-attire": "奇幻裝束",
+    "scifi-attire/scifi-attire": "科幻裝束",
+    "casual-modern/casual-modern": "日常與現代服裝",
+    "accessories/accessories": "配件與裝飾"
+  },
+  "tags": {
+    "fantasy plate armor": "奇幻板甲",
+    "leather adventurer outfit": "皮革冒險者服裝",
+    "wizard robe": "巫師長袍",
+    "royal ceremonial dress": "皇室禮服",
+    "traveler cloak and hood": "旅行者斗篷兜帽",
+    "ranger leather gear": "遊俠皮甲裝備",
+    "futuristic combat suit": "未來戰鬥服",
+    "cyberpunk streetwear": "賽博龐克街頭服",
+    "space explorer suit": "太空探索服",
+    "mecha pilot suit": "機甲駕駛服",
+    "holographic armor": "全息裝甲",
+    "tech-enhanced jacket": "科技強化夾克",
+    "casual streetwear": "休閒街頭服",
+    "school uniform": "學生制服",
+    "sportswear outfit": "運動服裝",
+    "business formal attire": "正式商務服裝",
+    "explorer utility outfit": "探險工作服",
+    "ornate shoulder armor": "華麗肩甲",
+    "utility belt": "工具腰帶",
+    "decorative cape": "裝飾披風",
+    "fingerless gloves": "無指手套",
+    "tactical goggles accessory": "戰術護目鏡配件",
+    "layered scarf": "多層圍巾"
+  }
+}

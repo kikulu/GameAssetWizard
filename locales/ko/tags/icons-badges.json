@@ -1,0 +1,27 @@
+{
+  "name": "아이콘·배지",
+  "categories": {
+    "in-game-icons": "게임 내 아이콘",
+    "app-store-icons": "앱·스토어 아이콘"
+  },
+  "subcategories": {
+    "in-game-icons/skills-currency": "스킬·재화",
+    "in-game-icons/achievement-badges": "업적 배지",
+    "app-store-icons/app-icons": "앱 아이콘"
+  },
+  "tags": {
+    "skill icon design": "스킬 아이콘 디자인",
+    "spell icon": "주문 아이콘",
+    "currency coin icon": "화폐 금화 아이콘",
+    "gem currency icon": "보석 재화 아이콘",
+    "energy icon": "에너지 아이콘",
+    "achievement badge icon": "업적 배지 아이콘",
+    "trophy icon": "트로피 아이콘",
+    "rank medal icon": "랭크 메달 아이콘",
+    "level up badge": "레벨업 배지",
+    "mobile app icon design": "모바일 앱 아이콘 디자인",
+    "minimalist app icon": "미니멀 앱 아이콘",
+    "3D app icon": "입체 3D 앱 아이콘",
+    "rounded square app icon": "둥근 사각형 앱 아이콘"
+  }
+}

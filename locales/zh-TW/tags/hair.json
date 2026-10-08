@@ -1,0 +1,29 @@
+{
+  "name": "髮型髮色",
+  "categories": {
+    "hairstyle": "髮型",
+    "hair-color": "髮色"
+  },
+  "subcategories": {
+    "hairstyle/hairstyle": "髮型",
+    "hair-color/hair-color": "髮色"
+  },
+  "tags": {
+    "ponytail": "馬尾",
+    "twintails": "雙馬尾",
+    "braided hair": "辮子",
+    "short hair": "短髮",
+    "long hair": "長髮",
+    "messy hair": "凌亂髮型",
+    "bun hairstyle": "丸子頭",
+    "wavy hair": "波浪捲髮",
+    "black hair": "黑髮",
+    "blonde hair": "金髮",
+    "silver hair": "銀髮",
+    "red hair": "紅髮",
+    "blue hair": "藍髮",
+    "white hair": "白髮",
+    "gradient hair color": "漸層髮色",
+    "colorful fantasy hair": "奇幻鮮豔髮色"
+  }
+}

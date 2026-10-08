@@ -28,16 +28,16 @@ function registerAppProtocol() {
 function registerApiBridge() {
     ipcMain.handle('api:request', async (event, options = {}) => {
         if (!event.senderFrame || !event.senderFrame.url.startsWith(`${APP_ORIGIN}/`)) {
-            return { error: 'Blocked: untrusted sender' };
+            return { error: 'Blocked: untrusted sender', errorCode: 'untrustedSender' };
         }
         let target;
         try {
             target = new URL(String(options.url));
         } catch {
-            return { error: `無效的網址：${options.url}` };
+            return { error: `Invalid URL: ${options.url}`, errorCode: 'invalidUrl', errorDetail: String(options.url) };
         }
         if (!['http:', 'https:'].includes(target.protocol)) {
-            return { error: '僅支援 http/https 位址' };
+            return { error: 'Only http/https addresses are supported', errorCode: 'unsupportedProtocol' };
         }
         try {
             const method = String(options.method || 'GET').toUpperCase();

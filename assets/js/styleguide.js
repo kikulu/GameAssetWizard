@@ -98,6 +98,8 @@
     const $ = id => document.getElementById(id);
     let lockedParams = null;     // 已擷取的參數快照
     let batchAbort = false;
+    let abortedByFailures = false;
+    let idleStatus = true;
     let batchResults = [];
 
     function loadProfiles() {
@@ -115,7 +117,7 @@
     function recall(key) { try { return localStorage.getItem(key); } catch { return null; } }
 
     function isEnabled() { return $('sl-enabled').checked; }
-    function setStatus(message) { $('sl-status').textContent = message; }
+    function setStatus(message) { idleStatus = false; $('sl-status').textContent = message; }
     function randomSeed() { return Math.floor(Math.random() * 2147483647); }
 
     // ---------------------------------------------------------------- 參數欄位讀寫
@@ -139,17 +141,18 @@
     }
 
     function summaryText(p) {
-        if (!p) return '尚未擷取參數。調整好下方產圖參數後，按「擷取目前參數」。';
+        if (!p) return t('style.noParams');
         const parts = [`Steps ${p.steps}`, `CFG ${p.cfg}`, `${p.sampler}/${p.scheduler}`, `denoise ${p.denoise}`];
         if (p.checkpoint) parts.push(`ckpt ${p.checkpoint}`);
         if (p.lora) parts.push(`LoRA ${p.lora}@${p.loraWeight}`);
-        const seedMode = $('sl-seed-mode').value === 'fixed' ? `固定種子 ${$('sl-seed').value}` : '隨機種子';
+        const seedMode = $('sl-seed-mode').value === 'fixed' ? t('style.seedFixedSummary', { seed: $('sl-seed').value }) : t('style.seedRandomSummary');
         return `${parts.join(' · ')} · ${seedMode}`;
     }
     function refreshSummary() {
         $('sl-summary').textContent = summaryText(lockedParams);
         const badge = $('sl-badge');
-        badge.textContent = isEnabled() ? `🔒 已鎖定${$('sl-name').value.trim() ? '：' + $('sl-name').value.trim() : ''}` : '🔓 未鎖定';
+        const styleName = $('sl-name').value.trim();
+        badge.textContent = isEnabled() ? (styleName ? t('style.badgeOnNamed', { name: styleName }) : t('style.badgeOn')) : t('style.badgeOff');
         badge.classList.toggle('on', isEnabled());
         $('sl-seed').disabled = $('sl-seed-mode').value !== 'fixed';
         $('sl-dice').disabled = $('sl-seed').disabled;
@@ -211,7 +214,7 @@
         const select = $('sl-profile'), profiles = loadProfiles();
         select.innerHTML = '';
         const blank = document.createElement('option');
-        blank.value = ''; blank.textContent = '— 選擇已儲存的風格 —';
+        blank.value = ''; blank.textContent = t('style.profilePlaceholder');
         select.append(blank);
         Object.keys(profiles).sort().forEach(name => {
             const option = document.createElement('option');
@@ -227,34 +230,34 @@
         if (!profile) return;
         fillEditor(profile);
         remember(STORE_ACTIVE, name);
-        setStatus(`已載入風格「${name}」。`);
+        setStatus(t('style.loaded', { name }));
     }
 
     function onSaveProfile() {
         if (isEnabled() && !lockedParams) return;
-        if (!$('sl-name').value.trim()) return setStatus('請先輸入風格名稱。');
+        if (!$('sl-name').value.trim()) return setStatus(t('style.needName'));
         if ($('sl-seed-mode').value === 'fixed' && Number($('sl-seed').value) < 0) $('sl-seed').value = randomSeed();
         const profile = currentProfile();
-        if (!profile) return setStatus('風格設定無效，請檢查名稱。');
+        if (!profile) return setStatus(t('style.invalid'));
         const profiles = loadProfiles();
-        if (profiles[profile.name] && !confirm(`已有名為「${profile.name}」的風格，要覆蓋嗎？`)) return;
+        if (profiles[profile.name] && !confirm(t('style.overwrite', { name: profile.name }))) return;
         profiles[profile.name] = profile;
         saveProfiles(profiles);
         remember(STORE_ACTIVE, profile.name);
         refreshProfileSelect(profile.name);
         refreshSummary();
-        setStatus(`💾 已儲存風格「${profile.name}」。`);
+        setStatus(t('style.saved', { name: profile.name }));
     }
 
     function onDeleteProfile() {
         const name = $('sl-profile').value;
-        if (!name) return setStatus('請先選擇要刪除的風格。');
-        if (!confirm(`確定刪除風格「${name}」？`)) return;
+        if (!name) return setStatus(t('style.deleteFirst'));
+        if (!confirm(t('style.confirmDelete', { name }))) return;
         const profiles = loadProfiles();
         delete profiles[name];
         saveProfiles(profiles);
         refreshProfileSelect('');
-        setStatus(`🗑️ 已刪除風格「${name}」。`);
+        setStatus(t('style.deleted', { name }));
     }
 
     // ---------------------------------------------------------------- 匯出 / 匯入
@@ -268,11 +271,11 @@
     }
 
     function onExportProfile() {
-        if (isEnabled() && !$('sl-name').value.trim()) return setStatus('請先輸入風格名稱。');
+        if (isEnabled() && !$('sl-name').value.trim()) return setStatus(t('style.exportNeedName'));
         const profile = currentProfile();
-        if (!profile) return setStatus('請先輸入風格名稱再匯出。');
+        if (!profile) return setStatus(t('style.exportNeedName'));
         downloadText(`style_${slug(profile.name, 'style')}.json`, JSON.stringify({ format: 'game-asset-style/1', profile }, null, 2));
-        setStatus('📤 已匯出風格設定。');
+        setStatus(t('style.exported'));
     }
 
     async function onImportFile(event) {
@@ -280,7 +283,7 @@
         event.target.value = '';
         if (!file) return;
         try {
-            if (file.size > 1024 * 1024) throw new Error('檔案過大');
+            if (file.size > 1024 * 1024) throw new Error(t('style.importTooLarge'));
             const data = JSON.parse(await file.text());
             const rawList = data.profile ? [data.profile] : data.profiles ? Object.values(data.profiles) : [data];
             const profiles = loadProfiles();
@@ -288,17 +291,17 @@
             for (const raw of rawList) {
                 const clean = sanitizeProfile(raw);
                 if (!clean) continue;
-                if (profiles[clean.name] && !confirm(`已有名為「${clean.name}」的風格，要覆蓋嗎？`)) continue;
+                if (profiles[clean.name] && !confirm(t('style.overwrite', { name: clean.name }))) continue;
                 profiles[clean.name] = clean; last = clean; count += 1;
             }
-            if (!count) throw new Error('找不到有效的風格設定');
+            if (!count) throw new Error(t('style.importNone'));
             saveProfiles(profiles);
             refreshProfileSelect(last.name);
             fillEditor(last);
             remember(STORE_ACTIVE, last.name);
-            setStatus(`📥 已匯入 ${count} 個風格，並載入「${last.name}」。`);
+            setStatus(t('style.importOk', { count, name: last.name }));
         } catch (error) {
-            setStatus(`❌ 匯入失敗：${error.message}`);
+            setStatus(t('style.importFail', { message: error.message }));
         }
     }
 
@@ -326,7 +329,7 @@
                 link.className = 'dt-download-link';
                 link.dataset.slDownload = '1';
                 link.download = `${profileName}_${String(index + 1).padStart(2, '0')}_${slug(subject)}${images.length > 1 ? '_' + (n + 1) : ''}.png`;
-                link.textContent = '⬇️ 下載';
+                link.textContent = t('style.tileDownload');
                 tile.append(img, link);
             });
             tile.prepend(caption);
@@ -342,23 +345,24 @@
 
     async function onRunBatch() {
         const subjects = $('sl-subjects').value.split('\n').map(s => s.trim()).filter(Boolean).slice(0, MAX_BATCH);
-        if (!subjects.length) return setStatus('請先在清單中輸入至少一個素材（每行一項）。');
-        if (!isEnabled()) setStatus('提醒：風格鎖定尚未啟用，批次結果的風格可能不一致。');
+        if (!subjects.length) return setStatus(t('style.batchEmpty'));
+        if (!isEnabled()) setStatus(t('style.batchNotLocked'));
 
         const extra = $('sl-append').checked ? $('positivePrompt').value.trim() : '';
         $('sl-gallery').innerHTML = '';
         batchResults = [];
         batchAbort = false;
+        abortedByFailures = false;
         setBatchBusy(true);
         let failures = 0;
 
         for (let i = 0; i < subjects.length && !batchAbort; i += 1) {
             const subject = subjects[i];
-            setStatus(`🎨 產圖中 ${i + 1}/${subjects.length}：${subject}`);
+            setStatus(t('style.batchProgress', { current: i + 1, total: subjects.length, subject }));
             const settings = generationSettings(extra ? `${subject}, ${extra}` : subject);
             try {
                 const images = await runProvider(settings);
-                if (!images.length) throw new Error('後端沒有回傳圖片');
+                if (!images.length) throw new Error(t('gen.noImages'));
                 failures = 0;
                 addTile(subject, i, images);
                 batchResults.push({
@@ -370,28 +374,28 @@
             } catch (error) {
                 failures += 1;
                 addTile(subject, i, [], error.message);
-                if (failures >= 3) { setStatus('❌ 連續失敗 3 次，已中止批次。請檢查後端連線。'); break; }
+                if (failures >= 3) { abortedByFailures = true; setStatus(t('style.batchAbortedFailures')); break; }
             }
         }
 
         setBatchBusy(false);
-        if (!/連續失敗/.test($('sl-status').textContent)) {
-            setStatus(batchAbort ? `⏹ 已停止，完成 ${batchResults.length} 項。` : `✅ 批次完成：成功 ${batchResults.length}/${subjects.length} 項。`);
+        if (!abortedByFailures) {
+            setStatus(batchAbort ? t('style.batchStopped', { done: batchResults.length }) : t('style.batchDone', { done: batchResults.length, total: subjects.length }));
         }
     }
 
     async function onDownloadAll() {
         const links = [...$('sl-gallery').querySelectorAll('a[data-sl-download]')];
-        if (!links.length) return setStatus('目前沒有可下載的圖片。');
+        if (!links.length) return setStatus(t('style.noDownloads'));
         for (const link of links) {
             link.click();
             await new Promise(resolve => setTimeout(resolve, 250));
         }
-        setStatus(`⬇️ 已觸發 ${links.length} 張圖片下載。`);
+        setStatus(t('style.downloadsStarted', { count: links.length }));
     }
 
     function onExportManifest() {
-        if (!batchResults.length) return setStatus('尚無批次紀錄可匯出。');
+        if (!batchResults.length) return setStatus(t('style.noManifest'));
         const profile = currentProfile();
         downloadText(`manifest_${slug($('sl-name').value, 'batch')}_${Date.now()}.json`, JSON.stringify({
             format: 'game-asset-batch/1',
@@ -400,44 +404,44 @@
             profile,
             items: batchResults
         }, null, 2));
-        setStatus('📄 已匯出批次設定紀錄。');
+        setStatus(t('style.manifestExported'));
     }
 
     // ---------------------------------------------------------------- 介面
 
     function panelHtml() {
         return `
-<summary>🎨 風格鎖定（保持系列素材一致）<span class="sl-badge" id="sl-badge">🔓 未鎖定</span></summary>
-<p class="generator-note">先調好下方產圖參數並按「擷取目前參數」，填入風格前綴與種子，再開啟鎖定。之後每次產圖（含批次）都會套用同一組設定。注意：固定種子能穩定構圖與色調，但不同提示詞間仍可能有差異，建議搭配固定的 Checkpoint／LoRA。</p>
-<div class="sl-row"><select id="sl-profile"></select><input id="sl-name" type="text" maxlength="60" placeholder="風格名稱（例如：Q版卡牌）"></div>
+<summary><span data-i18n="style.title">🎨 風格鎖定（保持系列素材一致）</span><span class="sl-badge" id="sl-badge"></span></summary>
+<p class="generator-note" data-i18n="style.note">先調好下方產圖參數並按「擷取目前參數」，填入風格前綴與種子，再開啟鎖定。之後每次產圖（含批次）都會套用同一組設定。注意：固定種子能穩定構圖與色調，但不同提示詞間仍可能有差異，建議搭配固定的 Checkpoint／LoRA。</p>
+<div class="sl-row"><select id="sl-profile"></select><input id="sl-name" type="text" maxlength="60" data-i18n-placeholder="style.namePlaceholder" placeholder="風格名稱（例如：Q版卡牌）"></div>
 <div class="dt-btn-row sl-btns">
-  <button type="button" class="dt-btn test" id="sl-save">💾 儲存</button>
-  <button type="button" class="dt-btn test" id="sl-delete">🗑️ 刪除</button>
-  <button type="button" class="dt-btn test" id="sl-export">📤 匯出</button>
-  <button type="button" class="dt-btn test" id="sl-import-btn">📥 匯入</button>
+  <button type="button" class="dt-btn test" id="sl-save" data-i18n="style.save">💾 儲存</button>
+  <button type="button" class="dt-btn test" id="sl-delete" data-i18n="style.delete">🗑️ 刪除</button>
+  <button type="button" class="dt-btn test" id="sl-export" data-i18n="style.export">📤 匯出</button>
+  <button type="button" class="dt-btn test" id="sl-import-btn" data-i18n="style.import">📥 匯入</button>
   <input type="file" id="sl-import" accept="application/json,.json" hidden>
 </div>
-<div class="setting-field"><label>風格前綴提示詞（自動加在每次提示詞最前面）</label><textarea id="sl-style-prompt" placeholder="例如：flat vector illustration, thick outline, pastel palette, game asset"></textarea></div>
-<div class="setting-field"><label>風格反向詞（自動附加到反向提示詞）</label><textarea id="sl-style-negative" placeholder="例如：photo, realistic, blurry, watermark"></textarea></div>
+<div class="setting-field"><label data-i18n="style.promptLabel">風格前綴提示詞（自動加在每次提示詞最前面）</label><textarea id="sl-style-prompt" data-i18n-placeholder="style.promptPlaceholder" placeholder="例如：flat vector illustration, thick outline, pastel palette, game asset"></textarea></div>
+<div class="setting-field"><label data-i18n="style.negativeLabel">風格反向詞（自動附加到反向提示詞）</label><textarea id="sl-style-negative" data-i18n-placeholder="style.negativePlaceholder" placeholder="例如：photo, realistic, blurry, watermark"></textarea></div>
 <div class="advanced-grid">
-  <div class="setting-field"><label>種子模式</label><select id="sl-seed-mode"><option value="fixed">固定種子（較一致）</option><option value="random">每張隨機</option></select></div>
-  <div class="setting-field"><label>固定種子</label><div class="sl-seed-row"><input id="sl-seed" type="number" value="-1" min="-1"><button type="button" class="dt-btn test" id="sl-dice" title="隨機產生種子">🎲</button></div></div>
+  <div class="setting-field"><label data-i18n="style.seedMode">種子模式</label><select id="sl-seed-mode"><option value="fixed" data-i18n="style.seedFixed">固定種子（較一致）</option><option value="random" data-i18n="style.seedRandom">每張隨機</option></select></div>
+  <div class="setting-field"><label data-i18n="style.seedLabel">固定種子</label><div class="sl-seed-row"><input id="sl-seed" type="number" value="-1" min="-1"><button type="button" class="dt-btn test" id="sl-dice" data-i18n-title="style.diceTitle" title="隨機產生種子">🎲</button></div></div>
 </div>
 <div class="sl-summary" id="sl-summary"></div>
-<div class="dt-btn-row"><button type="button" class="dt-btn test" id="sl-capture">📌 擷取目前參數</button></div>
-<label class="sl-toggle"><input type="checkbox" id="sl-enabled"> 啟用風格鎖定（鎖住 Steps／CFG／Sampler／Checkpoint／LoRA／種子欄位）</label>
+<div class="dt-btn-row"><button type="button" class="dt-btn test" id="sl-capture" data-i18n="style.capture">📌 擷取目前參數</button></div>
+<label class="sl-toggle"><input type="checkbox" id="sl-enabled"> <span data-i18n="style.enable">啟用風格鎖定（鎖住 Steps／CFG／Sampler／Checkpoint／LoRA／種子欄位）</span></label>
 <hr class="sl-sep">
-<div class="setting-field"><label>批次素材清單（每行一項，最多 ${MAX_BATCH} 項）</label><textarea id="sl-subjects" placeholder="knight with sword&#10;healing potion&#10;wooden treasure chest"></textarea></div>
-<label class="sl-toggle"><input type="checkbox" id="sl-append"> 同時附加上方已組好的提示詞（如鏡頭、場景標籤）</label>
+<div class="setting-field"><label id="sl-batch-label"></label><textarea id="sl-subjects" placeholder="knight with sword&#10;healing potion&#10;wooden treasure chest"></textarea></div>
+<label class="sl-toggle"><input type="checkbox" id="sl-append"> <span data-i18n="style.append">同時附加上方已組好的提示詞（如鏡頭、場景標籤）</span></label>
 <div class="dt-btn-row" style="margin-top:8px">
-  <button type="button" class="dt-btn generate" id="sl-run">🚀 批次產圖</button>
-  <button type="button" class="dt-btn test" id="sl-stop" disabled>⏹ 停止</button>
+  <button type="button" class="dt-btn generate" id="sl-run" data-i18n="style.run">🚀 批次產圖</button>
+  <button type="button" class="dt-btn test" id="sl-stop" data-i18n="style.stop" disabled>⏹ 停止</button>
 </div>
-<div class="dt-status generator-status" id="sl-status">尚未開始。</div>
+<div class="dt-status generator-status" id="sl-status"></div>
 <div class="dt-gallery" id="sl-gallery"></div>
 <div class="dt-btn-row" style="margin-top:10px">
-  <button type="button" class="dt-btn test" id="sl-dl-all">⬇️ 全部下載</button>
-  <button type="button" class="dt-btn test" id="sl-manifest">📄 匯出設定紀錄</button>
+  <button type="button" class="dt-btn test" id="sl-dl-all" data-i18n="style.downloadAll">⬇️ 全部下載</button>
+  <button type="button" class="dt-btn test" id="sl-manifest" data-i18n="style.manifest">📄 匯出設定紀錄</button>
 </div>`;
     }
 
@@ -472,21 +476,32 @@
         $('sl-capture').addEventListener('click', () => {
             lockedParams = readParams();
             refreshSummary();
-            setStatus('📌 已擷取目前產圖參數。');
+            setStatus(t('style.captured'));
         });
         $('sl-enabled').addEventListener('change', event => setEnabled(event.target.checked));
         $('sl-run').addEventListener('click', onRunBatch);
-        $('sl-stop').addEventListener('click', () => { batchAbort = true; setStatus('正在停止…（等待目前這張完成）'); });
+        $('sl-stop').addEventListener('click', () => { batchAbort = true; setStatus(t('style.stopping')); });
         $('sl-dl-all').addEventListener('click', onDownloadAll);
         $('sl-manifest').addEventListener('click', onExportManifest);
 
         const active = recall(STORE_ACTIVE);
         refreshProfileSelect(active);
+        $('sl-status').textContent = t('style.statusIdle');
         const profile = loadProfiles()[active];
         if (profile) fillEditor(profile);
         else refreshSummary();
         if (recall(STORE_ENABLED) === '1' && profile) { $('sl-enabled').checked = true; setEnabled(true); }
     }
+
+    // 切換語言：重繪動態文字（徽章、摘要、選單預設項、批次標題）
+    function refreshLocalizedText() {
+        if (!$('style-lock')) return;
+        refreshProfileSelect($('sl-profile').value);
+        refreshSummary();
+        $('sl-batch-label').textContent = t('style.batchLabel', { max: MAX_BATCH });
+        if (idleStatus) $('sl-status').textContent = t('style.statusIdle');
+    }
+    window.addEventListener('localechange', refreshLocalizedText);
 
     window.addEventListener('DOMContentLoaded', init);
 })();

@@ -1,0 +1,43 @@
+{
+  "name": "Actions & Poses",
+  "categories": {
+    "standing-idle": "Standing & Idle",
+    "combat-actions": "Combat Actions",
+    "movement": "Movement",
+    "situational-poses": "Situational Poses"
+  },
+  "subcategories": {
+    "standing-idle/standing-idle": "Standing & Idle",
+    "combat-actions/combat-actions": "Combat Actions",
+    "movement/movement": "Movement",
+    "situational-poses/situational-poses": "Situational Poses"
+  },
+  "tags": {
+    "standing pose": "standing pose",
+    "idle stance": "idle stance",
+    "confident standing pose": "confident standing pose",
+    "relaxed pose": "relaxed pose",
+    "hands on hips": "hands on hips",
+    "arms crossed pose": "arms crossed pose",
+    "combat stance": "combat stance",
+    "dynamic action pose": "dynamic action pose",
+    "sword swing pose": "sword swing pose",
+    "spellcasting pose": "spellcasting pose",
+    "bow aiming pose": "bow aiming pose",
+    "charging pose": "charging pose",
+    "defensive guard stance": "defensive guard stance",
+    "victory battle pose": "victory battle pose",
+    "running pose": "running pose",
+    "jumping pose": "jumping pose",
+    "flying pose": "flying pose",
+    "crouching pose": "crouching pose",
+    "sneaking pose": "sneaking pose",
+    "dashing pose": "dashing pose",
+    "sitting pose": "sitting pose",
+    "leaning pose": "leaning pose",
+    "victory pose": "victory pose",
+    "greeting pose": "greeting pose",
+    "thinking pose": "thinking pose",
+    "kneeling pose": "kneeling pose"
+  }
+}

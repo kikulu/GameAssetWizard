@@ -1,0 +1,37 @@
+{
+  "name": "Items & Gear",
+  "categories": {
+    "weapons": "Weapons",
+    "armor-items": "Armor & Items"
+  },
+  "subcategories": {
+    "weapons/melee-weapons": "Melee Weapons",
+    "weapons/ranged-weapons": "Ranged Weapons",
+    "armor-items/armor": "Armor",
+    "armor-items/consumables-collectibles": "Consumables & Collectibles"
+  },
+  "tags": {
+    "fantasy sword": "fantasy sword",
+    "battle axe": "battle axe",
+    "war hammer": "war hammer",
+    "dagger blade": "dagger blade",
+    "spear weapon": "spear weapon",
+    "magic staff": "magic staff",
+    "sci-fi rifle": "sci-fi rifle",
+    "bow and arrow": "bow and arrow",
+    "laser pistol": "laser pistol",
+    "throwing knife": "throwing knife",
+    "crossbow weapon": "crossbow weapon",
+    "plate armor": "plate armor",
+    "leather armor set": "leather armor set",
+    "mage robe": "mage robe",
+    "futuristic exosuit": "futuristic exosuit",
+    "shield item": "shield item",
+    "health potion bottle": "health potion bottle",
+    "magic scroll": "magic scroll",
+    "treasure chest": "treasure chest",
+    "gold coin icon": "gold coin icon",
+    "gemstone item": "gemstone item",
+    "key item": "key item"
+  }
+}

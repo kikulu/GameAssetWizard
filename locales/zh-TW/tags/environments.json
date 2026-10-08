@@ -1,0 +1,36 @@
+{
+  "name": "場景環境",
+  "categories": {
+    "nature": "自然場景",
+    "architecture-dungeons": "建築與地城",
+    "skybox-backgrounds": "天空盒與背景"
+  },
+  "subcategories": {
+    "nature/terrain": "地形",
+    "architecture-dungeons/buildings": "建築",
+    "architecture-dungeons/dungeon-interiors": "地城內部",
+    "skybox-backgrounds/background-assets": "背景素材"
+  },
+  "tags": {
+    "fantasy forest landscape": "奇幻森林景觀",
+    "mystical mountain scene": "神秘山脈場景",
+    "desert wasteland": "沙漠荒地",
+    "snowy tundra": "雪原凍土",
+    "tropical island": "熱帶島嶼",
+    "underwater ocean scene": "海底場景",
+    "medieval castle": "中世紀城堡",
+    "futuristic city skyline": "未來城市天際線",
+    "ancient temple ruins": "古代神殿遺跡",
+    "floating sky island": "漂浮天空島",
+    "steampunk city": "蒸汽龐克城市",
+    "dungeon corridor": "地城走廊",
+    "cave interior": "洞穴內部",
+    "dark forest path": "暗黑森林小徑",
+    "sci-fi spaceship interior": "太空船內部",
+    "abandoned laboratory": "廢棄實驗室",
+    "seamless sky background": "無縫天空背景",
+    "parallax background layer": "視差背景圖層",
+    "starry night skybox": "星空天空盒",
+    "sunset horizon backdrop": "夕陽地平線背景"
+  }
+}

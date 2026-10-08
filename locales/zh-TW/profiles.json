@@ -1,0 +1,124 @@
+{
+  "profiles": {
+    "mobile": {
+      "label": "📱 手遊（綜合）",
+      "platform": "手機遊戲",
+      "dimension": "綜合風格"
+    },
+    "mobile2d": {
+      "label": "📱 手遊 2D",
+      "platform": "手機遊戲",
+      "dimension": "2D 風格"
+    },
+    "mobile3d": {
+      "label": "📱 手遊 3D",
+      "platform": "手機遊戲",
+      "dimension": "3D 風格"
+    },
+    "steam": {
+      "label": "🖥️ Steam（綜合）",
+      "platform": "Steam / PC",
+      "dimension": "綜合風格"
+    },
+    "steam2d": {
+      "label": "🖥️ Steam 2D",
+      "platform": "Steam / PC",
+      "dimension": "2D 風格"
+    },
+    "steam3d": {
+      "label": "🖥️ Steam 3D",
+      "platform": "Steam / PC",
+      "dimension": "3D 風格"
+    }
+  },
+  "presets": {
+    "ios-app-icon": {
+      "label": "iOS App 圖示 1024x1024",
+      "note": "App Store 上架必備尺寸"
+    },
+    "android-icon": {
+      "label": "Android 圖示 512x512",
+      "note": "Google Play 圖示尺寸"
+    },
+    "in-game-icon": {
+      "label": "遊戲內圖示 256x256",
+      "note": "技能/道具/貨幣圖示"
+    },
+    "splash-portrait": {
+      "label": "啟動畫面 1170x2532",
+      "note": "直式手機啟動畫面"
+    },
+    "store-screenshot-portrait": {
+      "label": "商店截圖 1284x2778",
+      "note": "App Store 直式截圖"
+    },
+    "character-concept-square": {
+      "label": "角色概念圖 1024x1024",
+      "note": "方形角色設計稿"
+    },
+    "character-portrait-2d": {
+      "label": "2D 角色立繪 1024x1536",
+      "note": "直式角色立繪比例"
+    },
+    "sprite-frame": {
+      "label": "精靈圖單格 512x512",
+      "note": "Sprite sheet 單一動作格"
+    },
+    "ui-small-icon": {
+      "label": "2D UI小圖示 128x128",
+      "note": "按鈕/狀態小圖示"
+    },
+    "character-turnaround-3d": {
+      "label": "3D角色轉盤圖 1024x1536",
+      "note": "角色三視圖/轉盤參考比例"
+    },
+    "model-reference-wide": {
+      "label": "角色模型參考圖 2048x1024",
+      "note": "橫向模型設計參考"
+    },
+    "steam-main-capsule": {
+      "label": "Steam 主膠囊圖 616x353",
+      "note": "商店頁最主要曝光圖"
+    },
+    "steam-small-capsule": {
+      "label": "Steam 小膠囊圖 231x87",
+      "note": "清單/搜尋結果用"
+    },
+    "steam-header": {
+      "label": "Steam 頁首圖 460x215",
+      "note": "商店頁頂部圖"
+    },
+    "steam-library-hero": {
+      "label": "Steam 資料庫英雄圖 3840x1240",
+      "note": "個人收藏庫大圖"
+    },
+    "store-screenshot-16-9": {
+      "label": "商店截圖 16:9 1920x1080",
+      "note": "商店展示截圖"
+    },
+    "concept-art-2048": {
+      "label": "概念美術 2048x2048",
+      "note": "高解析概念設計稿"
+    },
+    "pixel-sprite": {
+      "label": "像素風精靈圖 128x128",
+      "note": "Pixel art sprite 尺寸"
+    },
+    "background-layer-2d": {
+      "label": "2D 背景圖層 1920x1080",
+      "note": "視差捲動背景層"
+    },
+    "character-portrait": {
+      "label": "角色立繪 1024x1536",
+      "note": "直式角色設計稿"
+    },
+    "character-design-3d": {
+      "label": "3D角色設計圖 2048x2048",
+      "note": "高解析角色設計稿"
+    },
+    "environment-concept": {
+      "label": "環境概念圖 3840x2160",
+      "note": "橫向場景概念稿"
+    }
+  }
+}

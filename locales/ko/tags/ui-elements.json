@@ -1,0 +1,28 @@
+{
+  "name": "UI 요소",
+  "categories": {
+    "buttons-frames": "버튼·프레임",
+    "hud": "HUD"
+  },
+  "subcategories": {
+    "buttons-frames/buttons": "버튼",
+    "buttons-frames/frames-borders": "프레임·테두리",
+    "hud/status-bars": "상태 바"
+  },
+  "tags": {
+    "game button UI": "게임 버튼 UI",
+    "rounded fantasy button": "둥근 판타지 버튼",
+    "sci-fi UI button": "SF 스타일 버튼",
+    "wooden UI button": "나무 질감 UI 버튼",
+    "glass UI button": "유리 질감 버튼",
+    "ornate frame border": "화려한 테두리 장식",
+    "fantasy UI panel": "판타지 UI 패널",
+    "futuristic HUD frame": "미래형 HUD 프레임",
+    "parchment UI background": "양피지 UI 배경",
+    "health bar UI": "체력 바 UI",
+    "mana bar UI": "마나 바 UI",
+    "experience progress bar": "경험치 진행 바",
+    "minimap UI element": "미니맵 UI 요소",
+    "inventory grid UI": "인벤토리 격자 UI"
+  }
+}

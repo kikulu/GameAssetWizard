@@ -1,0 +1,32 @@
+{
+  "name": "표정·감정",
+  "categories": {
+    "positive-emotions": "긍정적인 감정",
+    "combat-emotions": "전투 감정",
+    "other-emotions": "기타 감정"
+  },
+  "subcategories": {
+    "positive-emotions/positive-emotions": "긍정적인 감정",
+    "combat-emotions/combat-emotions": "전투 감정",
+    "other-emotions/other-emotions": "기타 감정"
+  },
+  "tags": {
+    "confident expression": "자신감 있는 표정",
+    "determined expression": "단호한 표정",
+    "cheerful smile": "밝은 미소",
+    "heroic expression": "영웅다운 표정",
+    "calm expression": "평온한 표정",
+    "playful grin": "장난기 어린 미소",
+    "fierce battle expression": "맹렬한 전투 표정",
+    "focused expression": "집중한 표정",
+    "battle cry expression": "함성 지르는 표정",
+    "intense determined stare": "날카롭고 굳센 눈빛",
+    "fearless expression": "두려움 없는 표정",
+    "surprised expression": "놀란 표정",
+    "mysterious expression": "신비로운 표정",
+    "gentle expression": "온화한 표정",
+    "curious expression": "호기심 어린 표정",
+    "serene expression": "고요한 표정",
+    "proud expression": "자랑스러운 표정"
+  }
+}

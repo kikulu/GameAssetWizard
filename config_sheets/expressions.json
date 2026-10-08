@@ -1,0 +1,52 @@
+{
+  "id": "expressions",
+  "categories": [
+    {
+      "id": "positive-emotions",
+      "subcategories": [
+        {
+          "id": "positive-emotions",
+          "tags": [
+            "confident expression",
+            "determined expression",
+            "cheerful smile",
+            "heroic expression",
+            "calm expression",
+            "playful grin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combat-emotions",
+      "subcategories": [
+        {
+          "id": "combat-emotions",
+          "tags": [
+            "fierce battle expression",
+            "focused expression",
+            "battle cry expression",
+            "intense determined stare",
+            "fearless expression"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other-emotions",
+      "subcategories": [
+        {
+          "id": "other-emotions",
+          "tags": [
+            "surprised expression",
+            "mysterious expression",
+            "gentle expression",
+            "curious expression",
+            "serene expression",
+            "proud expression"
+          ]
+        }
+      ]
+    }
+  ]
+}

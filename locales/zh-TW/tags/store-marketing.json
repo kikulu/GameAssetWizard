@@ -1,0 +1,28 @@
+{
+  "name": "商店行銷",
+  "categories": {
+    "steam-assets": "Steam 素材",
+    "marketing-promotion": "行銷宣傳",
+    "logos-branding": "Logo 與品牌"
+  },
+  "subcategories": {
+    "steam-assets/store-images": "商店圖片",
+    "marketing-promotion/promotional-images": "宣傳圖",
+    "logos-branding/logo-design": "標誌設計"
+  },
+  "tags": {
+    "steam capsule art": "Steam膠囊圖",
+    "steam header image": "Steam頁首圖",
+    "steam store background": "Steam商店背景圖",
+    "key art poster": "主視覺關鍵圖",
+    "game promotional banner": "遊戲宣傳橫幅",
+    "social media game ad": "社群媒體廣告圖",
+    "splash screen artwork": "啟動畫面插圖",
+    "loading screen illustration": "載入畫面插圖",
+    "main menu background art": "主選單背景美術",
+    "game logo design": "遊戲Logo設計",
+    "studio logo icon": "工作室Logo圖示",
+    "wordmark title logo": "文字標題Logo",
+    "emblem badge logo": "徽章式Logo"
+  }
+}

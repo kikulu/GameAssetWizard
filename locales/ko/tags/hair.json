@@ -1,0 +1,29 @@
+{
+  "name": "헤어스타일·머리색",
+  "categories": {
+    "hairstyle": "헤어스타일",
+    "hair-color": "머리색"
+  },
+  "subcategories": {
+    "hairstyle/hairstyle": "헤어스타일",
+    "hair-color/hair-color": "머리색"
+  },
+  "tags": {
+    "ponytail": "포니테일",
+    "twintails": "트윈테일",
+    "braided hair": "땋은 머리",
+    "short hair": "짧은 머리",
+    "long hair": "긴 머리",
+    "messy hair": "헝클어진 머리",
+    "bun hairstyle": "올림머리 번",
+    "wavy hair": "웨이브 머리",
+    "black hair": "검은 머리",
+    "blonde hair": "금발",
+    "silver hair": "은발",
+    "red hair": "붉은 머리",
+    "blue hair": "파란 머리",
+    "white hair": "흰 머리",
+    "gradient hair color": "그라데이션 머리색",
+    "colorful fantasy hair": "판타지풍 화려한 머리색"
+  }
+}

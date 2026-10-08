@@ -21,7 +21,10 @@
             headers: options.headers || {},
             body: typeof options.body === 'string' ? options.body : undefined
         });
-        if (result.error) throw new Error(result.error);
+        if (result.error) {
+            const message = result.errorCode ? t(`error.${result.errorCode}`, { detail: result.errorDetail || '' }) : result.error;
+            throw new Error(message);
+        }
 
         return {
             ok: result.status >= 200 && result.status < 300,

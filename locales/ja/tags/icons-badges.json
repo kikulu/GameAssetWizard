@@ -1,0 +1,27 @@
+{
+  "name": "アイコン・バッジ",
+  "categories": {
+    "in-game-icons": "ゲーム内アイコン",
+    "app-store-icons": "アプリ・ストアアイコン"
+  },
+  "subcategories": {
+    "in-game-icons/skills-currency": "スキル・通貨",
+    "in-game-icons/achievement-badges": "実績バッジ",
+    "app-store-icons/app-icons": "アプリアイコン"
+  },
+  "tags": {
+    "skill icon design": "スキルアイコンデザイン",
+    "spell icon": "魔法アイコン",
+    "currency coin icon": "通貨・金貨アイコン",
+    "gem currency icon": "宝石通貨アイコン",
+    "energy icon": "エネルギーアイコン",
+    "achievement badge icon": "実績バッジアイコン",
+    "trophy icon": "トロフィーアイコン",
+    "rank medal icon": "ランクメダルアイコン",
+    "level up badge": "レベルアップバッジ",
+    "mobile app icon design": "モバイルアプリアイコンデザイン",
+    "minimalist app icon": "ミニマルなアプリアイコン",
+    "3D app icon": "立体的な3Dアプリアイコン",
+    "rounded square app icon": "角丸四角のアプリアイコン"
+  }
+}

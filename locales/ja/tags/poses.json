@@ -1,0 +1,43 @@
+{
+  "name": "アクション・ポーズ",
+  "categories": {
+    "standing-idle": "立ちポーズ・待機",
+    "combat-actions": "戦闘アクション",
+    "movement": "移動ポーズ",
+    "situational-poses": "シチュエーションポーズ"
+  },
+  "subcategories": {
+    "standing-idle/standing-idle": "立ちポーズ・待機",
+    "combat-actions/combat-actions": "戦闘アクション",
+    "movement/movement": "移動ポーズ",
+    "situational-poses/situational-poses": "シチュエーションポーズ"
+  },
+  "tags": {
+    "standing pose": "立ちポーズ",
+    "idle stance": "アイドルポーズ",
+    "confident standing pose": "自信に満ちた立ち姿",
+    "relaxed pose": "リラックスしたポーズ",
+    "hands on hips": "腰に手を当てたポーズ",
+    "arms crossed pose": "腕組みポーズ",
+    "combat stance": "戦闘の構え",
+    "dynamic action pose": "ダイナミックな戦闘ポーズ",
+    "sword swing pose": "剣を振るうポーズ",
+    "spellcasting pose": "詠唱ポーズ",
+    "bow aiming pose": "弓を引いて狙うポーズ",
+    "charging pose": "突撃ポーズ",
+    "defensive guard stance": "防御の構え",
+    "victory battle pose": "勝利の戦闘ポーズ",
+    "running pose": "走るポーズ",
+    "jumping pose": "ジャンプポーズ",
+    "flying pose": "飛行ポーズ",
+    "crouching pose": "しゃがみポーズ",
+    "sneaking pose": "忍び足ポーズ",
+    "dashing pose": "ダッシュポーズ",
+    "sitting pose": "座りポーズ",
+    "leaning pose": "もたれかかるポーズ",
+    "victory pose": "勝利ポーズ",
+    "greeting pose": "挨拶ポーズ",
+    "thinking pose": "考え込むポーズ",
+    "kneeling pose": "片膝をつくポーズ"
+  }
+}

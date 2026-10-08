@@ -1,0 +1,32 @@
+{
+  "name": "表情・感情",
+  "categories": {
+    "positive-emotions": "ポジティブな感情",
+    "combat-emotions": "戦闘時の感情",
+    "other-emotions": "その他の感情"
+  },
+  "subcategories": {
+    "positive-emotions/positive-emotions": "ポジティブな感情",
+    "combat-emotions/combat-emotions": "戦闘時の感情",
+    "other-emotions/other-emotions": "その他の感情"
+  },
+  "tags": {
+    "confident expression": "自信に満ちた表情",
+    "determined expression": "決意に満ちた表情",
+    "cheerful smile": "明るい笑顔",
+    "heroic expression": "英雄的な表情",
+    "calm expression": "穏やかな表情",
+    "playful grin": "いたずらっぽい笑み",
+    "fierce battle expression": "猛々しい戦闘の表情",
+    "focused expression": "集中した表情",
+    "battle cry expression": "雄叫びの表情",
+    "intense determined stare": "鋭く決意に満ちた眼差し",
+    "fearless expression": "恐れを知らない表情",
+    "surprised expression": "驚いた表情",
+    "mysterious expression": "神秘的な表情",
+    "gentle expression": "優しい表情",
+    "curious expression": "好奇心に満ちた表情",
+    "serene expression": "静かな表情",
+    "proud expression": "誇らしげな表情"
+  }
+}
