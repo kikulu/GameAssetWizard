@@ -18,7 +18,7 @@ npm run dist:mac     # macOS：dmg + zip
 npm run dist:linux   # Linux：AppImage + deb
 ```
 
-輸出位於 `release/`（已被 `.gitignore` 排除）。打包設定在 `package.json` 的 `build` 欄位，只會收錄 `index.html`、`assets/`、`config_sheets/`、`electron/` 與 `package.json`。
+輸出位於 `release/`（已被 `.gitignore` 排除）。打包設定在 `package.json` 的 `build` 欄位，只會收錄 `index.html`、`assets/`、`config_sheets/`、`locales/`、`electron/` 與 `package.json`。
 
 > 跨平台打包通常需在對應的作業系統上執行；macOS 安裝檔若要對外發佈，需另行設定 Apple 簽章與公證。
 > 發佈前請把 `build.appId` 改成自己的反向網域識別碼，並視需求在 `build` 中加入 `icon`。

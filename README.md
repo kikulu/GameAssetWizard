@@ -8,7 +8,8 @@
 
 - 支援手機遊戲／Steam・PC，以及綜合、2D、3D 六種創作模式。
 - 提供 RPG、卡牌、休閒模擬、黑暗奇幻、科幻與像素 Roguelike 等可微調的創作範本套餐。
-- 以可獨立編輯的 JSON 詞庫管理鏡頭、角色、服裝、場景、特效與行銷素材標籤。
+- 以可獨立編輯的 JSON 詞庫管理鏡頭、角色、服裝、場景、特效與行銷素材標籤；結構與各語言顯示文字分檔，便於擴充與翻譯。
+- **多語系**：介面、標籤庫、範本與產圖工作台支援繁體中文、English、日本語、한국어，並提供翻譯對照表與匯入／檢查工具，詳見[多語系與翻譯指南](docs/I18N.md)。
 - 手動選取、分類隨機抽卡與標籤權重調整。
 - 產生正向／反向提示詞並一鍵複製。
 - 支援 Draw Things、SD WebUI／Forge 與 ComfyUI 本機產圖。
@@ -38,7 +39,7 @@ npm start
 執行檢查與測試：
 
 ```bash
-npm run check   # 語法檢查
+npm run check   # 語法檢查與語系檔完整性
 npm test        # 單元測試
 ```
 
@@ -51,7 +52,7 @@ npm run dist         # 打包目前平台安裝檔（輸出至 release/）
 npm run dist:win     # 或 dist:mac / dist:linux
 ```
 
-桌面版由主程序代送產圖後端請求，**不受 CORS 限制，不需要執行 `server_proxy.js`**。網頁版與桌面版共用同一份 `index.html`、`assets/` 與 `config_sheets/`。
+桌面版由主程序代送產圖後端請求，**不受 CORS 限制，不需要執行 `server_proxy.js`**。網頁版與桌面版共用同一份 `index.html`、`assets/`、`config_sheets/` 與 `locales/`。
 
 ## Draw Things 整合
 
@@ -82,12 +83,16 @@ npm run dist:win     # 或 dist:mac / dist:linux
 │       ├── generation.js    # Draw Things／SD WebUI／ComfyUI 產圖
 │       ├── styleguide.js    # 風格鎖定與批次產圖
 │       ├── templates.js     # 創作範本
-│       └── i18n.js          # 介面多語言
-├── config_sheets/           # 提示詞詞庫、模式設定與範本（JSON）
+│       └── i18n.js          # 多語系執行層
+├── config_sheets/           # 語言中立的詞庫結構、提示詞、模式設定與範本（JSON）
+├── locales/                 # 各語言的介面文字、標籤庫、模式與範本顯示文字
+│   └── <code>/              # zh-TW、en、ja、ko（ui / profiles / templates / tags）
 ├── docs/                    # 架構、開發、部署與使用文件
+│   └── i18n/                # 自動產生的翻譯對照表（CSV／Markdown）
 ├── electron/
 │   ├── main.js              # Electron 主程序（app:// 協定、API 橋接）
 │   └── preload.js           # 安全地暴露 window.desktop
+├── scripts/i18n.js          # 翻譯工具：檢查、對照表、匯入、新增語言
 ├── tests/                   # 單元測試（node --test）
 ├── CHANGELOG.md             # 版本紀錄
 ├── CONTRIBUTING.md          # 貢獻指南
@@ -105,7 +110,9 @@ npm run dist:win     # 或 dist:mac / dist:linux
 - [詞庫與設定檔格式](docs/CONFIG_SHEETS.md)
 - [本機產圖後端設定](docs/LOCAL_GENERATORS.md)
 - [風格一致化流程](docs/STYLE_CONSISTENCY.md)
+- [多語系與翻譯指南](docs/I18N.md)
 - [介面語言](docs/LOCALIZATION.md)
+- [翻譯對照表](docs/i18n/translation-table.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Changelog](CHANGELOG.md)
 

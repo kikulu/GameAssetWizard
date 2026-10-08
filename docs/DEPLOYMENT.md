@@ -4,7 +4,7 @@
 
 專案本體是純靜態檔案，可放在任何靜態主機（GitHub Pages、Netlify、Nginx…）：
 
-- 上傳 `index.html`、`assets/`、`config_sheets/`。
+- 上傳 `index.html`、`assets/`、`config_sheets/`、`locales/`。
 - 需注意：頁面若以 `https://` 提供，瀏覽器會封鎖對 `http://127.0.0.1` 的「混合內容」請求，連本機產圖後端可能失敗。本機使用請以 `npm start` 開啟 `http://127.0.0.1:3000`，或改用桌面版。
 - 瀏覽器直連本機後端時可能遇到 CORS，可執行 `npm run proxy`（見 [README](../README.md)）。
 

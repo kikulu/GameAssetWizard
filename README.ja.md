@@ -20,6 +20,10 @@ npm start
 
 `http://127.0.0.1:3000` を開きます。Node.js 18 以上が必要です。追加の実行時パッケージは不要です。
 
+## 多言語対応
+
+UI、辞書（タグ）、テンプレート、生成スタジオが繁体字中国語・English・日本語・한국어に対応しています。辞書は言語に依存しない構造ファイルと言語別のラベルファイルに分かれており、翻訳対応表（CSV／Markdown）と、取り込み・検証ツールを用意しています。詳細は[多言語化・翻訳ガイド](docs/I18N.md)を参照してください。
+
 ## デスクトップ版（Electron）
 
 ```bash
@@ -44,6 +48,7 @@ npm run dist         # 現在の OS 向けインストーラーを作成（出�
 - [デプロイ](docs/DEPLOYMENT.md)
 - [辞書・設定ファイル形式](docs/CONFIG_SHEETS.md)
 - [スタイル一貫化ワークフロー](docs/STYLE_CONSISTENCY.md)
+- [多言語化・翻訳ガイド](docs/I18N.md) · [翻訳対応表](docs/i18n/translation-table.md)
 - [変更履歴](CHANGELOG.md) · [コントリビュート](CONTRIBUTING.md)
 
 ## 作者

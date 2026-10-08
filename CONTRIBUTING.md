@@ -14,7 +14,7 @@
 3. 提交前執行：
 
    ```bash
-   npm run check   # 語法檢查
+   npm run check   # 語法檢查與語系檔完整性
    npm test        # 單元測試
    ```
 
@@ -25,7 +25,12 @@
 - 前端維持原生 JavaScript，不引入執行期套件。
 - 呼叫本機產圖後端請使用 `apiFetch()`（見 [桌面版說明](docs/DESKTOP.md)）。
 - 使用者提供的文字一律以 `textContent` 或安全的 DOM API 寫入畫面。
-- 詞庫項目必須同時有 `en` 與 `cn`。
+- 新增詞庫項目時，結構檔（`config_sheets/`）與各語言的顯示文字（`locales/`）要一起提交，並通過 `npm run i18n:check`。
+- 使用者看得到的文字一律走語系檔（`data-i18n`／`t('鍵')`），不要硬寫在 HTML 或 JavaScript。
+
+## 翻譯貢獻
+
+不需要寫程式也能貢獻翻譯：執行 `npm run i18n:table` 產生對照表，用試算表翻譯後以 `npm run i18n:import` 匯回，或直接編輯 `locales/<語言>/` 的 JSON。完整流程、新增語言與翻譯慣例見 [多語系與翻譯指南](docs/I18N.md)。日文與韓文標籤歡迎母語使用者校對。
 
 ## 請勿提交
 

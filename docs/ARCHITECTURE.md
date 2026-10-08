@@ -9,8 +9,13 @@
 ```text
 index.html                 頁面語意與操作介面
 assets/css/styles.css      響應式視覺樣式
-assets/js/app.js           UI 狀態、詞庫載入、提示詞組合與 Draw Things 呼叫
-config_sheets/*.json       可編輯的提示詞資料來源
+assets/js/app.js           UI 狀態、詞庫載入、提示詞組合
+assets/js/i18n.js          多語系執行層：載入語系檔、t()、切換語言事件
+assets/js/generation.js    Draw Things／SD WebUI／ComfyUI 產圖
+assets/js/templates.js     創作範本
+config_sheets/             語言中立的詞庫結構、提示詞、模式與範本（JSON）
+locales/<語言>/            各語言的介面文字、標籤庫、模式與範本顯示文字
+scripts/i18n.js            翻譯工具：檢查、對照表、匯入、新增語言
 server.js                  開發用靜態檔案伺服器
 server_proxy.js            Draw Things 的 CORS 轉送代理（僅網頁版需要）
 assets/js/styleguide.js     風格鎖定、風格預設與批次產圖（透過 generationSettings 掛勾介入）
@@ -21,14 +26,14 @@ electron/preload.js        以 contextBridge 暴露 window.desktop
 
 ## 資料流
 
-1. 瀏覽器從 `config_sheets` 載入基礎設定、模式設定與分類詞庫。
+1. 瀏覽器載入語系登錄（`locales/locales.json`）並決定語言，再從 `config_sheets` 載入基礎設定、模式設定與分類詞庫結構，以及目前語言的顯示文字。切換語言時只重新載入並重繪顯示文字，已選標籤以英文提示詞為鍵，不受影響。
 2. 使用者選取或隨機抽取標籤；前端組合正向及反向提示詞。
 3. 使用者可複製提示詞到外部工具，或將內容送到 Draw Things HTTP API。
 4. 若 Draw Things 未提供 CORS 標頭，改經 `server_proxy.js` 轉送。
 
 ## 設計原則
 
-- 詞庫與程式碼分離，內容人員無須修改 JavaScript 即可擴充資料。
+- 詞庫與程式碼分離，內容人員無須修改 JavaScript 即可擴充資料；結構（語言中立）與顯示文字（各語言）再分離，翻譯人員不需碰結構檔。
 - 不引入執行期套件，降低本機安裝門檻與供應鏈風險。
 - Node.js 僅處理本機靜態服務與代理；不保存提示詞或圖片。
 - 雙平台共用同一份前端；差異只集中在 `platform.js`，Electron 依賴僅限 devDependencies。
