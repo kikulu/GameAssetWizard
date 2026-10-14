@@ -14,7 +14,7 @@
 3. 提交前執行：
 
    ```bash
-   npm run check   # 語法檢查與語系檔完整性
+   npm run check   # 語法檢查、詞庫結構與語系檔完整性
    npm test        # 單元測試
    ```
 

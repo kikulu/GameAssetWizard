@@ -2,6 +2,21 @@
 
 格式參考 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，版本遵循[語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.5.0] — 2026-10-14
+
+### Added
+- 隨機抽卡改以「群組」為單位：結構檔的子分類可帶 `group`，同組互為替代只抽一個。姿勢、表情、場景、武器、主特效、UI 元素、圖示與商店素材不再一次抽到多個；服裝為 1 件主服裝＋1 個配件。詳見 `docs/RANDOM_PICK.md`。
+- 隨機抽卡會避開目前已選的標籤，連續重抽不會抽到同一個結果；每個分類標題新增 🎲 按鈕，可單獨重抽該分類。
+- 「🎯 同類只抽一個」開關（預設開啟、會記住選擇），關閉後回到舊行為。
+- `assets/js/randomizer.js`（純函式）與單元測試。
+- `npm run validate`：詞庫與設定檔結構驗證（id 格式與唯一性、`group`、提示詞唯一性、模式與範本欄位），已納入 `npm run check`。
+
+### Changed
+- 創作範本面板重新設計：預設收合，標題列顯示目前套用的套餐；清單點選即套用、再點取消，選中項目展開說明；篩選改為兩個精簡下拉選單，移除「套用」按鈕與說明框。面板移到主控面板最上方。
+- 移除不再使用的 UI 字串（`template.note`、`template.package`、`template.apply`、`template.applied`、`template.meta`），新增 `template.current`、`template.none`、`random.variety`、`random.rollSheet`。
+- 隨機抽卡的預設行為改變：每個互斥分類一次只出現一個結果（可用「同類只抽一個」開關還原）。
+- Roadmap 重新整理，加入後續優化與改版建議。
+
 ## [1.4.0] — 2026-10-08
 
 ### Added

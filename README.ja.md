@@ -48,6 +48,7 @@ npm run dist         # 現在の OS 向けインストーラーを作成（出�
 - [デプロイ](docs/DEPLOYMENT.md)
 - [辞書・設定ファイル形式](docs/CONFIG_SHEETS.md)
 - [スタイル一貫化ワークフロー](docs/STYLE_CONSISTENCY.md)
+- [ランダム抽選](docs/RANDOM_PICK.md)
 - [多言語化・翻訳ガイド](docs/I18N.md) · [翻訳対応表](docs/i18n/translation-table.md)
 - [変更履歴](CHANGELOG.md) · [コントリビュート](CONTRIBUTING.md)
 

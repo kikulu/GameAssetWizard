@@ -2,7 +2,7 @@
 
 > 此檔由 `npm run i18n:table` 自動產生，請勿手動編輯。要修改翻譯，請編輯 `locales/<語言>/` 底下的 JSON，或編輯 `translation-table.csv` 後以 `npm run i18n:import` 匯回。
 
-共 550 筆，語言：zh-TW、en、ja、ko。
+共 549 筆，語言：zh-TW、en、ja、ko。
 
 
 ## ui
@@ -46,19 +46,14 @@
 | quality.vector | 簡潔向量風 | Clean vector style | シンプルなベクタースタイル | 깔끔한 벡터 스타일 |
 | quality.aaa | AAA 遊戲規格 | AAA game quality | AAA ゲーム品質 | AAA 게임 사양 |
 | template.title | ⚗️ 創作範本套餐 | ⚗️ Creative Template Packs | ⚗️ クリエイティブテンプレート | ⚗️ 창작 템플릿 패키지 |
-| template.note | 先選遊戲類型與風格，再套用套餐作為可微調的起點。 | Pick a game type and style, then apply a pack as a starting point you can fine-tune. | ゲームの種類とスタイルを選び、微調整できる出発点としてテンプレートを適用します。 | 게임 유형과 스타일을 고른 뒤 세부 조정이 가능한 시작점으로 패키지를 적용하세요. |
 | template.gameType | 遊戲類型 | Game type | ゲームの種類 | 게임 유형 |
 | template.styleType | 風格類型 | Style type | スタイルの種類 | 스타일 유형 |
-| template.package | 基礎套餐 | Base pack | ベースパック | 기본 패키지 |
 | template.loading | 載入套餐中… | Loading packs… | テンプレートを読み込み中… | 패키지 불러오는 중… |
 | template.allGameTypes | 全部遊戲類型 | All game types | すべてのジャンル | 모든 게임 유형 |
 | template.allStyleTypes | 全部風格類型 | All style types | すべてのスタイル | 모든 스타일 유형 |
-| template.apply | ✨ 套用並開始微調 | ✨ Apply and start tuning | ✨ 適用して微調整を開始 | ✨ 적용하고 세부 조정 시작 |
 | template.clear | ↺ 移除套餐 | ↺ Remove pack | ↺ テンプレートを解除 | ↺ 패키지 제거 |
 | template.noMatch | 找不到符合條件的套餐，請調整篩選。 | No pack matches the filters. Adjust the filters. | 条件に合うテンプレートがありません。絞り込みを調整してください。 | 조건에 맞는 패키지가 없습니다. 필터를 조정하세요. |
-| template.applied | ✅ 已套用「{label}」。現在可從詞庫加入標籤、調整權重與產圖參數。 | ✅ Applied "{label}". You can now add tags from the library and adjust weights and generation parameters. | ✅「{label}」を適用しました。辞書からタグを追加し、重みや生成パラメーターを調整できます。 | ✅ "{label}" 적용 완료. 이제 라이브러리에서 태그를 추가하고 가중치와 생성 파라미터를 조정할 수 있습니다. |
 | template.loadError | ❌ 無法載入套餐：{message} | ❌ Could not load packs: {message} | ❌ テンプレートを読み込めません: {message} | ❌ 패키지를 불러올 수 없습니다: {message} |
-| template.meta | {description} {platform} · {dimension} | {description} {platform} · {dimension} | {description} {platform} · {dimension} | {description} {platform} · {dimension} |
 | template.platformMobile | 📱 手機 | 📱 Mobile | 📱 モバイル | 📱 모바일 |
 | template.platformSteam | 🖥️ Steam/PC | 🖥️ Steam/PC | 🖥️ Steam/PC | 🖥️ Steam/PC |
 | selected.title | 📍 目前選中標籤： | 📍 Selected tags: | 📍 選択中のタグ: | 📍 선택한 태그: |
@@ -170,6 +165,10 @@
 | style.downloadsStarted | ⬇️ 已觸發 {count} 張圖片下載。 | ⬇️ Started downloading {count} image(s). | ⬇️ {count} 枚の画像のダウンロードを開始しました。 | ⬇️ 이미지 {count}장 다운로드를 시작했습니다. |
 | style.noManifest | 尚無批次紀錄可匯出。 | There is no batch log to export yet. | エクスポートできるバッチログがまだありません。 | 내보낼 배치 기록이 아직 없습니다. |
 | style.manifestExported | 📄 已匯出批次設定紀錄。 | 📄 Batch settings log exported. | 📄 バッチ設定ログをエクスポートしました。 | 📄 배치 설정 기록을 내보냈습니다. |
+| template.current | 目前套餐：{label} | Active pack: {label} | 適用中: {label} | 적용 중: {label} |
+| template.none | 尚未套用套餐 | No pack applied | テンプレート未適用 | 적용된 패키지 없음 |
+| random.variety | 🎯 同類只抽一個（避免重複姿勢、服裝） | 🎯 One pick per group (avoid duplicate poses / outfits) | 🎯 同種は 1 つだけ抽選（ポーズや衣装の重複を防止） | 🎯 같은 종류는 하나만 추첨 (중복 포즈·의상 방지) |
+| random.rollSheet | 只重抽此分類 | Re-roll this category only | このカテゴリだけ再抽選 | 이 카테고리만 다시 추첨 |
 
 ## profiles
 

@@ -7,10 +7,10 @@
 ## 功能
 
 - 支援手機遊戲／Steam・PC，以及綜合、2D、3D 六種創作模式。
-- 提供 RPG、卡牌、休閒模擬、黑暗奇幻、科幻與像素 Roguelike 等可微調的創作範本套餐。
+- 提供 RPG、卡牌、休閒模擬、黑暗奇幻、科幻與像素 Roguelike 等創作範本套餐：可收合的面板，點選清單項目即套用，再點一次即取消。
 - 以可獨立編輯的 JSON 詞庫管理鏡頭、角色、服裝、場景、特效與行銷素材標籤；結構與各語言顯示文字分檔，便於擴充與翻譯。
 - **多語系**：介面、標籤庫、範本與產圖工作台支援繁體中文、English、日本語、한국어，並提供翻譯對照表與匯入／檢查工具，詳見[多語系與翻譯指南](docs/I18N.md)。
-- 手動選取、分類隨機抽卡與標籤權重調整。
+- 手動選取、分類隨機抽卡與標籤權重調整。隨機抽卡以群組為單位，**同類只抽一個**（不會一次抽到 4 個姿勢），連續重抽不重複，每個分類也可單獨 🎲 重抽，詳見[隨機抽卡](docs/RANDOM_PICK.md)。
 - 產生正向／反向提示詞並一鍵複製。
 - 支援 Draw Things、SD WebUI／Forge 與 ComfyUI 本機產圖。
 - **風格鎖定與批次產圖**：儲存／匯出風格預設，鎖定參數與種子，一次產出整組風格一致的素材，詳見[風格一致化流程](docs/STYLE_CONSISTENCY.md)。
@@ -39,7 +39,7 @@ npm start
 執行檢查與測試：
 
 ```bash
-npm run check   # 語法檢查與語系檔完整性
+npm run check   # 語法檢查、詞庫結構與語系檔完整性
 npm test        # 單元測試
 ```
 
@@ -80,6 +80,7 @@ npm run dist:win     # 或 dist:mac / dist:linux
 │   └── js/
 │       ├── platform.js      # 網頁／桌面版抽象層（apiFetch）
 │       ├── app.js           # 前端互動、詞庫與提示詞組合
+│       ├── randomizer.js    # 隨機抽卡邏輯（群組、避免重複）
 │       ├── generation.js    # Draw Things／SD WebUI／ComfyUI 產圖
 │       ├── styleguide.js    # 風格鎖定與批次產圖
 │       ├── templates.js     # 創作範本
@@ -92,7 +93,9 @@ npm run dist:win     # 或 dist:mac / dist:linux
 ├── electron/
 │   ├── main.js              # Electron 主程序（app:// 協定、API 橋接）
 │   └── preload.js           # 安全地暴露 window.desktop
-├── scripts/i18n.js          # 翻譯工具：檢查、對照表、匯入、新增語言
+├── scripts/
+│   ├── i18n.js              # 翻譯工具：檢查、對照表、匯入、新增語言
+│   └── validate-data.js     # 詞庫與設定檔結構驗證
 ├── tests/                   # 單元測試（node --test）
 ├── CHANGELOG.md             # 版本紀錄
 ├── CONTRIBUTING.md          # 貢獻指南
@@ -108,6 +111,7 @@ npm run dist:win     # 或 dist:mac / dist:linux
 - [桌面版（Electron）](docs/DESKTOP.md)
 - [部署](docs/DEPLOYMENT.md)
 - [詞庫與設定檔格式](docs/CONFIG_SHEETS.md)
+- [隨機抽卡](docs/RANDOM_PICK.md)
 - [本機產圖後端設定](docs/LOCAL_GENERATORS.md)
 - [風格一致化流程](docs/STYLE_CONSISTENCY.md)
 - [多語系與翻譯指南](docs/I18N.md)

@@ -7,7 +7,9 @@ A JSON-library-driven prompt generator for game art. It helps mobile and Steam/P
 ## Features
 
 - Six mobile/Steam and general/2D/3D creative profiles.
-- Editable JSON prompt libraries, random selection, tag weighting, and prompt copy.
+- Editable JSON prompt libraries, tag weighting, and prompt copy.
+- Creative template packs in a collapsible panel: click a row to apply, click again to remove.
+- Group-aware random picking: one pick per group (never four poses at once), no immediate repeats on re-roll, and a per-category 🎲 re-roll. See [Random picking](docs/RANDOM_PICK.md).
 - Local generation through Draw Things, SD WebUI/Forge, or ComfyUI.
 - Advanced controls for sampler, scheduler, seed, batch, denoise, checkpoint, VAE, LoRA, ControlNet, and ComfyUI API workflows.
 - Fully localized interface, tag libraries, templates and generation studio in Traditional Chinese, English, Japanese, and Korean. Tag libraries are split into a language-neutral structure plus per-language label files, with a translation lookup table and import/check tooling. See the [i18n guide](docs/I18N.md).
@@ -44,6 +46,7 @@ Save a style preset (style prefix, negative prompt, parameters, seed), lock it, 
 - [Deployment](docs/DEPLOYMENT.md)
 - [Config sheet formats](docs/CONFIG_SHEETS.md)
 - [Style consistency workflow](docs/STYLE_CONSISTENCY.md)
+- [Random picking](docs/RANDOM_PICK.md)
 - [i18n and translation guide](docs/I18N.md) · [Translation table](docs/i18n/translation-table.md)
 - [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md)
 

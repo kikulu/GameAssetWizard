@@ -48,6 +48,7 @@ npm run dist         # 현재 OS용 설치 파일 빌드 (출력: release/)
 - [배포](docs/DEPLOYMENT.md)
 - [라이브러리·설정 파일 형식](docs/CONFIG_SHEETS.md)
 - [스타일 일관성 워크플로](docs/STYLE_CONSISTENCY.md)
+- [무작위 추첨](docs/RANDOM_PICK.md)
 - [다국어·번역 가이드](docs/I18N.md) · [번역 대조표](docs/i18n/translation-table.md)
 - [변경 기록](CHANGELOG.md) · [기여 가이드](CONTRIBUTING.md)
 

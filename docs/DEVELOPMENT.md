@@ -38,10 +38,11 @@ npm run electron
 ```bash
 npm run check   # 語法檢查
 npm test        # 單元測試（Node 內建測試執行器，無需額外套件）
+npm run validate     # 只驗證詞庫結構（已包含在 npm run check）
 npm run i18n:check   # 只檢查語系檔（已包含在 npm run check）
 ```
 
-`check` 會驗證 Node.js、Electron 與瀏覽器 JavaScript 的語法，並檢查所有語系檔的完整性；`test` 涵蓋風格鎖定與翻譯工具。新增功能時，請手動驗證：詞庫載入、標籤權重、提示詞複製、模式/尺寸切換與代理錯誤訊息。
+`check` 會驗證 Node.js、Electron 與瀏覽器 JavaScript 的語法、詞庫結構與所有語系檔的完整性；`test` 涵蓋風格鎖定、翻譯工具、資料驗證與隨機抽卡。新增功能時，請手動驗證：詞庫載入、標籤權重、提示詞複製、模式/尺寸切換與代理錯誤訊息。
 
 ## 擴充詞庫
 

@@ -10,11 +10,13 @@
 index.html                 頁面語意與操作介面
 assets/css/styles.css      響應式視覺樣式
 assets/js/app.js           UI 狀態、詞庫載入、提示詞組合
+assets/js/randomizer.js     隨機抽卡邏輯（以群組為單位、避免重複；純函式）
 assets/js/i18n.js          多語系執行層：載入語系檔、t()、切換語言事件
 assets/js/generation.js    Draw Things／SD WebUI／ComfyUI 產圖
 assets/js/templates.js     創作範本
 config_sheets/             語言中立的詞庫結構、提示詞、模式與範本（JSON）
 locales/<語言>/            各語言的介面文字、標籤庫、模式與範本顯示文字
+scripts/validate-data.js    詞庫與設定檔結構驗證
 scripts/i18n.js            翻譯工具：檢查、對照表、匯入、新增語言
 server.js                  開發用靜態檔案伺服器
 server_proxy.js            Draw Things 的 CORS 轉送代理（僅網頁版需要）

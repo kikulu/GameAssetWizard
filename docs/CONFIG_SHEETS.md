@@ -22,7 +22,7 @@
     {
       "id": "magic",
       "subcategories": [
-        { "id": "elemental", "tags": ["fire magic effect", "ice frost effect"] }
+        { "id": "elemental", "group": "main-effect", "tags": ["fire magic effect", "ice frost effect"] }
       ]
     }
   ]
@@ -32,6 +32,7 @@
 - 結構為 `id` → `categories[]` → `subcategories[]` → `tags[]`（提示詞字串）。
 - 所有 id 使用小寫英文與連字號（kebab-case），檔名須等於 `id`。
 - **標籤就是實際送進提示詞的英文原文**，且在全部分類中必須唯一（顯示文字以它為鍵）。
+- `group`（選填，kebab-case）：同一個分類檔內帶有相同 `group` 的子分類互為替代，隨機抽卡時整組只抽一個；沒有 `group` 的子分類各自成一組。見 [隨機抽卡](RANDOM_PICK.md)。
 - 顯示名稱不寫在這裡，而是在每個語言的 `locales/<語言>/tags/<sheetId>.json`。
 
 ### 新增分類或標籤的步驟
@@ -74,6 +75,6 @@
 
 ## 驗證
 
-修改後請執行 `npm run check`（含 `i18n:check`）與 `npm test`，並在瀏覽器切換各語言確認載入、範本套用與提示詞組合正常。（JSON schema 自動驗證列於 [Roadmap](ROADMAP.md)。）
+修改後請執行 `npm run validate`（結構驗證）、`npm run check`（含 `validate` 與 `i18n:check`）與 `npm test`，並在瀏覽器切換各語言確認載入、範本套用與提示詞組合正常。`npm run validate` 會檢查 id 格式與唯一性、`group`、提示詞唯一性、模式與範本欄位；各語言顯示文字的完整性由 `npm run i18n:check` 負責。
 
 > 這裡的「詞庫」是創作標籤；與產圖用的「風格預設」（見 [風格一致化流程](STYLE_CONSISTENCY.md)）是不同概念。
