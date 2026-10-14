@@ -159,5 +159,7 @@
   "style.noDownloads": "다운로드할 이미지가 없습니다.",
   "style.downloadsStarted": "⬇️ 이미지 {count}장 다운로드를 시작했습니다.",
   "style.noManifest": "내보낼 배치 기록이 아직 없습니다.",
-  "style.manifestExported": "📄 배치 설정 기록을 내보냈습니다."
+  "style.manifestExported": "📄 배치 설정 기록을 내보냈습니다.",
+  "random.variety": "🎯 같은 종류는 하나만 추첨 (중복 포즈·의상 방지)",
+  "random.rollSheet": "이 카테고리만 다시 추첨"
 }

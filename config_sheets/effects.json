@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "elemental",
+          "group": "main-effect",
           "tags": [
             "fire magic effect",
             "ice frost effect",
@@ -21,6 +22,7 @@
       "subcategories": [
         {
           "id": "impact",
+          "group": "main-effect",
           "tags": [
             "sword slash effect",
             "explosion particle effect",

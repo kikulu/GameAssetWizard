@@ -159,5 +159,7 @@
   "style.noDownloads": "ダウンロードできる画像がありません。",
   "style.downloadsStarted": "⬇️ {count} 枚の画像のダウンロードを開始しました。",
   "style.noManifest": "エクスポートできるバッチログがまだありません。",
-  "style.manifestExported": "📄 バッチ設定ログをエクスポートしました。"
+  "style.manifestExported": "📄 バッチ設定ログをエクスポートしました。",
+  "random.variety": "🎯 同種は 1 つだけ抽選（ポーズや衣装の重複を防止）",
+  "random.rollSheet": "このカテゴリだけ再抽選"
 }

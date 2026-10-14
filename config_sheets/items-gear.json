@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "melee-weapons",
+          "group": "weapon",
           "tags": [
             "fantasy sword",
             "battle axe",
@@ -17,6 +18,7 @@
         },
         {
           "id": "ranged-weapons",
+          "group": "weapon",
           "tags": [
             "sci-fi rifle",
             "bow and arrow",

@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "terrain",
+          "group": "location",
           "tags": [
             "fantasy forest landscape",
             "mystical mountain scene",
@@ -22,6 +23,7 @@
       "subcategories": [
         {
           "id": "buildings",
+          "group": "location",
           "tags": [
             "medieval castle",
             "futuristic city skyline",
@@ -32,6 +34,7 @@
         },
         {
           "id": "dungeon-interiors",
+          "group": "location",
           "tags": [
             "dungeon corridor",
             "cave interior",

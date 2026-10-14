@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "store-images",
+          "group": "deliverable",
           "tags": [
             "steam capsule art",
             "steam header image",
@@ -20,6 +21,7 @@
       "subcategories": [
         {
           "id": "promotional-images",
+          "group": "deliverable",
           "tags": [
             "game promotional banner",
             "social media game ad",
@@ -35,6 +37,7 @@
       "subcategories": [
         {
           "id": "logo-design",
+          "group": "deliverable",
           "tags": [
             "game logo design",
             "studio logo icon",

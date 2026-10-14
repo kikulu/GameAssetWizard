@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "skills-currency",
+          "group": "icon",
           "tags": [
             "skill icon design",
             "spell icon",
@@ -16,6 +17,7 @@
         },
         {
           "id": "achievement-badges",
+          "group": "icon",
           "tags": [
             "achievement badge icon",
             "trophy icon",
@@ -30,6 +32,7 @@
       "subcategories": [
         {
           "id": "app-icons",
+          "group": "icon",
           "tags": [
             "mobile app icon design",
             "minimalist app icon",

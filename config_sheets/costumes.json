@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "fantasy-attire",
+          "group": "outfit",
           "tags": [
             "fantasy plate armor",
             "leather adventurer outfit",
@@ -22,6 +23,7 @@
       "subcategories": [
         {
           "id": "scifi-attire",
+          "group": "outfit",
           "tags": [
             "futuristic combat suit",
             "cyberpunk streetwear",
@@ -38,6 +40,7 @@
       "subcategories": [
         {
           "id": "casual-modern",
+          "group": "outfit",
           "tags": [
             "casual streetwear",
             "school uniform",

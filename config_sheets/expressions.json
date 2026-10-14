@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "positive-emotions",
+          "group": "expression",
           "tags": [
             "confident expression",
             "determined expression",
@@ -22,6 +23,7 @@
       "subcategories": [
         {
           "id": "combat-emotions",
+          "group": "expression",
           "tags": [
             "fierce battle expression",
             "focused expression",
@@ -37,6 +39,7 @@
       "subcategories": [
         {
           "id": "other-emotions",
+          "group": "expression",
           "tags": [
             "surprised expression",
             "mysterious expression",

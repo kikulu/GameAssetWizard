@@ -159,5 +159,7 @@
   "style.noDownloads": "There are no images to download.",
   "style.downloadsStarted": "⬇️ Started downloading {count} image(s).",
   "style.noManifest": "There is no batch log to export yet.",
-  "style.manifestExported": "📄 Batch settings log exported."
+  "style.manifestExported": "📄 Batch settings log exported.",
+  "random.variety": "🎯 One pick per group (avoid duplicate poses / outfits)",
+  "random.rollSheet": "Re-roll this category only"
 }

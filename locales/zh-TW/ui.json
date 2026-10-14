@@ -159,5 +159,7 @@
   "style.noDownloads": "目前沒有可下載的圖片。",
   "style.downloadsStarted": "⬇️ 已觸發 {count} 張圖片下載。",
   "style.noManifest": "尚無批次紀錄可匯出。",
-  "style.manifestExported": "📄 已匯出批次設定紀錄。"
+  "style.manifestExported": "📄 已匯出批次設定紀錄。",
+  "random.variety": "🎯 同類只抽一個（避免重複姿勢、服裝）",
+  "random.rollSheet": "只重抽此分類"
 }

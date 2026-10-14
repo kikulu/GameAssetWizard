@@ -105,3 +105,9 @@
 
 /* 桌面版（Electron）不需要 CORS 代理說明 */
 .is-desktop .web-only { display: none; }
+
+/* 隨機抽卡：同類只抽一個、分類標題上的單獨重抽按鈕 */
+.random-variety { display: flex; align-items: flex-start; gap: 8px; margin-top: 10px; padding-top: 9px; border-top: 1px dashed #4b3a14; font-size: 12px; line-height: 1.5; color: var(--text-muted); cursor: pointer; }
+.layer1-controls { display: inline-flex; align-items: center; gap: 12px; }
+.sheet-roll { background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 2px 6px; font-size: 15px; line-height: 1; cursor: pointer; opacity: .7; }
+.sheet-roll:hover, .sheet-roll:focus-visible { opacity: 1; border-color: var(--accent); background: rgba(255,255,255,.06); }

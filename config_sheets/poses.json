@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "standing-idle",
+          "group": "pose",
           "tags": [
             "standing pose",
             "idle stance",
@@ -22,6 +23,7 @@
       "subcategories": [
         {
           "id": "combat-actions",
+          "group": "pose",
           "tags": [
             "combat stance",
             "dynamic action pose",
@@ -40,6 +42,7 @@
       "subcategories": [
         {
           "id": "movement",
+          "group": "pose",
           "tags": [
             "running pose",
             "jumping pose",
@@ -56,6 +59,7 @@
       "subcategories": [
         {
           "id": "situational-poses",
+          "group": "pose",
           "tags": [
             "sitting pose",
             "leaning pose",

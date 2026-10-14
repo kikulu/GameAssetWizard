@@ -217,27 +217,30 @@ function toggleAllCheckboxes(e) {
     document.querySelectorAll('input[data-role="random-sheet-cb"]').forEach(cb => { cb.checked = allCheckedState; });
 }
 
-function forEachSubcategory(sheetId, callback) {
-    const sheet = globalMatrix[sheetId];
-    if (!sheet) return;
-    sheet.categories.forEach(category => category.subcategories.forEach(sub => callback(sub, category)));
+// 抽卡以「群組」為單位：同組的子分類互為替代，只抽一個（邏輯見 randomizer.js）。
+function varietyEnabled() {
+    const box = document.getElementById('random-variety');
+    return !box || box.checked;
+}
+
+function rollSheets(sheetIds) {
+    const variety = varietyEnabled();
+    // 目前已選、屬於這些分類的標籤：重抽時盡量避開，讓連續抽卡不重複
+    const avoid = new Set([...activeSelections.keys()].filter(prompt => sheetIds.includes(tagIndex.get(prompt))));
+    avoid.forEach(prompt => activeSelections.delete(prompt));
+    sheetIds.forEach(sheetId => {
+        const sheet = globalMatrix[sheetId];
+        if (!sheet) return;
+        Randomizer.pickForSheet(sheet, { variety, avoid }).forEach(prompt => activeSelections.set(prompt, { weight: 1.0 }));
+    });
+    updateUIAndOutput();
 }
 
 function randomPickSelected() {
     if (!sheetOrder.length) return;
     const allowedSheets = Array.from(document.querySelectorAll('input[data-role="random-sheet-cb"]:checked')).map(cb => cb.value);
     if (allowedSheets.length === 0) { alert(t('random.needOne')); return; }
-
-    activeSelections.forEach((_, prompt) => {
-        if (allowedSheets.includes(tagIndex.get(prompt))) activeSelections.delete(prompt);
-    });
-    allowedSheets.forEach(sheetId => forEachSubcategory(sheetId, sub => {
-        if (sub.tags.length > 0) {
-            const prompt = sub.tags[Math.floor(Math.random() * sub.tags.length)];
-            activeSelections.set(prompt, { weight: 1.0 });
-        }
-    }));
-    updateUIAndOutput();
+    rollSheets(allowedSheets);
 }
 
 // ========================= 主要矩陣 UI =========================
@@ -262,7 +265,17 @@ function buildMatrixUI() {
         const arrow1 = document.createElement('span');
         arrow1.className = 'arrow';
         arrow1.textContent = '▶';
-        header1.append(title1, arrow1);
+        const rollButton = document.createElement('button');
+        rollButton.type = 'button';
+        rollButton.className = 'sheet-roll';
+        rollButton.textContent = '🎲';
+        rollButton.title = t('random.rollSheet');
+        rollButton.setAttribute('aria-label', t('random.rollSheet'));
+        rollButton.addEventListener('click', (event) => { event.stopPropagation(); rollSheets([sheetId]); });
+        const controls1 = document.createElement('span');
+        controls1.className = 'layer1-controls';
+        controls1.append(rollButton, arrow1);
+        header1.append(title1, controls1);
 
         const content1 = document.createElement('div');
         content1.className = 'layer1-content';
@@ -471,6 +484,9 @@ window.addEventListener('DOMContentLoaded', () => {
     ["dt-model", "dt-bg", "dt-quality"].forEach(id => {
         document.getElementById(id).addEventListener('change', updateUIAndOutput);
     });
+    const variety = document.getElementById('random-variety');
+    try { if (localStorage.getItem('random-variety') === '0') variety.checked = false; } catch { /* ignore */ }
+    variety.addEventListener('change', () => { try { localStorage.setItem('random-variety', variety.checked ? '1' : '0'); } catch { /* ignore */ } });
 });
 
 window.onload = loadConfig;

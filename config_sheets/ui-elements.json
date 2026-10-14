@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "buttons",
+          "group": "ui-element",
           "tags": [
             "game button UI",
             "rounded fantasy button",
@@ -16,6 +17,7 @@
         },
         {
           "id": "frames-borders",
+          "group": "ui-element",
           "tags": [
             "ornate frame border",
             "fantasy UI panel",
@@ -30,6 +32,7 @@
       "subcategories": [
         {
           "id": "status-bars",
+          "group": "ui-element",
           "tags": [
             "health bar UI",
             "mana bar UI",
