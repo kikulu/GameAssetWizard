@@ -112,6 +112,7 @@ npm run dist:win     # 或 dist:mac / dist:linux
 - [部署](docs/DEPLOYMENT.md)
 - [詞庫與設定檔格式](docs/CONFIG_SHEETS.md)
 - [隨機抽卡](docs/RANDOM_PICK.md)
+- [AI 協作開發提示詞](docs/AI_DEV_PROMPTS.md)
 - [本機產圖後端設定](docs/LOCAL_GENERATORS.md)
 - [風格一致化流程](docs/STYLE_CONSISTENCY.md)
 - [多語系與翻譯指南](docs/I18N.md)

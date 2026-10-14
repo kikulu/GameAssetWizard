@@ -2,6 +2,11 @@
 
 格式參考 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，版本遵循[語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [Unreleased]
+
+### Added
+- `docs/AI_DEV_PROMPTS.md`：在新對話中以 AI 協助開發的專案背景提示詞，以及新功能、修正錯誤、修改既有功能、翻譯、標籤擴充、審查、重構、發佈與交接各階段的提示詞，並附 ROADMAP 項目的起手式。
+
 ## [1.5.0] — 2026-10-14
 
 ### Added

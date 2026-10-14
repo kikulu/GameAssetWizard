@@ -47,6 +47,7 @@ Save a style preset (style prefix, negative prompt, parameters, seed), lock it, 
 - [Config sheet formats](docs/CONFIG_SHEETS.md)
 - [Style consistency workflow](docs/STYLE_CONSISTENCY.md)
 - [Random picking](docs/RANDOM_PICK.md)
+- [AI-assisted development prompts](docs/AI_DEV_PROMPTS.md) (Traditional Chinese)
 - [i18n and translation guide](docs/I18N.md) · [Translation table](docs/i18n/translation-table.md)
 - [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md)
 
