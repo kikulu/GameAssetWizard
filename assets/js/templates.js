@@ -4,7 +4,6 @@ const templateLocale = {}; // { [locale]: { gameTypes, styleTypes, templates } }
 let appliedTemplateId = null;
 
 function option(select, value, label) { const item = document.createElement('option'); item.value = value; item.textContent = label; select.appendChild(item); }
-function selectedCreativeTemplate() { return creativeTemplates.find(item => item.id === document.getElementById('template-package').value); }
 
 function templateText() { return templateLocale[I18N.locale] || {}; }
 function gameTypeName(id) { return (templateText().gameTypes || {})[id] || id; }
@@ -30,31 +29,54 @@ function fillFilterSelects() {
     gameSelect.value = keepGame; styleSelect.value = keepStyle;
 }
 
-function refreshCreativeTemplatePackages() {
+function templateChip(text) { const chip = document.createElement('span'); chip.className = 'template-chip'; chip.textContent = text; return chip; }
+
+function templateItemButton(item) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'template-item' + (item.id === appliedTemplateId ? ' selected' : '');
+    button.setAttribute('role', 'listitem');
+    button.setAttribute('aria-pressed', item.id === appliedTemplateId ? 'true' : 'false');
+    button.title = templateDescription(item);
+
+    const head = document.createElement('span'); head.className = 'template-item-head';
+    const name = document.createElement('span'); name.className = 'template-item-name'; name.textContent = templateName(item);
+    const tags = document.createElement('span'); tags.className = 'template-item-tags';
+    tags.append(templateChip(item.platform === 'mobile' ? t('template.platformMobile') : t('template.platformSteam')), templateChip(item.dimension.toUpperCase()));
+    head.append(name, tags);
+
+    const detail = document.createElement('span'); detail.className = 'template-item-detail';
+    detail.textContent = templateDescription(item);
+    const types = document.createElement('span'); types.className = 'template-item-types';
+    types.textContent = `${gameTypeName(item.gameType)} · ${styleTypeName(item.styleType)}`;
+    detail.append(types);
+
+    button.append(head, detail);
+    button.addEventListener('click', () => { if (item.id === appliedTemplateId) clearCreativeTemplate(); else applyCreativeTemplate(item.id); });
+    return button;
+}
+
+function renderTemplateList() {
     const gameType = document.getElementById('template-game-type').value;
     const styleType = document.getElementById('template-style-type').value;
-    const packages = creativeTemplates.filter(item => (!gameType || item.gameType === gameType) && (!styleType || item.styleType === styleType));
-    const select = document.getElementById('template-package');
-    const keep = select.value;
-    select.innerHTML = '';
-    packages.forEach(item => option(select, item.id, templateName(item)));
-    if (keep && packages.some(item => item.id === keep)) select.value = keep;
-    updateCreativeTemplateDescription();
+    const list = document.getElementById('template-list');
+    list.innerHTML = '';
+    const visible = creativeTemplates.filter(item => (!gameType || item.gameType === gameType) && (!styleType || item.styleType === styleType));
+    if (!visible.length) {
+        const empty = document.createElement('div'); empty.className = 'template-empty'; empty.textContent = t('template.noMatch');
+        list.append(empty);
+    } else visible.forEach(item => list.append(templateItemButton(item)));
 }
 
-function updateCreativeTemplateDescription() {
-    const item = selectedCreativeTemplate();
-    const box = document.getElementById('template-description');
-    if (!item) { box.textContent = t('template.noMatch'); return; }
-    box.textContent = t('template.meta', {
-        description: templateDescription(item),
-        platform: item.platform === 'mobile' ? t('template.platformMobile') : t('template.platformSteam'),
-        dimension: item.dimension.toUpperCase()
-    });
+function updateTemplateSummary() {
+    const applied = creativeTemplates.find(item => item.id === appliedTemplateId);
+    document.getElementById('template-current').textContent = applied ? t('template.current', { label: templateName(applied) }) : t('template.none');
+    document.getElementById('template-panel').classList.toggle('has-template', Boolean(applied));
+    document.getElementById('template-clear').hidden = !applied;
 }
 
-function applyCreativeTemplate() {
-    const item = selectedCreativeTemplate();
+function applyCreativeTemplate(id) {
+    const item = creativeTemplates.find(entry => entry.id === id);
     if (!item) return;
     templatePrompt = item.prompt;
     templateNegative = item.negative;
@@ -62,36 +84,40 @@ function applyCreativeTemplate() {
     setPlatform(item.platform);
     setDimension(item.dimension);
     updateUIAndOutput();
-    document.getElementById('template-description').textContent = t('template.applied', { label: templateName(item) });
+    renderTemplateList();
+    updateTemplateSummary();
 }
 
 function clearCreativeTemplate() {
-    templatePrompt = ''; templateNegative = ''; appliedTemplateId = null; updateUIAndOutput();
-    updateCreativeTemplateDescription();
+    templatePrompt = ''; templateNegative = ''; appliedTemplateId = null;
+    updateUIAndOutput();
+    renderTemplateList();
+    updateTemplateSummary();
 }
 
 async function loadCreativeTemplates() {
+    const list = document.getElementById('template-list');
     try {
         await I18N.ready;
-        document.getElementById('template-description').textContent = t('template.loading');
+        list.textContent = t('template.loading');
         const response = await fetch('config_sheets/templates.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         creativeTemplates = (await response.json()).templates || [];
         await loadTemplateLocale(I18N.locale);
-        document.getElementById('template-game-type').addEventListener('change', refreshCreativeTemplatePackages);
-        document.getElementById('template-style-type').addEventListener('change', refreshCreativeTemplatePackages);
-        document.getElementById('template-package').addEventListener('change', updateCreativeTemplateDescription);
+        document.getElementById('template-game-type').addEventListener('change', renderTemplateList);
+        document.getElementById('template-style-type').addEventListener('change', renderTemplateList);
+        document.getElementById('template-clear').addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); clearCreativeTemplate(); });
         templateStructureReady = true;
         fillFilterSelects();
-        refreshCreativeTemplatePackages();
-    } catch (error) { document.getElementById('template-description').textContent = t('template.loadError', { message: error.message }); }
+        renderTemplateList();
+        updateTemplateSummary();
+    } catch (error) { list.textContent = t('template.loadError', { message: error.message }); }
 }
 
 window.addEventListener('localechange', () => {
     if (!templateStructureReady) return;
     fillFilterSelects();
-    refreshCreativeTemplatePackages();
-    const applied = creativeTemplates.find(item => item.id === appliedTemplateId);
-    if (applied) document.getElementById('template-description').textContent = t('template.applied', { label: templateName(applied) });
+    renderTemplateList();
+    updateTemplateSummary();
 });
 window.addEventListener('DOMContentLoaded', loadCreativeTemplates);
