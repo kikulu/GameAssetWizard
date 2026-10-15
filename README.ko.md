@@ -20,6 +20,12 @@ npm start
 
 `http://127.0.0.1:3000`을 여세요. Node.js 18 이상이 필요하며 추가 런타임 패키지는 필요하지 않습니다.
 
+## 주요 추가 기능 (v1.6)
+
+- 태그를 📌 고정하면 다시 추첨해도 유지되고 나머지만 바뀝니다.
+- 이미지 엔진에 맞춰 프롬프트를 출력합니다 (Stable Diffusion은 `(태그:가중치)`, Midjourney는 `--ar` / `--v` / `--no` 포함, Ideogram·DALL·E 3는 자연스러운 문장). 로컬 생성은 항상 Stable Diffusion 형식을 사용합니다.
+- 세션을 자동 저장하며 공유 링크(데스크톱 앱은 공유 코드)와 JSON 내보내기/가져오기로 공유할 수 있습니다. API 주소와 생성 파라미터는 포함되지 않습니다.
+
 ## 다국어 지원
 
 인터페이스, 태그 라이브러리, 템플릿, 생성 스튜디오가 번체 중국어·English·日本語·한국어를 지원합니다. 태그 라이브러리는 언어와 무관한 구조 파일과 언어별 라벨 파일로 나뉘어 있으며, 번역 대조표(CSV／Markdown)와 가져오기·검사 도구를 제공합니다. 자세한 내용은 [다국어·번역 가이드](docs/I18N.md)를 참고하세요.
@@ -48,7 +54,9 @@ npm run dist         # 현재 OS용 설치 파일 빌드 (출력: release/)
 - [배포](docs/DEPLOYMENT.md)
 - [라이브러리·설정 파일 형식](docs/CONFIG_SHEETS.md)
 - [스타일 일관성 워크플로](docs/STYLE_CONSISTENCY.md)
-- [무작위 추첨](docs/RANDOM_PICK.md)
+- [무작위 추첨과 고정](docs/RANDOM_PICK.md)
+- [이미지 엔진별 프롬프트 형식](docs/PROMPT_FORMATS.md)
+- [세션: 자동 저장과 공유](docs/SESSION.md)
 - [다국어·번역 가이드](docs/I18N.md) · [번역 대조표](docs/i18n/translation-table.md)
 - [변경 기록](CHANGELOG.md) · [기여 가이드](CONTRIBUTING.md)
 

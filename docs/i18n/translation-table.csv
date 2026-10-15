@@ -26,7 +26,7 @@ ui,settings.toggle,🎛️ 展開素材規格設定（尺寸 / 引擎）,🎛️
 ui,settings.preset,📐 用途尺寸預設（依模式自動切換）,📐 Size presets (switch with the mode),📐 用途別サイズプリセット（モードに応じて切替）,📐 용도별 크기 프리셋 (모드에 따라 전환)
 ui,settings.width,寬 (Width),Width,幅 (Width),너비 (Width)
 ui,settings.height,高 (Height),Height,高さ (Height),높이 (Height)
-ui,settings.engine,🖌️ 繪圖引擎 / 模型參考,🖌️ Image engine / model reference,🖌️ 画像エンジン / モデル参考,🖌️ 이미지 엔진 / 모델 참고
+ui,settings.engine,🖌️ 繪圖引擎（決定提示詞輸出格式）,🖌️ Image engine (sets the prompt output format),🖌️ 画像エンジン（プロンプトの出力形式を決定）,🖌️ 이미지 엔진 (프롬프트 출력 형식 결정)
 ui,settings.background,🎨 背景需求,🎨 Background,🎨 背景の指定,🎨 배경 요구
 ui,settings.quality,✨ 品質關鍵字,✨ Quality keywords,✨ 品質キーワード,✨ 품질 키워드
 ui,bg.transparent,透明/去背 (Icon用),Transparent / isolated (for icons),透明・切り抜き（アイコン用）,투명/배경 제거 (아이콘용)
@@ -159,6 +159,38 @@ ui,template.current,目前套餐：{label},Active pack: {label},適用中: {labe
 ui,template.none,尚未套用套餐,No pack applied,テンプレート未適用,적용된 패키지 없음
 ui,random.variety,🎯 同類只抽一個（避免重複姿勢、服裝）,🎯 One pick per group (avoid duplicate poses / outfits),🎯 同種は 1 つだけ抽選（ポーズや衣装の重複を防止）,🎯 같은 종류는 하나만 추첨 (중복 포즈·의상 방지)
 ui,random.rollSheet,只重抽此分類,Re-roll this category only,このカテゴリだけ再抽選,이 카테고리만 다시 추첨
+ui,selected.pin,釘選：重抽時保留此標籤,Pin: keep this tag when re-rolling,ピン留め: 再抽選でもこのタグを残す,고정: 다시 추첨해도 이 태그 유지
+ui,selected.unpin,取消釘選,Unpin,ピン留めを解除,고정 해제
+ui,engine.note.sdxl,Stable Diffusion 格式：權重寫成 (標籤:權重)，反向詞請貼到 Negative 欄位。,Stable Diffusion format: weights are written as (tag:weight); paste the negative prompt into the Negative field.,Stable Diffusion 形式: 重みは (タグ:重み) で表記します。ネガティブプロンプトは Negative 欄に貼り付けてください。,Stable Diffusion 형식: 가중치는 (태그:가중치)로 표기합니다. 부정 프롬프트는 Negative 칸에 붙여 넣으세요.
+ui,engine.note.midjourney,預設版本：不加 --v；附加 --ar，反向詞轉為 --no（最多 10 項）。不使用 :: 權重，權重只影響順序，低於 0.5 的標籤會省略。,"Default version: no --v flag; adds --ar and converts the negative prompt to --no (up to 10 terms). No :: weights — weights only affect order, and tags below 0.5 are omitted.",デフォルトバージョン: --v は付けません。--ar を追加し、ネガティブプロンプトは --no に変換します（最大 10 項目）。:: の重みは使わず、重みは並び順にのみ反映し、0.5 未満のタグは省略します。,기본 버전: --v를 붙이지 않습니다. --ar를 추가하고 부정 프롬프트는 --no로 변환합니다(최대 10개). :: 가중치는 쓰지 않으며 가중치는 순서에만 반영되고 0.5 미만 태그는 생략됩니다.
+ui,engine.note.midjourney-7,加上 --v 7、--ar，反向詞轉為 --no（最多 10 項）。V7 不支援 :: 權重，權重只影響順序，低於 0.5 的標籤會省略。,"Adds --v 7 and --ar, and converts the negative prompt to --no (up to 10 terms). V7 does not support :: weights, so weights only affect order and tags below 0.5 are omitted.",--v 7 と --ar を追加し、ネガティブプロンプトは --no に変換します（最大 10 項目）。V7 は :: の重みに対応していないため、重みは並び順にのみ反映し、0.5 未満のタグは省略します。,--v 7과 --ar를 추가하고 부정 프롬프트는 --no로 변환합니다(최대 10개). V7은 :: 가중치를 지원하지 않아 가중치는 순서에만 반영되고 0.5 미만 태그는 생략됩니다.
+ui,engine.note.midjourney-6,加上 --v 6.1、--ar，權重轉為 :: 語法，反向詞轉為 --no（最多 10 項）。,"Adds --v 6.1 and --ar, converts weights to :: syntax and the negative prompt to --no (up to 10 terms).",--v 6.1 と --ar を追加し、重みは :: 構文に、ネガティブプロンプトは --no に変換します（最大 10 項目）。,"--v 6.1과 --ar를 추가하고 가중치는 :: 구문으로, 부정 프롬프트는 --no로 변환합니다(최대 10개)."
+ui,engine.note.leonardo,不使用權重語法：權重只影響順序，低於 0.5 的標籤會省略。反向詞請貼到 Negative prompt 欄位。,No weight syntax: weights only affect order and tags below 0.5 are omitted. Paste the negative prompt into the Negative prompt field.,重み構文は使いません。重みは並び順にのみ反映し、0.5 未満のタグは省略します。ネガティブプロンプトは Negative prompt 欄に貼り付けてください。,가중치 구문을 쓰지 않습니다. 가중치는 순서에만 반영되고 0.5 미만 태그는 생략됩니다. 부정 프롬프트는 Negative prompt 칸에 붙여 넣으세요.
+ui,engine.note.ideogram,輸出自然語句；權重轉為「強調」或「淡淡帶過」的描述。若介面提供 Negative prompt 欄位，請貼入反向詞。,"Outputs a natural sentence; weights become ""emphasize"" or ""subtle"" wording. If the interface has a Negative prompt field, paste the negative prompt there.",自然な文章で出力します。重みは「強調」や「控えめに」という表現に変換します。Negative prompt 欄がある場合は、ネガティブプロンプトをそこに貼り付けてください。,"자연스러운 문장으로 출력하며 가중치는 ""강조"" 또는 ""은은하게"" 표현으로 바뀝니다. Negative prompt 칸이 있으면 부정 프롬프트를 거기에 붙여 넣으세요."
+ui,engine.note.dalle3,輸出自然語句；權重轉為「強調」或「淡淡帶過」的描述。DALL·E 3 沒有反向提示詞，反向詞已改寫成句尾的 Avoid 句子。,"Outputs a natural sentence; weights become ""emphasize"" or ""subtle"" wording. DALL·E 3 has no negative prompt, so the negative terms are rewritten as a trailing ""Avoid"" sentence.",自然な文章で出力します。重みは「強調」や「控えめに」という表現に変換します。DALL·E 3 にはネガティブプロンプトがないため、ネガティブ項目は末尾の Avoid 文に書き換えています。,"자연스러운 문장으로 출력하며 가중치는 ""강조"" 또는 ""은은하게"" 표현으로 바뀝니다. DALL·E 3에는 부정 프롬프트가 없어 부정 항목을 끝의 Avoid 문장으로 바꿨습니다."
+ui,gen.sdFormatNote,本機產圖一律使用 Stable Diffusion 格式的提示詞，不受「繪圖引擎」選擇影響。,"Local generation always uses the Stable Diffusion prompt format, regardless of the selected image engine.",ローカル生成は、選択した画像エンジンに関係なく常に Stable Diffusion 形式のプロンプトを使用します。,로컬 생성은 선택한 이미지 엔진과 관계없이 항상 Stable Diffusion 형식의 프롬프트를 사용합니다.
+ui,session.title,💾 工作階段（自動儲存／分享）,💾 Session (autosave / share),💾 セッション（自動保存／共有）,💾 세션 (자동 저장/공유)
+ui,session.share,🔗 複製分享連結,🔗 Copy share link,🔗 共有リンクをコピー,🔗 공유 링크 복사
+ui,session.shareCode,🔗 複製分享代碼,🔗 Copy share code,🔗 共有コードをコピー,🔗 공유 코드 복사
+ui,session.export,📤 匯出 JSON,📤 Export JSON,📤 JSON をエクスポート,📤 JSON 내보내기
+ui,session.import,📥 匯入 JSON,📥 Import JSON,📥 JSON をインポート,📥 JSON 가져오기
+ui,session.reset,♻ 重設,♻ Reset,♻ リセット,♻ 초기화
+ui,session.pastePlaceholder,貼上分享連結或代碼,Paste a share link or code,共有リンクまたはコードを貼り付け,공유 링크 또는 코드 붙여넣기
+ui,session.apply,套用,Apply,適用,적용
+ui,session.hint,不包含 API 位址與產圖參數。,Does not include API addresses or generation parameters.,API アドレスと生成パラメーターは含まれません。,API 주소와 생성 파라미터는 포함되지 않습니다.
+ui,session.autosaved,✅ 已自動儲存,✅ Autosaved,✅ 自動保存しました,✅ 자동 저장됨
+ui,session.restored,已還原上次的工作階段（{count} 個標籤）。,Restored your last session ({count} tags).,前回のセッションを復元しました（タグ {count} 件）。,지난 세션을 복원했습니다 (태그 {count}개).
+ui,session.restoredShared,已載入分享的工作階段（{count} 個標籤）。,Loaded the shared session ({count} tags).,共有されたセッションを読み込みました（タグ {count} 件）。,공유된 세션을 불러왔습니다 (태그 {count}개).
+ui,session.imported,📥 已匯入工作階段（{count} 個標籤）。,📥 Session imported ({count} tags).,📥 セッションをインポートしました（タグ {count} 件）。,📥 세션을 가져왔습니다 (태그 {count}개).
+ui,session.skipped,有 {count} 個標籤在目前詞庫中找不到，已略過。,{count} tag(s) were not found in the current library and were skipped.,{count} 件のタグが現在の辞書に見つからず、スキップしました。,태그 {count}개가 현재 라이브러리에 없어 건너뛰었습니다.
+ui,session.copied,🔗 已複製分享連結。,🔗 Share link copied.,🔗 共有リンクをコピーしました。,🔗 공유 링크를 복사했습니다.
+ui,session.copiedCode,🔗 已複製分享代碼。,🔗 Share code copied.,🔗 共有コードをコピーしました。,🔗 공유 코드를 복사했습니다.
+ui,session.copyFailed,無法自動複製，請從輸入欄手動複製。,Could not copy automatically. Copy it from the input field.,自動でコピーできませんでした。入力欄から手動でコピーしてください。,자동으로 복사할 수 없습니다. 입력란에서 직접 복사하세요.
+ui,session.longLink,連結很長（{length} 字元），部分聊天工具可能會截斷；建議改用匯出 JSON。,The link is long ({length} characters) and some chat apps may truncate it; consider exporting JSON instead.,リンクが長い（{length} 文字）ため、一部のチャットアプリで切り詰められる可能性があります。JSON のエクスポートをおすすめします。,링크가 깁니다({length}자). 일부 채팅 앱에서 잘릴 수 있으니 JSON 내보내기를 권장합니다.
+ui,session.invalid,內容不是有效的工作階段。,That is not a valid session.,有効なセッションではありません。,유효한 세션이 아닙니다.
+ui,session.tooLarge,內容過大。,The content is too large.,内容が大きすぎます。,내용이 너무 큽니다.
+ui,session.importFail,❌ 無法讀取工作階段：{message},❌ Could not read the session: {message},❌ セッションを読み込めません: {message},❌ 세션을 읽을 수 없습니다: {message}
+ui,session.resetConfirm,確定要重設並清除自動儲存的工作階段嗎？,Reset and clear the autosaved session?,リセットして自動保存されたセッションを消去しますか？,초기화하고 자동 저장된 세션을 삭제할까요?
 profiles,profiles::mobile::label,📱 手遊（綜合）,📱 Mobile (General),📱 モバイル（総合）,📱 모바일 (종합)
 profiles,profiles::mobile::platform,手機遊戲,Mobile Games,モバイルゲーム,모바일 게임
 profiles,profiles::mobile::dimension,綜合風格,General Style,総合スタイル,종합 스타일

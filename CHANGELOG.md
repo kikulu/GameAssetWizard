@@ -2,10 +2,21 @@
 
 格式參考 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，版本遵循[語意化版本](https://semver.org/lang/zh-TW/)。
 
-## [Unreleased]
+## [1.6.0] — 2026-10-14
 
 ### Added
+- **釘選標籤**：已選標籤可 📌 釘選；隨機抽卡與分類 🎲 重抽時保留釘選的標籤，且其所在的群組不再另外抽（`randomizer.js` 新增 `pinned` 參數）。釘選會標示在清單與詞庫，並存入工作階段。
+- **依繪圖引擎輸出提示詞格式**（`promptformat.js`）：Stable Diffusion XL（`(標籤:權重)`）、Midjourney（預設版本／v7／v6.1：`--ar` 由尺寸換算、`--v`、`--no` 最多 10 項；僅 v6.1 使用 `::` 權重）、Leonardo.Ai、Ideogram 與 DALL·E 3（自然語句、DALL·E 3 的反向詞改寫為 Avoid 句子）。引擎選單下方顯示說明。詳見 `docs/PROMPT_FORMATS.md`。
+- **工作階段**（`session.js`、`session-ui.js`）：自動儲存與還原、複製分享連結（桌面版為分享代碼）、匯出／匯入 JSON、貼上連結或代碼套用、重設。不包含 API 位址與產圖參數；載入時只接受目前詞庫中存在的提示詞與已知選項。詳見 `docs/SESSION.md`。
+- 提示詞格式、工作階段與釘選的單元測試；`npm test` 現有 50 項測試。
 - `docs/AI_DEV_PROMPTS.md`：在新對話中以 AI 協助開發的專案背景提示詞，以及新功能、修正錯誤、修改既有功能、翻譯、標籤擴充、審查、重構、發佈與交接各階段的提示詞，並附 ROADMAP 項目的起手式。
+
+### Changed
+- 繪圖引擎選單的值改為 id，且**不再把引擎名稱當關鍵字加進提示詞**（先前會出現 `Midjourney v6 game art style`、`SDXL, game asset lora` 等文字）。選 Midjourney、Leonardo、Ideogram、DALL·E 3 時，畫面上的提示詞格式會改變。
+- 本機產圖一律使用 Stable Diffusion 格式，不受「繪圖引擎」影響；產圖工作台加上說明。
+- 修改尺寸、選尺寸預設或切換引擎時，畫面上的提示詞會即時更新（Midjourney 的 `--ar` 依尺寸換算）。
+- `npm run i18n:check` 能辨識動態組合的語系鍵，不再誤報「未使用」。
+- 新增 32 個 UI 字串（四種語言），並調整 `settings.engine` 的文字。
 
 ## [1.5.0] — 2026-10-14
 

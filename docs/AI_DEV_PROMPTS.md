@@ -27,13 +27,13 @@ Game Asset Prompt Generator：以 JSON 詞庫驅動的遊戲美術提示詞產�
 
 ## 技術與結構
 - 原生 HTML／CSS／JavaScript（無框架、無執行期套件；Electron 只是 devDependency）。Node.js 18+。
-- index.html 載入順序：platform.js → i18n.js → randomizer.js → app.js → generation.js → styleguide.js → templates.js（classic script，共用全域）。
+- index.html 載入順序：platform.js → i18n.js → promptformat.js → session.js → randomizer.js → app.js → generation.js → styleguide.js → templates.js → session-ui.js（classic script，共用全域）。
 - config_sheets/：語言中立資料。index.json 列出分類；<sheetId>.json 為「分類→子分類(可帶 group)→英文提示詞」；profiles.json（六種模式與尺寸預設 id）；templates.json；base_settings.json。
 - locales/<zh-TW|en|ja|ko>/：各語言顯示文字 ui.json、profiles.json、templates.json、tags/<sheetId>.json。locales/locales.json 登錄語言。
-- assets/js：app.js（狀態、矩陣 UI、提示詞組合）、i18n.js（執行層，全域 t()）、randomizer.js（純函式）、generation.js（產圖，generationSettings(promptOverride)／runProvider）、styleguide.js（風格鎖定與批次產圖，透過 window.applyStyleLock 掛勾）、templates.js、platform.js（apiFetch：網頁＝fetch，桌面＝IPC 代送）。
+- assets/js：app.js（狀態、矩陣 UI、提示詞組合）、i18n.js（執行層，全域 t()）、randomizer.js（純函式；群組、避免重複、釘選）、promptformat.js（依繪圖引擎輸出格式，純函式）、session.js（工作階段驗證／編碼，純函式）與 session-ui.js（自動儲存、分享、匯出入）、generation.js（產圖，generationSettings(promptOverride)／runProvider）、styleguide.js（風格鎖定與批次產圖，透過 window.applyStyleLock 掛勾）、templates.js、platform.js（apiFetch：網頁＝fetch，桌面＝IPC 代送）。
 - electron/main.js、preload.js：app:// 協定、IPC 橋接、contextIsolation＋sandbox。
 - scripts/i18n.js（check／table／import／add）、scripts/validate-data.js。tests/ 使用 node:test。
-- 關鍵資料模型：已選標籤 activeSelections 是 Map，以「英文提示詞」為鍵；顯示文字由 locales 依目前語言查詢，因此切換語言不會影響已選內容。提示詞在所有分類中必須唯一。
+- 關鍵資料模型：已選標籤 activeSelections 是 Map，以「英文提示詞」為鍵、值為 { weight, pinned }；顯示文字由 locales 依目前語言查詢，因此切換語言不會影響已選內容。提示詞在所有分類中必須唯一。
 
 ## 指令
 npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語法＋資料驗證＋i18n 檢查）｜npm test｜npm run validate｜npm run i18n:check／i18n:table／i18n:import／i18n:add｜npm run dist
@@ -46,6 +46,8 @@ npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語�
 5. 不新增執行期套件；若真的需要，先提出理由與替代方案，等我同意。
 6. 純邏輯盡量放進可在 Node 測試的純函式模組，並補單元測試。
 7. 不要改動已發佈的歷史（不 rebase／force-push、不改既有 tag）。
+8. 畫面上的提示詞由 PromptFormat.format(引擎, promptInput()) 產生；本機產圖一律走 getGenerationPrompts()（Stable Diffusion 格式），不受引擎選擇影響。新增引擎或改格式請改 promptformat.js 並補測試。
+9. 工作階段（自動儲存、分享連結、匯出檔）不得包含 API 位址與產圖參數；任何載入路徑都必須經 Session.sanitize（只接受詞庫中存在的提示詞與已知選項）。新增要儲存的設定時同步修改 session-ui.js 的 capture／apply 與 session.js 的 sanitize，並補測試。
 
 ## Git 與版本規則
 - 只有一個長期分支 master。作者與提交者固定為 kikulu <kikulu@gmail.com>（repo 內已設定）。
@@ -338,27 +340,9 @@ npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語�
 
 下列任務貼在「專案背景提示詞」之後，接著依 A 系列階段進行（跳過 A1 的重述部分即可）。
 
-### F1. 釘選標籤（重抽時保留）
+### F1～F3（已於 v1.6.0 完成）
 
-```text
-功能：已選標籤可 📌 釘選；隨機抽卡與分類 🎲 重抽時，被釘選的標籤保留，只重抽其餘部分，且同一群組已有釘選標籤時，該群組不再另外抽。
-目的：喜歡目前的姿勢，只想換服裝或表情。
-請從 A1（需求釐清）開始，並特別考慮：釘選狀態是否隨語言切換保留、是否存入 session、清空選取與移除標籤時的行為、釘選與權重 UI 的位置、與 randomizer.js 的介面（建議新增 pinned 參數並補測試）。
-```
-
-### F2. 依繪圖引擎輸出提示詞格式
-
-```text
-功能：依主控面板選擇的繪圖引擎輸出不同格式——Stable Diffusion／SDXL／ComfyUI 維持 (tag:1.2) 權重；Midjourney 輸出自然語句並附 --ar（由寬高換算）與 --v 等參數，權重用 ::；DALL·E 3／Ideogram 輸出完整句子且不含權重語法。
-請從 A1 開始，並先調查各引擎目前的提示詞語法（若你無法上網，請明確標示哪些是推測並請我確認）。設計成「格式化器」純函式模組，便於單元測試；考慮負向提示詞在各引擎的處理（Midjourney 用 --no）、產圖工作台是否一律使用 SD 格式、i18n 與文件更新。
-```
-
-### F3. 自動儲存工作階段與分享連結
-
-```text
-功能：自動儲存目前工作階段（已選標籤與權重、模式與 2D／3D、尺寸、範本、引擎等設定、不含 API 位址與金鑰），重新開啟時還原；可匯出／匯入 session JSON；可產生分享連結（URL hash，內容以英文提示詞為鍵，不受語言影響）。
-請從 A1 開始，並考慮：資料版本號與向前相容、載入不存在的提示詞（詞庫改版後）時的容錯、隱私（不可包含產圖後端位址）、URL 長度上限、與風格鎖定的關係，以及驗證與清除入口。
-```
+釘選標籤、依繪圖引擎輸出提示詞格式、工作階段自動儲存與分享連結都已完成，詳見 [隨機抽卡與釘選](RANDOM_PICK.md)、[依繪圖引擎輸出提示詞格式](PROMPT_FORMATS.md)、[工作階段](SESSION.md)。後續延伸請見下面的 F6、F7。
 
 ### F4. CI 與端對端測試納入專案
 
@@ -371,6 +355,25 @@ npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語�
 
 ```text
 任務：建立母語校對流程。請先閱讀 docs/I18N.md。提案：在語系檔或獨立中繼資料中記錄各語言各鍵的「已校對」狀態、npm run i18n:check 回報校對進度（不影響通過與否）、對照表 CSV 加上狀態欄位並支援匯入、校對者的貢獻指南。核准後再實作，並維持現有 CSV 匯入的相容性與測試。
+```
+
+---
+
+### F6. Midjourney 版本與參數可設定化
+
+```text
+任務：目前 promptformat.js 內以程式碼硬寫各引擎格式（Midjourney 預設／v7／v6.1）。請改為可編輯的資料驅動設定，並加入選填的進階參數。
+請先閱讀 docs/PROMPT_FORMATS.md。從 A1 開始，並特別考慮：
+- 把 ENGINES 抽成 config_sheets 下的 JSON（含 family、version、是否支援 ::、--no 上限等），並在 npm run validate 與測試中驗證；版本與參數支援狀態要有明確的「資料來源與查證日期」欄位，且你必須先上網查證目前 Midjourney 官方文件，無法確認的標示為待確認，不要憑記憶。
+- 選填欄位（--stylize、--chaos、--style raw、--seed、--weird）的 UI 位置、預設值、是否納入工作階段（session.js 的 sanitize 與版本相容）、i18n 與說明文字。
+- 引擎選單改由設定檔產生時，如何維持現有 option id 與已存的工作階段相容。
+```
+
+### F7. 鎖定整個分類與手動選取的同組互斥
+
+```text
+功能：(1) 分類標題可「鎖定」，重抽時整個分類保持不變（釘選的延伸）；(2) 手動點選標籤時，可選擇「同群組只留一個」（點第二個標籤時取代而非疊加），預設關閉。
+請從 A1 開始，並特別考慮：鎖定狀態是否存入工作階段（session-ui.js capture／apply 與 session.js sanitize）、與釘選的關係與優先順序、randomizer.js 的介面（建議新增 lockedSheets 或在呼叫端過濾）、手動互斥與 group 資料的關係（group 只在同一分類檔內有效）、清空與剔除時的行為、i18n 與無障礙（鎖定按鈕需要 aria-pressed）。
 ```
 
 ---

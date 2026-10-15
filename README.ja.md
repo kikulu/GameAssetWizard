@@ -20,6 +20,12 @@ npm start
 
 `http://127.0.0.1:3000` を開きます。Node.js 18 以上が必要です。追加の実行時パッケージは不要です。
 
+## 主な追加機能（v1.6）
+
+- タグを 📌 ピン留めすると、再抽選でも残り、それ以外だけが入れ替わります。
+- 画像エンジンに応じてプロンプトを出力します（Stable Diffusion は `(タグ:重み)`、Midjourney は `--ar` / `--v` / `--no` 付き、Ideogram・DALL·E 3 は自然な文章）。ローカル生成は常に Stable Diffusion 形式です。
+- セッションを自動保存し、共有リンク（デスクトップ版は共有コード）や JSON のエクスポート／インポートで共有できます。API アドレスと生成パラメーターは含まれません。
+
 ## 多言語対応
 
 UI、辞書（タグ）、テンプレート、生成スタジオが繁体字中国語・English・日本語・한국어に対応しています。辞書は言語に依存しない構造ファイルと言語別のラベルファイルに分かれており、翻訳対応表（CSV／Markdown）と、取り込み・検証ツールを用意しています。詳細は[多言語化・翻訳ガイド](docs/I18N.md)を参照してください。
@@ -48,7 +54,9 @@ npm run dist         # 現在の OS 向けインストーラーを作成（出�
 - [デプロイ](docs/DEPLOYMENT.md)
 - [辞書・設定ファイル形式](docs/CONFIG_SHEETS.md)
 - [スタイル一貫化ワークフロー](docs/STYLE_CONSISTENCY.md)
-- [ランダム抽選](docs/RANDOM_PICK.md)
+- [ランダム抽選とピン留め](docs/RANDOM_PICK.md)
+- [画像エンジン別のプロンプト形式](docs/PROMPT_FORMATS.md)
+- [セッション: 自動保存と共有](docs/SESSION.md)
 - [多言語化・翻訳ガイド](docs/I18N.md) · [翻訳対応表](docs/i18n/translation-table.md)
 - [変更履歴](CHANGELOG.md) · [コントリビュート](CONTRIBUTING.md)
 

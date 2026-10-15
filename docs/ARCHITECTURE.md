@@ -10,6 +10,9 @@
 index.html                 頁面語意與操作介面
 assets/css/styles.css      響應式視覺樣式
 assets/js/app.js           UI 狀態、詞庫載入、提示詞組合
+assets/js/promptformat.js     依繪圖引擎輸出提示詞格式（純函式）
+assets/js/session.js          工作階段驗證、編碼與檔案格式（純函式）
+assets/js/session-ui.js       工作階段自動儲存、還原、分享、匯出／匯入（介面）
 assets/js/randomizer.js     隨機抽卡邏輯（以群組為單位、避免重複；純函式）
 assets/js/i18n.js          多語系執行層：載入語系檔、t()、切換語言事件
 assets/js/generation.js    Draw Things／SD WebUI／ComfyUI 產圖

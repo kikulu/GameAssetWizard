@@ -41,6 +41,10 @@ npm run dist:linux   # Linux：AppImage + deb
 - 讀取專案內 JSON：使用一般 `fetch()`。
 - 需要判斷平台時使用 `window.isDesktopApp`，或以 CSS 的 `.is-desktop`／`.is-web`（`<html>` 會自動加上）。
 
+## 工作階段分享
+
+桌面版沒有公開網址，「分享」會複製**分享代碼**而不是連結；對方貼到「貼上分享連結或代碼」欄位即可。自動儲存、匯出與匯入的行為與網頁版相同，見 [工作階段](SESSION.md)。
+
 ## 疑難排解
 
 | 現象 | 可能原因與處理 |
