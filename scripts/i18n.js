@@ -101,17 +101,25 @@ function expectedKeysFromStructure() {
     return keys;
 }
 
-/** 掃描 index.html 與 assets/js 使用到的 UI 鍵。 */
+/**
+ * 掃描 index.html 與 assets/js 使用到的 UI 鍵。
+ *  - required：明確呼叫 t('鍵')、setRich(..., '鍵') 或 data-i18n* 屬性（缺少就是錯誤）。
+ *  - maybe：程式中任何看起來像鍵的字串，以及動態組合的前綴（如 `engine.note.${id}`），
+ *    只用來判斷「未被使用」的警告，避免誤報。
+ */
 function usedUiKeys() {
-    const used = new Set();
+    const required = new Set(), maybe = new Set(), prefixes = new Set();
     const files = [path.join(ROOT, 'index.html'), ...fs.readdirSync(path.join(ROOT, 'assets/js')).filter(f => f.endsWith('.js')).map(f => path.join(ROOT, 'assets/js', f))];
     for (const file of files) {
         const text = fs.readFileSync(file, 'utf8');
-        for (const m of text.matchAll(/data-i18n(?:-html|-title|-placeholder|-aria-label)?="([\w.]+)"/g)) used.add(m[1]);
-        for (const m of text.matchAll(/\bt\(\s*['"`]([\w.]+)['"`]/g)) used.add(m[1]);
-        for (const m of text.matchAll(/setRich\([^,]+,\s*['"]([\w.]+)['"]/g)) used.add(m[1]);
+        for (const m of text.matchAll(/data-i18n(?:-html|-title|-placeholder|-aria-label)?="([\w.]+)"/g)) required.add(m[1]);
+        for (const m of text.matchAll(/\bt\(\s*['"`]([\w.]+)['"`]/g)) required.add(m[1]);
+        for (const m of text.matchAll(/setRich\([^,]+,\s*['"]([\w.]+)['"]/g)) required.add(m[1]);
+        for (const m of text.matchAll(/['"`]([a-z][\w]*(?:\.[\w-]+)+)['"`]/g)) maybe.add(m[1]);
+        for (const m of text.matchAll(/`([\w.-]+\.)\$\{/g)) prefixes.add(m[1]);
     }
-    return used;
+    required.forEach(key => maybe.add(key));
+    return { required, maybe, prefixes };
 }
 
 // ------------------------------------------------------------------ check
@@ -129,7 +137,7 @@ function check() {
     }
 
     const structureKeys = expectedKeysFromStructure();
-    const usedKeys = usedUiKeys();
+    const { required: usedKeys, maybe: maybeUsed, prefixes: usedPrefixes } = usedUiKeys();
     const files = expectedFiles();
 
     // 讀取所有語系檔
@@ -151,7 +159,8 @@ function check() {
         if (name === 'ui') {
             for (const key of usedKeys) if (!(key in ref)) errors.push(`[${reference}] ui.json 缺少程式使用的鍵：${key}`);
             for (const key of Object.keys(ref)) {
-                if (!usedKeys.has(key) && !key.startsWith('error.')) warnings.push(`[${reference}] ui.json 的鍵未被使用：${key}`);
+                const dynamic = key.startsWith('error.') || [...usedPrefixes].some(prefix => key.startsWith(prefix));
+                if (!maybeUsed.has(key) && !dynamic) warnings.push(`[${reference}] ui.json 的鍵未被使用：${key}`);
             }
         } else {
             const expected = structureKeys[name];

@@ -123,3 +123,18 @@ test('add 可新增語言並通過檢查', () => {
     assert.equal(run(dir, 'add', 'fr', 'Français').status, 1);
     assert.equal(run(dir, 'add', 'bad code', 'x').status, 1);
 });
+
+test('check 會警告未被使用的 UI 鍵，但不會誤報動態組合的鍵', () => {
+    const dir = sandbox();
+    for (const code of ['zh-TW', 'en', 'ja', 'ko']) {
+        const file = path.join(dir, 'locales', code, 'ui.json');
+        const ui = readJson(file);
+        ui['totally.unused.key'] = 'x';
+        fs.writeFileSync(file, JSON.stringify(ui, null, 2));
+    }
+    const result = run(dir, 'check');
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stderr, /totally\.unused\.key/);
+    assert.doesNotMatch(result.stderr, /engine\.note\./);
+    assert.doesNotMatch(result.stderr, /session\.copied/);
+});
