@@ -2,6 +2,9 @@ let creativeTemplates = [];
 let templateStructureReady = false;
 const templateLocale = {}; // { [locale]: { gameTypes, styleTypes, templates } }
 let appliedTemplateId = null;
+// 工作階段還原（session-ui.js）要等範本資料載入完成；載入失敗也要放行
+let resolveTemplatesReady;
+window.templatesReady = new Promise(resolve => { resolveTemplatesReady = resolve; });
 
 function option(select, value, label) { const item = document.createElement('option'); item.value = value; item.textContent = label; select.appendChild(item); }
 
@@ -112,6 +115,7 @@ async function loadCreativeTemplates() {
         renderTemplateList();
         updateTemplateSummary();
     } catch (error) { list.textContent = t('template.loadError', { message: error.message }); }
+    finally { resolveTemplatesReady(); }
 }
 
 window.addEventListener('localechange', () => {

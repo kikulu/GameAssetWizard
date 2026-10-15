@@ -46,6 +46,27 @@
                 </div>
             </details>
 
+            <details class="session-panel" id="session-panel">
+                <summary>
+                    <span class="session-title" data-i18n="session.title">💾 工作階段（自動儲存／分享）</span>
+                    <span class="session-status" id="session-status" role="status" aria-live="polite"></span>
+                </summary>
+                <div class="session-body">
+                    <div class="session-buttons">
+                        <button type="button" class="session-btn" id="session-share">🔗</button>
+                        <button type="button" class="session-btn" id="session-export" data-i18n="session.export">📤 匯出 JSON</button>
+                        <button type="button" class="session-btn" id="session-import" data-i18n="session.import">📥 匯入 JSON</button>
+                        <button type="button" class="session-btn danger" id="session-reset" data-i18n="session.reset">♻ 重設</button>
+                        <input type="file" id="session-file" accept="application/json,.json" hidden>
+                    </div>
+                    <div class="session-paste-row">
+                        <input type="text" id="session-paste" autocomplete="off" spellcheck="false" data-i18n-placeholder="session.pastePlaceholder" placeholder="貼上分享連結或代碼">
+                        <button type="button" class="session-btn" id="session-apply" data-i18n="session.apply">套用</button>
+                    </div>
+                    <p class="session-hint" data-i18n="session.hint">不包含 API 位址與產圖參數。</p>
+                </div>
+            </details>
+
             <div class="toggle-row">
                 <div class="toggle-btn active" id="btn-plat-mobile" data-i18n="platform.mobile" onclick="setPlatform('mobile')">📱 手機遊戲</div>
                 <div class="toggle-btn" id="btn-plat-steam" data-i18n="platform.steam" onclick="setPlatform('steam')">🖥️ Steam / PC</div>
@@ -165,10 +186,12 @@
 <script src="assets/js/platform.js" defer></script>
 <script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/promptformat.js" defer></script>
+<script src="assets/js/session.js" defer></script>
 <script src="assets/js/randomizer.js" defer></script>
 <script src="assets/js/app.js" defer></script>
 <script src="assets/js/generation.js" defer></script>
 <script src="assets/js/styleguide.js" defer></script>
 <script src="assets/js/templates.js" defer></script>
+<script src="assets/js/session-ui.js" defer></script>
 </body>
 </html>

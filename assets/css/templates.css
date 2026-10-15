@@ -25,3 +25,20 @@
 .template-item.selected .template-item-detail { display: block; }
 .template-item-types { display: block; margin-top: 3px; color: var(--text-muted); font-size: 10.5px; }
 .template-empty { padding: 10px; color: var(--text-muted); font-size: 12px; }
+
+/* 工作階段：自動儲存、分享與匯出／匯入（預設收合） */
+.session-panel { margin: 0 0 14px; border: 1px solid #355645; border-radius: 10px; background: rgba(8, 20, 15, .5); }
+.session-panel > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 8px; row-gap: 2px; padding: 9px 12px; cursor: pointer; list-style: none; user-select: none; }
+.session-panel > summary::-webkit-details-marker { display: none; }
+.session-panel > summary::after { content: '▸'; grid-column: 2; grid-row: 1 / span 2; color: var(--text-muted); transition: transform .15s; }
+.session-panel[open] > summary::after { transform: rotate(90deg); }
+.session-title { grid-column: 1; color: #86efac; font-weight: bold; font-size: 13px; }
+.session-status { grid-column: 1; min-height: 1em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; color: var(--text-muted); }
+.session-body { padding: 0 10px 10px; }
+.session-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-bottom: 8px; }
+.session-btn { padding: 7px 8px; border: 1px solid #355645; border-radius: 8px; background: rgba(16, 40, 30, .7); color: var(--text); font: inherit; font-size: 12px; cursor: pointer; }
+.session-btn:hover, .session-btn:focus-visible { border-color: var(--accent); }
+.session-btn.danger:hover, .session-btn.danger:focus-visible { border-color: #b45454; color: #fecaca; }
+.session-paste-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; }
+.session-paste-row input { min-width: 0; padding: 7px 8px; font-size: 12px; }
+.session-hint { margin: 8px 0 0; font-size: 11px; color: var(--text-muted); }

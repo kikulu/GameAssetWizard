@@ -87,7 +87,11 @@ async function loadConfig() {
         buildRandomConfigUI(false);
         buildPresetSelect();
         updateProfileLabel();
-        randomPickSelected();
+        // 優先還原分享連結／自動儲存的工作階段（session-ui.js）；沒有才做第一次隨機抽卡
+        const restored = typeof restoreSession === 'function' ? await restoreSession() : false;
+        if (!restored) randomPickSelected();
+        else updateUIAndOutput();
+        if (typeof enableSessionAutosave === 'function') enableSessionAutosave();
 
     } catch (e) {
         const box = document.getElementById('matrixContainer');
@@ -495,6 +499,7 @@ function updateUIAndOutput() {
     document.getElementById('positivePrompt').value = output.positive;
     document.getElementById('negativePrompt').value = output.negative;
     document.getElementById('engine-note').textContent = t(output.noteKey);
+    if (typeof scheduleSessionSave === 'function') scheduleSessionSave();
 }
 
 function clearAllSelection() { activeSelections.clear(); updateUIAndOutput(); }
