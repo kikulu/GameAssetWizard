@@ -77,3 +77,23 @@ test('先均勻挑子分類，再挑標籤（小子分類不會被大子分類�
     for (let i = 0; i < 2000; i += 1) if (Randomizer.pickFromGroup(group, { rng }).startsWith('s')) small += 1;
     assert.ok(small > 800 && small < 1200, `small=${small}`);
 });
+
+test('釘選的標籤所在的群組不會再抽，其他群組照常抽', () => {
+    const pose = sheets.poses.categories[0].subcategories[0].tags[0];
+    for (let i = 0; i < 30; i += 1) assert.deepEqual(Randomizer.pickForSheet(sheets.poses, { rng: seeded(i), pinned: new Set([pose]) }), []);
+
+    const accessories = sheets.costumes.categories.find(c => c.id === 'accessories').subcategories[0].tags;
+    const outfitTag = sheets.costumes.categories[0].subcategories[0].tags[0];
+    for (let i = 0; i < 30; i += 1) {
+        const picks = Randomizer.pickForSheet(sheets.costumes, { rng: seeded(i), pinned: new Set([outfitTag]) });
+        assert.equal(picks.length, 1);
+        assert.ok(accessories.includes(picks[0]), '只會重抽配件');
+    }
+});
+
+test('關閉 variety 時，釘選只會讓所在的子分類不抽', () => {
+    const pose = sheets.poses.categories[0].subcategories[0].tags[0];
+    const picks = Randomizer.pickForSheet(sheets.poses, { variety: false, pinned: new Set([pose]) });
+    assert.equal(picks.length, 3);
+    assert.ok(!picks.includes(pose));
+});

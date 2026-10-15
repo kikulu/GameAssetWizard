@@ -158,5 +158,7 @@
   "template.current": "Active pack: {label}",
   "template.none": "No pack applied",
   "random.variety": "🎯 One pick per group (avoid duplicate poses / outfits)",
-  "random.rollSheet": "Re-roll this category only"
+  "random.rollSheet": "Re-roll this category only",
+  "selected.pin": "Pin: keep this tag when re-rolling",
+  "selected.unpin": "Unpin"
 }

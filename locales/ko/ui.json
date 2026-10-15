@@ -158,5 +158,7 @@
   "template.current": "적용 중: {label}",
   "template.none": "적용된 패키지 없음",
   "random.variety": "🎯 같은 종류는 하나만 추첨 (중복 포즈·의상 방지)",
-  "random.rollSheet": "이 카테고리만 다시 추첨"
+  "random.rollSheet": "이 카테고리만 다시 추첨",
+  "selected.pin": "고정: 다시 추첨해도 이 태그 유지",
+  "selected.unpin": "고정 해제"
 }

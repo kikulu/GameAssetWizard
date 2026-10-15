@@ -158,5 +158,7 @@
   "template.current": "適用中: {label}",
   "template.none": "テンプレート未適用",
   "random.variety": "🎯 同種は 1 つだけ抽選（ポーズや衣装の重複を防止）",
-  "random.rollSheet": "このカテゴリだけ再抽選"
+  "random.rollSheet": "このカテゴリだけ再抽選",
+  "selected.pin": "ピン留め: 再抽選でもこのタグを残す",
+  "selected.unpin": "ピン留めを解除"
 }

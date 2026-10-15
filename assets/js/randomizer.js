@@ -6,6 +6,7 @@
  * 沒有 group 的子分類各自成一組（例如髮型與髮色、種族與職業）。
  * 抽取時先均勻挑子分類，再挑標籤，避免標籤數量多的子分類佔盡機會，
  * 並會盡量避開 avoid 內的標籤（上一次的結果），讓連續抽卡不重複。
+ * 釘選（pinned）的標籤會被保留：只要某個群組已含有釘選標籤，該群組就不再另外抽。
  */
 (function (root, factory) {
     if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -39,10 +40,18 @@
         return choose(candidates.length ? candidates : sub.tags, rng);
     }
 
-    /** 回傳這個分類本次抽到的標籤陣列（每組一個）。 */
-    function pickForSheet(sheet, { variety = true, rng = Math.random, avoid = new Set() } = {}) {
-        return buildGroups(sheet, { variety }).map(group => pickFromGroup(group, { rng, avoid })).filter(Boolean);
+    /** 這個群組是否已含有釘選的標籤。 */
+    function hasPinned(group, pinned) {
+        return group.subs.some(sub => sub.tags.some(tag => pinned.has(tag)));
     }
 
-    return { buildGroups, pickFromGroup, pickForSheet };
+    /** 回傳這個分類本次抽到的標籤陣列（每組一個）；已有釘選標籤的群組不抽。 */
+    function pickForSheet(sheet, { variety = true, rng = Math.random, avoid = new Set(), pinned = new Set() } = {}) {
+        return buildGroups(sheet, { variety })
+            .filter(group => !hasPinned(group, pinned))
+            .map(group => pickFromGroup(group, { rng, avoid }))
+            .filter(Boolean);
+    }
+
+    return { buildGroups, pickFromGroup, pickForSheet, hasPinned };
 }));

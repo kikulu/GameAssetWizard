@@ -158,5 +158,7 @@
   "template.current": "目前套餐：{label}",
   "template.none": "尚未套用套餐",
   "random.variety": "🎯 同類只抽一個（避免重複姿勢、服裝）",
-  "random.rollSheet": "只重抽此分類"
+  "random.rollSheet": "只重抽此分類",
+  "selected.pin": "釘選：重抽時保留此標籤",
+  "selected.unpin": "取消釘選"
 }

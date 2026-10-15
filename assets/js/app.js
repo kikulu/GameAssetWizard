@@ -225,13 +225,15 @@ function varietyEnabled() {
 
 function rollSheets(sheetIds) {
     const variety = varietyEnabled();
-    // 目前已選、屬於這些分類的標籤：重抽時盡量避開，讓連續抽卡不重複
-    const avoid = new Set([...activeSelections.keys()].filter(prompt => sheetIds.includes(tagIndex.get(prompt))));
+    const inSheets = [...activeSelections].filter(([prompt]) => sheetIds.includes(tagIndex.get(prompt)));
+    // 釘選的標籤保留，且其所在的群組不再另外抽；其餘已選標籤重抽時盡量避開，讓連續抽卡不重複
+    const pinned = new Set(inSheets.filter(([, data]) => data.pinned).map(([prompt]) => prompt));
+    const avoid = new Set(inSheets.filter(([, data]) => !data.pinned).map(([prompt]) => prompt));
     avoid.forEach(prompt => activeSelections.delete(prompt));
     sheetIds.forEach(sheetId => {
         const sheet = globalMatrix[sheetId];
         if (!sheet) return;
-        Randomizer.pickForSheet(sheet, { variety, avoid }).forEach(prompt => activeSelections.set(prompt, { weight: 1.0 }));
+        Randomizer.pickForSheet(sheet, { variety, avoid, pinned }).forEach(prompt => activeSelections.set(prompt, { weight: 1.0, pinned: false }));
     });
     updateUIAndOutput();
 }
@@ -358,7 +360,14 @@ function buildMatrixUI() {
 
 function toggleTag(prompt) {
     if (activeSelections.has(prompt)) { activeSelections.delete(prompt); }
-    else { activeSelections.set(prompt, { weight: 1.0 }); }
+    else { activeSelections.set(prompt, { weight: 1.0, pinned: false }); }
+    updateUIAndOutput();
+}
+
+function togglePin(prompt) {
+    const data = activeSelections.get(prompt);
+    if (!data) return;
+    data.pinned = !data.pinned;
     updateUIAndOutput();
 }
 
@@ -395,7 +404,7 @@ function selectedListItem(prompt, data) {
 
     const info = document.createElement('div');
     const name = document.createElement('b');
-    name.textContent = tagLabel(prompt);
+    name.textContent = (data.pinned ? '📌 ' : '') + tagLabel(prompt);
     const weight = document.createElement('span');
     weight.style.cssText = 'font-size:11px;color:var(--text-muted)';
     weight.textContent = data.weight !== 1.0 ? ' x' + data.weight : '';
@@ -403,6 +412,14 @@ function selectedListItem(prompt, data) {
 
     const actions = document.createElement('div');
     actions.className = 'weight-actions';
+    const pin = document.createElement('button');
+    pin.type = 'button';
+    pin.className = 'btn-pin' + (data.pinned ? ' active' : '');
+    pin.textContent = '📌';
+    pin.title = data.pinned ? t('selected.unpin') : t('selected.pin');
+    pin.setAttribute('aria-label', pin.title);
+    pin.setAttribute('aria-pressed', data.pinned ? 'true' : 'false');
+    pin.addEventListener('click', () => togglePin(prompt));
     const plus = document.createElement('button');
     plus.textContent = '➕';
     plus.addEventListener('click', () => adjustWeight(prompt, 0.1));
@@ -414,7 +431,7 @@ function selectedListItem(prompt, data) {
     remove.textContent = t('selected.remove');
     remove.title = t('selected.removeTitle');
     remove.addEventListener('click', () => removeTagDirectly(prompt));
-    actions.append(plus, minus, remove);
+    actions.append(pin, plus, minus, remove);
 
     item.append(info, actions);
     return item;
@@ -422,7 +439,7 @@ function selectedListItem(prompt, data) {
 
 function updateUIAndOutput() {
     document.querySelectorAll('.interactive-tag').forEach(el => {
-        el.classList.remove('selected');
+        el.classList.remove('selected', 'pinned');
         const badge = el.querySelector('.weight-badge');
         if (badge) { badge.style.display = 'none'; }
     });
@@ -444,6 +461,7 @@ function updateUIAndOutput() {
             const matchedEl = document.getElementById(tagElementId(prompt));
             if (matchedEl) {
                 matchedEl.classList.add('selected');
+                if (data.pinned) matchedEl.classList.add('pinned');
                 if (data.weight !== 1.0) {
                     const badge = matchedEl.querySelector('.weight-badge');
                     if (badge) { badge.innerText = `x${data.weight}`; badge.style.display = 'inline-block'; }

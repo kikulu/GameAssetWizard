@@ -111,3 +111,10 @@
 .layer1-controls { display: inline-flex; align-items: center; gap: 12px; }
 .sheet-roll { background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 2px 6px; font-size: 15px; line-height: 1; cursor: pointer; opacity: .7; }
 .sheet-roll:hover, .sheet-roll:focus-visible { opacity: 1; border-color: var(--accent); background: rgba(255,255,255,.06); }
+
+/* 釘選標籤 */
+.btn-pin { opacity: .55; }
+.btn-pin:hover, .btn-pin:focus-visible { opacity: 1; }
+.btn-pin.active { opacity: 1; background: rgba(230, 184, 72, .22); border-color: var(--gold); }
+.interactive-tag.pinned { box-shadow: 0 0 0 1px var(--gold); }
+.interactive-tag.pinned::before { content: '📌'; margin-right: 4px; font-size: 11px; }
