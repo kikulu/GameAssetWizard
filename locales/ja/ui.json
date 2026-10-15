@@ -26,7 +26,7 @@
   "settings.preset": "📐 用途別サイズプリセット（モードに応じて切替）",
   "settings.width": "幅 (Width)",
   "settings.height": "高さ (Height)",
-  "settings.engine": "🖌️ 画像エンジン / モデル参考",
+  "settings.engine": "🖌️ 画像エンジン（プロンプトの出力形式を決定）",
   "settings.background": "🎨 背景の指定",
   "settings.quality": "✨ 品質キーワード",
   "bg.transparent": "透明・切り抜き（アイコン用）",
@@ -160,5 +160,13 @@
   "random.variety": "🎯 同種は 1 つだけ抽選（ポーズや衣装の重複を防止）",
   "random.rollSheet": "このカテゴリだけ再抽選",
   "selected.pin": "ピン留め: 再抽選でもこのタグを残す",
-  "selected.unpin": "ピン留めを解除"
+  "selected.unpin": "ピン留めを解除",
+  "engine.note.sdxl": "Stable Diffusion 形式: 重みは (タグ:重み) で表記します。ネガティブプロンプトは Negative 欄に貼り付けてください。",
+  "engine.note.midjourney": "デフォルトバージョン: --v は付けません。--ar を追加し、ネガティブプロンプトは --no に変換します（最大 10 項目）。:: の重みは使わず、重みは並び順にのみ反映し、0.5 未満のタグは省略します。",
+  "engine.note.midjourney-7": "--v 7 と --ar を追加し、ネガティブプロンプトは --no に変換します（最大 10 項目）。V7 は :: の重みに対応していないため、重みは並び順にのみ反映し、0.5 未満のタグは省略します。",
+  "engine.note.midjourney-6": "--v 6.1 と --ar を追加し、重みは :: 構文に、ネガティブプロンプトは --no に変換します（最大 10 項目）。",
+  "engine.note.leonardo": "重み構文は使いません。重みは並び順にのみ反映し、0.5 未満のタグは省略します。ネガティブプロンプトは Negative prompt 欄に貼り付けてください。",
+  "engine.note.ideogram": "自然な文章で出力します。重みは「強調」や「控えめに」という表現に変換します。Negative prompt 欄がある場合は、ネガティブプロンプトをそこに貼り付けてください。",
+  "engine.note.dalle3": "自然な文章で出力します。重みは「強調」や「控えめに」という表現に変換します。DALL·E 3 にはネガティブプロンプトがないため、ネガティブ項目は末尾の Avoid 文に書き換えています。",
+  "gen.sdFormatNote": "ローカル生成は、選択した画像エンジンに関係なく常に Stable Diffusion 形式のプロンプトを使用します。"
 }

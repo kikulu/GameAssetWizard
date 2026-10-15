@@ -26,7 +26,7 @@
   "settings.preset": "📐 용도별 크기 프리셋 (모드에 따라 전환)",
   "settings.width": "너비 (Width)",
   "settings.height": "높이 (Height)",
-  "settings.engine": "🖌️ 이미지 엔진 / 모델 참고",
+  "settings.engine": "🖌️ 이미지 엔진 (프롬프트 출력 형식 결정)",
   "settings.background": "🎨 배경 요구",
   "settings.quality": "✨ 품질 키워드",
   "bg.transparent": "투명/배경 제거 (아이콘용)",
@@ -160,5 +160,13 @@
   "random.variety": "🎯 같은 종류는 하나만 추첨 (중복 포즈·의상 방지)",
   "random.rollSheet": "이 카테고리만 다시 추첨",
   "selected.pin": "고정: 다시 추첨해도 이 태그 유지",
-  "selected.unpin": "고정 해제"
+  "selected.unpin": "고정 해제",
+  "engine.note.sdxl": "Stable Diffusion 형식: 가중치는 (태그:가중치)로 표기합니다. 부정 프롬프트는 Negative 칸에 붙여 넣으세요.",
+  "engine.note.midjourney": "기본 버전: --v를 붙이지 않습니다. --ar를 추가하고 부정 프롬프트는 --no로 변환합니다(최대 10개). :: 가중치는 쓰지 않으며 가중치는 순서에만 반영되고 0.5 미만 태그는 생략됩니다.",
+  "engine.note.midjourney-7": "--v 7과 --ar를 추가하고 부정 프롬프트는 --no로 변환합니다(최대 10개). V7은 :: 가중치를 지원하지 않아 가중치는 순서에만 반영되고 0.5 미만 태그는 생략됩니다.",
+  "engine.note.midjourney-6": "--v 6.1과 --ar를 추가하고 가중치는 :: 구문으로, 부정 프롬프트는 --no로 변환합니다(최대 10개).",
+  "engine.note.leonardo": "가중치 구문을 쓰지 않습니다. 가중치는 순서에만 반영되고 0.5 미만 태그는 생략됩니다. 부정 프롬프트는 Negative prompt 칸에 붙여 넣으세요.",
+  "engine.note.ideogram": "자연스러운 문장으로 출력하며 가중치는 \"강조\" 또는 \"은은하게\" 표현으로 바뀝니다. Negative prompt 칸이 있으면 부정 프롬프트를 거기에 붙여 넣으세요.",
+  "engine.note.dalle3": "자연스러운 문장으로 출력하며 가중치는 \"강조\" 또는 \"은은하게\" 표현으로 바뀝니다. DALL·E 3에는 부정 프롬프트가 없어 부정 항목을 끝의 Avoid 문장으로 바꿨습니다.",
+  "gen.sdFormatNote": "로컬 생성은 선택한 이미지 엔진과 관계없이 항상 Stable Diffusion 형식의 프롬프트를 사용합니다."
 }

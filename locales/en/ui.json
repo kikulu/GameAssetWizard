@@ -26,7 +26,7 @@
   "settings.preset": "📐 Size presets (switch with the mode)",
   "settings.width": "Width",
   "settings.height": "Height",
-  "settings.engine": "🖌️ Image engine / model reference",
+  "settings.engine": "🖌️ Image engine (sets the prompt output format)",
   "settings.background": "🎨 Background",
   "settings.quality": "✨ Quality keywords",
   "bg.transparent": "Transparent / isolated (for icons)",
@@ -160,5 +160,13 @@
   "random.variety": "🎯 One pick per group (avoid duplicate poses / outfits)",
   "random.rollSheet": "Re-roll this category only",
   "selected.pin": "Pin: keep this tag when re-rolling",
-  "selected.unpin": "Unpin"
+  "selected.unpin": "Unpin",
+  "engine.note.sdxl": "Stable Diffusion format: weights are written as (tag:weight); paste the negative prompt into the Negative field.",
+  "engine.note.midjourney": "Default version: no --v flag; adds --ar and converts the negative prompt to --no (up to 10 terms). No :: weights — weights only affect order, and tags below 0.5 are omitted.",
+  "engine.note.midjourney-7": "Adds --v 7 and --ar, and converts the negative prompt to --no (up to 10 terms). V7 does not support :: weights, so weights only affect order and tags below 0.5 are omitted.",
+  "engine.note.midjourney-6": "Adds --v 6.1 and --ar, converts weights to :: syntax and the negative prompt to --no (up to 10 terms).",
+  "engine.note.leonardo": "No weight syntax: weights only affect order and tags below 0.5 are omitted. Paste the negative prompt into the Negative prompt field.",
+  "engine.note.ideogram": "Outputs a natural sentence; weights become \"emphasize\" or \"subtle\" wording. If the interface has a Negative prompt field, paste the negative prompt there.",
+  "engine.note.dalle3": "Outputs a natural sentence; weights become \"emphasize\" or \"subtle\" wording. DALL·E 3 has no negative prompt, so the negative terms are rewritten as a trailing \"Avoid\" sentence.",
+  "gen.sdFormatNote": "Local generation always uses the Stable Diffusion prompt format, regardless of the selected image engine."
 }

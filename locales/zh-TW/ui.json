@@ -26,7 +26,7 @@
   "settings.preset": "📐 用途尺寸預設（依模式自動切換）",
   "settings.width": "寬 (Width)",
   "settings.height": "高 (Height)",
-  "settings.engine": "🖌️ 繪圖引擎 / 模型參考",
+  "settings.engine": "🖌️ 繪圖引擎（決定提示詞輸出格式）",
   "settings.background": "🎨 背景需求",
   "settings.quality": "✨ 品質關鍵字",
   "bg.transparent": "透明/去背 (Icon用)",
@@ -160,5 +160,13 @@
   "random.variety": "🎯 同類只抽一個（避免重複姿勢、服裝）",
   "random.rollSheet": "只重抽此分類",
   "selected.pin": "釘選：重抽時保留此標籤",
-  "selected.unpin": "取消釘選"
+  "selected.unpin": "取消釘選",
+  "engine.note.sdxl": "Stable Diffusion 格式：權重寫成 (標籤:權重)，反向詞請貼到 Negative 欄位。",
+  "engine.note.midjourney": "預設版本：不加 --v；附加 --ar，反向詞轉為 --no（最多 10 項）。不使用 :: 權重，權重只影響順序，低於 0.5 的標籤會省略。",
+  "engine.note.midjourney-7": "加上 --v 7、--ar，反向詞轉為 --no（最多 10 項）。V7 不支援 :: 權重，權重只影響順序，低於 0.5 的標籤會省略。",
+  "engine.note.midjourney-6": "加上 --v 6.1、--ar，權重轉為 :: 語法，反向詞轉為 --no（最多 10 項）。",
+  "engine.note.leonardo": "不使用權重語法：權重只影響順序，低於 0.5 的標籤會省略。反向詞請貼到 Negative prompt 欄位。",
+  "engine.note.ideogram": "輸出自然語句；權重轉為「強調」或「淡淡帶過」的描述。若介面提供 Negative prompt 欄位，請貼入反向詞。",
+  "engine.note.dalle3": "輸出自然語句；權重轉為「強調」或「淡淡帶過」的描述。DALL·E 3 沒有反向提示詞，反向詞已改寫成句尾的 Avoid 句子。",
+  "gen.sdFormatNote": "本機產圖一律使用 Stable Diffusion 格式的提示詞，不受「繪圖引擎」選擇影響。"
 }

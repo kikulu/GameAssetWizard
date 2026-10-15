@@ -96,14 +96,17 @@
                 </div>
 
                 <div class="setting-field" style="margin-bottom: 10px;">
-                    <label data-i18n="settings.engine">🖌️ 繪圖引擎 / 模型參考</label>
+                    <label data-i18n="settings.engine">🖌️ 繪圖引擎（決定提示詞輸出格式）</label>
                     <select id="dt-model">
-                        <option value="Midjourney v6 game art style">Midjourney v6</option>
-                        <option value="SDXL, game asset lora">Stable Diffusion XL</option>
-                        <option value="Leonardo Ai, game asset style">Leonardo.Ai</option>
-                        <option value="Ideogram 2.0, clean vector style">Ideogram 2.0</option>
-                        <option value="DALL-E 3, clean digital art">DALL·E 3</option>
+                        <option value="sdxl">Stable Diffusion XL</option>
+                        <option value="midjourney">Midjourney</option>
+                        <option value="midjourney-7">Midjourney v7</option>
+                        <option value="midjourney-6">Midjourney v6.1</option>
+                        <option value="leonardo">Leonardo.Ai</option>
+                        <option value="ideogram">Ideogram</option>
+                        <option value="dalle3">DALL·E 3</option>
                     </select>
+                    <div class="preset-note" id="engine-note"></div>
                 </div>
 
                 <div class="setting-grid">
@@ -161,6 +164,7 @@
 <div id="backToTop" class="back-to-top" data-i18n-title="app.backToTop" title="回到頁首">▲</div>
 <script src="assets/js/platform.js" defer></script>
 <script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/promptformat.js" defer></script>
 <script src="assets/js/randomizer.js" defer></script>
 <script src="assets/js/app.js" defer></script>
 <script src="assets/js/generation.js" defer></script>

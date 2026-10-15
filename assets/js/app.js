@@ -179,6 +179,7 @@ function applyPreset() {
     document.getElementById('dt-width').value = preset.w;
     document.getElementById('dt-height').value = preset.h;
     updatePresetNote();
+    if (configReady) updateUIAndOutput();
 }
 
 // ========================= 設定面板收合 =========================
@@ -389,13 +390,35 @@ function adjustWeight(prompt, delta) {
     }
 }
 
-function buildBasePrompt() {
+function currentEngine() { return document.getElementById('dt-model').value; }
+
+/** 目前畫面上的設定整理成格式化器的輸入（與引擎無關）。 */
+function promptInput() {
     const profile = currentProfile();
-    const model = document.getElementById('dt-model').value;
-    const bg = document.getElementById('dt-bg').value;
-    const quality = document.getElementById('dt-quality').value;
-    const styleTags = profile ? profile.styleTags : "game asset";
-    return [styleTags, quality, bg, model, templatePrompt].filter(Boolean).join(', ');
+    return {
+        base: {
+            style: profile ? profile.styleTags : 'game asset',
+            quality: document.getElementById('dt-quality').value,
+            background: document.getElementById('dt-bg').value,
+            template: templatePrompt
+        },
+        tags: [...activeSelections].map(([prompt, data]) => ({ prompt, weight: data.weight })),
+        negative: [baseConfig ? baseConfig.baseNegative : '', templateNegative].filter(Boolean).join(', '),
+        width: Number(document.getElementById('dt-width').value),
+        height: Number(document.getElementById('dt-height').value)
+    };
+}
+
+/**
+ * 本機產圖一律使用 Stable Diffusion 格式，不受「繪圖引擎」影響：
+ * 引擎本身就是 SD 格式時沿用文字框內容（保留使用者手動編輯），否則重新以 SD 格式組合。
+ */
+function getGenerationPrompts() {
+    if (PromptFormat.family(currentEngine()) === 'sd') {
+        return { positive: document.getElementById('positivePrompt').value, negative: document.getElementById('negativePrompt').value };
+    }
+    const sd = PromptFormat.format('sdxl', promptInput());
+    return { positive: sd.positive, negative: sd.negative };
 }
 
 function selectedListItem(prompt, data) {
@@ -446,7 +469,6 @@ function updateUIAndOutput() {
 
     const listContainer = document.getElementById('selectedDisplayList');
     listContainer.innerHTML = '';
-    const activeTokens = [];
 
     if (activeSelections.size === 0) {
         const empty = document.createElement('span');
@@ -455,9 +477,6 @@ function updateUIAndOutput() {
         listContainer.appendChild(empty);
     } else {
         activeSelections.forEach((data, prompt) => {
-            const formattedToken = (data.weight === 1.0) ? prompt : `(${prompt}:${data.weight})`;
-            activeTokens.push(formattedToken);
-
             const matchedEl = document.getElementById(tagElementId(prompt));
             if (matchedEl) {
                 matchedEl.classList.add('selected');
@@ -471,12 +490,11 @@ function updateUIAndOutput() {
         });
     }
 
-    const basePositive = buildBasePrompt();
-    document.getElementById('positivePrompt').value = activeTokens.length > 0
-        ? `${basePositive}, ${activeTokens.join(', ')}`
-        : basePositive;
-    const baseNegative = baseConfig ? baseConfig.baseNegative : '';
-    document.getElementById('negativePrompt').value = [baseNegative, templateNegative].filter(Boolean).join(', ');
+    // 依選擇的繪圖引擎輸出提示詞格式（說明見 promptformat.js）
+    const output = PromptFormat.format(currentEngine(), promptInput());
+    document.getElementById('positivePrompt').value = output.positive;
+    document.getElementById('negativePrompt').value = output.negative;
+    document.getElementById('engine-note').textContent = t(output.noteKey);
 }
 
 function clearAllSelection() { activeSelections.clear(); updateUIAndOutput(); }
@@ -499,7 +517,7 @@ window.addEventListener('scroll', () => {
 backToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
 window.addEventListener('DOMContentLoaded', () => {
-    ["dt-model", "dt-bg", "dt-quality"].forEach(id => {
+    ["dt-model", "dt-bg", "dt-quality", "dt-width", "dt-height"].forEach(id => {
         document.getElementById(id).addEventListener('change', updateUIAndOutput);
     });
     const variety = document.getElementById('random-variety');
