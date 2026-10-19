@@ -49,3 +49,12 @@ test('抓出 id 與檔名不一致', () => {
     edit(dir, 'hair.json', d => { d.id = 'wrong'; });
     assert.match(run(dir).stderr, /id 必須等於檔名/);
 });
+
+test('single 必須是布林值，且不可與 group 同時使用', () => {
+    const dir = sandbox();
+    edit(dir, 'hair.json', d => { d.categories[0].subcategories[0].single = 'yes'; });
+    assert.match(run(dir).stderr, /single 必須是布林值/);
+    const dir2 = sandbox();
+    edit(dir2, 'poses.json', d => { d.categories[0].subcategories[0].single = true; });
+    assert.match(run(dir2).stderr, /single 與 group 不可同時使用/);
+});

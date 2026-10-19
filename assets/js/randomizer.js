@@ -7,6 +7,8 @@
  * 抽取時先均勻挑子分類，再挑標籤，避免標籤數量多的子分類佔盡機會，
  * 並會盡量避開 avoid 內的標籤（上一次的結果），讓連續抽卡不重複。
  * 釘選（pinned）的標籤會被保留：只要某個群組已含有釘選標籤，該群組就不再另外抽。
+ * 手動選取時的「同群組只留一個」使用 exclusiveSiblings：宣告了 group 的子分類互為替代，
+ * 標記 single 的子分類內只能選一個；其他子分類（例如配件）可以多選。
  */
 (function (root, factory) {
     if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -40,6 +42,28 @@
         return choose(candidates.length ? candidates : sub.tags, rng);
     }
 
+    /**
+     * 手動選取時與 prompt 互斥的其他標籤：
+     *  - 子分類帶有 group：同分類檔內同 group 的所有標籤（跨子分類）。
+     *  - 子分類標記 single：同一個子分類內的其他標籤。
+     *  - 其他：沒有互斥（回傳空陣列）。
+     */
+    function exclusiveSiblings(sheet, prompt) {
+        let owner = null;
+        for (const category of sheet.categories) {
+            for (const sub of category.subcategories) if (sub.tags.includes(prompt)) owner = sub;
+        }
+        if (!owner) return [];
+        if (owner.group) {
+            return sheet.categories.flatMap(category => category.subcategories)
+                .filter(sub => sub.group === owner.group)
+                .flatMap(sub => sub.tags)
+                .filter(tag => tag !== prompt);
+        }
+        if (owner.single) return owner.tags.filter(tag => tag !== prompt);
+        return [];
+    }
+
     /** 這個群組是否已含有釘選的標籤。 */
     function hasPinned(group, pinned) {
         return group.subs.some(sub => sub.tags.some(tag => pinned.has(tag)));
@@ -53,5 +77,5 @@
             .filter(Boolean);
     }
 
-    return { buildGroups, pickFromGroup, pickForSheet, hasPinned };
+    return { buildGroups, pickFromGroup, pickForSheet, hasPinned, exclusiveSiblings };
 }));

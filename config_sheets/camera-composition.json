@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "shot-size",
+          "single": true,
           "tags": [
             "extreme close-up shot",
             "close-up shot",
@@ -22,6 +23,7 @@
       "subcategories": [
         {
           "id": "viewpoint",
+          "single": true,
           "tags": [
             "bird's eye view",
             "low angle shot",

@@ -24,6 +24,7 @@
       "subcategories": [
         {
           "id": "hair-color",
+          "single": true,
           "tags": [
             "black hair",
             "blonde hair",

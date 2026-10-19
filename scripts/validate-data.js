@@ -56,6 +56,8 @@ function validate() {
                 if (subIds.has(sub.id)) err(`${where}: subcategory id「${sub.id}」重複`);
                 subIds.add(sub.id);
                 if (sub.group !== undefined && !KEBAB.test(String(sub.group))) err(`${subWhere}: group「${sub.group}」必須是 kebab-case`);
+                if (sub.single !== undefined && typeof sub.single !== 'boolean') err(`${subWhere}: single 必須是布林值`);
+                if (sub.single === true && sub.group !== undefined) err(`${subWhere}: single 與 group 不可同時使用（group 已涵蓋互斥）`);
                 if (!Array.isArray(sub.tags) || sub.tags.length === 0) { err(`${subWhere}: tags 必須是非空陣列`); continue; }
                 for (const prompt of sub.tags) {
                     if (!isText(prompt) || prompt !== prompt.trim()) { err(`${subWhere}: 提示詞必須是沒有前後空白的非空字串（${JSON.stringify(prompt)}）`); continue; }

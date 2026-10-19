@@ -6,6 +6,7 @@
       "subcategories": [
         {
           "id": "fantasy-races",
+          "single": true,
           "tags": [
             "human",
             "elf",
@@ -24,6 +25,7 @@
       "subcategories": [
         {
           "id": "classes-roles",
+          "single": true,
           "tags": [
             "knight",
             "mage",

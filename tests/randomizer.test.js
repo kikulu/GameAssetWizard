@@ -97,3 +97,35 @@ test('關閉 variety 時，釘選只會讓所在的子分類不抽', () => {
     assert.equal(picks.length, 3);
     assert.ok(!picks.includes(pose));
 });
+
+test('exclusiveSiblings：group 內跨子分類互斥，single 只在子分類內互斥，其他不互斥', () => {
+    const pose = sheets.poses.categories[0].subcategories[0].tags[0];
+    const siblings = Randomizer.exclusiveSiblings(sheets.poses, pose);
+    assert.equal(siblings.length, tagsOf(sheets.poses).length - 1, '姿勢整組互斥');
+    assert.ok(!siblings.includes(pose));
+
+    const shot = sheets['camera-composition'].categories.find(c => c.id === 'shot-size').subcategories[0];
+    assert.deepEqual(Randomizer.exclusiveSiblings(sheets['camera-composition'], shot.tags[0]), shot.tags.slice(1), 'single 子分類內互斥');
+
+    const lens = sheets['camera-composition'].categories.find(c => c.id === 'composition-lens').subcategories[0].tags[0];
+    assert.deepEqual(Randomizer.exclusiveSiblings(sheets['camera-composition'], lens), [], '未宣告互斥的子分類可多選');
+    const accessory = sheets.costumes.categories.find(c => c.id === 'accessories').subcategories[0].tags[0];
+    assert.deepEqual(Randomizer.exclusiveSiblings(sheets.costumes, accessory), []);
+    assert.deepEqual(Randomizer.exclusiveSiblings(sheets.poses, 'no such tag'), []);
+});
+
+test('exclusiveSiblings：服裝主體跨子分類互斥但不含配件', () => {
+    const outfit = sheets.costumes.categories[0].subcategories[0].tags[0];
+    const siblings = Randomizer.exclusiveSiblings(sheets.costumes, outfit);
+    const accessories = sheets.costumes.categories.find(c => c.id === 'accessories').subcategories[0].tags;
+    assert.ok(siblings.length > 5);
+    siblings.forEach(tag => assert.ok(!accessories.includes(tag)));
+});
+
+test('標記 single 的子分類不應同時宣告 group，且每個 single 子分類至少有兩個標籤', () => {
+    for (const sheet of Object.values(sheets)) {
+        for (const sub of sheet.categories.flatMap(c => c.subcategories)) {
+            if (sub.single) { assert.equal(sub.group, undefined, sub.id); assert.ok(sub.tags.length >= 2, sub.id); }
+        }
+    }
+});
