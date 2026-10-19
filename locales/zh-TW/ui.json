@@ -194,5 +194,7 @@
   "random.lockSheet": "鎖定此分類（重抽時保持不變）",
   "random.unlockSheet": "解除鎖定",
   "random.lockedRoll": "此分類已鎖定",
-  "random.allLocked": "勾選的分類都已鎖定，請先解除鎖定或勾選其他分類。"
+  "random.allLocked": "勾選的分類都已鎖定，請先解除鎖定或勾選其他分類。",
+  "library.exclusive": "🔀 同群組只留一個（手動選取時取代）",
+  "library.exclusiveBlocked": "「{label}」已釘選，無法取代；請先取消釘選。"
 }

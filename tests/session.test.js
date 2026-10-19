@@ -16,7 +16,7 @@ const valid = {
     platform: 'steam', dimension: '3d', engine: 'midjourney', background: 'clean studio background',
     quality: 'masterpiece, best quality, highly detailed, 4k', width: 1920, height: 1080, preset: 'steam-main-capsule', template: 'mobile-anime-rpg',
     selections: [{ prompt: 'knight', weight: 1.3, pinned: true }, { prompt: 'battle stance', weight: 0.6 }],
-    random: { sheets: ['poses'], variety: false, locked: ['costumes'] }
+    random: { sheets: ['poses'], variety: false, locked: ['costumes'], exclusive: true }
 };
 
 test('sanitize 接受有效的工作階段並保留釘選與權重', () => {
@@ -25,7 +25,7 @@ test('sanitize 接受有效的工作階段並保留釘選與權重', () => {
     assert.equal(state.platform, 'steam');
     assert.equal(state.engine, 'midjourney');
     assert.deepEqual(state.selections, [{ prompt: 'knight', weight: 1.3, pinned: true }, { prompt: 'battle stance', weight: 0.6, pinned: false }]);
-    assert.deepEqual(state.random, { sheets: ['poses'], variety: false, locked: ['costumes'] });
+    assert.deepEqual(state.random, { sheets: ['poses'], variety: false, locked: ['costumes'], exclusive: true });
     assert.equal(state.template, 'mobile-anime-rpg');
 });
 
@@ -46,7 +46,7 @@ test('sanitize 修正權重、去除重複並套用預設值', () => {
     assert.equal(state.height, null);
     assert.equal(state.template, null);
     assert.deepEqual(state.selections.map(s => s.weight), [2, 1, 0.2]);
-    assert.deepEqual(state.random, { sheets: ['poses'], variety: true, locked: ['costumes'] });
+    assert.deepEqual(state.random, { sheets: ['poses'], variety: true, locked: ['costumes'], exclusive: false });
 });
 
 test('sanitize 拒絕非物件', () => {

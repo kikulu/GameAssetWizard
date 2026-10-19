@@ -23,6 +23,8 @@
     <div class="card">
         <h2 data-i18n="library.title">📂 素材詞庫矩陣</h2>
         <p style="color: var(--text-muted); font-size: 13px; margin-top: -10px;" data-i18n="library.hint">點擊分類列可【展開/收合】。點選標籤可加入右側面板並可調整權重。</p>
+        <label class="library-option"><input type="checkbox" id="manual-exclusive"> <span data-i18n="library.exclusive">🔀 同群組只留一個（手動選取時取代）</span></label>
+        <div id="exclusive-notice" class="exclusive-notice" role="status" aria-live="polite"></div>
         <div id="matrixContainer">載入詞庫中...</div>
     </div>
 

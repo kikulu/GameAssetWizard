@@ -194,5 +194,7 @@
   "random.lockSheet": "Lock this category (re-rolls leave it unchanged)",
   "random.unlockSheet": "Unlock this category",
   "random.lockedRoll": "This category is locked",
-  "random.allLocked": "All selected categories are locked. Unlock one or select another category."
+  "random.allLocked": "All selected categories are locked. Unlock one or select another category.",
+  "library.exclusive": "🔀 One per group (replace when selecting manually)",
+  "library.exclusiveBlocked": "\"{label}\" is pinned and cannot be replaced; unpin it first."
 }

@@ -194,5 +194,7 @@
   "random.lockSheet": "이 카테고리 잠금 (다시 추첨해도 변경 안 함)",
   "random.unlockSheet": "잠금 해제",
   "random.lockedRoll": "이 카테고리는 잠겨 있습니다",
-  "random.allLocked": "선택한 카테고리가 모두 잠겨 있습니다. 잠금을 해제하거나 다른 카테고리를 선택하세요."
+  "random.allLocked": "선택한 카테고리가 모두 잠겨 있습니다. 잠금을 해제하거나 다른 카테고리를 선택하세요.",
+  "library.exclusive": "🔀 같은 그룹은 하나만 (수동 선택 시 교체)",
+  "library.exclusiveBlocked": "\"{label}\"이(가) 고정되어 있어 교체할 수 없습니다. 먼저 고정을 해제하세요."
 }

@@ -401,9 +401,31 @@ function buildMatrixUI() {
     refreshLockUI();
 }
 
+function manualExclusiveEnabled() {
+    const box = document.getElementById('manual-exclusive');
+    return Boolean(box && box.checked);
+}
+
+let exclusiveNoticeTimer = null;
+function showExclusiveNotice(message) {
+    const box = document.getElementById('exclusive-notice');
+    if (!box) return;
+    box.textContent = message;
+    clearTimeout(exclusiveNoticeTimer);
+    exclusiveNoticeTimer = setTimeout(() => { box.textContent = ''; }, 4000);
+}
+
 function toggleTag(prompt) {
-    if (activeSelections.has(prompt)) { activeSelections.delete(prompt); }
-    else { activeSelections.set(prompt, { weight: 1.0, pinned: false }); }
+    if (activeSelections.has(prompt)) { activeSelections.delete(prompt); updateUIAndOutput(); return; }
+    if (manualExclusiveEnabled()) {
+        // 同群組（或單選子分類）只留一個：取代已選的對手；對手已釘選時釘選優先，新標籤不加入
+        const sheet = globalMatrix[tagIndex.get(prompt)];
+        const rivals = sheet ? Randomizer.exclusiveSiblings(sheet, prompt).filter(tag => activeSelections.has(tag)) : [];
+        const pinnedRival = rivals.find(tag => activeSelections.get(tag).pinned);
+        if (pinnedRival) { showExclusiveNotice(t('library.exclusiveBlocked', { label: tagLabel(pinnedRival) })); return; }
+        rivals.forEach(tag => activeSelections.delete(tag));
+    }
+    activeSelections.set(prompt, { weight: 1.0, pinned: false });
     updateUIAndOutput();
 }
 
@@ -570,6 +592,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const variety = document.getElementById('random-variety');
     try { if (localStorage.getItem('random-variety') === '0') variety.checked = false; } catch { /* ignore */ }
     variety.addEventListener('change', () => { try { localStorage.setItem('random-variety', variety.checked ? '1' : '0'); } catch { /* ignore */ } });
+    const exclusive = document.getElementById('manual-exclusive');
+    try { if (localStorage.getItem('manual-exclusive') === '1') exclusive.checked = true; } catch { /* ignore */ }
+    exclusive.addEventListener('change', () => { try { localStorage.setItem('manual-exclusive', exclusive.checked ? '1' : '0'); } catch { /* ignore */ } });
 });
 
 window.onload = loadConfig;

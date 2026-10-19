@@ -127,3 +127,7 @@
 .layer1-header.locked { box-shadow: inset 3px 0 0 var(--gold); }
 .random-opt-label.locked { color: var(--gold); }
 .random-opt-label.locked::after { content: ' 🔒'; font-size: 11px; }
+
+/* 手動選取：同群組只留一個 */
+.library-option { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 10px; font-size: 12.5px; line-height: 1.5; color: var(--text-muted); cursor: pointer; }
+.exclusive-notice { min-height: 1.2em; margin: -4px 0 10px; font-size: 12px; color: var(--gold); }

@@ -53,7 +53,8 @@
             random: {
                 sheets: [...document.querySelectorAll('input[data-role="random-sheet-cb"]:checked')].map(box => box.value),
                 variety: varietyEnabled(),
-                locked: [...lockedSheets]
+                locked: [...lockedSheets],
+                exclusive: manualExclusiveEnabled()
             }
         };
     }
@@ -86,6 +87,8 @@
             const variety = $('random-variety');
             variety.checked = state.random.variety;
             try { localStorage.setItem('random-variety', variety.checked ? '1' : '0'); } catch { /* ignore */ }
+            $('manual-exclusive').checked = state.random.exclusive;
+            try { localStorage.setItem('manual-exclusive', state.random.exclusive ? '1' : '0'); } catch { /* ignore */ }
 
             activeSelections.clear();
             state.selections.forEach(item => activeSelections.set(item.prompt, { weight: item.weight, pinned: item.pinned }));
@@ -209,6 +212,7 @@
         // 隨機抽卡的分類勾選與其他不一定觸發 updateUIAndOutput 的設定，也要觸發儲存
         $('randomOptionsContainer').addEventListener('change', () => scheduleSessionSave());
         $('random-variety').addEventListener('change', () => scheduleSessionSave());
+        $('manual-exclusive').addEventListener('change', () => scheduleSessionSave());
     });
     window.addEventListener('localechange', refreshLabels);
 })();

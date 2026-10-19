@@ -194,5 +194,7 @@
   "random.lockSheet": "このカテゴリをロック（再抽選で変更しない）",
   "random.unlockSheet": "ロックを解除",
   "random.lockedRoll": "このカテゴリはロック中です",
-  "random.allLocked": "選択したカテゴリはすべてロックされています。ロックを解除するか、別のカテゴリを選択してください。"
+  "random.allLocked": "選択したカテゴリはすべてロックされています。ロックを解除するか、別のカテゴリを選択してください。",
+  "library.exclusive": "🔀 同じグループは 1 つだけ（手動選択時は置き換え）",
+  "library.exclusiveBlocked": "「{label}」はピン留めされているため置き換えできません。先にピン留めを解除してください。"
 }
