@@ -9,7 +9,7 @@ A JSON-library-driven prompt generator for game art. It helps mobile and Steam/P
 - Six mobile/Steam and general/2D/3D creative profiles.
 - Editable JSON prompt libraries, tag weighting, and prompt copy.
 - Creative template packs in a collapsible panel: click a row to apply, click again to remove.
-- Pin tags with 📌: re-rolls keep what you like and only change the rest.
+- Pin tags with 📌 and lock whole categories with 🔒: re-rolls keep what you like and only change the rest. An optional "one per group" mode keeps mutually exclusive tags from stacking when you select manually.
 - Engine-aware prompt output: `(tag:weight)` for Stable Diffusion, `--ar` / `--v` / `--no` for Midjourney, natural sentences for Ideogram and DALL·E 3 (local generation always uses the Stable Diffusion format). See [Prompt formats](docs/PROMPT_FORMATS.md).
 - Autosaved sessions with shareable links (a share code on desktop) and JSON export/import; API addresses and generation parameters are never included. See [Sessions](docs/SESSION.md).
 - Group-aware random picking: one pick per group (never four poses at once), no immediate repeats on re-roll, and a per-category 🎲 re-roll. See [Random picking](docs/RANDOM_PICK.md).

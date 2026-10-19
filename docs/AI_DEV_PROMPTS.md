@@ -28,12 +28,12 @@ Game Asset Prompt Generator：以 JSON 詞庫驅動的遊戲美術提示詞產�
 ## 技術與結構
 - 原生 HTML／CSS／JavaScript（無框架、無執行期套件；Electron 只是 devDependency）。Node.js 18+。
 - index.html 載入順序：platform.js → i18n.js → promptformat.js → session.js → randomizer.js → app.js → generation.js → styleguide.js → templates.js → session-ui.js（classic script，共用全域）。
-- config_sheets/：語言中立資料。index.json 列出分類；<sheetId>.json 為「分類→子分類(可帶 group)→英文提示詞」；profiles.json（六種模式與尺寸預設 id）；templates.json；base_settings.json。
+- config_sheets/：語言中立資料。index.json 列出分類；<sheetId>.json 為「分類→子分類(可帶 group 或 single)→英文提示詞」（group＝互為替代的子分類；single＝子分類內只能選一個）；profiles.json（六種模式與尺寸預設 id）；templates.json；base_settings.json。
 - locales/<zh-TW|en|ja|ko>/：各語言顯示文字 ui.json、profiles.json、templates.json、tags/<sheetId>.json。locales/locales.json 登錄語言。
 - assets/js：app.js（狀態、矩陣 UI、提示詞組合）、i18n.js（執行層，全域 t()）、randomizer.js（純函式；群組、避免重複、釘選）、promptformat.js（依繪圖引擎輸出格式，純函式）、session.js（工作階段驗證／編碼，純函式）與 session-ui.js（自動儲存、分享、匯出入）、generation.js（產圖，generationSettings(promptOverride)／runProvider）、styleguide.js（風格鎖定與批次產圖，透過 window.applyStyleLock 掛勾）、templates.js、platform.js（apiFetch：網頁＝fetch，桌面＝IPC 代送）。
 - electron/main.js、preload.js：app:// 協定、IPC 橋接、contextIsolation＋sandbox。
 - scripts/i18n.js（check／table／import／add）、scripts/validate-data.js。tests/ 使用 node:test。
-- 關鍵資料模型：已選標籤 activeSelections 是 Map，以「英文提示詞」為鍵、值為 { weight, pinned }；顯示文字由 locales 依目前語言查詢，因此切換語言不會影響已選內容。提示詞在所有分類中必須唯一。
+- 關鍵資料模型：已選標籤 activeSelections 是 Map，以「英文提示詞」為鍵、值為 { weight, pinned }；lockedSheets 是已鎖定分類的 Set（重抽時略過，清空時保留）；手動「同群組只留一個」由 Randomizer.exclusiveSiblings 判斷互斥範圍；顯示文字由 locales 依目前語言查詢，因此切換語言不會影響已選內容。提示詞在所有分類中必須唯一。
 
 ## 指令
 npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語法＋資料驗證＋i18n 檢查）｜npm test｜npm run validate｜npm run i18n:check／i18n:table／i18n:import／i18n:add｜npm run dist
@@ -369,11 +369,15 @@ npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語�
 - 引擎選單改由設定檔產生時，如何維持現有 option id 與已存的工作階段相容。
 ```
 
-### F7. 鎖定整個分類與手動選取的同組互斥
+### F7（已於 v1.7.0 完成）
+
+鎖定整個分類與手動選取的「同群組只留一個」已完成，詳見 [隨機抽卡](RANDOM_PICK.md)。後續延伸見下面的 F8。
+
+### F8. 互斥衝突的視覺提示與明確的衝突配對
 
 ```text
-功能：(1) 分類標題可「鎖定」，重抽時整個分類保持不變（釘選的延伸）；(2) 手動點選標籤時，可選擇「同群組只留一個」（點第二個標籤時取代而非疊加），預設關閉。
-請從 A1 開始，並特別考慮：鎖定狀態是否存入工作階段（session-ui.js capture／apply 與 session.js sanitize）、與釘選的關係與優先順序、randomizer.js 的介面（建議新增 lockedSheets 或在呼叫端過濾）、手動互斥與 group 資料的關係（group 只在同一分類檔內有效）、清空與剔除時的行為、i18n 與無障礙（鎖定按鈕需要 aria-pressed）。
+功能：(1) 開啟「同群組只留一個」時，標籤上直接標示「會取代 X」，讓互斥關係在詞庫中可見；(2) 資料新增「A 與 B 互相衝突」的明確配對（例如特定服裝與特定武器），點選時依同樣規則取代或提示。
+請從 A1 開始，並特別考慮：資料欄位設計與 npm run validate 的驗證（配對的雙方必須存在、不可重複或自相衝突）、Randomizer.exclusiveSiblings 的擴充與單元測試、與釘選優先規則的一致性、隨機抽卡是否也要避開衝突配對、工作階段還原時遇到衝突的處理（載入不應被拒絕，但要有明確行為）、視覺提示的無障礙（不只靠顏色）與 i18n。
 ```
 
 ---

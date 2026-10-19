@@ -2,7 +2,7 @@
 
 > 此檔由 `npm run i18n:table` 自動產生，請勿手動編輯。要修改翻譯，請編輯 `locales/<語言>/` 底下的 JSON，或編輯 `translation-table.csv` 後以 `npm run i18n:import` 匯回。
 
-共 581 筆，語言：zh-TW、en、ja、ko。
+共 587 筆，語言：zh-TW、en、ja、ko。
 
 
 ## ui
@@ -201,6 +201,12 @@
 | session.tooLarge | 內容過大。 | The content is too large. | 内容が大きすぎます。 | 내용이 너무 큽니다. |
 | session.importFail | ❌ 無法讀取工作階段：{message} | ❌ Could not read the session: {message} | ❌ セッションを読み込めません: {message} | ❌ 세션을 읽을 수 없습니다: {message} |
 | session.resetConfirm | 確定要重設並清除自動儲存的工作階段嗎？ | Reset and clear the autosaved session? | リセットして自動保存されたセッションを消去しますか？ | 초기화하고 자동 저장된 세션을 삭제할까요? |
+| random.lockSheet | 鎖定此分類（重抽時保持不變） | Lock this category (re-rolls leave it unchanged) | このカテゴリをロック（再抽選で変更しない） | 이 카테고리 잠금 (다시 추첨해도 변경 안 함) |
+| random.unlockSheet | 解除鎖定 | Unlock this category | ロックを解除 | 잠금 해제 |
+| random.lockedRoll | 此分類已鎖定 | This category is locked | このカテゴリはロック中です | 이 카테고리는 잠겨 있습니다 |
+| random.allLocked | 勾選的分類都已鎖定，請先解除鎖定或勾選其他分類。 | All selected categories are locked. Unlock one or select another category. | 選択したカテゴリはすべてロックされています。ロックを解除するか、別のカテゴリを選択してください。 | 선택한 카테고리가 모두 잠겨 있습니다. 잠금을 해제하거나 다른 카테고리를 선택하세요. |
+| library.exclusive | 🔀 同群組只留一個（手動選取時取代） | 🔀 One per group (replace when selecting manually) | 🔀 同じグループは 1 つだけ（手動選択時は置き換え） | 🔀 같은 그룹은 하나만 (수동 선택 시 교체) |
+| library.exclusiveBlocked | 「{label}」已釘選，無法取代；請先取消釘選。 | "{label}" is pinned and cannot be replaced; unpin it first. | 「{label}」はピン留めされているため置き換えできません。先にピン留めを解除してください。 | "{label}"이(가) 고정되어 있어 교체할 수 없습니다. 먼저 고정을 해제하세요. |
 
 ## profiles
 
