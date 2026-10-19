@@ -15,6 +15,7 @@ let currentPlatform = "mobile"; // mobile | steam
 let currentDimension = "general"; // general | 2d | 3d
 let allCheckedState = true;
 
+const lockedSheets = new Set();       // 已鎖定的分類（sheetId）：重抽時保持不變
 const openSheets = new Set();         // 展開中的分類（sheetId）
 const collapsedCategories = new Set(); // 收合中的子分類（`${sheetId}/${categoryId}`）
 
@@ -214,6 +215,7 @@ function buildRandomConfigUI(preserve) {
         label.append(input, document.createTextNode(' ' + sheetName(sheetId)));
         container.appendChild(label);
     });
+    refreshLockUI();
 }
 
 function toggleAllCheckboxes(e) {
@@ -228,7 +230,9 @@ function varietyEnabled() {
     return !box || box.checked;
 }
 
-function rollSheets(sheetIds) {
+function rollSheets(requestedIds) {
+    const sheetIds = requestedIds.filter(sheetId => !lockedSheets.has(sheetId)); // 鎖定的分類整個跳過
+    if (!sheetIds.length) return;
     const variety = varietyEnabled();
     const inSheets = [...activeSelections].filter(([prompt]) => sheetIds.includes(tagIndex.get(prompt)));
     // 釘選的標籤保留，且其所在的群組不再另外抽；其餘已選標籤重抽時盡量避開，讓連續抽卡不重複
@@ -247,7 +251,36 @@ function randomPickSelected() {
     if (!sheetOrder.length) return;
     const allowedSheets = Array.from(document.querySelectorAll('input[data-role="random-sheet-cb"]:checked')).map(cb => cb.value);
     if (allowedSheets.length === 0) { alert(t('random.needOne')); return; }
+    if (allowedSheets.every(sheetId => lockedSheets.has(sheetId))) { alert(t('random.allLocked')); return; }
     rollSheets(allowedSheets);
+}
+
+/** 鎖定／解除鎖定分類：鎖定後重抽（全部或單獨 🎲）都不會動它，手動點選仍可修改。 */
+function toggleSheetLock(sheetId) {
+    if (lockedSheets.has(sheetId)) lockedSheets.delete(sheetId); else lockedSheets.add(sheetId);
+    refreshLockUI();
+    if (typeof scheduleSessionSave === 'function') scheduleSessionSave();
+}
+
+function refreshLockUI() {
+    document.querySelectorAll('.sheet-lock').forEach(button => {
+        const locked = lockedSheets.has(button.dataset.sheet);
+        button.textContent = locked ? '🔒' : '🔓';
+        button.classList.toggle('active', locked);
+        button.setAttribute('aria-pressed', locked ? 'true' : 'false');
+        button.title = t(locked ? 'random.unlockSheet' : 'random.lockSheet');
+        button.setAttribute('aria-label', button.title);
+        button.closest('.layer1-header').classList.toggle('locked', locked);
+    });
+    document.querySelectorAll('.sheet-roll').forEach(button => {
+        const locked = lockedSheets.has(button.dataset.sheet);
+        button.disabled = locked;
+        button.title = t(locked ? 'random.lockedRoll' : 'random.rollSheet');
+        button.setAttribute('aria-label', button.title);
+    });
+    document.querySelectorAll('input[data-role="random-sheet-cb"]').forEach(box => {
+        box.closest('label').classList.toggle('locked', lockedSheets.has(box.value));
+    });
 }
 
 // ========================= 主要矩陣 UI =========================
@@ -275,13 +308,17 @@ function buildMatrixUI() {
         const rollButton = document.createElement('button');
         rollButton.type = 'button';
         rollButton.className = 'sheet-roll';
+        rollButton.dataset.sheet = sheetId;
         rollButton.textContent = '🎲';
-        rollButton.title = t('random.rollSheet');
-        rollButton.setAttribute('aria-label', t('random.rollSheet'));
         rollButton.addEventListener('click', (event) => { event.stopPropagation(); rollSheets([sheetId]); });
+        const lockButton = document.createElement('button');
+        lockButton.type = 'button';
+        lockButton.className = 'sheet-lock';
+        lockButton.dataset.sheet = sheetId;
+        lockButton.addEventListener('click', (event) => { event.stopPropagation(); toggleSheetLock(sheetId); });
         const controls1 = document.createElement('span');
         controls1.className = 'layer1-controls';
-        controls1.append(rollButton, arrow1);
+        controls1.append(lockButton, rollButton, arrow1);
         header1.append(title1, controls1);
 
         const content1 = document.createElement('div');
@@ -361,6 +398,7 @@ function buildMatrixUI() {
         accItem.appendChild(content1);
         container.appendChild(accItem);
     });
+    refreshLockUI();
 }
 
 function toggleTag(prompt) {
@@ -502,7 +540,11 @@ function updateUIAndOutput() {
     if (typeof scheduleSessionSave === 'function') scheduleSessionSave();
 }
 
-function clearAllSelection() { activeSelections.clear(); updateUIAndOutput(); }
+function clearAllSelection() {
+    // 已鎖定分類裡的標籤保留，只清除其他
+    [...activeSelections.keys()].forEach(prompt => { if (!lockedSheets.has(tagIndex.get(prompt))) activeSelections.delete(prompt); });
+    updateUIAndOutput();
+}
 
 function copyText(textareaId, btnId) {
     const textarea = document.getElementById(textareaId);

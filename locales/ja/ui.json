@@ -190,5 +190,9 @@
   "session.invalid": "有効なセッションではありません。",
   "session.tooLarge": "内容が大きすぎます。",
   "session.importFail": "❌ セッションを読み込めません: {message}",
-  "session.resetConfirm": "リセットして自動保存されたセッションを消去しますか？"
+  "session.resetConfirm": "リセットして自動保存されたセッションを消去しますか？",
+  "random.lockSheet": "このカテゴリをロック（再抽選で変更しない）",
+  "random.unlockSheet": "ロックを解除",
+  "random.lockedRoll": "このカテゴリはロック中です",
+  "random.allLocked": "選択したカテゴリはすべてロックされています。ロックを解除するか、別のカテゴリを選択してください。"
 }

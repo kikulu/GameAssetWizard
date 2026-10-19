@@ -190,5 +190,9 @@
   "session.invalid": "That is not a valid session.",
   "session.tooLarge": "The content is too large.",
   "session.importFail": "❌ Could not read the session: {message}",
-  "session.resetConfirm": "Reset and clear the autosaved session?"
+  "session.resetConfirm": "Reset and clear the autosaved session?",
+  "random.lockSheet": "Lock this category (re-rolls leave it unchanged)",
+  "random.unlockSheet": "Unlock this category",
+  "random.lockedRoll": "This category is locked",
+  "random.allLocked": "All selected categories are locked. Unlock one or select another category."
 }

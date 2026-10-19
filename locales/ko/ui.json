@@ -190,5 +190,9 @@
   "session.invalid": "유효한 세션이 아닙니다.",
   "session.tooLarge": "내용이 너무 큽니다.",
   "session.importFail": "❌ 세션을 읽을 수 없습니다: {message}",
-  "session.resetConfirm": "초기화하고 자동 저장된 세션을 삭제할까요?"
+  "session.resetConfirm": "초기화하고 자동 저장된 세션을 삭제할까요?",
+  "random.lockSheet": "이 카테고리 잠금 (다시 추첨해도 변경 안 함)",
+  "random.unlockSheet": "잠금 해제",
+  "random.lockedRoll": "이 카테고리는 잠겨 있습니다",
+  "random.allLocked": "선택한 카테고리가 모두 잠겨 있습니다. 잠금을 해제하거나 다른 카테고리를 선택하세요."
 }

@@ -118,3 +118,12 @@
 .btn-pin.active { opacity: 1; background: rgba(230, 184, 72, .22); border-color: var(--gold); }
 .interactive-tag.pinned { box-shadow: 0 0 0 1px var(--gold); }
 .interactive-tag.pinned::before { content: '📌'; margin-right: 4px; font-size: 11px; }
+
+/* 鎖定分類：重抽時保持不變 */
+.sheet-lock { background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 2px 6px; font-size: 14px; line-height: 1; cursor: pointer; opacity: .6; }
+.sheet-lock:hover, .sheet-lock:focus-visible { opacity: 1; border-color: var(--accent); background: rgba(255,255,255,.06); }
+.sheet-lock.active { opacity: 1; border-color: var(--gold); background: rgba(230, 184, 72, .18); }
+.sheet-roll:disabled { opacity: .25; cursor: not-allowed; }
+.layer1-header.locked { box-shadow: inset 3px 0 0 var(--gold); }
+.random-opt-label.locked { color: var(--gold); }
+.random-opt-label.locked::after { content: ' 🔒'; font-size: 11px; }

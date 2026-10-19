@@ -16,7 +16,7 @@ const valid = {
     platform: 'steam', dimension: '3d', engine: 'midjourney', background: 'clean studio background',
     quality: 'masterpiece, best quality, highly detailed, 4k', width: 1920, height: 1080, preset: 'steam-main-capsule', template: 'mobile-anime-rpg',
     selections: [{ prompt: 'knight', weight: 1.3, pinned: true }, { prompt: 'battle stance', weight: 0.6 }],
-    random: { sheets: ['poses'], variety: false }
+    random: { sheets: ['poses'], variety: false, locked: ['costumes'] }
 };
 
 test('sanitize 接受有效的工作階段並保留釘選與權重', () => {
@@ -25,7 +25,7 @@ test('sanitize 接受有效的工作階段並保留釘選與權重', () => {
     assert.equal(state.platform, 'steam');
     assert.equal(state.engine, 'midjourney');
     assert.deepEqual(state.selections, [{ prompt: 'knight', weight: 1.3, pinned: true }, { prompt: 'battle stance', weight: 0.6, pinned: false }]);
-    assert.deepEqual(state.random, { sheets: ['poses'], variety: false });
+    assert.deepEqual(state.random, { sheets: ['poses'], variety: false, locked: ['costumes'] });
     assert.equal(state.template, 'mobile-anime-rpg');
 });
 
@@ -38,7 +38,7 @@ test('sanitize 略過詞庫中不存在的提示詞並回報數量，不會塞�
 test('sanitize 修正權重、去除重複並套用預設值', () => {
     const { state } = Session.sanitize({ platform: 'xbox', dimension: '4d', engine: 'nope', width: 3, height: 'abc', template: 'nope',
         selections: [{ prompt: 'knight', weight: 99 }, { prompt: 'knight', weight: 1 }, { prompt: 'battle stance', weight: 'x' }, { prompt: 'close-up shot', weight: 0.01 }],
-        random: { sheets: ['poses', 'nope', 5] } }, ctx);
+        random: { sheets: ['poses', 'nope', 5], locked: ['costumes', 'nope', 7] } }, ctx);
     assert.equal(state.platform, 'mobile');
     assert.equal(state.dimension, 'general');
     assert.equal(state.engine, 'sdxl');
@@ -46,7 +46,7 @@ test('sanitize 修正權重、去除重複並套用預設值', () => {
     assert.equal(state.height, null);
     assert.equal(state.template, null);
     assert.deepEqual(state.selections.map(s => s.weight), [2, 1, 0.2]);
-    assert.deepEqual(state.random, { sheets: ['poses'], variety: true });
+    assert.deepEqual(state.random, { sheets: ['poses'], variety: true, locked: ['costumes'] });
 });
 
 test('sanitize 拒絕非物件', () => {

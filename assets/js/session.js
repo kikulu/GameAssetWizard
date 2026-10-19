@@ -68,7 +68,8 @@
             selections,
             random: {
                 sheets: (Array.isArray(random.sheets) ? random.sheets : []).filter(id => typeof id === 'string' && (!ctx.sheets || ctx.sheets.includes(id))),
-                variety: random.variety !== false
+                variety: random.variety !== false,
+                locked: (Array.isArray(random.locked) ? random.locked : []).filter(id => typeof id === 'string' && (!ctx.sheets || ctx.sheets.includes(id)))
             }
         };
         return { state, skipped };

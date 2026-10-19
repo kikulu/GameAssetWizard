@@ -52,7 +52,8 @@
             selections: [...activeSelections].map(([prompt, data]) => ({ prompt, weight: data.weight, pinned: Boolean(data.pinned) })),
             random: {
                 sheets: [...document.querySelectorAll('input[data-role="random-sheet-cb"]:checked')].map(box => box.value),
-                variety: varietyEnabled()
+                variety: varietyEnabled(),
+                locked: [...lockedSheets]
             }
         };
     }
@@ -79,6 +80,9 @@
             if (state.random.sheets.length) {
                 document.querySelectorAll('input[data-role="random-sheet-cb"]').forEach(box => { box.checked = state.random.sheets.includes(box.value); });
             }
+            lockedSheets.clear();
+            state.random.locked.forEach(sheetId => lockedSheets.add(sheetId));
+            refreshLockUI();
             const variety = $('random-variety');
             variety.checked = state.random.variety;
             try { localStorage.setItem('random-variety', variety.checked ? '1' : '0'); } catch { /* ignore */ }

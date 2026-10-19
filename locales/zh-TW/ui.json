@@ -190,5 +190,9 @@
   "session.invalid": "內容不是有效的工作階段。",
   "session.tooLarge": "內容過大。",
   "session.importFail": "❌ 無法讀取工作階段：{message}",
-  "session.resetConfirm": "確定要重設並清除自動儲存的工作階段嗎？"
+  "session.resetConfirm": "確定要重設並清除自動儲存的工作階段嗎？",
+  "random.lockSheet": "鎖定此分類（重抽時保持不變）",
+  "random.unlockSheet": "解除鎖定",
+  "random.lockedRoll": "此分類已鎖定",
+  "random.allLocked": "勾選的分類都已鎖定，請先解除鎖定或勾選其他分類。"
 }
