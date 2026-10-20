@@ -152,10 +152,20 @@
                 </div>
             </div>
 
-            <h4 style="margin: 5px 0 5px 0; color: var(--accent);" data-i18n="selected.title">📍 目前選中標籤：</h4>
+            <div class="selected-head">
+                <h4 style="margin: 5px 0 5px 0; color: var(--accent);" data-i18n="selected.title">📍 目前選中標籤：</h4>
+                <span class="history-buttons">
+                    <button type="button" class="history-btn" id="history-undo" title="復原（Ctrl+Z）" disabled>↩</button>
+                    <button type="button" class="history-btn" id="history-redo" title="重做（Ctrl+Shift+Z）" disabled>↪</button>
+                </span>
+            </div>
             <div id="selectedDisplayList" style="max-height: 170px; overflow-y: auto; margin-bottom: 15px;">
                 <span style="color:var(--text-muted); font-size: 13px;" data-i18n="selected.empty">尚未選取任何標籤...</span>
             </div>
+            <details class="history-panel" id="history-panel">
+                <summary><span data-i18n="history.title">🕘 歷史</span> <span id="history-count"></span><span class="history-status" id="history-status" role="status" aria-live="polite"></span></summary>
+                <div class="history-list" id="history-list"></div>
+            </details>
 
             <h4 style="margin: 0 0 5px 0; color: var(--accent);" data-i18n="prompt.positive">🚀 正向提示詞 (Positive)</h4>
             <div style="position: relative;">
@@ -189,6 +199,7 @@
 <script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/promptformat.js" defer></script>
 <script src="assets/js/session.js" defer></script>
+<script src="assets/js/history.js" defer></script>
 <script src="assets/js/randomizer.js" defer></script>
 <script src="assets/js/app.js" defer></script>
 <script src="assets/js/generation.js" defer></script>

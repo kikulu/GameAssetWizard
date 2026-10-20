@@ -101,7 +101,8 @@
     function load(raw, source) {
         const result = Session.sanitize(raw, context());
         if (!result) return false;
-        apply(result.state);
+        if (source === 'restored') apply(result.state);
+        else recordedChange({ key: 'history.session' }, () => apply(result.state)); // 匯入／分享連結載入可以復原
         const key = { restored: 'session.restored', shared: 'session.restoredShared', imported: 'session.imported' }[source];
         const parts = [t(key, { count: result.state.selections.length })];
         if (result.skipped) parts.push(t('session.skipped', { count: result.skipped }));

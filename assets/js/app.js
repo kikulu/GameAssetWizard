@@ -16,6 +16,9 @@ let currentDimension = "general"; // general | 2d | 3d
 let allCheckedState = true;
 
 const lockedSheets = new Set();       // 已鎖定的分類（sheetId）：重抽時保持不變
+const selectionHistory = SelectionHistory.create({ limit: 50 }); // 選取歷史（復原／重做），邏輯見 history.js
+let historyEnabled = false;           // 初次載入完成後才開始記錄
+let historyReplaying = false;         // 復原／重做還原狀態時不重複記錄
 const openSheets = new Set();         // 展開中的分類（sheetId）
 const collapsedCategories = new Set(); // 收合中的子分類（`${sheetId}/${categoryId}`）
 
@@ -93,6 +96,8 @@ async function loadConfig() {
         if (!restored) randomPickSelected();
         else updateUIAndOutput();
         if (typeof enableSessionAutosave === 'function') enableSessionAutosave();
+        historyEnabled = true;
+        refreshHistoryUI();
 
     } catch (e) {
         const box = document.getElementById('matrixContainer');
@@ -112,6 +117,7 @@ window.addEventListener('localechange', () => {
     buildPresetSelect({ apply: false });
     updateProfileLabel();
     updateUIAndOutput();
+    refreshHistoryUI();
 });
 
 // ========================= 平台 / 風格切換 =========================
@@ -233,6 +239,11 @@ function varietyEnabled() {
 function rollSheets(requestedIds) {
     const sheetIds = requestedIds.filter(sheetId => !lockedSheets.has(sheetId)); // 鎖定的分類整個跳過
     if (!sheetIds.length) return;
+    const label = sheetIds.length === 1 ? { key: 'history.rerollSheet', sheetId: sheetIds[0] } : { key: 'history.reroll', count: sheetIds.length };
+    recordedChange(label, () => rollSheetsCore(sheetIds));
+}
+
+function rollSheetsCore(sheetIds) {
     const variety = varietyEnabled();
     const inSheets = [...activeSelections].filter(([prompt]) => sheetIds.includes(tagIndex.get(prompt)));
     // 釘選的標籤保留，且其所在的群組不再另外抽；其餘已選標籤重抽時盡量避開，讓連續抽卡不重複
@@ -416,6 +427,10 @@ function showExclusiveNotice(message) {
 }
 
 function toggleTag(prompt) {
+    recordedChange({ key: activeSelections.has(prompt) ? 'history.remove' : 'history.add', prompt }, () => toggleTagCore(prompt));
+}
+
+function toggleTagCore(prompt) {
     if (activeSelections.has(prompt)) { activeSelections.delete(prompt); updateUIAndOutput(); return; }
     if (manualExclusiveEnabled()) {
         // 同群組（或單選子分類）只留一個：取代已選的對手；對手已釘選時釘選優先，新標籤不加入
@@ -432,26 +447,31 @@ function toggleTag(prompt) {
 function togglePin(prompt) {
     const data = activeSelections.get(prompt);
     if (!data) return;
-    data.pinned = !data.pinned;
-    updateUIAndOutput();
+    recordedChange({ key: data.pinned ? 'history.unpin' : 'history.pin', prompt }, () => {
+        data.pinned = !data.pinned;
+        updateUIAndOutput();
+    });
 }
 
 function removeTagDirectly(prompt) {
-    if (activeSelections.has(prompt)) {
+    if (!activeSelections.has(prompt)) return;
+    recordedChange({ key: 'history.remove', prompt }, () => {
         activeSelections.delete(prompt);
         updateUIAndOutput();
-    }
+    });
 }
 
 function adjustWeight(prompt, delta) {
-    if (activeSelections.has(prompt)) {
+    if (!activeSelections.has(prompt)) return;
+    // 連按 ➕／➖ 會合併成一步，復原一次就回到調整之前
+    recordedChange({ key: 'history.weight', prompt }, () => {
         let data = activeSelections.get(prompt);
         data.weight = Math.round((data.weight + delta) * 10) / 10;
         if (data.weight <= 0.2) data.weight = 0.2;
         if (data.weight > 2.0) data.weight = 2.0;
         activeSelections.set(prompt, data);
         updateUIAndOutput();
-    }
+    }, { key: `weight:${prompt}` });
 }
 
 function currentEngine() { return document.getElementById('dt-model').value; }
@@ -563,9 +583,114 @@ function updateUIAndOutput() {
 }
 
 function clearAllSelection() {
-    // 已鎖定分類裡的標籤保留，只清除其他
-    [...activeSelections.keys()].forEach(prompt => { if (!lockedSheets.has(tagIndex.get(prompt))) activeSelections.delete(prompt); });
-    updateUIAndOutput();
+    recordedChange({ key: 'history.clear' }, () => {
+        // 已鎖定分類裡的標籤保留，只清除其他
+        [...activeSelections.keys()].forEach(prompt => { if (!lockedSheets.has(tagIndex.get(prompt))) activeSelections.delete(prompt); });
+        updateUIAndOutput();
+    });
+}
+
+// ========================= 選取歷史（復原／重做） =========================
+function snapshotSelections() {
+    return [...activeSelections].map(([prompt, data]) => ({ prompt, weight: data.weight, pinned: Boolean(data.pinned) }));
+}
+
+function restoreSelections(state) {
+    historyReplaying = true;
+    try {
+        activeSelections.clear();
+        state.forEach(item => activeSelections.set(item.prompt, { weight: item.weight, pinned: item.pinned }));
+        updateUIAndOutput();
+    } finally { historyReplaying = false; }
+}
+
+/** 執行會改變已選標籤的動作並記錄到歷史；前後沒有差異就不記錄。 */
+function recordedChange(label, change, options) {
+    if (!historyEnabled || historyReplaying) { change(); return; }
+    const before = snapshotSelections();
+    change();
+    if (selectionHistory.commit(label, before, snapshotSelections(), options)) refreshHistoryUI();
+}
+
+function historyLabelText(label) {
+    if (!label) return '';
+    const params = {};
+    if (label.prompt) params.label = tagLabel(label.prompt);
+    if (label.sheetId) params.label = sheetName(label.sheetId);
+    if (label.count !== undefined) params.count = label.count;
+    return t(label.key, params);
+}
+
+function announceHistory(message) {
+    const box = document.getElementById('history-status');
+    if (box) box.textContent = message;
+}
+
+function undoSelection() {
+    const label = selectionHistory.undoLabel;
+    const state = selectionHistory.undo();
+    if (!state) return;
+    restoreSelections(state);
+    refreshHistoryUI();
+    announceHistory(t('history.undone', { action: historyLabelText(label) }));
+}
+
+function redoSelection() {
+    const label = selectionHistory.redoLabel;
+    const state = selectionHistory.redo();
+    if (!state) return;
+    restoreSelections(state);
+    refreshHistoryUI();
+    announceHistory(t('history.redone', { action: historyLabelText(label) }));
+}
+
+function jumpHistory(position) {
+    const state = selectionHistory.jumpTo(position);
+    if (!state) return;
+    restoreSelections(state);
+    refreshHistoryUI();
+}
+
+function historyItemButton(text, current, undone, position) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'history-item' + (current ? ' current' : '') + (undone ? ' undone' : '');
+    if (current) button.setAttribute('aria-current', 'true');
+    button.textContent = text;
+    button.addEventListener('click', () => jumpHistory(position));
+    return button;
+}
+
+function refreshHistoryUI() {
+    const undoButton = document.getElementById('history-undo'), redoButton = document.getElementById('history-redo');
+    if (!undoButton) return;
+    undoButton.disabled = !selectionHistory.canUndo();
+    redoButton.disabled = !selectionHistory.canRedo();
+    undoButton.title = selectionHistory.canUndo() ? t('history.undoTitle', { action: historyLabelText(selectionHistory.undoLabel) }) : t('history.undo');
+    redoButton.title = selectionHistory.canRedo() ? t('history.redoTitle', { action: historyLabelText(selectionHistory.redoLabel) }) : t('history.redo');
+    undoButton.setAttribute('aria-label', undoButton.title);
+    redoButton.setAttribute('aria-label', redoButton.title);
+
+    const entries = selectionHistory.list();
+    document.getElementById('history-count').textContent = entries.length ? `(${entries.length})` : '';
+    const list = document.getElementById('history-list');
+    list.innerHTML = '';
+    if (!entries.length) {
+        const empty = document.createElement('div');
+        empty.className = 'history-empty';
+        empty.textContent = t('history.empty');
+        list.append(empty);
+        return;
+    }
+    for (let i = entries.length - 1; i >= 0; i -= 1) {
+        const text = (selectionHistory.cursor === i + 1 ? `${t('history.current')} · ` : '') + historyLabelText(entries[i].label);
+        list.append(historyItemButton(text, selectionHistory.cursor === i + 1, !entries[i].applied, i + 1));
+    }
+    list.append(historyItemButton((selectionHistory.cursor === 0 ? `${t('history.current')} · ` : '') + t('history.initial'), selectionHistory.cursor === 0, false, 0));
+}
+
+function isEditableTarget(target) {
+    return target instanceof Element && (target.closest('input, textarea, select') !== null || target.isContentEditable);
 }
 
 function copyText(textareaId, btnId) {
@@ -592,6 +717,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const variety = document.getElementById('random-variety');
     try { if (localStorage.getItem('random-variety') === '0') variety.checked = false; } catch { /* ignore */ }
     variety.addEventListener('change', () => { try { localStorage.setItem('random-variety', variety.checked ? '1' : '0'); } catch { /* ignore */ } });
+    document.getElementById('history-undo').addEventListener('click', undoSelection);
+    document.getElementById('history-redo').addEventListener('click', redoSelection);
+    document.addEventListener('keydown', event => {
+        if (!(event.ctrlKey || event.metaKey) || event.altKey || isEditableTarget(event.target)) return; // 文字框內維持原生復原
+        const key = event.key.toLowerCase();
+        if (key === 'z' && !event.shiftKey && selectionHistory.canUndo()) { event.preventDefault(); undoSelection(); }
+        else if (((key === 'z' && event.shiftKey) || key === 'y') && selectionHistory.canRedo()) { event.preventDefault(); redoSelection(); }
+    });
     const exclusive = document.getElementById('manual-exclusive');
     try { if (localStorage.getItem('manual-exclusive') === '1') exclusive.checked = true; } catch { /* ignore */ }
     exclusive.addEventListener('change', () => { try { localStorage.setItem('manual-exclusive', exclusive.checked ? '1' : '0'); } catch { /* ignore */ } });
