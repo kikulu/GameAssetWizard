@@ -273,7 +273,28 @@ function toggleSheetLock(sheetId) {
     if (typeof scheduleSessionSave === 'function') scheduleSessionSave();
 }
 
+/** 鎖定快捷操作：全部鎖定、全部解除、鎖定目前已選標籤所在的分類。 */
+function setLockedSheets(sheetIds) {
+    lockedSheets.clear();
+    sheetIds.forEach(sheetId => lockedSheets.add(sheetId));
+    refreshLockUI();
+    if (typeof scheduleSessionSave === 'function') scheduleSessionSave();
+}
+function lockAllSheets() { setLockedSheets(sheetOrder); }
+function unlockAllSheets() { setLockedSheets([]); }
+function sheetsWithSelection() { return [...new Set([...activeSelections.keys()].map(prompt => tagIndex.get(prompt)).filter(Boolean))]; }
+function lockSelectedSheets() { setLockedSheets([...lockedSheets, ...sheetsWithSelection()]); }
+
+function refreshLockShortcuts() {
+    const lockAll = document.getElementById('lock-all');
+    if (!lockAll) return;
+    lockAll.disabled = sheetOrder.length > 0 && sheetOrder.every(sheetId => lockedSheets.has(sheetId));
+    document.getElementById('unlock-all').disabled = lockedSheets.size === 0;
+    document.getElementById('lock-selected').disabled = sheetsWithSelection().every(sheetId => lockedSheets.has(sheetId));
+}
+
 function refreshLockUI() {
+    refreshLockShortcuts();
     document.querySelectorAll('.sheet-lock').forEach(button => {
         const locked = lockedSheets.has(button.dataset.sheet);
         button.textContent = locked ? '🔒' : '🔓';
@@ -579,6 +600,7 @@ function updateUIAndOutput() {
     document.getElementById('positivePrompt').value = output.positive;
     document.getElementById('negativePrompt').value = output.negative;
     document.getElementById('engine-note').textContent = t(output.noteKey);
+    refreshLockShortcuts();
     if (typeof scheduleSessionSave === 'function') scheduleSessionSave();
 }
 
@@ -717,6 +739,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const variety = document.getElementById('random-variety');
     try { if (localStorage.getItem('random-variety') === '0') variety.checked = false; } catch { /* ignore */ }
     variety.addEventListener('change', () => { try { localStorage.setItem('random-variety', variety.checked ? '1' : '0'); } catch { /* ignore */ } });
+    document.getElementById('lock-all').addEventListener('click', lockAllSheets);
+    document.getElementById('unlock-all').addEventListener('click', unlockAllSheets);
+    document.getElementById('lock-selected').addEventListener('click', lockSelectedSheets);
     document.getElementById('history-undo').addEventListener('click', undoSelection);
     document.getElementById('history-redo').addEventListener('click', redoSelection);
     document.addEventListener('keydown', event => {

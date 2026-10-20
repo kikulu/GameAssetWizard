@@ -215,5 +215,8 @@
   "history.reroll": "重抽 {count} 個分類",
   "history.rerollSheet": "重抽「{label}」",
   "history.clear": "清空重選",
-  "history.session": "載入工作階段"
+  "history.session": "載入工作階段",
+  "random.lockAll": "🔒 全部鎖定",
+  "random.unlockAll": "🔓 全部解除",
+  "random.lockSelected": "🔒 鎖定已選內容的分類"
 }

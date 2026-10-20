@@ -86,6 +86,11 @@
                     <a href="#" data-i18n="random.toggleAll" onclick="toggleAllCheckboxes(event)" style="color:var(--accent); text-decoration:none; font-size:11px;">全選/全不選</a>
                 </div>
                 <div id="randomOptionsContainer" class="random-options"></div>
+                <div class="lock-shortcuts">
+                    <button type="button" class="lock-shortcut" id="lock-all" data-i18n="random.lockAll">🔒 全部鎖定</button>
+                    <button type="button" class="lock-shortcut" id="unlock-all" data-i18n="random.unlockAll">🔓 全部解除</button>
+                    <button type="button" class="lock-shortcut" id="lock-selected" data-i18n="random.lockSelected">🔒 鎖定已選內容的分類</button>
+                </div>
                 <label class="random-variety"><input type="checkbox" id="random-variety" checked> <span data-i18n="random.variety">🎯 同類只抽一個（避免重複姿勢、服裝）</span></label>
             </div>
 

@@ -215,5 +215,8 @@
   "history.reroll": "Re-rolled {count} categories",
   "history.rerollSheet": "Re-rolled \"{label}\"",
   "history.clear": "Cleared the selection",
-  "history.session": "Loaded a session"
+  "history.session": "Loaded a session",
+  "random.lockAll": "🔒 Lock all",
+  "random.unlockAll": "🔓 Unlock all",
+  "random.lockSelected": "🔒 Lock categories with selected tags"
 }

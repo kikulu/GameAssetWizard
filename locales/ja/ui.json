@@ -215,5 +215,8 @@
   "history.reroll": "{count} カテゴリを再抽選",
   "history.rerollSheet": "「{label}」を再抽選",
   "history.clear": "選択をクリア",
-  "history.session": "セッションを読み込み"
+  "history.session": "セッションを読み込み",
+  "random.lockAll": "🔒 すべてロック",
+  "random.unlockAll": "🔓 すべて解除",
+  "random.lockSelected": "🔒 選択中のタグがあるカテゴリをロック"
 }

@@ -215,5 +215,8 @@
   "history.reroll": "카테고리 {count}개 다시 추첨",
   "history.rerollSheet": "\"{label}\" 다시 추첨",
   "history.clear": "선택 초기화",
-  "history.session": "세션 불러오기"
+  "history.session": "세션 불러오기",
+  "random.lockAll": "🔒 모두 잠금",
+  "random.unlockAll": "🔓 모두 해제",
+  "random.lockSelected": "🔒 선택한 태그가 있는 카테고리 잠금"
 }
