@@ -64,6 +64,26 @@
         return [];
     }
 
+    /**
+     * 手動互斥模式下，給「尚未選取的互斥標籤」的提示：
+     *   selection：Map(提示詞 → { pinned })，只需包含這個分類的已選標籤。
+     * 回傳 Map(提示詞 → { replaces: [會被取代的已選標籤], pinnedBy: [其中已釘選的] })；
+     * pinnedBy 不是空的代表釘選優先，這個標籤無法加入。
+     */
+    function exclusiveHints(sheet, selection) {
+        const hints = new Map();
+        for (const [selected, data] of selection) {
+            for (const rival of exclusiveSiblings(sheet, selected)) {
+                if (selection.has(rival)) continue;
+                if (!hints.has(rival)) hints.set(rival, { replaces: [], pinnedBy: [] });
+                const hint = hints.get(rival);
+                hint.replaces.push(selected);
+                if (data && data.pinned) hint.pinnedBy.push(selected);
+            }
+        }
+        return hints;
+    }
+
     /** 這個群組是否已含有釘選的標籤。 */
     function hasPinned(group, pinned) {
         return group.subs.some(sub => sub.tags.some(tag => pinned.has(tag)));
@@ -77,5 +97,5 @@
             .filter(Boolean);
     }
 
-    return { buildGroups, pickFromGroup, pickForSheet, hasPinned, exclusiveSiblings };
+    return { buildGroups, pickFromGroup, pickForSheet, hasPinned, exclusiveSiblings, exclusiveHints };
 }));

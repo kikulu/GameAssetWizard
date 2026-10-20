@@ -218,5 +218,6 @@
   "history.session": "セッションを読み込み",
   "random.lockAll": "🔒 すべてロック",
   "random.unlockAll": "🔓 すべて解除",
-  "random.lockSelected": "🔒 選択中のタグがあるカテゴリをロック"
+  "random.lockSelected": "🔒 選択中のタグがあるカテゴリをロック",
+  "library.exclusivePreview": "これを選ぶと「{label}」を置き換えます"
 }

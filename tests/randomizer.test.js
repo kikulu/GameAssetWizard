@@ -129,3 +129,32 @@ test('標記 single 的子分類不應同時宣告 group，且每個 single 子�
         }
     }
 });
+
+test('exclusiveHints：只標示尚未選取的互斥標籤，並指出會取代誰', () => {
+    const poses = tagsOf(sheets.poses);
+    const hints = Randomizer.exclusiveHints(sheets.poses, new Map([[poses[0], { pinned: false }]]));
+    assert.equal(hints.size, poses.length - 1);
+    assert.ok(!hints.has(poses[0]), '已選的標籤本身不會有提示');
+    assert.deepEqual(hints.get(poses[5]), { replaces: [poses[0]], pinnedBy: [] });
+});
+
+test('exclusiveHints：互斥的已選標籤已釘選時標示 pinnedBy', () => {
+    const poses = tagsOf(sheets.poses);
+    const hints = Randomizer.exclusiveHints(sheets.poses, new Map([[poses[0], { pinned: true }]]));
+    assert.deepEqual(hints.get(poses[3]).pinnedBy, [poses[0]]);
+});
+
+test('exclusiveHints：single 子分類與一般子分類', () => {
+    const cam = sheets['camera-composition'];
+    const shot = cam.categories.find(c => c.id === 'shot-size').subcategories[0].tags;
+    const hints = Randomizer.exclusiveHints(cam, new Map([[shot[0], { pinned: false }]]));
+    assert.deepEqual([...hints.keys()].sort(), shot.slice(1).sort(), '只有同一個 single 子分類的標籤');
+    const lens = cam.categories.find(c => c.id === 'composition-lens').subcategories[0].tags[0];
+    assert.equal(Randomizer.exclusiveHints(cam, new Map([[lens, { pinned: false }]])).size, 0, '可多選的子分類沒有提示');
+});
+
+test('exclusiveHints：同組已選多個標籤時列出全部會被取代的標籤', () => {
+    const poses = tagsOf(sheets.poses);
+    const hints = Randomizer.exclusiveHints(sheets.poses, new Map([[poses[0], { pinned: false }], [poses[1], { pinned: true }]]));
+    assert.deepEqual(hints.get(poses[2]), { replaces: [poses[0], poses[1]], pinnedBy: [poses[1]] });
+});

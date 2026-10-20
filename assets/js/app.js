@@ -601,6 +601,7 @@ function updateUIAndOutput() {
     document.getElementById('negativePrompt').value = output.negative;
     document.getElementById('engine-note').textContent = t(output.noteKey);
     refreshLockShortcuts();
+    refreshExclusiveHints();
     if (typeof scheduleSessionSave === 'function') scheduleSessionSave();
 }
 
@@ -711,8 +712,47 @@ function refreshHistoryUI() {
     list.append(historyItemButton((selectionHistory.cursor === 0 ? `${t('history.current')} · ` : '') + t('history.initial'), selectionHistory.cursor === 0, false, 0));
 }
 
+// ========================= 互斥衝突提示 =========================
+/** 互斥模式開啟時，標示「點選會取代誰」的標籤；已被釘選擋住的標籤另外標示。 */
+function refreshExclusiveHints() {
+    document.querySelectorAll('.interactive-tag.rival, .interactive-tag.rival-blocked').forEach(el => {
+        el.classList.remove('rival', 'rival-blocked');
+        delete el.dataset.hint;
+        el.removeAttribute('title');
+    });
+    if (!manualExclusiveEnabled()) return;
+    const bySheet = new Map();
+    activeSelections.forEach((data, prompt) => {
+        const sheetId = tagIndex.get(prompt);
+        if (!sheetId) return;
+        if (!bySheet.has(sheetId)) bySheet.set(sheetId, new Map());
+        bySheet.get(sheetId).set(prompt, data);
+    });
+    bySheet.forEach((selection, sheetId) => {
+        Randomizer.exclusiveHints(globalMatrix[sheetId], selection).forEach((hint, prompt) => {
+            const el = document.getElementById(tagElementId(prompt));
+            if (!el) return;
+            const blocked = hint.pinnedBy.length > 0;
+            el.classList.add(blocked ? 'rival-blocked' : 'rival');
+            el.dataset.hint = blocked
+                ? t('library.exclusiveBlocked', { label: hint.pinnedBy.map(tagLabel).join(' / ') })
+                : t('library.exclusivePreview', { label: hint.replaces.map(tagLabel).join(' / ') });
+            el.title = el.dataset.hint;
+        });
+    });
+}
+
+function showExclusivePreview(text) {
+    const box = document.getElementById('exclusive-preview');
+    if (box) box.textContent = text || '';
+}
+
+/** 可輸入文字的欄位才保留瀏覽器原生的 Ctrl+Z；勾選框、按鈕、下拉選單等不攔截。 */
 function isEditableTarget(target) {
-    return target instanceof Element && (target.closest('input, textarea, select') !== null || target.isContentEditable);
+    if (!(target instanceof Element)) return false;
+    if (target.isContentEditable || target.closest('textarea')) return true;
+    const input = target.closest('input');
+    return Boolean(input) && !['checkbox', 'radio', 'button', 'submit', 'reset', 'range', 'color', 'file', 'image'].includes(input.type);
 }
 
 function copyText(textareaId, btnId) {
@@ -752,7 +792,18 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     const exclusive = document.getElementById('manual-exclusive');
     try { if (localStorage.getItem('manual-exclusive') === '1') exclusive.checked = true; } catch { /* ignore */ }
-    exclusive.addEventListener('change', () => { try { localStorage.setItem('manual-exclusive', exclusive.checked ? '1' : '0'); } catch { /* ignore */ } });
+    exclusive.addEventListener('change', () => {
+        try { localStorage.setItem('manual-exclusive', exclusive.checked ? '1' : '0'); } catch { /* ignore */ }
+        refreshExclusiveHints();
+        showExclusivePreview('');
+    });
+    // 滑過互斥標籤時，在選項下方直接顯示「點選將取代 X」
+    const matrix = document.getElementById('matrixContainer');
+    matrix.addEventListener('mouseover', event => {
+        const tag = event.target instanceof Element ? event.target.closest('.interactive-tag[data-hint]') : null;
+        showExclusivePreview(tag ? tag.dataset.hint : '');
+    });
+    matrix.addEventListener('mouseleave', () => showExclusivePreview(''));
 });
 
 window.onload = loadConfig;

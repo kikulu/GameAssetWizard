@@ -157,3 +157,10 @@
 .lock-shortcut:hover:not(:disabled), .lock-shortcut:focus-visible { border-color: var(--gold); }
 .lock-shortcut:disabled { opacity: .35; cursor: not-allowed; }
 .lock-shortcuts + .random-variety { margin-top: 8px; padding-top: 0; border-top: 0; }
+
+/* 互斥衝突提示：點選這些標籤會取代已選標籤（虛線）；被釘選擋住的標籤會變暗並標示 🚫 */
+.exclusive-preview { min-height: 1.2em; margin: -4px 0 4px; font-size: 12px; color: #86efac; }
+.interactive-tag.rival { border-style: dashed; }
+.interactive-tag.rival::before { content: '⇄'; margin-right: 4px; font-size: 11px; color: var(--accent); }
+.interactive-tag.rival-blocked { opacity: .55; border-style: dashed; }
+.interactive-tag.rival-blocked::before { content: '🚫'; margin-right: 4px; font-size: 11px; }

@@ -218,5 +218,6 @@
   "history.session": "載入工作階段",
   "random.lockAll": "🔒 全部鎖定",
   "random.unlockAll": "🔓 全部解除",
-  "random.lockSelected": "🔒 鎖定已選內容的分類"
+  "random.lockSelected": "🔒 鎖定已選內容的分類",
+  "library.exclusivePreview": "點選將取代「{label}」"
 }

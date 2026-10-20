@@ -218,5 +218,6 @@
   "history.session": "세션 불러오기",
   "random.lockAll": "🔒 모두 잠금",
   "random.unlockAll": "🔓 모두 해제",
-  "random.lockSelected": "🔒 선택한 태그가 있는 카테고리 잠금"
+  "random.lockSelected": "🔒 선택한 태그가 있는 카테고리 잠금",
+  "library.exclusivePreview": "이것을 선택하면 \"{label}\"을(를) 교체합니다"
 }
