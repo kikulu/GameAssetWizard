@@ -2,7 +2,7 @@
 
 > 此檔由 `npm run i18n:table` 自動產生，請勿手動編輯。要修改翻譯，請編輯 `locales/<語言>/` 底下的 JSON，或編輯 `translation-table.csv` 後以 `npm run i18n:import` 匯回。
 
-共 587 筆，語言：zh-TW、en、ja、ko。
+共 610 筆，語言：zh-TW、en、ja、ko。
 
 
 ## ui
@@ -207,6 +207,29 @@
 | random.allLocked | 勾選的分類都已鎖定，請先解除鎖定或勾選其他分類。 | All selected categories are locked. Unlock one or select another category. | 選択したカテゴリはすべてロックされています。ロックを解除するか、別のカテゴリを選択してください。 | 선택한 카테고리가 모두 잠겨 있습니다. 잠금을 해제하거나 다른 카테고리를 선택하세요. |
 | library.exclusive | 🔀 同群組只留一個（手動選取時取代） | 🔀 One per group (replace when selecting manually) | 🔀 同じグループは 1 つだけ（手動選択時は置き換え） | 🔀 같은 그룹은 하나만 (수동 선택 시 교체) |
 | library.exclusiveBlocked | 「{label}」已釘選，無法取代；請先取消釘選。 | "{label}" is pinned and cannot be replaced; unpin it first. | 「{label}」はピン留めされているため置き換えできません。先にピン留めを解除してください。 | "{label}"이(가) 고정되어 있어 교체할 수 없습니다. 먼저 고정을 해제하세요. |
+| history.title | 🕘 歷史 | 🕘 History | 🕘 履歴 | 🕘 기록 |
+| history.undo | 復原（Ctrl+Z） | Undo (Ctrl+Z) | 元に戻す（Ctrl+Z） | 실행 취소 (Ctrl+Z) |
+| history.redo | 重做（Ctrl+Shift+Z） | Redo (Ctrl+Shift+Z) | やり直し（Ctrl+Shift+Z） | 다시 실행 (Ctrl+Shift+Z) |
+| history.undoTitle | 復原：{action}（Ctrl+Z） | Undo: {action} (Ctrl+Z) | 元に戻す: {action}（Ctrl+Z） | 실행 취소: {action} (Ctrl+Z) |
+| history.redoTitle | 重做：{action}（Ctrl+Shift+Z） | Redo: {action} (Ctrl+Shift+Z) | やり直し: {action}（Ctrl+Shift+Z） | 다시 실행: {action} (Ctrl+Shift+Z) |
+| history.empty | 尚無可復原的操作。 | Nothing to undo yet. | 元に戻せる操作はまだありません。 | 실행 취소할 작업이 아직 없습니다. |
+| history.initial | 最初狀態 | Initial state | 最初の状態 | 처음 상태 |
+| history.current | 目前 | Current | 現在 | 현재 |
+| history.undone | 已復原：{action} | Undid: {action} | 元に戻しました: {action} | 실행 취소됨: {action} |
+| history.redone | 已重做：{action} | Redid: {action} | やり直しました: {action} | 다시 실행됨: {action} |
+| history.add | 加入「{label}」 | Added "{label}" | 「{label}」を追加 | "{label}" 추가 |
+| history.remove | 剔除「{label}」 | Removed "{label}" | 「{label}」を削除 | "{label}" 제외 |
+| history.weight | 調整「{label}」權重 | Changed weight of "{label}" | 「{label}」の重みを変更 | "{label}" 가중치 변경 |
+| history.pin | 釘選「{label}」 | Pinned "{label}" | 「{label}」をピン留め | "{label}" 고정 |
+| history.unpin | 取消釘選「{label}」 | Unpinned "{label}" | 「{label}」のピン留めを解除 | "{label}" 고정 해제 |
+| history.reroll | 重抽 {count} 個分類 | Re-rolled {count} categories | {count} カテゴリを再抽選 | 카테고리 {count}개 다시 추첨 |
+| history.rerollSheet | 重抽「{label}」 | Re-rolled "{label}" | 「{label}」を再抽選 | "{label}" 다시 추첨 |
+| history.clear | 清空重選 | Cleared the selection | 選択をクリア | 선택 초기화 |
+| history.session | 載入工作階段 | Loaded a session | セッションを読み込み | 세션 불러오기 |
+| random.lockAll | 🔒 全部鎖定 | 🔒 Lock all | 🔒 すべてロック | 🔒 모두 잠금 |
+| random.unlockAll | 🔓 全部解除 | 🔓 Unlock all | 🔓 すべて解除 | 🔓 모두 해제 |
+| random.lockSelected | 🔒 鎖定已選內容的分類 | 🔒 Lock categories with selected tags | 🔒 選択中のタグがあるカテゴリをロック | 🔒 선택한 태그가 있는 카테고리 잠금 |
+| library.exclusivePreview | 點選將取代「{label}」 | Selecting this replaces "{label}" | これを選ぶと「{label}」を置き換えます | 이것을 선택하면 "{label}"을(를) 교체합니다 |
 
 ## profiles
 

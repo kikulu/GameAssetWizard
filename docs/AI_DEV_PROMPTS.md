@@ -30,7 +30,7 @@ Game Asset Prompt Generator：以 JSON 詞庫驅動的遊戲美術提示詞產�
 - index.html 載入順序：platform.js → i18n.js → promptformat.js → session.js → randomizer.js → app.js → generation.js → styleguide.js → templates.js → session-ui.js（classic script，共用全域）。
 - config_sheets/：語言中立資料。index.json 列出分類；<sheetId>.json 為「分類→子分類(可帶 group 或 single)→英文提示詞」（group＝互為替代的子分類；single＝子分類內只能選一個）；profiles.json（六種模式與尺寸預設 id）；templates.json；base_settings.json。
 - locales/<zh-TW|en|ja|ko>/：各語言顯示文字 ui.json、profiles.json、templates.json、tags/<sheetId>.json。locales/locales.json 登錄語言。
-- assets/js：app.js（狀態、矩陣 UI、提示詞組合）、i18n.js（執行層，全域 t()）、randomizer.js（純函式；群組、避免重複、釘選）、promptformat.js（依繪圖引擎輸出格式，純函式）、session.js（工作階段驗證／編碼，純函式）與 session-ui.js（自動儲存、分享、匯出入）、generation.js（產圖，generationSettings(promptOverride)／runProvider）、styleguide.js（風格鎖定與批次產圖，透過 window.applyStyleLock 掛勾）、templates.js、platform.js（apiFetch：網頁＝fetch，桌面＝IPC 代送）。
+- assets/js：app.js（狀態、矩陣 UI、提示詞組合）、i18n.js（執行層，全域 t()）、randomizer.js（純函式；群組、避免重複、釘選）、promptformat.js（依繪圖引擎輸出格式，純函式）、history.js（選取歷史：線性時間軸，純函式）、session.js（工作階段驗證／編碼，純函式）與 session-ui.js（自動儲存、分享、匯出入）、generation.js（產圖，generationSettings(promptOverride)／runProvider）、styleguide.js（風格鎖定與批次產圖，透過 window.applyStyleLock 掛勾）、templates.js、platform.js（apiFetch：網頁＝fetch，桌面＝IPC 代送）。
 - electron/main.js、preload.js：app:// 協定、IPC 橋接、contextIsolation＋sandbox。
 - scripts/i18n.js（check／table／import／add）、scripts/validate-data.js。tests/ 使用 node:test。
 - 關鍵資料模型：已選標籤 activeSelections 是 Map，以「英文提示詞」為鍵、值為 { weight, pinned }；lockedSheets 是已鎖定分類的 Set（重抽時略過，清空時保留）；手動「同群組只留一個」由 Randomizer.exclusiveSiblings 判斷互斥範圍；顯示文字由 locales 依目前語言查詢，因此切換語言不會影響已選內容。提示詞在所有分類中必須唯一。
@@ -46,8 +46,9 @@ npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語�
 5. 不新增執行期套件；若真的需要，先提出理由與替代方案，等我同意。
 6. 純邏輯盡量放進可在 Node 測試的純函式模組，並補單元測試。
 7. 不要改動已發佈的歷史（不 rebase／force-push、不改既有 tag）。
-8. 畫面上的提示詞由 PromptFormat.format(引擎, promptInput()) 產生；本機產圖一律走 getGenerationPrompts()（Stable Diffusion 格式），不受引擎選擇影響。新增引擎或改格式請改 promptformat.js 並補測試。
-9. 工作階段（自動儲存、分享連結、匯出檔）不得包含 API 位址與產圖參數；任何載入路徑都必須經 Session.sanitize（只接受詞庫中存在的提示詞與已知選項）。新增要儲存的設定時同步修改 session-ui.js 的 capture／apply 與 session.js 的 sanitize，並補測試。
+8. 任何會改變 activeSelections 的新動作都必須包在 recordedChange(label, fn, options) 裡，才會進入復原歷史（label 為 { key, prompt?, sheetId?, count? }，key 對應 history.* 語系鍵）；還原狀態一律走 restoreSelections。
+9. 畫面上的提示詞由 PromptFormat.format(引擎, promptInput()) 產生；本機產圖一律走 getGenerationPrompts()（Stable Diffusion 格式），不受引擎選擇影響。新增引擎或改格式請改 promptformat.js 並補測試。
+10. 工作階段（自動儲存、分享連結、匯出檔）不得包含 API 位址與產圖參數；任何載入路徑都必須經 Session.sanitize（只接受詞庫中存在的提示詞與已知選項）。新增要儲存的設定時同步修改 session-ui.js 的 capture／apply 與 session.js 的 sanitize，並補測試。
 
 ## Git 與版本規則
 - 只有一個長期分支 master。作者與提交者固定為 kikulu <kikulu@gmail.com>（repo 內已設定）。
@@ -373,11 +374,11 @@ npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語�
 
 鎖定整個分類與手動選取的「同群組只留一個」已完成，詳見 [隨機抽卡](RANDOM_PICK.md)。後續延伸見下面的 F8。
 
-### F8. 互斥衝突的視覺提示與明確的衝突配對
+### F8. 明確的衝突配對（視覺提示已於 v1.8.0 完成）
 
 ```text
-功能：(1) 開啟「同群組只留一個」時，標籤上直接標示「會取代 X」，讓互斥關係在詞庫中可見；(2) 資料新增「A 與 B 互相衝突」的明確配對（例如特定服裝與特定武器），點選時依同樣規則取代或提示。
-請從 A1 開始，並特別考慮：資料欄位設計與 npm run validate 的驗證（配對的雙方必須存在、不可重複或自相衝突）、Randomizer.exclusiveSiblings 的擴充與單元測試、與釘選優先規則的一致性、隨機抽卡是否也要避開衝突配對、工作階段還原時遇到衝突的處理（載入不應被拒絕，但要有明確行為）、視覺提示的無障礙（不只靠顏色）與 i18n。
+功能：資料新增「A 與 B 互相衝突」的明確配對（例如特定服裝與特定武器），點選時依與 group／single 相同的規則取代或提示（釘選優先），並沿用已有的衝突提示（⇄／🚫，Randomizer.exclusiveHints）。
+請從 A1 開始，並特別考慮：資料欄位設計與 npm run validate 的驗證（配對的雙方必須存在、不可重複或自相衝突）、Randomizer.exclusiveSiblings 的擴充與單元測試、與釘選優先規則的一致性、隨機抽卡是否也要避開衝突配對、工作階段還原時遇到衝突的處理（載入不應被拒絕，但要有明確行為）、觸控裝置沒有 hover 的提示方式、復原歷史（recordedChange）是否記錄衝突取代，以及 i18n。
 ```
 
 ---
