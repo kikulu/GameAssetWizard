@@ -7,7 +7,7 @@ A JSON-library-driven prompt generator for game art. It helps mobile and Steam/P
 ## Features
 
 - Six mobile/Steam and general/2D/3D creative profiles.
-- Editable JSON prompt libraries, tag weighting, and prompt copy.
+- Editable JSON prompt libraries (18 categories, 361 tags: camera, characters, costumes, scenes, effects, creatures, vehicles, materials, lighting, color palettes, layout examples, store assets…), tag weighting, and prompt copy.
 - Creative template packs in a collapsible panel: click a row to apply, click again to remove.
 - Pin tags with 📌 and lock whole categories with 🔒: re-rolls keep what you like and only change the rest. An optional "one per group" mode keeps mutually exclusive tags from stacking when you select manually and shows which tag a click would replace; one click locks every category that already has tags.
 - Undo / redo (`Ctrl+Z`) with a history list you can jump through: recover from an accidental clear or re-roll. See [Undo and history](docs/HISTORY.md).
@@ -49,6 +49,7 @@ Save a style preset (style prefix, negative prompt, parameters, seed), lock it, 
 - [Desktop guide](docs/DESKTOP.md)
 - [Deployment](docs/DEPLOYMENT.md)
 - [Config sheet formats](docs/CONFIG_SHEETS.md)
+- [Tag library overview and writing guide](docs/TAG_LIBRARY.md) (Traditional Chinese)
 - [Style consistency workflow](docs/STYLE_CONSISTENCY.md)
 - [Random picking, pinning and locking](docs/RANDOM_PICK.md)
 - [Undo and history](docs/HISTORY.md)

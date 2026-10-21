@@ -262,7 +262,7 @@ npm start（網頁，127.0.0.1:3000）｜npm run electron｜npm run check（語�
 ```text
 任務：{{新增分類 {{名稱}}｜在既有分類新增標籤｜新增範本}}。
 內容方向：{{描述，例如：載具、怪物、材質、光影}}
-請先閱讀 docs/CONFIG_SHEETS.md 與 docs/RANDOM_PICK.md，然後：
+請先閱讀 docs/CONFIG_SHEETS.md、docs/TAG_LIBRARY.md（撰寫規範、分類一覽）與 docs/RANDOM_PICK.md，然後：
 1. 先給我提案：分類／子分類結構、哪些子分類互為替代（group）、標籤清單（英文提示詞要實用、簡短、符合 SD／Midjourney 常見用法，且在全專案中唯一）。我確認後再動手。
 2. 實作：config_sheets 結構檔、index.json、profiles.json 的 defaultRandomSheets（如需要）、四個語言的 locales/tags/<sheetId>.json。
 3. 執行 npm run validate、npm run i18n:check、npm test，並在瀏覽器確認新分類顯示、隨機抽卡每次結果數量合理、四種語言正常。

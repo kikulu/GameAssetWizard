@@ -54,6 +54,7 @@ npm run dist         # 現在の OS 向けインストーラーを作成（出�
 - [デスクトップ版ガイド](docs/DESKTOP.md)
 - [デプロイ](docs/DEPLOYMENT.md)
 - [辞書・設定ファイル形式](docs/CONFIG_SHEETS.md)
+- [タグライブラリ概要と執筆ガイド](docs/TAG_LIBRARY.md)
 - [スタイル一貫化ワークフロー](docs/STYLE_CONSISTENCY.md)
 - [ランダム抽選・ピン留め・ロック](docs/RANDOM_PICK.md)
 - [元に戻す・履歴](docs/HISTORY.md)
