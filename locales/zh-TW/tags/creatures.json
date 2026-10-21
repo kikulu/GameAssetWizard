@@ -1,0 +1,51 @@
+{
+  "name": "生物與怪物",
+  "categories": {
+    "fantasy-monsters": "奇幻怪物",
+    "undead-demons": "不死族與惡魔",
+    "animals-mounts": "動物與坐騎",
+    "sci-fi-creatures": "科幻生物"
+  },
+  "subcategories": {
+    "fantasy-monsters/fantasy-monsters": "奇幻怪物",
+    "undead-demons/undead-demons": "不死族與惡魔",
+    "animals-mounts/animals-mounts": "動物與坐騎",
+    "sci-fi-creatures/sci-fi-creatures": "科幻生物"
+  },
+  "tags": {
+    "goblin warrior": "哥布林戰士",
+    "orc brute": "獸人蠻兵",
+    "fire-breathing dragon": "噴火巨龍",
+    "giant slime monster": "巨型史萊姆",
+    "stone golem": "石像魔像",
+    "cave troll": "洞穴巨魔",
+    "minotaur": "牛頭怪",
+    "harpy": "鳥身女妖",
+    "treasure chest mimic": "寶箱怪",
+    "giant spider": "巨型蜘蛛",
+    "skeleton warrior": "骷髏戰士",
+    "shambling zombie": "蹣跚殭屍",
+    "vampire lord": "吸血鬼領主",
+    "lich king": "巫妖王",
+    "horned demon": "有角惡魔",
+    "mischievous imp": "頑皮小惡魔",
+    "grim reaper": "死神",
+    "wailing ghost": "哀嚎幽靈",
+    "dire wolf": "巨狼",
+    "armored war horse": "披甲戰馬",
+    "giant eagle": "巨鷹",
+    "griffin": "獅鷲",
+    "white unicorn": "白色獨角獸",
+    "fluffy fox companion": "毛茸茸狐狸夥伴",
+    "armored rhinoceros mount": "披甲犀牛坐騎",
+    "cute cat familiar": "可愛貓咪使魔",
+    "wise old owl": "睿智老貓頭鷹",
+    "insectoid alien": "昆蟲型外星人",
+    "tentacled alien": "觸手外星生物",
+    "mutant beast": "變異野獸",
+    "cyborg wolf": "機械改造狼",
+    "robot dog": "機器狗",
+    "bio-mechanical creature": "生化機械生物",
+    "crystal-skinned creature": "水晶皮膚生物"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Color Palettes",
+  "categories": {
+    "palette-schemes": "Color Schemes",
+    "themed-palettes": "Themed Palettes"
+  },
+  "subcategories": {
+    "palette-schemes/palette-schemes": "Color Schemes",
+    "themed-palettes/themed-palettes": "Themed Palettes"
+  },
+  "tags": {
+    "monochromatic color palette": "monochromatic color palette",
+    "complementary color scheme": "complementary color scheme",
+    "analogous color palette": "analogous color palette",
+    "triadic color scheme": "triadic color scheme",
+    "limited color palette": "limited color palette",
+    "pastel color palette": "pastel color palette",
+    "high contrast colors": "high contrast colors",
+    "vibrant saturated colors": "vibrant saturated colors",
+    "muted desaturated tones": "muted desaturated tones",
+    "warm color palette": "warm color palette",
+    "cool color palette": "cool color palette",
+    "earth tone palette": "earth tone palette",
+    "teal and orange color grading": "teal and orange color grading",
+    "crimson and gold color scheme": "crimson and gold color scheme",
+    "emerald green and gold": "emerald green and gold",
+    "icy blue and silver white": "icy blue and silver white",
+    "sunset orange and purple": "sunset orange and purple",
+    "black and white with red accent": "black and white with red accent",
+    "neon pink and cyan": "neon pink and cyan",
+    "autumn leaf colors": "autumn leaf colors",
+    "candy bright colors": "candy bright colors"
+  }
+}

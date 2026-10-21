@@ -1,0 +1,62 @@
+{
+  "id": "materials",
+  "categories": [
+    {
+      "id": "natural-materials",
+      "subcategories": [
+        {
+          "id": "natural-materials",
+          "group": "main-material",
+          "tags": [
+            "weathered wood grain",
+            "rough carved stone",
+            "polished marble",
+            "mossy stone",
+            "frozen ice",
+            "tanned leather",
+            "bone and ivory",
+            "soft fur"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "metals",
+      "subcategories": [
+        {
+          "id": "metals",
+          "group": "main-material",
+          "tags": [
+            "polished gold",
+            "rusty iron",
+            "brushed steel",
+            "ornate bronze",
+            "copper with green patina",
+            "gleaming silver",
+            "dark obsidian"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "special-materials",
+      "subcategories": [
+        {
+          "id": "special-materials",
+          "group": "main-material",
+          "tags": [
+            "translucent glass",
+            "glowing crystal",
+            "jelly-like gel",
+            "woven cloth fabric",
+            "handmade paper",
+            "neon tube",
+            "holographic surface",
+            "glazed porcelain",
+            "soft clay"
+          ]
+        }
+      ]
+    }
+  ]
+}

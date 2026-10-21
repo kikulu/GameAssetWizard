@@ -1,0 +1,34 @@
+{
+  "name": "色彩配置",
+  "categories": {
+    "palette-schemes": "配色方案",
+    "themed-palettes": "主題配色"
+  },
+  "subcategories": {
+    "palette-schemes/palette-schemes": "配色方案",
+    "themed-palettes/themed-palettes": "主題配色"
+  },
+  "tags": {
+    "monochromatic color palette": "單色系配色",
+    "complementary color scheme": "互補色配色",
+    "analogous color palette": "類似色配色",
+    "triadic color scheme": "三等分配色",
+    "limited color palette": "限定色板",
+    "pastel color palette": "粉彩配色",
+    "high contrast colors": "高對比色彩",
+    "vibrant saturated colors": "鮮豔高飽和色彩",
+    "muted desaturated tones": "低飽和柔和色調",
+    "warm color palette": "暖色系配色",
+    "cool color palette": "冷色系配色",
+    "earth tone palette": "大地色系配色",
+    "teal and orange color grading": "青橙色調",
+    "crimson and gold color scheme": "緋紅與金色配色",
+    "emerald green and gold": "翡翠綠與金色",
+    "icy blue and silver white": "冰藍與銀白",
+    "sunset orange and purple": "夕陽橘與紫色",
+    "black and white with red accent": "黑白加紅色點綴",
+    "neon pink and cyan": "霓虹粉與青色",
+    "autumn leaf colors": "秋葉色系",
+    "candy bright colors": "糖果亮色"
+  }
+}

@@ -22,8 +22,8 @@ const edit = (dir, file, fn) => { const p = path.join(dir, 'config_sheets', file
 test('專案資料通過驗證', () => {
     const result = validate();
     assert.deepEqual(result.errors, []);
-    assert.equal(result.sheets, 12);
-    assert.equal(result.prompts, 218);
+    assert.equal(result.sheets, 18);
+    assert.equal(result.prompts, 361);
 });
 
 test('抓出重複的提示詞與錯誤的 group', () => {

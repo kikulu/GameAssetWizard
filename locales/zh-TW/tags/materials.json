@@ -1,0 +1,39 @@
+{
+  "name": "材質",
+  "categories": {
+    "natural-materials": "自然材質",
+    "metals": "金屬",
+    "special-materials": "特殊材質"
+  },
+  "subcategories": {
+    "natural-materials/natural-materials": "自然材質",
+    "metals/metals": "金屬",
+    "special-materials/special-materials": "特殊材質"
+  },
+  "tags": {
+    "weathered wood grain": "風化木紋",
+    "rough carved stone": "粗糙雕刻石材",
+    "polished marble": "拋光大理石",
+    "mossy stone": "長滿青苔的石頭",
+    "frozen ice": "冰凍的冰塊",
+    "tanned leather": "鞣製皮革",
+    "bone and ivory": "骨頭與象牙",
+    "soft fur": "柔軟毛皮",
+    "polished gold": "拋光黃金",
+    "rusty iron": "生鏽的鐵",
+    "brushed steel": "髮絲紋鋼",
+    "ornate bronze": "華麗青銅",
+    "copper with green patina": "綠銅鏽的銅",
+    "gleaming silver": "閃亮白銀",
+    "dark obsidian": "黑曜岩",
+    "translucent glass": "半透明玻璃",
+    "glowing crystal": "發光水晶",
+    "jelly-like gel": "果凍狀凝膠",
+    "woven cloth fabric": "編織布料",
+    "handmade paper": "手工紙",
+    "neon tube": "霓虹燈管",
+    "holographic surface": "全息投影表面",
+    "glazed porcelain": "釉面瓷器",
+    "soft clay": "柔軟黏土"
+  }
+}

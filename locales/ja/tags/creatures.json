@@ -1,0 +1,51 @@
+{
+  "name": "生き物・モンスター",
+  "categories": {
+    "fantasy-monsters": "ファンタジーモンスター",
+    "undead-demons": "アンデッド・悪魔",
+    "animals-mounts": "動物・騎乗生物",
+    "sci-fi-creatures": "SF生物"
+  },
+  "subcategories": {
+    "fantasy-monsters/fantasy-monsters": "ファンタジーモンスター",
+    "undead-demons/undead-demons": "アンデッド・悪魔",
+    "animals-mounts/animals-mounts": "動物・騎乗生物",
+    "sci-fi-creatures/sci-fi-creatures": "SF生物"
+  },
+  "tags": {
+    "goblin warrior": "ゴブリン戦士",
+    "orc brute": "オークの猛者",
+    "fire-breathing dragon": "火を吐くドラゴン",
+    "giant slime monster": "巨大スライム",
+    "stone golem": "ストーンゴーレム",
+    "cave troll": "洞窟のトロル",
+    "minotaur": "ミノタウロス",
+    "harpy": "ハーピー",
+    "treasure chest mimic": "ミミック",
+    "giant spider": "巨大蜘蛛",
+    "skeleton warrior": "スケルトン戦士",
+    "shambling zombie": "よろめくゾンビ",
+    "vampire lord": "ヴァンパイアロード",
+    "lich king": "リッチキング",
+    "horned demon": "角の生えた悪魔",
+    "mischievous imp": "いたずら好きなインプ",
+    "grim reaper": "死神",
+    "wailing ghost": "泣き叫ぶ幽霊",
+    "dire wolf": "ダイアウルフ",
+    "armored war horse": "鎧をまとった軍馬",
+    "giant eagle": "巨大な鷲",
+    "griffin": "グリフォン",
+    "white unicorn": "白いユニコーン",
+    "fluffy fox companion": "ふわふわの狐の相棒",
+    "armored rhinoceros mount": "鎧をまとったサイの騎獣",
+    "cute cat familiar": "かわいい猫の使い魔",
+    "wise old owl": "賢い老フクロウ",
+    "insectoid alien": "昆虫型エイリアン",
+    "tentacled alien": "触手のあるエイリアン",
+    "mutant beast": "ミュータントビースト",
+    "cyborg wolf": "サイボーグウルフ",
+    "robot dog": "ロボット犬",
+    "bio-mechanical creature": "バイオメカニカル生物",
+    "crystal-skinned creature": "結晶の皮膚を持つ生物"
+  }
+}

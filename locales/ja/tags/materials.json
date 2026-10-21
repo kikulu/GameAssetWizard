@@ -1,0 +1,39 @@
+{
+  "name": "マテリアル・質感",
+  "categories": {
+    "natural-materials": "自然素材",
+    "metals": "金属",
+    "special-materials": "特殊素材"
+  },
+  "subcategories": {
+    "natural-materials/natural-materials": "自然素材",
+    "metals/metals": "金属",
+    "special-materials/special-materials": "特殊素材"
+  },
+  "tags": {
+    "weathered wood grain": "風化した木目",
+    "rough carved stone": "粗く削った石",
+    "polished marble": "磨き上げた大理石",
+    "mossy stone": "苔むした石",
+    "frozen ice": "凍った氷",
+    "tanned leather": "なめし革",
+    "bone and ivory": "骨と象牙",
+    "soft fur": "やわらかな毛皮",
+    "polished gold": "磨かれた金",
+    "rusty iron": "錆びた鉄",
+    "brushed steel": "ヘアライン仕上げの鋼",
+    "ornate bronze": "装飾的な青銅",
+    "copper with green patina": "緑青の浮いた銅",
+    "gleaming silver": "輝く銀",
+    "dark obsidian": "黒曜石",
+    "translucent glass": "半透明のガラス",
+    "glowing crystal": "光る水晶",
+    "jelly-like gel": "ゼリー状のゲル",
+    "woven cloth fabric": "織られた布地",
+    "handmade paper": "手漉きの紙",
+    "neon tube": "ネオン管",
+    "holographic surface": "ホログラフィックな表面",
+    "glazed porcelain": "釉薬をかけた磁器",
+    "soft clay": "やわらかい粘土"
+  }
+}

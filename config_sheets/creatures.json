@@ -1,0 +1,83 @@
+{
+  "id": "creatures",
+  "categories": [
+    {
+      "id": "fantasy-monsters",
+      "subcategories": [
+        {
+          "id": "fantasy-monsters",
+          "group": "creature",
+          "tags": [
+            "goblin warrior",
+            "orc brute",
+            "fire-breathing dragon",
+            "giant slime monster",
+            "stone golem",
+            "cave troll",
+            "minotaur",
+            "harpy",
+            "treasure chest mimic",
+            "giant spider"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "undead-demons",
+      "subcategories": [
+        {
+          "id": "undead-demons",
+          "group": "creature",
+          "tags": [
+            "skeleton warrior",
+            "shambling zombie",
+            "vampire lord",
+            "lich king",
+            "horned demon",
+            "mischievous imp",
+            "grim reaper",
+            "wailing ghost"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals-mounts",
+      "subcategories": [
+        {
+          "id": "animals-mounts",
+          "group": "creature",
+          "tags": [
+            "dire wolf",
+            "armored war horse",
+            "giant eagle",
+            "griffin",
+            "white unicorn",
+            "fluffy fox companion",
+            "armored rhinoceros mount",
+            "cute cat familiar",
+            "wise old owl"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sci-fi-creatures",
+      "subcategories": [
+        {
+          "id": "sci-fi-creatures",
+          "group": "creature",
+          "tags": [
+            "insectoid alien",
+            "tentacled alien",
+            "mutant beast",
+            "cyborg wolf",
+            "robot dog",
+            "bio-mechanical creature",
+            "crystal-skinned creature"
+          ]
+        }
+      ]
+    }
+  ]
+}

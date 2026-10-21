@@ -1,0 +1,47 @@
+{
+  "name": "Vehicles",
+  "categories": {
+    "ground-vehicles": "Ground Vehicles",
+    "air-vehicles": "Air Vehicles",
+    "water-vehicles": "Water & Underwater Vehicles",
+    "space-vehicles": "Space Vehicles",
+    "mechs": "Mechs"
+  },
+  "subcategories": {
+    "ground-vehicles/ground-vehicles": "Ground Vehicles",
+    "air-vehicles/air-vehicles": "Air Vehicles",
+    "water-vehicles/water-vehicles": "Water & Underwater Vehicles",
+    "space-vehicles/space-vehicles": "Space Vehicles",
+    "mechs/mechs": "Mechs"
+  },
+  "tags": {
+    "armored war chariot": "armored war chariot",
+    "wooden merchant wagon": "wooden merchant wagon",
+    "steampunk steam locomotive": "steampunk steam locomotive",
+    "cyberpunk hover bike": "cyberpunk hover bike",
+    "desert sand buggy": "desert sand buggy",
+    "heavy battle tank": "heavy battle tank",
+    "futuristic maglev train": "futuristic maglev train",
+    "steampunk airship": "steampunk airship",
+    "sky pirate zeppelin": "sky pirate zeppelin",
+    "sci-fi starfighter": "sci-fi starfighter",
+    "hovering gunship": "hovering gunship",
+    "hot air balloon": "hot air balloon",
+    "flying carpet": "flying carpet",
+    "delivery drone": "delivery drone",
+    "pirate galleon": "pirate galleon",
+    "viking longship": "viking longship",
+    "small sailing boat": "small sailing boat",
+    "futuristic hovercraft": "futuristic hovercraft",
+    "deep sea submarine": "deep sea submarine",
+    "space shuttle": "space shuttle",
+    "orbital space station": "orbital space station",
+    "mining spaceship": "mining spaceship",
+    "cargo freighter spaceship": "cargo freighter spaceship",
+    "planetary rover": "planetary rover",
+    "bipedal combat mech": "bipedal combat mech",
+    "heavy walker mech": "heavy walker mech",
+    "jetpack assault mech": "jetpack assault mech",
+    "cargo loader exosuit": "cargo loader exosuit"
+  }
+}

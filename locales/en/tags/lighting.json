@@ -1,0 +1,30 @@
+{
+  "name": "Lighting",
+  "categories": {
+    "light-direction": "Light Direction",
+    "light-mood": "Lighting Mood"
+  },
+  "subcategories": {
+    "light-direction/light-direction": "Light Direction",
+    "light-mood/light-mood": "Lighting Mood"
+  },
+  "tags": {
+    "rim lighting": "rim lighting",
+    "backlit silhouette": "backlit silhouette",
+    "soft front lighting": "soft front lighting",
+    "dramatic side lighting": "dramatic side lighting",
+    "top-down lighting": "top-down lighting",
+    "eerie underlighting": "eerie underlighting",
+    "golden hour sunlight": "golden hour sunlight",
+    "blue hour twilight": "blue hour twilight",
+    "soft moonlight": "soft moonlight",
+    "harsh midday sun": "harsh midday sun",
+    "overcast diffused light": "overcast diffused light",
+    "warm candlelight": "warm candlelight",
+    "glowing neon lighting": "glowing neon lighting",
+    "flickering firelight": "flickering firelight",
+    "magical ethereal glow": "magical ethereal glow",
+    "studio three-point lighting": "studio three-point lighting",
+    "high contrast chiaroscuro": "high contrast chiaroscuro"
+  }
+}

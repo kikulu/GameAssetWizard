@@ -1,0 +1,57 @@
+{
+  "id": "layouts",
+  "categories": [
+    {
+      "id": "asset-sheet-layouts",
+      "subcategories": [
+        {
+          "id": "asset-sheet-layouts",
+          "group": "layout",
+          "tags": [
+            "character turnaround sheet",
+            "character expression sheet",
+            "sprite sheet layout",
+            "seamless tileset grid",
+            "icon set grid layout",
+            "item concept sheet",
+            "UI kit sheet",
+            "concept art sheet with callouts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene-layouts",
+      "subcategories": [
+        {
+          "id": "scene-layouts",
+          "group": "layout",
+          "tags": [
+            "isometric diorama",
+            "top-down map layout",
+            "side-scrolling platformer scene",
+            "centered hero shot",
+            "panoramic wide landscape layout"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "promo-layouts",
+      "subcategories": [
+        {
+          "id": "promo-layouts",
+          "group": "layout",
+          "tags": [
+            "key art poster composition",
+            "splash art with centered character",
+            "collectible card frame illustration",
+            "wide banner layout",
+            "logo lockup with tagline space",
+            "square app icon composition"
+          ]
+        }
+      ]
+    }
+  ]
+}

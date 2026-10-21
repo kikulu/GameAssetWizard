@@ -158,3 +158,37 @@ test('exclusiveHints：同組已選多個標籤時列出全部會被取代的標
     const hints = Randomizer.exclusiveHints(sheets.poses, new Map([[poses[0], { pinned: false }], [poses[1], { pinned: true }]]));
     assert.deepEqual(hints.get(poses[2]), { replaces: [poses[0], poses[1]], pinnedBy: [poses[1]] });
 });
+
+test('新增分類：生物、載具、材質、色彩配置、版面各抽一個，光影抽「方向＋氛圍」兩個', () => {
+    for (const id of ['creatures', 'vehicles', 'materials', 'color-palettes', 'layouts']) {
+        for (let i = 0; i < 40; i += 1) assert.equal(Randomizer.pickForSheet(sheets[id], { rng: seeded(i) }).length, 1, id);
+    }
+    for (let i = 0; i < 40; i += 1) {
+        const picks = Randomizer.pickForSheet(sheets.lighting, { rng: seeded(i) });
+        assert.equal(picks.length, 2);
+        const [direction, mood] = sheets.lighting.categories.map(c => c.subcategories[0].tags);
+        assert.equal(picks.filter(tag => direction.includes(tag)).length, 1);
+        assert.equal(picks.filter(tag => mood.includes(tag)).length, 1);
+    }
+});
+
+test('新增分類的互斥規則：光影在各自子分類內單選、配色與載具跨子分類互斥', () => {
+    const [direction, mood] = sheets.lighting.categories.map(c => c.subcategories[0]);
+    assert.deepEqual(Randomizer.exclusiveSiblings(sheets.lighting, direction.tags[0]), direction.tags.slice(1));
+    assert.ok(!Randomizer.exclusiveSiblings(sheets.lighting, direction.tags[0]).includes(mood.tags[0]), '方向與氛圍可同時選');
+    const palettes = tagsOf(sheets['color-palettes']);
+    assert.equal(Randomizer.exclusiveSiblings(sheets['color-palettes'], palettes[0]).length, palettes.length - 1);
+    const vehicles = tagsOf(sheets.vehicles);
+    assert.equal(Randomizer.exclusiveSiblings(sheets.vehicles, vehicles[0]).length, vehicles.length - 1);
+});
+
+test('生物與載具重抽時避開上一次結果，釘選的生物會被保留', () => {
+    let previous = new Set();
+    for (let i = 0; i < 40; i += 1) {
+        const picks = Randomizer.pickForSheet(sheets.creatures, { rng: seeded(i * 7 + 1), avoid: previous });
+        picks.forEach(tag => assert.ok(!previous.has(tag)));
+        previous = new Set(picks);
+    }
+    const dragon = 'fire-breathing dragon';
+    assert.deepEqual(Randomizer.pickForSheet(sheets.creatures, { rng: seeded(3), pinned: new Set([dragon]) }), []);
+});

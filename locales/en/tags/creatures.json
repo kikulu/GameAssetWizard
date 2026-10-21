@@ -1,0 +1,51 @@
+{
+  "name": "Creatures & Monsters",
+  "categories": {
+    "fantasy-monsters": "Fantasy Monsters",
+    "undead-demons": "Undead & Demons",
+    "animals-mounts": "Animals & Mounts",
+    "sci-fi-creatures": "Sci-Fi Creatures"
+  },
+  "subcategories": {
+    "fantasy-monsters/fantasy-monsters": "Fantasy Monsters",
+    "undead-demons/undead-demons": "Undead & Demons",
+    "animals-mounts/animals-mounts": "Animals & Mounts",
+    "sci-fi-creatures/sci-fi-creatures": "Sci-Fi Creatures"
+  },
+  "tags": {
+    "goblin warrior": "goblin warrior",
+    "orc brute": "orc brute",
+    "fire-breathing dragon": "fire-breathing dragon",
+    "giant slime monster": "giant slime monster",
+    "stone golem": "stone golem",
+    "cave troll": "cave troll",
+    "minotaur": "minotaur",
+    "harpy": "harpy",
+    "treasure chest mimic": "treasure chest mimic",
+    "giant spider": "giant spider",
+    "skeleton warrior": "skeleton warrior",
+    "shambling zombie": "shambling zombie",
+    "vampire lord": "vampire lord",
+    "lich king": "lich king",
+    "horned demon": "horned demon",
+    "mischievous imp": "mischievous imp",
+    "grim reaper": "grim reaper",
+    "wailing ghost": "wailing ghost",
+    "dire wolf": "dire wolf",
+    "armored war horse": "armored war horse",
+    "giant eagle": "giant eagle",
+    "griffin": "griffin",
+    "white unicorn": "white unicorn",
+    "fluffy fox companion": "fluffy fox companion",
+    "armored rhinoceros mount": "armored rhinoceros mount",
+    "cute cat familiar": "cute cat familiar",
+    "wise old owl": "wise old owl",
+    "insectoid alien": "insectoid alien",
+    "tentacled alien": "tentacled alien",
+    "mutant beast": "mutant beast",
+    "cyborg wolf": "cyborg wolf",
+    "robot dog": "robot dog",
+    "bio-mechanical creature": "bio-mechanical creature",
+    "crystal-skinned creature": "crystal-skinned creature"
+  }
+}

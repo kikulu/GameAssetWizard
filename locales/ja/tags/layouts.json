@@ -1,0 +1,34 @@
+{
+  "name": "レイアウト・構図例",
+  "categories": {
+    "asset-sheet-layouts": "素材シートのレイアウト",
+    "scene-layouts": "シーンのレイアウト",
+    "promo-layouts": "プロモーション用レイアウト"
+  },
+  "subcategories": {
+    "asset-sheet-layouts/asset-sheet-layouts": "素材シートのレイアウト",
+    "scene-layouts/scene-layouts": "シーンのレイアウト",
+    "promo-layouts/promo-layouts": "プロモーション用レイアウト"
+  },
+  "tags": {
+    "character turnaround sheet": "正面・側面・背面のキャラクター設定画",
+    "character expression sheet": "キャラクター表情シート",
+    "sprite sheet layout": "スプライトシートのレイアウト",
+    "seamless tileset grid": "シームレスなタイルセット",
+    "icon set grid layout": "アイコンセットのグリッド配置",
+    "item concept sheet": "アイテム設定シート",
+    "UI kit sheet": "UIキットシート",
+    "concept art sheet with callouts": "注釈付きコンセプトアートシート",
+    "isometric diorama": "アイソメトリックのジオラマ",
+    "top-down map layout": "トップダウンのマップレイアウト",
+    "side-scrolling platformer scene": "横スクロールのプラットフォーマーシーン",
+    "centered hero shot": "中央に配置したヒーローショット",
+    "panoramic wide landscape layout": "パノラマのワイド風景レイアウト",
+    "key art poster composition": "キーアートポスターの構図",
+    "splash art with centered character": "キャラクターを中央に置いたスプラッシュアート",
+    "collectible card frame illustration": "コレクタブルカードの枠付きイラスト",
+    "wide banner layout": "ワイドバナーのレイアウト",
+    "logo lockup with tagline space": "キャッチコピー用スペースを空けたロゴロックアップ",
+    "square app icon composition": "正方形のアプリアイコン構図"
+  }
+}

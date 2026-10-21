@@ -1,0 +1,39 @@
+{
+  "name": "재질",
+  "categories": {
+    "natural-materials": "자연 재질",
+    "metals": "금속",
+    "special-materials": "특수 재질"
+  },
+  "subcategories": {
+    "natural-materials/natural-materials": "자연 재질",
+    "metals/metals": "금속",
+    "special-materials/special-materials": "특수 재질"
+  },
+  "tags": {
+    "weathered wood grain": "풍화된 나뭇결",
+    "rough carved stone": "거칠게 깎은 돌",
+    "polished marble": "광택 대리석",
+    "mossy stone": "이끼 낀 돌",
+    "frozen ice": "얼어붙은 얼음",
+    "tanned leather": "무두질한 가죽",
+    "bone and ivory": "뼈와 상아",
+    "soft fur": "부드러운 털가죽",
+    "polished gold": "광택 나는 금",
+    "rusty iron": "녹슨 철",
+    "brushed steel": "헤어라인 강철",
+    "ornate bronze": "화려한 청동",
+    "copper with green patina": "녹청이 낀 구리",
+    "gleaming silver": "반짝이는 은",
+    "dark obsidian": "흑요석",
+    "translucent glass": "반투명 유리",
+    "glowing crystal": "빛나는 수정",
+    "jelly-like gel": "젤리 같은 젤",
+    "woven cloth fabric": "짜인 천",
+    "handmade paper": "수제 종이",
+    "neon tube": "네온관",
+    "holographic surface": "홀로그램 표면",
+    "glazed porcelain": "유약 바른 자기",
+    "soft clay": "부드러운 점토"
+  }
+}

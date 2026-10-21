@@ -1,0 +1,88 @@
+{
+  "id": "vehicles",
+  "categories": [
+    {
+      "id": "ground-vehicles",
+      "subcategories": [
+        {
+          "id": "ground-vehicles",
+          "group": "vehicle",
+          "tags": [
+            "armored war chariot",
+            "wooden merchant wagon",
+            "steampunk steam locomotive",
+            "cyberpunk hover bike",
+            "desert sand buggy",
+            "heavy battle tank",
+            "futuristic maglev train"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "air-vehicles",
+      "subcategories": [
+        {
+          "id": "air-vehicles",
+          "group": "vehicle",
+          "tags": [
+            "steampunk airship",
+            "sky pirate zeppelin",
+            "sci-fi starfighter",
+            "hovering gunship",
+            "hot air balloon",
+            "flying carpet",
+            "delivery drone"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "water-vehicles",
+      "subcategories": [
+        {
+          "id": "water-vehicles",
+          "group": "vehicle",
+          "tags": [
+            "pirate galleon",
+            "viking longship",
+            "small sailing boat",
+            "futuristic hovercraft",
+            "deep sea submarine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "space-vehicles",
+      "subcategories": [
+        {
+          "id": "space-vehicles",
+          "group": "vehicle",
+          "tags": [
+            "space shuttle",
+            "orbital space station",
+            "mining spaceship",
+            "cargo freighter spaceship",
+            "planetary rover"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mechs",
+      "subcategories": [
+        {
+          "id": "mechs",
+          "group": "vehicle",
+          "tags": [
+            "bipedal combat mech",
+            "heavy walker mech",
+            "jetpack assault mech",
+            "cargo loader exosuit"
+          ]
+        }
+      ]
+    }
+  ]
+}

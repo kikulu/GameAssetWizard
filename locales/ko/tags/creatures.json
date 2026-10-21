@@ -1,0 +1,51 @@
+{
+  "name": "생물·몬스터",
+  "categories": {
+    "fantasy-monsters": "판타지 몬스터",
+    "undead-demons": "언데드·악마",
+    "animals-mounts": "동물·탈것 생물",
+    "sci-fi-creatures": "SF 생물"
+  },
+  "subcategories": {
+    "fantasy-monsters/fantasy-monsters": "판타지 몬스터",
+    "undead-demons/undead-demons": "언데드·악마",
+    "animals-mounts/animals-mounts": "동물·탈것 생물",
+    "sci-fi-creatures/sci-fi-creatures": "SF 생물"
+  },
+  "tags": {
+    "goblin warrior": "고블린 전사",
+    "orc brute": "오크 괴력병",
+    "fire-breathing dragon": "불을 뿜는 용",
+    "giant slime monster": "거대 슬라임",
+    "stone golem": "석상 골렘",
+    "cave troll": "동굴 트롤",
+    "minotaur": "미노타우로스",
+    "harpy": "하피",
+    "treasure chest mimic": "미믹",
+    "giant spider": "거대 거미",
+    "skeleton warrior": "해골 전사",
+    "shambling zombie": "비틀거리는 좀비",
+    "vampire lord": "뱀파이어 군주",
+    "lich king": "리치 킹",
+    "horned demon": "뿔 달린 악마",
+    "mischievous imp": "장난스러운 임프",
+    "grim reaper": "사신",
+    "wailing ghost": "울부짖는 유령",
+    "dire wolf": "다이어울프",
+    "armored war horse": "갑옷 입은 군마",
+    "giant eagle": "거대한 독수리",
+    "griffin": "그리핀",
+    "white unicorn": "하얀 유니콘",
+    "fluffy fox companion": "복슬복슬한 여우 동료",
+    "armored rhinoceros mount": "갑옷 입은 코뿔소 탈것",
+    "cute cat familiar": "귀여운 고양이 사역마",
+    "wise old owl": "지혜로운 늙은 부엉이",
+    "insectoid alien": "곤충형 외계인",
+    "tentacled alien": "촉수 외계 생물",
+    "mutant beast": "돌연변이 야수",
+    "cyborg wolf": "사이보그 늑대",
+    "robot dog": "로봇 개",
+    "bio-mechanical creature": "바이오메카닉 생물",
+    "crystal-skinned creature": "수정 피부 생물"
+  }
+}

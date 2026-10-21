@@ -1,0 +1,30 @@
+{
+  "name": "조명",
+  "categories": {
+    "light-direction": "빛의 방향",
+    "light-mood": "빛의 분위기"
+  },
+  "subcategories": {
+    "light-direction/light-direction": "빛의 방향",
+    "light-mood/light-mood": "빛의 분위기"
+  },
+  "tags": {
+    "rim lighting": "림 라이팅",
+    "backlit silhouette": "역광 실루엣",
+    "soft front lighting": "부드러운 정면광",
+    "dramatic side lighting": "극적인 측광",
+    "top-down lighting": "톱 라이팅",
+    "eerie underlighting": "으스스한 하단 조명",
+    "golden hour sunlight": "골든 아워 햇빛",
+    "blue hour twilight": "블루 아워 황혼",
+    "soft moonlight": "부드러운 달빛",
+    "harsh midday sun": "강렬한 한낮의 태양",
+    "overcast diffused light": "흐린 날의 확산광",
+    "warm candlelight": "따뜻한 촛불",
+    "glowing neon lighting": "빛나는 네온 조명",
+    "flickering firelight": "일렁이는 불빛",
+    "magical ethereal glow": "환상적인 마법 광채",
+    "studio three-point lighting": "스튜디오 3점 조명",
+    "high contrast chiaroscuro": "고대비 키아로스쿠로"
+  }
+}

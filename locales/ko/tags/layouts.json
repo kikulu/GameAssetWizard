@@ -1,0 +1,34 @@
+{
+  "name": "레이아웃·구도 예시",
+  "categories": {
+    "asset-sheet-layouts": "에셋 시트 레이아웃",
+    "scene-layouts": "장면 레이아웃",
+    "promo-layouts": "홍보 레이아웃"
+  },
+  "subcategories": {
+    "asset-sheet-layouts/asset-sheet-layouts": "에셋 시트 레이아웃",
+    "scene-layouts/scene-layouts": "장면 레이아웃",
+    "promo-layouts/promo-layouts": "홍보 레이아웃"
+  },
+  "tags": {
+    "character turnaround sheet": "정면·측면·후면 캐릭터 턴어라운드 시트",
+    "character expression sheet": "캐릭터 표정 시트",
+    "sprite sheet layout": "스프라이트 시트 레이아웃",
+    "seamless tileset grid": "이음새 없는 타일셋 격자",
+    "icon set grid layout": "아이콘 세트 격자 배치",
+    "item concept sheet": "아이템 설정 시트",
+    "UI kit sheet": "UI 키트 시트",
+    "concept art sheet with callouts": "주석 달린 콘셉트 아트 시트",
+    "isometric diorama": "아이소메트릭 디오라마",
+    "top-down map layout": "탑다운 맵 레이아웃",
+    "side-scrolling platformer scene": "횡스크롤 플랫포머 장면",
+    "centered hero shot": "중앙 영웅 샷",
+    "panoramic wide landscape layout": "파노라마 와이드 풍경 레이아웃",
+    "key art poster composition": "키 아트 포스터 구도",
+    "splash art with centered character": "캐릭터를 중앙에 둔 스플래시 아트",
+    "collectible card frame illustration": "수집형 카드 프레임 일러스트",
+    "wide banner layout": "와이드 배너 레이아웃",
+    "logo lockup with tagline space": "태그라인 공간을 둔 로고 락업",
+    "square app icon composition": "정사각형 앱 아이콘 구도"
+  }
+}

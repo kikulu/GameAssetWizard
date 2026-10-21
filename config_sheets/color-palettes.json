@@ -1,0 +1,48 @@
+{
+  "id": "color-palettes",
+  "categories": [
+    {
+      "id": "palette-schemes",
+      "subcategories": [
+        {
+          "id": "palette-schemes",
+          "group": "palette",
+          "tags": [
+            "monochromatic color palette",
+            "complementary color scheme",
+            "analogous color palette",
+            "triadic color scheme",
+            "limited color palette",
+            "pastel color palette",
+            "high contrast colors",
+            "vibrant saturated colors",
+            "muted desaturated tones",
+            "warm color palette",
+            "cool color palette",
+            "earth tone palette"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "themed-palettes",
+      "subcategories": [
+        {
+          "id": "themed-palettes",
+          "group": "palette",
+          "tags": [
+            "teal and orange color grading",
+            "crimson and gold color scheme",
+            "emerald green and gold",
+            "icy blue and silver white",
+            "sunset orange and purple",
+            "black and white with red accent",
+            "neon pink and cyan",
+            "autumn leaf colors",
+            "candy bright colors"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Materials",
+  "categories": {
+    "natural-materials": "Natural Materials",
+    "metals": "Metals",
+    "special-materials": "Special Materials"
+  },
+  "subcategories": {
+    "natural-materials/natural-materials": "Natural Materials",
+    "metals/metals": "Metals",
+    "special-materials/special-materials": "Special Materials"
+  },
+  "tags": {
+    "weathered wood grain": "weathered wood grain",
+    "rough carved stone": "rough carved stone",
+    "polished marble": "polished marble",
+    "mossy stone": "mossy stone",
+    "frozen ice": "frozen ice",
+    "tanned leather": "tanned leather",
+    "bone and ivory": "bone and ivory",
+    "soft fur": "soft fur",
+    "polished gold": "polished gold",
+    "rusty iron": "rusty iron",
+    "brushed steel": "brushed steel",
+    "ornate bronze": "ornate bronze",
+    "copper with green patina": "copper with green patina",
+    "gleaming silver": "gleaming silver",
+    "dark obsidian": "dark obsidian",
+    "translucent glass": "translucent glass",
+    "glowing crystal": "glowing crystal",
+    "jelly-like gel": "jelly-like gel",
+    "woven cloth fabric": "woven cloth fabric",
+    "handmade paper": "handmade paper",
+    "neon tube": "neon tube",
+    "holographic surface": "holographic surface",
+    "glazed porcelain": "glazed porcelain",
+    "soft clay": "soft clay"
+  }
+}

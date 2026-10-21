@@ -1,0 +1,34 @@
+{
+  "name": "版面與構圖範例",
+  "categories": {
+    "asset-sheet-layouts": "素材表版面",
+    "scene-layouts": "場景版面",
+    "promo-layouts": "宣傳版面"
+  },
+  "subcategories": {
+    "asset-sheet-layouts/asset-sheet-layouts": "素材表版面",
+    "scene-layouts/scene-layouts": "場景版面",
+    "promo-layouts/promo-layouts": "宣傳版面"
+  },
+  "tags": {
+    "character turnaround sheet": "角色前側後三視圖",
+    "character expression sheet": "角色表情表",
+    "sprite sheet layout": "精靈圖排列",
+    "seamless tileset grid": "無縫地圖圖塊格",
+    "icon set grid layout": "圖示組格狀排列",
+    "item concept sheet": "道具設定表",
+    "UI kit sheet": "UI 元件組合表",
+    "concept art sheet with callouts": "附註解的概念設定表",
+    "isometric diorama": "等距立體小場景",
+    "top-down map layout": "俯視地圖版面",
+    "side-scrolling platformer scene": "橫向捲軸平台場景",
+    "centered hero shot": "置中英雄主視覺",
+    "panoramic wide landscape layout": "全景寬幅風景版面",
+    "key art poster composition": "主視覺海報構圖",
+    "splash art with centered character": "角色居中的啟動插畫",
+    "collectible card frame illustration": "收藏卡牌框插畫",
+    "wide banner layout": "寬幅橫幅版面",
+    "logo lockup with tagline space": "預留標語空間的 Logo 組合",
+    "square app icon composition": "方形 App 圖示構圖"
+  }
+}

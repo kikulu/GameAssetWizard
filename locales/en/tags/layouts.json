@@ -1,0 +1,34 @@
+{
+  "name": "Layouts & Composition Examples",
+  "categories": {
+    "asset-sheet-layouts": "Asset Sheet Layouts",
+    "scene-layouts": "Scene Layouts",
+    "promo-layouts": "Promotional Layouts"
+  },
+  "subcategories": {
+    "asset-sheet-layouts/asset-sheet-layouts": "Asset Sheet Layouts",
+    "scene-layouts/scene-layouts": "Scene Layouts",
+    "promo-layouts/promo-layouts": "Promotional Layouts"
+  },
+  "tags": {
+    "character turnaround sheet": "character turnaround sheet",
+    "character expression sheet": "character expression sheet",
+    "sprite sheet layout": "sprite sheet layout",
+    "seamless tileset grid": "seamless tileset grid",
+    "icon set grid layout": "icon set grid layout",
+    "item concept sheet": "item concept sheet",
+    "UI kit sheet": "UI kit sheet",
+    "concept art sheet with callouts": "concept art sheet with callouts",
+    "isometric diorama": "isometric diorama",
+    "top-down map layout": "top-down map layout",
+    "side-scrolling platformer scene": "side-scrolling platformer scene",
+    "centered hero shot": "centered hero shot",
+    "panoramic wide landscape layout": "panoramic wide landscape layout",
+    "key art poster composition": "key art poster composition",
+    "splash art with centered character": "splash art with centered character",
+    "collectible card frame illustration": "collectible card frame illustration",
+    "wide banner layout": "wide banner layout",
+    "logo lockup with tagline space": "logo lockup with tagline space",
+    "square app icon composition": "square app icon composition"
+  }
+}

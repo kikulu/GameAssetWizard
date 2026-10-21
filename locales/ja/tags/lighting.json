@@ -1,0 +1,30 @@
+{
+  "name": "ライティング",
+  "categories": {
+    "light-direction": "光の方向",
+    "light-mood": "光の雰囲気"
+  },
+  "subcategories": {
+    "light-direction/light-direction": "光の方向",
+    "light-mood/light-mood": "光の雰囲気"
+  },
+  "tags": {
+    "rim lighting": "リムライティング",
+    "backlit silhouette": "逆光のシルエット",
+    "soft front lighting": "やわらかい順光",
+    "dramatic side lighting": "ドラマチックなサイドライト",
+    "top-down lighting": "トップライト",
+    "eerie underlighting": "不気味な下からの光",
+    "golden hour sunlight": "ゴールデンアワーの日差し",
+    "blue hour twilight": "ブルーアワーの薄明",
+    "soft moonlight": "やわらかな月明かり",
+    "harsh midday sun": "強烈な真昼の太陽",
+    "overcast diffused light": "曇天の拡散光",
+    "warm candlelight": "暖かいろうそくの光",
+    "glowing neon lighting": "輝くネオンライト",
+    "flickering firelight": "揺らめく炎の光",
+    "magical ethereal glow": "幻想的な魔法の輝き",
+    "studio three-point lighting": "スタジオの3点照明",
+    "high contrast chiaroscuro": "ハイコントラストのキアロスクーロ"
+  }
+}

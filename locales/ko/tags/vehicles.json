@@ -1,0 +1,47 @@
+{
+  "name": "탈것",
+  "categories": {
+    "ground-vehicles": "지상 탈것",
+    "air-vehicles": "공중 탈것",
+    "water-vehicles": "수상·수중 탈것",
+    "space-vehicles": "우주 탈것",
+    "mechs": "메카"
+  },
+  "subcategories": {
+    "ground-vehicles/ground-vehicles": "지상 탈것",
+    "air-vehicles/air-vehicles": "공중 탈것",
+    "water-vehicles/water-vehicles": "수상·수중 탈것",
+    "space-vehicles/space-vehicles": "우주 탈것",
+    "mechs/mechs": "메카"
+  },
+  "tags": {
+    "armored war chariot": "장갑 전차",
+    "wooden merchant wagon": "목재 상인 마차",
+    "steampunk steam locomotive": "스팀펑크 증기 기관차",
+    "cyberpunk hover bike": "사이버펑크 호버 바이크",
+    "desert sand buggy": "사막 샌드 버기",
+    "heavy battle tank": "중전차",
+    "futuristic maglev train": "미래형 자기부상 열차",
+    "steampunk airship": "스팀펑크 비행선",
+    "sky pirate zeppelin": "하늘 해적 제플린",
+    "sci-fi starfighter": "SF 스타파이터",
+    "hovering gunship": "호버링 건쉽",
+    "hot air balloon": "열기구",
+    "flying carpet": "하늘을 나는 양탄자",
+    "delivery drone": "배달 드론",
+    "pirate galleon": "해적 갤리온선",
+    "viking longship": "바이킹 롱쉽",
+    "small sailing boat": "작은 돛단배",
+    "futuristic hovercraft": "미래형 호버크래프트",
+    "deep sea submarine": "심해 잠수정",
+    "space shuttle": "우주 왕복선",
+    "orbital space station": "궤도 우주 정거장",
+    "mining spaceship": "채굴 우주선",
+    "cargo freighter spaceship": "화물 우주선",
+    "planetary rover": "행성 탐사 로버",
+    "bipedal combat mech": "이족 보행 전투 메카",
+    "heavy walker mech": "중량 워커 메카",
+    "jetpack assault mech": "제트팩 돌격 메카",
+    "cargo loader exosuit": "화물 적재용 외골격 슈트"
+  }
+}

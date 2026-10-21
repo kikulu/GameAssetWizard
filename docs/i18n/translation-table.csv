@@ -609,3 +609,190 @@ tags/store-marketing,tags::game logo design,遊戲Logo設計,game logo design,�
 tags/store-marketing,tags::studio logo icon,工作室Logo圖示,studio logo icon,スタジオロゴアイコン,스튜디오 로고 아이콘
 tags/store-marketing,tags::wordmark title logo,文字標題Logo,wordmark title logo,ワードマークタイトルロゴ,워드마크 타이틀 로고
 tags/store-marketing,tags::emblem badge logo,徽章式Logo,emblem badge logo,エンブレム型バッジロゴ,엠블럼 배지 로고
+tags/creatures,name,生物與怪物,Creatures & Monsters,生き物・モンスター,생물·몬스터
+tags/creatures,categories::fantasy-monsters,奇幻怪物,Fantasy Monsters,ファンタジーモンスター,판타지 몬스터
+tags/creatures,categories::undead-demons,不死族與惡魔,Undead & Demons,アンデッド・悪魔,언데드·악마
+tags/creatures,categories::animals-mounts,動物與坐騎,Animals & Mounts,動物・騎乗生物,동물·탈것 생물
+tags/creatures,categories::sci-fi-creatures,科幻生物,Sci-Fi Creatures,SF生物,SF 생물
+tags/creatures,subcategories::fantasy-monsters/fantasy-monsters,奇幻怪物,Fantasy Monsters,ファンタジーモンスター,판타지 몬스터
+tags/creatures,subcategories::undead-demons/undead-demons,不死族與惡魔,Undead & Demons,アンデッド・悪魔,언데드·악마
+tags/creatures,subcategories::animals-mounts/animals-mounts,動物與坐騎,Animals & Mounts,動物・騎乗生物,동물·탈것 생물
+tags/creatures,subcategories::sci-fi-creatures/sci-fi-creatures,科幻生物,Sci-Fi Creatures,SF生物,SF 생물
+tags/creatures,tags::goblin warrior,哥布林戰士,goblin warrior,ゴブリン戦士,고블린 전사
+tags/creatures,tags::orc brute,獸人蠻兵,orc brute,オークの猛者,오크 괴력병
+tags/creatures,tags::fire-breathing dragon,噴火巨龍,fire-breathing dragon,火を吐くドラゴン,불을 뿜는 용
+tags/creatures,tags::giant slime monster,巨型史萊姆,giant slime monster,巨大スライム,거대 슬라임
+tags/creatures,tags::stone golem,石像魔像,stone golem,ストーンゴーレム,석상 골렘
+tags/creatures,tags::cave troll,洞穴巨魔,cave troll,洞窟のトロル,동굴 트롤
+tags/creatures,tags::minotaur,牛頭怪,minotaur,ミノタウロス,미노타우로스
+tags/creatures,tags::harpy,鳥身女妖,harpy,ハーピー,하피
+tags/creatures,tags::treasure chest mimic,寶箱怪,treasure chest mimic,ミミック,미믹
+tags/creatures,tags::giant spider,巨型蜘蛛,giant spider,巨大蜘蛛,거대 거미
+tags/creatures,tags::skeleton warrior,骷髏戰士,skeleton warrior,スケルトン戦士,해골 전사
+tags/creatures,tags::shambling zombie,蹣跚殭屍,shambling zombie,よろめくゾンビ,비틀거리는 좀비
+tags/creatures,tags::vampire lord,吸血鬼領主,vampire lord,ヴァンパイアロード,뱀파이어 군주
+tags/creatures,tags::lich king,巫妖王,lich king,リッチキング,리치 킹
+tags/creatures,tags::horned demon,有角惡魔,horned demon,角の生えた悪魔,뿔 달린 악마
+tags/creatures,tags::mischievous imp,頑皮小惡魔,mischievous imp,いたずら好きなインプ,장난스러운 임프
+tags/creatures,tags::grim reaper,死神,grim reaper,死神,사신
+tags/creatures,tags::wailing ghost,哀嚎幽靈,wailing ghost,泣き叫ぶ幽霊,울부짖는 유령
+tags/creatures,tags::dire wolf,巨狼,dire wolf,ダイアウルフ,다이어울프
+tags/creatures,tags::armored war horse,披甲戰馬,armored war horse,鎧をまとった軍馬,갑옷 입은 군마
+tags/creatures,tags::giant eagle,巨鷹,giant eagle,巨大な鷲,거대한 독수리
+tags/creatures,tags::griffin,獅鷲,griffin,グリフォン,그리핀
+tags/creatures,tags::white unicorn,白色獨角獸,white unicorn,白いユニコーン,하얀 유니콘
+tags/creatures,tags::fluffy fox companion,毛茸茸狐狸夥伴,fluffy fox companion,ふわふわの狐の相棒,복슬복슬한 여우 동료
+tags/creatures,tags::armored rhinoceros mount,披甲犀牛坐騎,armored rhinoceros mount,鎧をまとったサイの騎獣,갑옷 입은 코뿔소 탈것
+tags/creatures,tags::cute cat familiar,可愛貓咪使魔,cute cat familiar,かわいい猫の使い魔,귀여운 고양이 사역마
+tags/creatures,tags::wise old owl,睿智老貓頭鷹,wise old owl,賢い老フクロウ,지혜로운 늙은 부엉이
+tags/creatures,tags::insectoid alien,昆蟲型外星人,insectoid alien,昆虫型エイリアン,곤충형 외계인
+tags/creatures,tags::tentacled alien,觸手外星生物,tentacled alien,触手のあるエイリアン,촉수 외계 생물
+tags/creatures,tags::mutant beast,變異野獸,mutant beast,ミュータントビースト,돌연변이 야수
+tags/creatures,tags::cyborg wolf,機械改造狼,cyborg wolf,サイボーグウルフ,사이보그 늑대
+tags/creatures,tags::robot dog,機器狗,robot dog,ロボット犬,로봇 개
+tags/creatures,tags::bio-mechanical creature,生化機械生物,bio-mechanical creature,バイオメカニカル生物,바이오메카닉 생물
+tags/creatures,tags::crystal-skinned creature,水晶皮膚生物,crystal-skinned creature,結晶の皮膚を持つ生物,수정 피부 생물
+tags/vehicles,name,載具,Vehicles,乗り物,탈것
+tags/vehicles,categories::ground-vehicles,地面載具,Ground Vehicles,地上の乗り物,지상 탈것
+tags/vehicles,categories::air-vehicles,空中載具,Air Vehicles,空の乗り物,공중 탈것
+tags/vehicles,categories::water-vehicles,水上與水下載具,Water & Underwater Vehicles,水上・水中の乗り物,수상·수중 탈것
+tags/vehicles,categories::space-vehicles,太空載具,Space Vehicles,宇宙の乗り物,우주 탈것
+tags/vehicles,categories::mechs,機甲,Mechs,メカ,메카
+tags/vehicles,subcategories::ground-vehicles/ground-vehicles,地面載具,Ground Vehicles,地上の乗り物,지상 탈것
+tags/vehicles,subcategories::air-vehicles/air-vehicles,空中載具,Air Vehicles,空の乗り物,공중 탈것
+tags/vehicles,subcategories::water-vehicles/water-vehicles,水上與水下載具,Water & Underwater Vehicles,水上・水中の乗り物,수상·수중 탈것
+tags/vehicles,subcategories::space-vehicles/space-vehicles,太空載具,Space Vehicles,宇宙の乗り物,우주 탈것
+tags/vehicles,subcategories::mechs/mechs,機甲,Mechs,メカ,메카
+tags/vehicles,tags::armored war chariot,裝甲馬拉戰車,armored war chariot,装甲戦車,장갑 전차
+tags/vehicles,tags::wooden merchant wagon,木製商人馬車,wooden merchant wagon,木製の商人の荷馬車,목재 상인 마차
+tags/vehicles,tags::steampunk steam locomotive,蒸汽龐克蒸汽火車,steampunk steam locomotive,スチームパンクの蒸気機関車,스팀펑크 증기 기관차
+tags/vehicles,tags::cyberpunk hover bike,賽博龐克懸浮機車,cyberpunk hover bike,サイバーパンクのホバーバイク,사이버펑크 호버 바이크
+tags/vehicles,tags::desert sand buggy,沙漠沙灘車,desert sand buggy,砂漠のサンドバギー,사막 샌드 버기
+tags/vehicles,tags::heavy battle tank,重型坦克,heavy battle tank,重戦車,중전차
+tags/vehicles,tags::futuristic maglev train,未來磁浮列車,futuristic maglev train,未来的なリニア列車,미래형 자기부상 열차
+tags/vehicles,tags::steampunk airship,蒸汽龐克飛艇,steampunk airship,スチームパンクの飛行船,스팀펑크 비행선
+tags/vehicles,tags::sky pirate zeppelin,空中海盜飛艇,sky pirate zeppelin,空賊の飛行船,하늘 해적 제플린
+tags/vehicles,tags::sci-fi starfighter,科幻星際戰機,sci-fi starfighter,SFスターファイター,SF 스타파이터
+tags/vehicles,tags::hovering gunship,懸浮砲艇,hovering gunship,ホバリングするガンシップ,호버링 건쉽
+tags/vehicles,tags::hot air balloon,熱氣球,hot air balloon,熱気球,열기구
+tags/vehicles,tags::flying carpet,飛毯,flying carpet,空飛ぶ絨毯,하늘을 나는 양탄자
+tags/vehicles,tags::delivery drone,運送無人機,delivery drone,配達ドローン,배달 드론
+tags/vehicles,tags::pirate galleon,海盜大帆船,pirate galleon,海賊のガレオン船,해적 갤리온선
+tags/vehicles,tags::viking longship,維京長船,viking longship,バイキングのロングシップ,바이킹 롱쉽
+tags/vehicles,tags::small sailing boat,小型帆船,small sailing boat,小さな帆船,작은 돛단배
+tags/vehicles,tags::futuristic hovercraft,未來氣墊船,futuristic hovercraft,未来的なホバークラフト,미래형 호버크래프트
+tags/vehicles,tags::deep sea submarine,深海潛水艇,deep sea submarine,深海潜水艇,심해 잠수정
+tags/vehicles,tags::space shuttle,太空梭,space shuttle,スペースシャトル,우주 왕복선
+tags/vehicles,tags::orbital space station,軌道太空站,orbital space station,軌道上の宇宙ステーション,궤도 우주 정거장
+tags/vehicles,tags::mining spaceship,採礦太空船,mining spaceship,採掘宇宙船,채굴 우주선
+tags/vehicles,tags::cargo freighter spaceship,貨運太空船,cargo freighter spaceship,貨物宇宙船,화물 우주선
+tags/vehicles,tags::planetary rover,星球探測車,planetary rover,惑星探査ローバー,행성 탐사 로버
+tags/vehicles,tags::bipedal combat mech,雙足戰鬥機甲,bipedal combat mech,二足歩行の戦闘メカ,이족 보행 전투 메카
+tags/vehicles,tags::heavy walker mech,重型步行機甲,heavy walker mech,重量級ウォーカーメカ,중량 워커 메카
+tags/vehicles,tags::jetpack assault mech,噴射背包突擊機甲,jetpack assault mech,ジェットパック突撃メカ,제트팩 돌격 메카
+tags/vehicles,tags::cargo loader exosuit,貨運裝載外骨骼,cargo loader exosuit,貨物積載用エクソスーツ,화물 적재용 외골격 슈트
+tags/materials,name,材質,Materials,マテリアル・質感,재질
+tags/materials,categories::natural-materials,自然材質,Natural Materials,自然素材,자연 재질
+tags/materials,categories::metals,金屬,Metals,金属,금속
+tags/materials,categories::special-materials,特殊材質,Special Materials,特殊素材,특수 재질
+tags/materials,subcategories::natural-materials/natural-materials,自然材質,Natural Materials,自然素材,자연 재질
+tags/materials,subcategories::metals/metals,金屬,Metals,金属,금속
+tags/materials,subcategories::special-materials/special-materials,特殊材質,Special Materials,特殊素材,특수 재질
+tags/materials,tags::weathered wood grain,風化木紋,weathered wood grain,風化した木目,풍화된 나뭇결
+tags/materials,tags::rough carved stone,粗糙雕刻石材,rough carved stone,粗く削った石,거칠게 깎은 돌
+tags/materials,tags::polished marble,拋光大理石,polished marble,磨き上げた大理石,광택 대리석
+tags/materials,tags::mossy stone,長滿青苔的石頭,mossy stone,苔むした石,이끼 낀 돌
+tags/materials,tags::frozen ice,冰凍的冰塊,frozen ice,凍った氷,얼어붙은 얼음
+tags/materials,tags::tanned leather,鞣製皮革,tanned leather,なめし革,무두질한 가죽
+tags/materials,tags::bone and ivory,骨頭與象牙,bone and ivory,骨と象牙,뼈와 상아
+tags/materials,tags::soft fur,柔軟毛皮,soft fur,やわらかな毛皮,부드러운 털가죽
+tags/materials,tags::polished gold,拋光黃金,polished gold,磨かれた金,광택 나는 금
+tags/materials,tags::rusty iron,生鏽的鐵,rusty iron,錆びた鉄,녹슨 철
+tags/materials,tags::brushed steel,髮絲紋鋼,brushed steel,ヘアライン仕上げの鋼,헤어라인 강철
+tags/materials,tags::ornate bronze,華麗青銅,ornate bronze,装飾的な青銅,화려한 청동
+tags/materials,tags::copper with green patina,綠銅鏽的銅,copper with green patina,緑青の浮いた銅,녹청이 낀 구리
+tags/materials,tags::gleaming silver,閃亮白銀,gleaming silver,輝く銀,반짝이는 은
+tags/materials,tags::dark obsidian,黑曜岩,dark obsidian,黒曜石,흑요석
+tags/materials,tags::translucent glass,半透明玻璃,translucent glass,半透明のガラス,반투명 유리
+tags/materials,tags::glowing crystal,發光水晶,glowing crystal,光る水晶,빛나는 수정
+tags/materials,tags::jelly-like gel,果凍狀凝膠,jelly-like gel,ゼリー状のゲル,젤리 같은 젤
+tags/materials,tags::woven cloth fabric,編織布料,woven cloth fabric,織られた布地,짜인 천
+tags/materials,tags::handmade paper,手工紙,handmade paper,手漉きの紙,수제 종이
+tags/materials,tags::neon tube,霓虹燈管,neon tube,ネオン管,네온관
+tags/materials,tags::holographic surface,全息投影表面,holographic surface,ホログラフィックな表面,홀로그램 표면
+tags/materials,tags::glazed porcelain,釉面瓷器,glazed porcelain,釉薬をかけた磁器,유약 바른 자기
+tags/materials,tags::soft clay,柔軟黏土,soft clay,やわらかい粘土,부드러운 점토
+tags/lighting,name,光影,Lighting,ライティング,조명
+tags/lighting,categories::light-direction,光線方向,Light Direction,光の方向,빛의 방향
+tags/lighting,categories::light-mood,光線氛圍,Lighting Mood,光の雰囲気,빛의 분위기
+tags/lighting,subcategories::light-direction/light-direction,光線方向,Light Direction,光の方向,빛의 방향
+tags/lighting,subcategories::light-mood/light-mood,光線氛圍,Lighting Mood,光の雰囲気,빛의 분위기
+tags/lighting,tags::rim lighting,輪廓光,rim lighting,リムライティング,림 라이팅
+tags/lighting,tags::backlit silhouette,逆光剪影,backlit silhouette,逆光のシルエット,역광 실루엣
+tags/lighting,tags::soft front lighting,柔和正面光,soft front lighting,やわらかい順光,부드러운 정면광
+tags/lighting,tags::dramatic side lighting,戲劇性側光,dramatic side lighting,ドラマチックなサイドライト,극적인 측광
+tags/lighting,tags::top-down lighting,頂光,top-down lighting,トップライト,톱 라이팅
+tags/lighting,tags::eerie underlighting,詭異底光,eerie underlighting,不気味な下からの光,으스스한 하단 조명
+tags/lighting,tags::golden hour sunlight,黃金時刻陽光,golden hour sunlight,ゴールデンアワーの日差し,골든 아워 햇빛
+tags/lighting,tags::blue hour twilight,藍調時刻暮光,blue hour twilight,ブルーアワーの薄明,블루 아워 황혼
+tags/lighting,tags::soft moonlight,柔和月光,soft moonlight,やわらかな月明かり,부드러운 달빛
+tags/lighting,tags::harsh midday sun,強烈正午陽光,harsh midday sun,強烈な真昼の太陽,강렬한 한낮의 태양
+tags/lighting,tags::overcast diffused light,陰天漫射光,overcast diffused light,曇天の拡散光,흐린 날의 확산광
+tags/lighting,tags::warm candlelight,溫暖燭光,warm candlelight,暖かいろうそくの光,따뜻한 촛불
+tags/lighting,tags::glowing neon lighting,霓虹燈光,glowing neon lighting,輝くネオンライト,빛나는 네온 조명
+tags/lighting,tags::flickering firelight,搖曳火光,flickering firelight,揺らめく炎の光,일렁이는 불빛
+tags/lighting,tags::magical ethereal glow,夢幻魔法光輝,magical ethereal glow,幻想的な魔法の輝き,환상적인 마법 광채
+tags/lighting,tags::studio three-point lighting,攝影棚三點布光,studio three-point lighting,スタジオの3点照明,스튜디오 3점 조명
+tags/lighting,tags::high contrast chiaroscuro,高對比明暗法,high contrast chiaroscuro,ハイコントラストのキアロスクーロ,고대비 키아로스쿠로
+tags/color-palettes,name,色彩配置,Color Palettes,カラーパレット,색상 팔레트
+tags/color-palettes,categories::palette-schemes,配色方案,Color Schemes,配色スキーム,색상 구성
+tags/color-palettes,categories::themed-palettes,主題配色,Themed Palettes,テーマ別パレット,테마별 팔레트
+tags/color-palettes,subcategories::palette-schemes/palette-schemes,配色方案,Color Schemes,配色スキーム,색상 구성
+tags/color-palettes,subcategories::themed-palettes/themed-palettes,主題配色,Themed Palettes,テーマ別パレット,테마별 팔레트
+tags/color-palettes,tags::monochromatic color palette,單色系配色,monochromatic color palette,モノクロマティックな配色,단색조 팔레트
+tags/color-palettes,tags::complementary color scheme,互補色配色,complementary color scheme,補色の配色,보색 배색
+tags/color-palettes,tags::analogous color palette,類似色配色,analogous color palette,類似色の配色,유사색 팔레트
+tags/color-palettes,tags::triadic color scheme,三等分配色,triadic color scheme,トライアドの配色,3색 조화 배색
+tags/color-palettes,tags::limited color palette,限定色板,limited color palette,限られた色数のパレット,제한된 색상 팔레트
+tags/color-palettes,tags::pastel color palette,粉彩配色,pastel color palette,パステルカラーの配色,파스텔 팔레트
+tags/color-palettes,tags::high contrast colors,高對比色彩,high contrast colors,ハイコントラストな色使い,고대비 색상
+tags/color-palettes,tags::vibrant saturated colors,鮮豔高飽和色彩,vibrant saturated colors,鮮やかで彩度の高い色,선명한 고채도 색상
+tags/color-palettes,tags::muted desaturated tones,低飽和柔和色調,muted desaturated tones,彩度を抑えた落ち着いた色調,채도를 낮춘 차분한 톤
+tags/color-palettes,tags::warm color palette,暖色系配色,warm color palette,暖色系の配色,따뜻한 색상 팔레트
+tags/color-palettes,tags::cool color palette,冷色系配色,cool color palette,寒色系の配色,차가운 색상 팔레트
+tags/color-palettes,tags::earth tone palette,大地色系配色,earth tone palette,アースカラーの配色,어스톤 팔레트
+tags/color-palettes,tags::teal and orange color grading,青橙色調,teal and orange color grading,ティール＆オレンジのカラーグレーディング,틸 앤 오렌지 컬러 그레이딩
+tags/color-palettes,tags::crimson and gold color scheme,緋紅與金色配色,crimson and gold color scheme,深紅と金の配色,진홍색과 금색 배색
+tags/color-palettes,tags::emerald green and gold,翡翠綠與金色,emerald green and gold,エメラルドグリーンと金,에메랄드 그린과 금색
+tags/color-palettes,tags::icy blue and silver white,冰藍與銀白,icy blue and silver white,氷のような青と銀白,얼음 같은 파랑과 은백색
+tags/color-palettes,tags::sunset orange and purple,夕陽橘與紫色,sunset orange and purple,夕焼けのオレンジと紫,석양 주황과 보라
+tags/color-palettes,tags::black and white with red accent,黑白加紅色點綴,black and white with red accent,白黒に赤のアクセント,흑백에 빨간 포인트
+tags/color-palettes,tags::neon pink and cyan,霓虹粉與青色,neon pink and cyan,ネオンピンクとシアン,네온 핑크와 시안
+tags/color-palettes,tags::autumn leaf colors,秋葉色系,autumn leaf colors,秋の葉の色合い,가을 낙엽 색상
+tags/color-palettes,tags::candy bright colors,糖果亮色,candy bright colors,キャンディのような明るい色,캔디 같은 밝은 색상
+tags/layouts,name,版面與構圖範例,Layouts & Composition Examples,レイアウト・構図例,레이아웃·구도 예시
+tags/layouts,categories::asset-sheet-layouts,素材表版面,Asset Sheet Layouts,素材シートのレイアウト,에셋 시트 레이아웃
+tags/layouts,categories::scene-layouts,場景版面,Scene Layouts,シーンのレイアウト,장면 레이아웃
+tags/layouts,categories::promo-layouts,宣傳版面,Promotional Layouts,プロモーション用レイアウト,홍보 레이아웃
+tags/layouts,subcategories::asset-sheet-layouts/asset-sheet-layouts,素材表版面,Asset Sheet Layouts,素材シートのレイアウト,에셋 시트 레이아웃
+tags/layouts,subcategories::scene-layouts/scene-layouts,場景版面,Scene Layouts,シーンのレイアウト,장면 레이아웃
+tags/layouts,subcategories::promo-layouts/promo-layouts,宣傳版面,Promotional Layouts,プロモーション用レイアウト,홍보 레이아웃
+tags/layouts,tags::character turnaround sheet,角色前側後三視圖,character turnaround sheet,正面・側面・背面のキャラクター設定画,정면·측면·후면 캐릭터 턴어라운드 시트
+tags/layouts,tags::character expression sheet,角色表情表,character expression sheet,キャラクター表情シート,캐릭터 표정 시트
+tags/layouts,tags::sprite sheet layout,精靈圖排列,sprite sheet layout,スプライトシートのレイアウト,스프라이트 시트 레이아웃
+tags/layouts,tags::seamless tileset grid,無縫地圖圖塊格,seamless tileset grid,シームレスなタイルセット,이음새 없는 타일셋 격자
+tags/layouts,tags::icon set grid layout,圖示組格狀排列,icon set grid layout,アイコンセットのグリッド配置,아이콘 세트 격자 배치
+tags/layouts,tags::item concept sheet,道具設定表,item concept sheet,アイテム設定シート,아이템 설정 시트
+tags/layouts,tags::UI kit sheet,UI 元件組合表,UI kit sheet,UIキットシート,UI 키트 시트
+tags/layouts,tags::concept art sheet with callouts,附註解的概念設定表,concept art sheet with callouts,注釈付きコンセプトアートシート,주석 달린 콘셉트 아트 시트
+tags/layouts,tags::isometric diorama,等距立體小場景,isometric diorama,アイソメトリックのジオラマ,아이소메트릭 디오라마
+tags/layouts,tags::top-down map layout,俯視地圖版面,top-down map layout,トップダウンのマップレイアウト,탑다운 맵 레이아웃
+tags/layouts,tags::side-scrolling platformer scene,橫向捲軸平台場景,side-scrolling platformer scene,横スクロールのプラットフォーマーシーン,횡스크롤 플랫포머 장면
+tags/layouts,tags::centered hero shot,置中英雄主視覺,centered hero shot,中央に配置したヒーローショット,중앙 영웅 샷
+tags/layouts,tags::panoramic wide landscape layout,全景寬幅風景版面,panoramic wide landscape layout,パノラマのワイド風景レイアウト,파노라마 와이드 풍경 레이아웃
+tags/layouts,tags::key art poster composition,主視覺海報構圖,key art poster composition,キーアートポスターの構図,키 아트 포스터 구도
+tags/layouts,tags::splash art with centered character,角色居中的啟動插畫,splash art with centered character,キャラクターを中央に置いたスプラッシュアート,캐릭터를 중앙에 둔 스플래시 아트
+tags/layouts,tags::collectible card frame illustration,收藏卡牌框插畫,collectible card frame illustration,コレクタブルカードの枠付きイラスト,수집형 카드 프레임 일러스트
+tags/layouts,tags::wide banner layout,寬幅橫幅版面,wide banner layout,ワイドバナーのレイアウト,와이드 배너 레이아웃
+tags/layouts,tags::logo lockup with tagline space,預留標語空間的 Logo 組合,logo lockup with tagline space,キャッチコピー用スペースを空けたロゴロックアップ,태그라인 공간을 둔 로고 락업
+tags/layouts,tags::square app icon composition,方形 App 圖示構圖,square app icon composition,正方形のアプリアイコン構図,정사각형 앱 아이콘 구도

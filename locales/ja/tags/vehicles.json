@@ -1,0 +1,47 @@
+{
+  "name": "乗り物",
+  "categories": {
+    "ground-vehicles": "地上の乗り物",
+    "air-vehicles": "空の乗り物",
+    "water-vehicles": "水上・水中の乗り物",
+    "space-vehicles": "宇宙の乗り物",
+    "mechs": "メカ"
+  },
+  "subcategories": {
+    "ground-vehicles/ground-vehicles": "地上の乗り物",
+    "air-vehicles/air-vehicles": "空の乗り物",
+    "water-vehicles/water-vehicles": "水上・水中の乗り物",
+    "space-vehicles/space-vehicles": "宇宙の乗り物",
+    "mechs/mechs": "メカ"
+  },
+  "tags": {
+    "armored war chariot": "装甲戦車",
+    "wooden merchant wagon": "木製の商人の荷馬車",
+    "steampunk steam locomotive": "スチームパンクの蒸気機関車",
+    "cyberpunk hover bike": "サイバーパンクのホバーバイク",
+    "desert sand buggy": "砂漠のサンドバギー",
+    "heavy battle tank": "重戦車",
+    "futuristic maglev train": "未来的なリニア列車",
+    "steampunk airship": "スチームパンクの飛行船",
+    "sky pirate zeppelin": "空賊の飛行船",
+    "sci-fi starfighter": "SFスターファイター",
+    "hovering gunship": "ホバリングするガンシップ",
+    "hot air balloon": "熱気球",
+    "flying carpet": "空飛ぶ絨毯",
+    "delivery drone": "配達ドローン",
+    "pirate galleon": "海賊のガレオン船",
+    "viking longship": "バイキングのロングシップ",
+    "small sailing boat": "小さな帆船",
+    "futuristic hovercraft": "未来的なホバークラフト",
+    "deep sea submarine": "深海潜水艇",
+    "space shuttle": "スペースシャトル",
+    "orbital space station": "軌道上の宇宙ステーション",
+    "mining spaceship": "採掘宇宙船",
+    "cargo freighter spaceship": "貨物宇宙船",
+    "planetary rover": "惑星探査ローバー",
+    "bipedal combat mech": "二足歩行の戦闘メカ",
+    "heavy walker mech": "重量級ウォーカーメカ",
+    "jetpack assault mech": "ジェットパック突撃メカ",
+    "cargo loader exosuit": "貨物積載用エクソスーツ"
+  }
+}

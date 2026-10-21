@@ -1,0 +1,34 @@
+{
+  "name": "カラーパレット",
+  "categories": {
+    "palette-schemes": "配色スキーム",
+    "themed-palettes": "テーマ別パレット"
+  },
+  "subcategories": {
+    "palette-schemes/palette-schemes": "配色スキーム",
+    "themed-palettes/themed-palettes": "テーマ別パレット"
+  },
+  "tags": {
+    "monochromatic color palette": "モノクロマティックな配色",
+    "complementary color scheme": "補色の配色",
+    "analogous color palette": "類似色の配色",
+    "triadic color scheme": "トライアドの配色",
+    "limited color palette": "限られた色数のパレット",
+    "pastel color palette": "パステルカラーの配色",
+    "high contrast colors": "ハイコントラストな色使い",
+    "vibrant saturated colors": "鮮やかで彩度の高い色",
+    "muted desaturated tones": "彩度を抑えた落ち着いた色調",
+    "warm color palette": "暖色系の配色",
+    "cool color palette": "寒色系の配色",
+    "earth tone palette": "アースカラーの配色",
+    "teal and orange color grading": "ティール＆オレンジのカラーグレーディング",
+    "crimson and gold color scheme": "深紅と金の配色",
+    "emerald green and gold": "エメラルドグリーンと金",
+    "icy blue and silver white": "氷のような青と銀白",
+    "sunset orange and purple": "夕焼けのオレンジと紫",
+    "black and white with red accent": "白黒に赤のアクセント",
+    "neon pink and cyan": "ネオンピンクとシアン",
+    "autumn leaf colors": "秋の葉の色合い",
+    "candy bright colors": "キャンディのような明るい色"
+  }
+}

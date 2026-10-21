@@ -11,6 +11,12 @@
     "effects",
     "ui-elements",
     "icons-badges",
-    "store-marketing"
+    "store-marketing",
+    "creatures",
+    "vehicles",
+    "materials",
+    "lighting",
+    "color-palettes",
+    "layouts"
   ]
 }

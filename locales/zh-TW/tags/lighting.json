@@ -1,0 +1,30 @@
+{
+  "name": "光影",
+  "categories": {
+    "light-direction": "光線方向",
+    "light-mood": "光線氛圍"
+  },
+  "subcategories": {
+    "light-direction/light-direction": "光線方向",
+    "light-mood/light-mood": "光線氛圍"
+  },
+  "tags": {
+    "rim lighting": "輪廓光",
+    "backlit silhouette": "逆光剪影",
+    "soft front lighting": "柔和正面光",
+    "dramatic side lighting": "戲劇性側光",
+    "top-down lighting": "頂光",
+    "eerie underlighting": "詭異底光",
+    "golden hour sunlight": "黃金時刻陽光",
+    "blue hour twilight": "藍調時刻暮光",
+    "soft moonlight": "柔和月光",
+    "harsh midday sun": "強烈正午陽光",
+    "overcast diffused light": "陰天漫射光",
+    "warm candlelight": "溫暖燭光",
+    "glowing neon lighting": "霓虹燈光",
+    "flickering firelight": "搖曳火光",
+    "magical ethereal glow": "夢幻魔法光輝",
+    "studio three-point lighting": "攝影棚三點布光",
+    "high contrast chiaroscuro": "高對比明暗法"
+  }
+}

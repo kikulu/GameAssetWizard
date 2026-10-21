@@ -1,0 +1,34 @@
+{
+  "name": "색상 팔레트",
+  "categories": {
+    "palette-schemes": "색상 구성",
+    "themed-palettes": "테마별 팔레트"
+  },
+  "subcategories": {
+    "palette-schemes/palette-schemes": "색상 구성",
+    "themed-palettes/themed-palettes": "테마별 팔레트"
+  },
+  "tags": {
+    "monochromatic color palette": "단색조 팔레트",
+    "complementary color scheme": "보색 배색",
+    "analogous color palette": "유사색 팔레트",
+    "triadic color scheme": "3색 조화 배색",
+    "limited color palette": "제한된 색상 팔레트",
+    "pastel color palette": "파스텔 팔레트",
+    "high contrast colors": "고대비 색상",
+    "vibrant saturated colors": "선명한 고채도 색상",
+    "muted desaturated tones": "채도를 낮춘 차분한 톤",
+    "warm color palette": "따뜻한 색상 팔레트",
+    "cool color palette": "차가운 색상 팔레트",
+    "earth tone palette": "어스톤 팔레트",
+    "teal and orange color grading": "틸 앤 오렌지 컬러 그레이딩",
+    "crimson and gold color scheme": "진홍색과 금색 배색",
+    "emerald green and gold": "에메랄드 그린과 금색",
+    "icy blue and silver white": "얼음 같은 파랑과 은백색",
+    "sunset orange and purple": "석양 주황과 보라",
+    "black and white with red accent": "흑백에 빨간 포인트",
+    "neon pink and cyan": "네온 핑크와 시안",
+    "autumn leaf colors": "가을 낙엽 색상",
+    "candy bright colors": "캔디 같은 밝은 색상"
+  }
+}

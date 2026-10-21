@@ -1,0 +1,47 @@
+{
+  "name": "載具",
+  "categories": {
+    "ground-vehicles": "地面載具",
+    "air-vehicles": "空中載具",
+    "water-vehicles": "水上與水下載具",
+    "space-vehicles": "太空載具",
+    "mechs": "機甲"
+  },
+  "subcategories": {
+    "ground-vehicles/ground-vehicles": "地面載具",
+    "air-vehicles/air-vehicles": "空中載具",
+    "water-vehicles/water-vehicles": "水上與水下載具",
+    "space-vehicles/space-vehicles": "太空載具",
+    "mechs/mechs": "機甲"
+  },
+  "tags": {
+    "armored war chariot": "裝甲馬拉戰車",
+    "wooden merchant wagon": "木製商人馬車",
+    "steampunk steam locomotive": "蒸汽龐克蒸汽火車",
+    "cyberpunk hover bike": "賽博龐克懸浮機車",
+    "desert sand buggy": "沙漠沙灘車",
+    "heavy battle tank": "重型坦克",
+    "futuristic maglev train": "未來磁浮列車",
+    "steampunk airship": "蒸汽龐克飛艇",
+    "sky pirate zeppelin": "空中海盜飛艇",
+    "sci-fi starfighter": "科幻星際戰機",
+    "hovering gunship": "懸浮砲艇",
+    "hot air balloon": "熱氣球",
+    "flying carpet": "飛毯",
+    "delivery drone": "運送無人機",
+    "pirate galleon": "海盜大帆船",
+    "viking longship": "維京長船",
+    "small sailing boat": "小型帆船",
+    "futuristic hovercraft": "未來氣墊船",
+    "deep sea submarine": "深海潛水艇",
+    "space shuttle": "太空梭",
+    "orbital space station": "軌道太空站",
+    "mining spaceship": "採礦太空船",
+    "cargo freighter spaceship": "貨運太空船",
+    "planetary rover": "星球探測車",
+    "bipedal combat mech": "雙足戰鬥機甲",
+    "heavy walker mech": "重型步行機甲",
+    "jetpack assault mech": "噴射背包突擊機甲",
+    "cargo loader exosuit": "貨運裝載外骨骼"
+  }
+}
